@@ -38,6 +38,9 @@ importers:
       svelte-toolbelt:
         specifier: ^0.10.6
         version: 0.10.6(@sveltejs/kit@2.49.4(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.46.1)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.46.1)(typescript@5.9.3)(vite@7.3.1(jiti@2.6.1)(lightningcss@1.30.2)))(svelte@5.46.1)
+      svg-dotted-map:
+        specifier: ^2.0.1
+        version: 2.0.1
     devDependencies:
       '@internationalized/date':
         specifier: ^3.10.1
@@ -1085,6 +1088,9 @@ packages:
   svelte@5.46.1:
     resolution: {integrity: sha512-ynjfCHD3nP2el70kN5Pmg37sSi0EjOm9FgHYQdC4giWG/hzO3AatzXXJJgP305uIhGQxSufJLuYWtkY8uK/8RA==}
     engines: {node: '>=18'}
+
+  svg-dotted-map@2.0.1:
+    resolution: {integrity: sha512-eeI2XzIKm23gmSVr7ASTMNVJvxAvBfyL30tN33Y/DcZCJXvC/Br/cxQp9Ts6jDK/e7fkE5TpZStEfduPqPXrIw==}
 
   symbol-tree@3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
@@ -2184,6 +2190,8 @@ snapshots:
       locate-character: 3.0.0
       magic-string: 0.30.21
       zimmerframe: 1.1.4
+
+  svg-dotted-map@2.0.1: {}
 
   symbol-tree@3.2.4: {}
 

@@ -7,13 +7,13 @@ Complete List of Components
 * Android - SVG + Tailwind CSS
 * Animated Beam - Motion/React
 * Animated Circular Progress Bar - SVG + Tailwind CSS
-* Animated Gradient Text - Tailwind CSS
+* Animated Gradient Text - Tailwind CSS - done
 * Animated Grid Pattern - SVG + Tailwind CSS
 * Animated List - Motion/React
 * Animated Shiny Text - Tailwind CSS
 * Animated Theme Toggler - Tailwind CSS
-* Aurora Text - Tailwind CSS
-* Avatar Circles - Tailwind CSS
+* Aurora Text - Tailwind CSS - done
+* Avatar Circles - Tailwind CSS - done
 * Bento Grid - Tailwind CSS
 * Blur Fade - Motion/React + Tailwind CSS
 * Border Beam - Motion/React + Tailwind CSS
