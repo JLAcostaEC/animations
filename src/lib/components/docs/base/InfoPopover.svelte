@@ -87,7 +87,7 @@
   <button
     bind:this={triggerRef}
     onclick={toggle}
-    class="text-foreground/70 transition-[color] duration-150 ease-out hover:text-accent"
+    class="text-foreground/70 transition-[color] duration-150 ease-out hover:text-foreground"
     aria-label="More info"
   >
     <svg

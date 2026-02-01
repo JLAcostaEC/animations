@@ -232,7 +232,7 @@
       <!-- Main nav  -->
       <div class="flex items-center gap-6">
         <a href="/" class="text-primary hover:text-primary/90">
-          Svelte AI Elements
+          Svelte 5 Animations
         </a>
         <!-- Navigation menu  -->
         <NavigationMenuRoot class="max-md:hidden" delayDuration={0}>

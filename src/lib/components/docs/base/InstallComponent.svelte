@@ -77,8 +77,8 @@
         {/if}
 
         {#if codeBlocks.length > 0}
-          <Step title="Copy the Source Code">
-            <p class="mb-4">
+          <Step title="Copy the Source Code" titleBaseClass="mb-0">
+            <p class="mb-4 text-sm">
               Copy and paste the following code into your project:
             </p>
             <div class="space-y-4">

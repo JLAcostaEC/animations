@@ -6,16 +6,18 @@
     class: className,
     children,
     title,
+    titleBaseClass,
   } = $props<{
     class?: string;
     children?: Snippet;
     title?: string;
+    titleBaseClass?: string;
   }>();
 </script>
 
 <div class={cn("relative pb-10 pl-8", className)}>
   {#if title}
-    <div class="mb-4 flex h-8 items-center">
+    <div class={cn("mb-2 flex h-8 items-center", titleBaseClass)}>
       <span
         class="absolute -left-4 flex size-8 items-center justify-center rounded-full border border-border bg-card text-xs font-medium text-foreground shadow-sm [counter-increment:step] before:content-[counter(step)]"
       ></span>

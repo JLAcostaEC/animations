@@ -1,5 +1,5 @@
 <script lang="ts">
-  import TextAnimate from "$lib/magic/text-animate.svelte";
+  import { TextAnimate } from "$lib/components/magic-ui/text-animate";
   import { motion } from "motion-sv";
   let rotate = $state(0);
 
@@ -44,9 +44,9 @@
           content="Slide left by characters"
           animation="slideLeft"
           by="character"
-          ></TextAnimate>
+        ></TextAnimate>
 
-          <TextAnimate
+        <TextAnimate
           delay={2.5}
           variants={{
             hidden: {

@@ -33,6 +33,25 @@
           }
         }
       }
+    },
+    {
+      "name": "text-animate",
+      "type": "registry:block",
+      "title": "Text Animate",
+      "description": "Animate text with various effects like blur, slide, scale, and fade with granular control over words, characters, or lines.",
+      "files": [
+        {
+          "path": "./src/lib/components/magic-ui/text-animate/text-animate.svelte",
+          "type": "registry:component",
+          "target": "magic/text-animate/text-animate.svelte"
+        },
+        {
+          "path": "./src/lib/components/magic-ui/text-animate/index.ts",
+          "type": "registry:file",
+          "target": "magic/text-animate/index.ts"
+        }
+      ],
+      "registryDependencies": ["motion-sv"]
     }
  ]
 }

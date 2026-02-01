@@ -256,11 +256,11 @@
     /**
      * The class name to be applied to the component
      */
-    className?: string;
+    class?: string;
     /**
      * The class name to be applied to each segment
      */
-    segmentClassName?: string;
+    segmentClass?: string;
     /**
      * The delay before the animation starts
      */
@@ -302,13 +302,13 @@
   // as = "span",
   let {
     content,
-    className,
-    segmentClassName,
+    class: className = "",
+    segmentClass = "",
     delay = 0,
     duration = 0.3,
     variants,
     by = "word",
-    startOnView = false,
+    startOnView = true,
     once = false,
     animation = "fadeIn",
     accessible = true,
@@ -339,7 +339,7 @@
     }
   });
 
-  const finalVariants = $derived(
+  let finalVariants = $derived(
     variants
       ? {
           container: {
@@ -397,6 +397,7 @@
     whileInView={startOnView ? "show" : undefined}
     animate={startOnView ? undefined : "show"}
     exit="exit"
+    inViewOptions={{ once }}
     aria-label={accessible ? segments.join(" ") : undefined}
     class={cn("whitespace-pre-wrap", className)}
   >
@@ -410,9 +411,8 @@
         class={cn(
           by === "line" ? "block" : "inline-block whitespace-pre",
           by === "character" && "",
-          segmentClassName,
+          segmentClass,
         )}
-        inViewOptions={{ once }}
         aria-hidden={accessible ? true : undefined}
       >
         {segment}
