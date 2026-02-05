@@ -1,9 +1,19 @@
 ﻿<script lang="ts">
-  import  from "$lib/components/magic-ui/animated-grid-pattern/animated-grid-pattern.svelte";
+  import { AnimatedGridPattern } from "$lib/components/magic-ui/animated-grid-pattern";
+  import { cn } from "$lib/utils";
 </script>
 
-<div class="flex items-center justify-center w-full h-full min-h-[200px]">
-  <>
-    Preview Example
-  </>
+<div
+  class="bg-background relative flex h-[500px] w-full items-center justify-center overflow-hidden rounded-lg border p-20"
+>
+  <AnimatedGridPattern
+    numSquares={30}
+    maxOpacity={0.1}
+    duration={3}
+    repeatDelay={1}
+    class={cn(
+      "mask-[radial-gradient(500px_circle_at_center,white,transparent)]",
+      "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
+    )}
+  />
 </div>

@@ -8,42 +8,65 @@
   import InfoPopover from "./InfoPopover.svelte";
   import { cn } from "$lib/utils";
 
-  type Row = {
+  type PropDef = {
+    name: string;
+    type: string;
+    default?: string;
+    required?: boolean;
     description?: string;
-    [key: string]: unknown;
+  };
+
+  type PropsTable = {
+    name: string;
+    desc?: string;
+    props: PropDef[];
   };
 
   let {
-    headers = [],
-    keys = [],
-    data = [],
+    headers = ["Name", "Type", "Default", "Description"],
+    keys = ["name", "type", "default", "description"],
+    data,
   }: {
-    headers: string[];
-    keys: string[];
-    data: Row[];
+    headers?: string[];
+    keys?: string[];
+    data: PropsTable | PropDef[];
   } = $props();
+
+  const isPropsTable = (data: PropsTable | PropDef[]): data is PropsTable => {
+    return "props" in data;
+  };
+
+  const tableData = isPropsTable(data) ? data.props : data;
+  const tableHeaders = isPropsTable(data)
+    ? ["Name", "Type", "Default", "Description"]
+    : headers;
+  const tableKeys = isPropsTable(data)
+    ? ["name", "type", "default", "description"]
+    : keys;
 </script>
 
 <Table>
   <Thead>
     <Tr>
-      {#each headers as header (header)}
+      {#each tableHeaders as header (header)}
         <Th>{header}</Th>
       {/each}
     </Tr>
   </Thead>
   <Tbody>
-    {#each data as row, i (i)}
+    {#each tableData as row, i (i)}
       <Tr>
-        {#each keys as key, index (key)}
+        {#each tableKeys as key, index (key)}
           <Td>
             <span class="inline-flex items-center">
               <code
                 class={cn(
-                  "rounded-lg border border-border bg-card-muted px-1.5 py-0.5 font-normal text-foreground shadow-sm mono"
+                  "rounded-lg border border-border bg-card-muted px-1.5 py-0.5 font-normal text-foreground shadow-sm mono",
                 )}
               >
-                {row[key]}
+                {key === "default" && row.required
+                  ? "required"
+                  : (row as any)[key] || ""}
               </code>
               {#if index === 0 && row.description}
                 <InfoPopover description={row.description} />

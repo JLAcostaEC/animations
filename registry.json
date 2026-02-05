@@ -91,6 +91,44 @@
         }
       ],
       "registryDependencies": ["motion-sv"]
+    },
+     {
+      "name": "animated-circular-progress-bar",
+      "type": "registry:block",
+      "title": "Animated Circular Progress Bar",
+      "description": "A circular progress bar component with animated transitions between primary and secondary colors.",
+      "files": [
+        {
+          "path": "./src/lib/components/magic-ui/animated-circular-progress-bar/animated-circular-progress-bar.svelte",
+          "type": "registry:component",
+          "target": "magic/animated-circular-progress-bar/animated-circular-progress-bar.svelte"
+        },
+        {
+            "path": "./src/lib/components/magic-ui/animated-circular-progress-bar/index.ts",
+            "type": "registry:file",
+            "target": "magic/animated-circular-progress-bar/index.ts"
+        }
+      ],
+      "registryDependencies": []
+    },
+     {
+      "name": "animated-grid-pattern",
+      "type": "registry:block",
+      "title": "Animated Grid Pattern",
+      "description": "An animated grid pattern component that creates a dynamic background with moving squares that fade in and out.",
+      "files": [
+        {
+          "path": "./src/lib/components/magic-ui/animated-grid-pattern/animated-grid-pattern.svelte",
+          "type": "registry:component",
+          "target": "magic/animated-grid-pattern/animated-grid-pattern.svelte"
+        },
+        {
+            "path": "./src/lib/components/magic-ui/animated-grid-pattern/index.ts",
+            "type": "registry:file",
+            "target": "magic/animated-grid-pattern/index.ts"
+        }
+      ],
+      "registryDependencies": ["motion-sv"]
     }
 ]
 }

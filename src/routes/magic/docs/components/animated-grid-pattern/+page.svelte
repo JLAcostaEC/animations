@@ -1,5 +1,4 @@
 ﻿<script lang="ts">
-  import { page } from "$app/state";
   import { H1, H2, Paragraph, H3 } from "$lib/components/docs/markdown/index";
   import Raw from "$lib/components/magic-ui/animated-grid-pattern/animated-grid-pattern.svelte?raw";
   import type { CodeBlock } from "$lib/components/ui/code";
@@ -8,7 +7,6 @@
   import InstallComponent from "$lib/components/docs/base/InstallComponent.svelte";
   import APITable from "$lib/components/docs/base/APITable.svelte";
   import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
-  import SingleCodeFilename from "$lib/components/ui/code/single-code-filename.svelte";
   import { data } from "./data";
 
   const code: CodeBlock = {
@@ -55,7 +53,9 @@
     <H2 id="examples">Examples</H2>
     {#each data.examples as example}
       <div class="my-6">
-        <H3 id={example.name.toLowerCase().replace(/\s+/g, '-')}>{example.name}</H3>
+        <H3 id={example.name.toLowerCase().replace(/\s+/g, "-")}
+          >{example.name}</H3
+        >
         <PreviewComponent code={example.code}>
           <example.preview />
         </PreviewComponent>

@@ -33,7 +33,7 @@ export type PropsTable = {
 export type ComponentDoc = ComponentMeta & {
   preview?: Component;
   previewCode?: CodeBlock | CodeBlock[];
-  examples: Example[];
+  examples?: Example[];
   seo: SEO;
   tailwind?: CodeBlock;
   props?: PropsTable[];

@@ -1,9 +1,28 @@
 ﻿<script lang="ts">
-  import  from "$lib/components/magic-ui/animated-circular-progress-bar/animated-circular-progress-bar.svelte";
+  import { AnimatedCircularProgressBar } from "$lib/components/magic-ui/animated-circular-progress-bar";
+  import { onMount, onDestroy } from "svelte";
+
+  let value = $state(0);
+  let interval: ReturnType<typeof setInterval>;
+
+  onMount(() => {
+    const handleIncrement = () => {
+      value = value === 100 ? 0 : value + 10;
+    };
+
+    handleIncrement();
+    interval = setInterval(handleIncrement, 2000);
+  });
+
+  onDestroy(() => {
+    if (interval) {
+      clearInterval(interval);
+    }
+  });
 </script>
 
-<div class="flex items-center justify-center w-full h-full min-h-[200px]">
-  <>
-    Preview Example
-  </>
-</div>
+<AnimatedCircularProgressBar
+  {value}
+  gaugePrimaryColor="rgb(79 70 229)"
+  gaugeSecondaryColor="rgba(0, 0, 0, 0.1)"
+/>
