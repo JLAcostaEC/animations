@@ -52,6 +52,45 @@
         }
       ],
       "registryDependencies": ["motion-sv"]
+    },
+     {
+      "name": "animated-beam",
+      "type": "registry:block",
+      "title": "Animated Beam",
+      "description": "A component for creating animated beam effects between two elements with customizable gradients and paths.",
+      "files": [
+        {
+          "path": "./src/lib/components/magic-ui/animated-beam/animated-beam.svelte",
+          "type": "registry:component",
+          "target": "magic/animated-beam/animated-beam.svelte"
+        },
+        {
+          "path": "./src/lib/components/magic-ui/animated-beam/index.ts",
+          "type": "registry:file",
+          "target": "magic/animated-beam/index.ts"
+        },
+        {
+          "path": "./src/lib/components/magic-ui/animated-beam/types.ts",
+          "type": "registry:file",
+          "target": "magic/animated-beam/types.ts"
+        },
+        {
+          "path": "./src/lib/components/magic-ui/animated-beam/use-gradient-coordinates.svelte.ts",
+          "type": "registry:file",
+          "target": "magic/animated-beam/use-gradient-coordinates.svelte.ts"
+        },
+        {
+          "path": "./src/lib/components/magic-ui/animated-beam/use-path-calculator.svelte.ts",
+          "type": "registry:file",
+          "target": "magic/animated-beam/use-path-calculator.svelte.ts"
+        },
+        {
+          "path": "./src/lib/components/magic-ui/animated-beam/use-resize-observer.svelte.ts",
+          "type": "registry:file",
+          "target": "magic/animated-beam/use-resize-observer.svelte.ts"
+        }
+      ],
+      "registryDependencies": ["motion-sv"]
     }
- ]
+]
 }

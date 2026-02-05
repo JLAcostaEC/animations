@@ -6,5 +6,25 @@
 		"description": "An animated gradient background which transitions between colors for text.",
 		"registryDependencies": [],
 		"relativeUrl": "animated-gradient-text.json"
+	},
+	{
+		"name": "text-animate",
+		"title": "Text Animate",
+		"type": "registry:block",
+		"description": "Animate text with various effects like blur, slide, scale, and fade with granular control over words, characters, or lines.",
+		"registryDependencies": [
+			"motion-sv"
+		],
+		"relativeUrl": "text-animate.json"
+	},
+	{
+		"name": "animated-beam",
+		"title": "Animated Beam",
+		"type": "registry:block",
+		"description": "A component for creating animated beam effects between two elements with customizable gradients and paths.",
+		"registryDependencies": [
+			"motion-sv"
+		],
+		"relativeUrl": "animated-beam.json"
 	}
 ]
