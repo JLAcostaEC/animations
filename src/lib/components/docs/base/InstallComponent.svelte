@@ -17,6 +17,7 @@
     codeBlocks?: CodeBlock[];
     class?: string;
     folderStructure?: string;
+    packages?: string[];
   };
 </script>
 
@@ -35,6 +36,7 @@
     codeBlocks = [],
     class: className,
     folderStructure = "",
+    packages = [],
   }: InstallComponentProps = $props();
 
   let activeTab = $state("cli");
@@ -56,6 +58,15 @@
 
     <Tabs.Content value="manual" class="mt-4" data-toc-ignore="true">
       <Steps>
+        {#if packages.length > 0}
+          <Step title="Install dependencies">
+            <p class="mb-4">
+              Install the required packages for this component:
+            </p>
+            <PMCommand command="add" args={packages} />
+          </Step>
+        {/if}
+
         {#if dependencies.length > 0}
           <Step title="Install Dependencies">
             <p class="mb-4">Install the following dependencies:</p>

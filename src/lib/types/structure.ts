@@ -38,4 +38,5 @@ export type ComponentDoc = ComponentMeta & {
   tailwind?: CodeBlock;
   props?: PropsTable[];
   folderStructure?: string;
+  packages?: string[];
 };
