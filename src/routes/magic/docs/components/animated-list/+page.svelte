@@ -1,5 +1,4 @@
 ﻿<script lang="ts">
-  import { page } from "$app/state";
   import { H1, H2, Paragraph, H3 } from "$lib/components/docs/markdown/index";
   import Raw from "$lib/components/magic-ui/animated-list/animated-list.svelte?raw";
   import type { CodeBlock } from "$lib/components/ui/code";
@@ -55,7 +54,9 @@
     <H2 id="examples">Examples</H2>
     {#each data.examples as example}
       <div class="my-6">
-        <H3 id={example.name.toLowerCase().replace(/\s+/g, '-')}>{example.name}</H3>
+        <H3 id={example.name.toLowerCase().replace(/\s+/g, "-")}
+          >{example.name}</H3
+        >
         <PreviewComponent code={example.code}>
           <example.preview />
         </PreviewComponent>

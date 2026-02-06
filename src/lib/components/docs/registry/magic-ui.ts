@@ -20,44 +20,68 @@ export interface MagicComponent {
  */
 export const magicUIComponents: MagicComponent[] = [
   {
+    id: "animated-beam",
+    name: "Animated Beam",
+    href: "/magic/docs/components/animated-beam",
+    badge: "New",
+  },
+  {
+    id: "animated-circular-progress-bar",
+    name: "Animated Circular Progress Bar",
+    href: "/magic/docs/components/animated-circular-progress-bar",
+    badge: "New",
+  },
+  {
     id: "animated-gradient-text",
     name: "Animated Gradient Text",
     href: "/magic/docs/components/animated-gradient-text",
   },
-  // {
-  //   id: "animated-shiny-text",
-  //   name: "Animated Shiny Text",
-  //   href: "/magic/docs/components/animated-shiny-text",
-  //   badge: "New",
-  // },
-  // {
-  //   id: "aurora-text",
-  //   name: "Aurora Text",
-  //   href: "/magic/docs/components/aurora-text",
-  //   badge: "New",
-  // },
-  // {
-  //   id: "avatar-circles",
-  //   name: "Avatar Circles",
-  //   href: "/magic/docs/components/avatar-circles",
-  //   badge: "New",
-  // },
-  // {
-  //   id: "bento-grid",
-  //   name: "Bento Grid",
-  //   href: "/magic/docs/components/bento-grid",
-  //   badge: "New",
-  // },
-  // {
-  //   id: "pulsating-button",
-  //   name: "Pulsating Button",
-  //   href: "/magic/docs/components/pulsating-button",
-  //   badge: "New",
-  // },
+  {
+    id: "animated-grid-pattern",
+    name: "Animated Grid Pattern",
+    href: "/magic/docs/components/animated-grid-pattern",
+    badge: "New",
+  },
+  {
+    id: "animated-theme-toggler",
+    name: "Animated Theme Toggler",
+    href: "/magic/docs/components/animated-theme-toggler",
+    badge: "New",
+  },
   {
     id: "text-animate",
     name: "Text Animate",
     href: "/magic/docs/components/text-animate",
+    badge: "New",
+  },
+  {
+    id: "blur-fade",
+    name: "Blur Fade",
+    href: "/magic/docs/components/blur-fade",
+    badge: "New",
+  },
+  {
+    id: "border-beam",
+    name: "Border Beam",
+    href: "/magic/docs/components/border-beam",
+    badge: "New",
+  },
+  {
+    id: "cool-mode",
+    name: "Cool Mode",
+    href: "/magic/docs/components/cool-mode",
+    badge: "New",
+  },
+  {
+    id: "dot-pattern",
+    name: "Dot Pattern",
+    href: "/magic/docs/components/dot-pattern",
+    badge: "New",
+  },
+  {
+    id: "file-tree",
+    name: "File Tree",
+    href: "/magic/docs/components/file-tree",
     badge: "New",
   },
 ];

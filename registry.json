@@ -93,6 +93,25 @@
       "registryDependencies": ["motion-sv"]
     },
      {
+      "name": "animated-theme-toggler",
+      "type": "registry:block",
+      "title": "Animated Theme Toggler",
+      "description": "A smooth animated theme toggler that uses the View Transition API to create a circular reveal effect when switching between light and dark themes.",
+      "files": [
+        {
+          "path": "./src/lib/components/magic-ui/animated-theme-toggler/animated-theme-toggler.svelte",
+          "type": "registry:component",
+          "target": "magic/animated-theme-toggler/animated-theme-toggler.svelte"
+        },
+        {
+            "path": "./src/lib/components/magic-ui/animated-theme-toggler/index.ts",
+            "type": "registry:file",
+            "target": "magic/animated-theme-toggler/index.ts"
+        }
+      ],
+      "registryDependencies": []
+    },
+     {
       "name": "animated-circular-progress-bar",
       "type": "registry:block",
       "title": "Animated Circular Progress Bar",
@@ -129,6 +148,116 @@
         }
       ],
       "registryDependencies": ["motion-sv"]
+    },
+     {
+      "name": "blur-fade",
+      "type": "registry:block",
+      "title": "Blur Fade",
+      "description": "A component that animates content with blur and fade effects, supporting directional movement and intersection observer triggering.",
+      "files": [
+        {
+          "path": "./src/lib/components/magic-ui/blur-fade/blur-fade.svelte",
+          "type": "registry:component",
+          "target": "magic/blur-fade/blur-fade.svelte"
+        },
+        {
+            "path": "./src/lib/components/magic-ui/blur-fade/index.ts",
+            "type": "registry:file",
+            "target": "magic/blur-fade/index.ts"
+        }
+      ],
+      "registryDependencies": ["motion-sv"]
+    },
+     {
+      "name": "border-beam",
+      "type": "registry:block",
+      "title": "Border Beam",
+      "description": "A component for creating animated border beam effects around elements with customizable gradients, duration, and direction.",
+      "files": [
+        {
+          "path": "./src/lib/components/magic-ui/border-beam/border-beam.svelte",
+          "type": "registry:component",
+          "target": "magic/border-beam/border-beam.svelte"
+        },
+        {
+            "path": "./src/lib/components/magic-ui/border-beam/index.ts",
+            "type": "registry:file",
+            "target": "magic/border-beam/index.ts"
+        }
+      ],
+      "registryDependencies": ["motion-sv"]
+    },
+    {
+      "name": "file-tree",
+      "type": "registry:block",
+      "title": "File Tree",
+      "description": "An interactive file tree component with expandable folders, selectable files, and smooth animations.",
+      "files": [
+        {
+          "path": "./src/lib/components/magic-ui/file-tree/file-tree.svelte",
+          "type": "registry:component",
+          "target": "magic/file-tree/file-tree.svelte"
+        },
+        {
+          "path": "./src/lib/components/magic-ui/file-tree/folder.svelte",
+          "type": "registry:component",
+          "target": "magic/file-tree/folder.svelte"
+        },
+        {
+          "path": "./src/lib/components/magic-ui/file-tree/file.svelte",
+          "type": "registry:component",
+          "target": "magic/file-tree/file.svelte"
+        },
+        {
+          "path": "./src/lib/components/magic-ui/file-tree/collapse-button.svelte",
+          "type": "registry:component",
+          "target": "magic/file-tree/collapse-button.svelte"
+        },
+        {
+          "path": "./src/lib/components/magic-ui/file-tree/index.ts",
+          "type": "registry:file",
+          "target": "magic/file-tree/index.ts"
+        }
+      ],
+      "registryDependencies": ["motion-sv"]
+    },
+    {
+      "name": "dot-pattern",
+      "type": "registry:block",
+      "title": "Dot Pattern",
+      "description": "A customizable dot pattern background component with optional glow animations and mask effects.",
+      "files": [
+        {
+          "path": "./src/lib/components/magic-ui/dot-pattern/dot-pattern.svelte",
+          "type": "registry:component",
+          "target": "magic/dot-pattern/dot-pattern.svelte"
+        },
+        {
+          "path": "./src/lib/components/magic-ui/dot-pattern/index.ts",
+          "type": "registry:file",
+          "target": "magic/dot-pattern/index.ts"
+        }
+      ],
+      "registryDependencies": ["motion-sv"]
+    },
+    {
+      "name": "cool-mode",
+      "type": "registry:block",
+      "title": "Cool Mode",
+      "description": "Add a fun particle effect that follows mouse interactions, with support for emojis, images, and custom shapes.",
+      "files": [
+        {
+          "path": "./src/lib/components/magic-ui/cool-mode/cool-mode.svelte",
+          "type": "registry:component",
+          "target": "magic/cool-mode/cool-mode.svelte"
+        },
+        {
+          "path": "./src/lib/components/magic-ui/cool-mode/index.ts",
+          "type": "registry:file",
+          "target": "magic/cool-mode/index.ts"
+        }
+      ],
+      "registryDependencies": []
     }
 ]
 }

@@ -4,12 +4,6 @@ import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta } from "$lib/types/structure";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import Example1 from "./examples/animated-list-example-1.svelte";
-import Example1Raw from "./examples/animated-list-example-1.svelte?raw";
-import Example2 from "./examples/animated-list-example-2.svelte";
-import Example2Raw from "./examples/animated-list-example-2.svelte?raw";
-import Example3 from "./examples/animated-list-example-3.svelte";
-import Example3Raw from "./examples/animated-list-example-3.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
@@ -20,35 +14,6 @@ export const meta: ComponentMeta = {
   badge: "new",
 };
 
-const examples: Example[] = [
-  {
-    name: "Example 1",
-    preview: Example1,
-    code: {
-      filename: "animated-list-example-1.svelte",
-      filecode: Example1Raw,
-      lang: "svelte",
-    },
-  },
-  {
-    name: "Example 2",
-    preview: Example2,
-    code: {
-      filename: "animated-list-example-2.svelte",
-      filecode: Example2Raw,
-      lang: "svelte",
-    },
-  },
-  {
-    name: "Example 3",
-    preview: Example3,
-    code: {
-      filename: "animated-list-example-3.svelte",
-      filecode: Example3Raw,
-      lang: "svelte",
-    },
-  },
-];
 
 const seo: SEO = {
   title: " - SV5 Animations",
@@ -66,7 +31,6 @@ export const data: ComponentDoc = {
     hideLines: true,
     highlight: [2],
   },
-  examples,
   seo,
   props: [
     {

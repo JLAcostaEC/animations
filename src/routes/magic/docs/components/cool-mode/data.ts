@@ -4,45 +4,34 @@ import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta } from "$lib/types/structure";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import Example1 from "./examples/cool-mode-example-1.svelte";
-import Example1Raw from "./examples/cool-mode-example-1.svelte?raw";
-import Example2 from "./examples/cool-mode-example-2.svelte";
-import Example2Raw from "./examples/cool-mode-example-2.svelte?raw";
+import CoolModeCustomImg from "./examples/cool-mode-custom-img.svelte";
+import CoolModeCustomImgRaw from "./examples/cool-mode-custom-img.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
   id: "cool-mode",
-  title: "",
-  description: "A description for  component.",
+  title: "Cool Mode",
+  description: "Add a fun particle effect that follows mouse interactions, with support for emojis, images, and custom shapes.",
   category: "animation",
   badge: "new",
 };
 
 const examples: Example[] = [
   {
-    name: "Example 1",
-    preview: Example1,
+    name: "Custom Image",
+    preview: CoolModeCustomImg,
     code: {
-      filename: "cool-mode-example-1.svelte",
-      filecode: Example1Raw,
-      lang: "svelte",
-    },
-  },
-  {
-    name: "Example 2",
-    preview: Example2,
-    code: {
-      filename: "cool-mode-example-2.svelte",
-      filecode: Example2Raw,
+      filename: "cool-mode-custom-img.svelte",
+      filecode: CoolModeCustomImgRaw,
       lang: "svelte",
     },
   },
 ];
 
 const seo: SEO = {
-  title: " - SV5 Animations",
-  description: "Learn how to create  effects in Svelte using the SV5 Animations library.",
-  keywords: ["Svelte", "", "SV5 Animations", "Animation", "Web Design"],
+  title: "Cool Mode - SV5 Animations",
+  description: "Learn how to add interactive particle effects to Svelte components with cool-mode.",
+  keywords: ["Svelte", "Cool Mode", "SV5 Animations", "Animation", "Web Design", "Particles", "Interactive"],
 };
 
 export const data: ComponentDoc = {
@@ -59,17 +48,30 @@ export const data: ComponentDoc = {
   seo,
   props: [
     {
-      name: "",
-      desc: "A component for .",
+      name: "CoolMode",
+      desc: "A wrapper component that adds particle effects on interaction.",
       props: [
-        { name: "class", type: "string", default: '""', description: "Additional CSS classes to apply" },
+        { name: "children", type: "Snippet", default: "required", description: "The content to wrap with cool mode effect" },
+        { name: "options", type: "CoolParticleOptions", default: "undefined", description: "Configuration options for particles" },
+      ],
+    },
+    {
+      name: "CoolParticleOptions",
+      desc: "Configuration options for the particle effect.",
+      props: [
+        { name: "particle", type: "string", default: "\"circle\"", description: "Particle type: \"circle\", emoji, or image URL" },
+        { name: "particleCount", type: "number", default: "undefined", description: "Maximum number of particles" },
+        { name: "size", type: "number", default: "random", description: "Size of particles in pixels" },
+        { name: "speedHorz", type: "number", default: "random", description: "Horizontal speed of particles" },
+        { name: "speedUp", type: "number", default: "random", description: "Vertical speed of particles" },
       ],
     },
   ],
   folderStructure: `src/
-â””â”€â”€ lib/
-    â””â”€â”€ components/
-        â””â”€â”€ magic-ui/
-            â””â”€â”€ cool-mode/
-                â””â”€â”€ cool-mode.svelte`,
+└── lib/
+    └── components/
+        └── magic-ui/
+            └── cool-mode/
+                ├── cool-mode.svelte
+                └── index.ts`,
 };

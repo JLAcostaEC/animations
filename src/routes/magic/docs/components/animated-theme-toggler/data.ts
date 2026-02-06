@@ -1,48 +1,22 @@
-﻿import type { CodeBlock } from "$lib/components/ui/code";
-import type { Example } from "$lib/types/examples";
-import type { SEO } from "$lib/types/seo";
+﻿import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta } from "$lib/types/structure";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import Example1 from "./examples/animated-theme-toggler-example-1.svelte";
-import Example1Raw from "./examples/animated-theme-toggler-example-1.svelte?raw";
-import Example2 from "./examples/animated-theme-toggler-example-2.svelte";
-import Example2Raw from "./examples/animated-theme-toggler-example-2.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
   id: "animated-theme-toggler",
-  title: "",
-  description: "A description for  component.",
+  title: "Animated Theme Toggler",
+  description: "A smooth animated theme toggler that uses the View Transition API to create a circular reveal effect when switching between light and dark themes.",
   category: "animation",
   badge: "new",
 };
 
-const examples: Example[] = [
-  {
-    name: "Example 1",
-    preview: Example1,
-    code: {
-      filename: "animated-theme-toggler-example-1.svelte",
-      filecode: Example1Raw,
-      lang: "svelte",
-    },
-  },
-  {
-    name: "Example 2",
-    preview: Example2,
-    code: {
-      filename: "animated-theme-toggler-example-2.svelte",
-      filecode: Example2Raw,
-      lang: "svelte",
-    },
-  },
-];
 
 const seo: SEO = {
-  title: " - SV5 Animations",
-  description: "Learn how to create  effects in Svelte using the SV5 Animations library.",
-  keywords: ["Svelte", "", "SV5 Animations", "Animation", "Web Design"],
+  title: "Animated Theme Toggler - SV5 Animations",
+  description: "Learn how to create smooth theme switching effects in Svelte using the SV5 Animations library with View Transition API.",
+  keywords: ["Svelte", "Animated Theme Toggler", "SV5 Animations", "Animation", "Web Design", "View Transition API"],
 };
 
 export const data: ComponentDoc = {
@@ -55,21 +29,20 @@ export const data: ComponentDoc = {
     hideLines: true,
     highlight: [2],
   },
-  examples,
   seo,
   props: [
     {
-      name: "",
-      desc: "A component for .",
+      name: "AnimatedThemeToggler",
+      desc: "A component for smooth theme switching with circular reveal animation.",
       props: [
         { name: "class", type: "string", default: '""', description: "Additional CSS classes to apply" },
+        { name: "duration", type: "number", default: "400", description: "Duration of the animation in milliseconds" },
       ],
     },
   ],
-  folderStructure: `src/
-â””â”€â”€ lib/
-    â””â”€â”€ components/
-        â””â”€â”€ magic-ui/
-            â””â”€â”€ animated-theme-toggler/
-                â””â”€â”€ animated-theme-toggler.svelte`,
+  folderStructure: `
+animated-theme-toggler/
+├── animated-theme-toggler.svelte
+└── index.ts
+`,
 };

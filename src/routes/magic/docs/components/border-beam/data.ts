@@ -1,59 +1,45 @@
-﻿import type { CodeBlock } from "$lib/components/ui/code";
-import type { Example } from "$lib/types/examples";
+﻿import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta } from "$lib/types/structure";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import Example1 from "./examples/border-beam-example-1.svelte";
-import Example1Raw from "./examples/border-beam-example-1.svelte?raw";
-import Example2 from "./examples/border-beam-example-2.svelte";
-import Example2Raw from "./examples/border-beam-example-2.svelte?raw";
-import Example3 from "./examples/border-beam-example-3.svelte";
-import Example3Raw from "./examples/border-beam-example-3.svelte?raw";
+import BasicUsage from "./examples/border-beam-basic-usage.svelte";
+import BasicUsageRaw from "./examples/border-beam-basic-usage.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
   id: "border-beam",
-  title: "",
-  description: "A description for  component.",
+  title: "Border Beam",
+  description: "A component for creating animated border beam effects around elements with customizable gradients, duration, and direction.",
   category: "animation",
   badge: "new",
 };
 
 const examples: Example[] = [
   {
-    name: "Example 1",
-    preview: Example1,
+    name: "Basic Usage",
+    preview: BasicUsage,
     code: {
-      filename: "border-beam-example-1.svelte",
-      filecode: Example1Raw,
+      filename: "border-beam-basic-usage.svelte",
+      filecode: BasicUsageRaw,
       lang: "svelte",
     },
   },
   {
-    name: "Example 2",
-    preview: Example2,
+    name: "Preview",
+    preview: Preview,
     code: {
-      filename: "border-beam-example-2.svelte",
-      filecode: Example2Raw,
-      lang: "svelte",
-    },
-  },
-  {
-    name: "Example 3",
-    preview: Example3,
-    code: {
-      filename: "border-beam-example-3.svelte",
-      filecode: Example3Raw,
+      filename: "preview.svelte",
+      filecode: PreviewCode,
       lang: "svelte",
     },
   },
 ];
 
 const seo: SEO = {
-  title: " - SV5 Animations",
-  description: "Learn how to create  effects in Svelte using the SV5 Animations library.",
-  keywords: ["Svelte", "", "SV5 Animations", "Animation", "Web Design"],
+  title: "Border Beam - SV5 Animations",
+  description: "Learn how to create border beam effects in Svelte using the SV5 Animations library.",
+  keywords: ["Svelte", "Border Beam", "SV5 Animations", "Animation", "Web Design"],
 };
 
 export const data: ComponentDoc = {
@@ -70,10 +56,20 @@ export const data: ComponentDoc = {
   seo,
   props: [
     {
-      name: "",
-      desc: "A component for .",
+      name: "BorderBeam",
+      desc: "A component for creating animated border beam effects.",
       props: [
-        { name: "class", type: "string", default: '""', description: "Additional CSS classes to apply" },
+        { name: "size", type: "number", default: "50", description: "The size of the border beam in pixels" },
+        { name: "duration", type: "number", default: "6", description: "The duration of the animation in seconds" },
+        { name: "delay", type: "number", default: "0", description: "The delay before the animation starts in seconds" },
+        { name: "colorFrom", type: "string", default: '"#ffaa40"', description: "The starting color of the gradient" },
+        { name: "colorTo", type: "string", default: '"#9c40ff"', description: "The ending color of the gradient" },
+        { name: "transition", type: "Transition", default: "undefined", description: "Custom motion transition configuration" },
+        { name: "class", type: "string", default: "undefined", description: "Additional CSS classes to apply" },
+        { name: "style", type: "string", default: "undefined", description: "Additional inline styles" },
+        { name: "reverse", type: "boolean", default: "false", description: "Whether to reverse the animation direction" },
+        { name: "initialOffset", type: "number", default: "0", description: "The initial offset position (0-100)" },
+        { name: "borderWidth", type: "number", default: "1", description: "The border width of the beam in pixels" },
       ],
     },
   ],

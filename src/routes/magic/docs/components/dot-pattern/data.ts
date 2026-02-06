@@ -4,56 +4,45 @@ import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta } from "$lib/types/structure";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import Example1 from "./examples/dot-pattern-example-1.svelte";
-import Example1Raw from "./examples/dot-pattern-example-1.svelte?raw";
-import Example2 from "./examples/dot-pattern-example-2.svelte";
-import Example2Raw from "./examples/dot-pattern-example-2.svelte?raw";
-import Example3 from "./examples/dot-pattern-example-3.svelte";
-import Example3Raw from "./examples/dot-pattern-example-3.svelte?raw";
+import DotPatternLinearGradient from "./examples/dot-pattern-linear-gradient.svelte";
+import DotPatternLinearGradientRaw from "./examples/dot-pattern-linear-gradient.svelte?raw";
+import DotPatternWithGlowEffect from "./examples/dot-pattern-with-glow-effect.svelte";
+import DotPatternWithGlowEffectRaw from "./examples/dot-pattern-with-glow-effect.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
   id: "dot-pattern",
-  title: "",
-  description: "A description for  component.",
+  title: "Dot Pattern",
+  description: "A customizable dot pattern background component with optional glow animations and mask effects.",
   category: "animation",
   badge: "new",
 };
 
 const examples: Example[] = [
   {
-    name: "Example 1",
-    preview: Example1,
+    name: "Linear Gradient Mask",
+    preview: DotPatternLinearGradient,
     code: {
-      filename: "dot-pattern-example-1.svelte",
-      filecode: Example1Raw,
+      filename: "dot-pattern-linear-gradient.svelte",
+      filecode: DotPatternLinearGradientRaw,
       lang: "svelte",
     },
   },
   {
-    name: "Example 2",
-    preview: Example2,
+    name: "Glow Effect",
+    preview: DotPatternWithGlowEffect,
     code: {
-      filename: "dot-pattern-example-2.svelte",
-      filecode: Example2Raw,
-      lang: "svelte",
-    },
-  },
-  {
-    name: "Example 3",
-    preview: Example3,
-    code: {
-      filename: "dot-pattern-example-3.svelte",
-      filecode: Example3Raw,
+      filename: "dot-pattern-with-glow-effect.svelte",
+      filecode: DotPatternWithGlowEffectRaw,
       lang: "svelte",
     },
   },
 ];
 
 const seo: SEO = {
-  title: " - SV5 Animations",
-  description: "Learn how to create  effects in Svelte using the SV5 Animations library.",
-  keywords: ["Svelte", "", "SV5 Animations", "Animation", "Web Design"],
+  title: "Dot Pattern - SV5 Animations",
+  description: "Learn how to create customizable dot pattern backgrounds in Svelte with animations.",
+  keywords: ["Svelte", "Dot Pattern", "SV5 Animations", "Animation", "Web Design", "Background"],
 };
 
 export const data: ComponentDoc = {
@@ -70,17 +59,26 @@ export const data: ComponentDoc = {
   seo,
   props: [
     {
-      name: "",
-      desc: "A component for .",
+      name: "DotPattern",
+      desc: "A customizable dot pattern background with optional animations.",
       props: [
-        { name: "class", type: "string", default: '""', description: "Additional CSS classes to apply" },
+        { name: "width", type: "number", default: "16", description: "Horizontal spacing between dots" },
+        { name: "height", type: "number", default: "16", description: "Vertical spacing between dots" },
+        { name: "x", type: "number", default: "0", description: "X-offset of the entire pattern" },
+        { name: "y", type: "number", default: "0", description: "Y-offset of the entire pattern" },
+        { name: "cx", type: "number", default: "1", description: "X-offset of individual dots" },
+        { name: "cy", type: "number", default: "1", description: "Y-offset of individual dots" },
+        { name: "cr", type: "number", default: "1", description: "Radius of each dot" },
+        { name: "glow", type: "boolean", default: "false", description: "Enable glowing animation effect" },
+        { name: "class", type: "string", default: "\"\"", description: "Additional CSS classes" },
       ],
     },
   ],
   folderStructure: `src/
-â””â”€â”€ lib/
-    â””â”€â”€ components/
-        â””â”€â”€ magic-ui/
-            â””â”€â”€ dot-pattern/
-                â””â”€â”€ dot-pattern.svelte`,
+lib/
+  components/
+    magic-ui/
+      dot-pattern/
+        dot-pattern.svelte
+        index.ts`,
 };

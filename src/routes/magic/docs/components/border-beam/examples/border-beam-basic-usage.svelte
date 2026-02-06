@@ -1,4 +1,4 @@
-﻿<script lang="ts">
+<script lang="ts">
   import { BorderBeam } from "$lib/components/magic-ui/border-beam";
 </script>
 

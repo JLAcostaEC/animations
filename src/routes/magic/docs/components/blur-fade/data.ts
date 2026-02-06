@@ -4,46 +4,46 @@ import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta } from "$lib/types/structure";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import Example1 from "./examples/blur-fade-example-1.svelte";
-import Example1Raw from "./examples/blur-fade-example-1.svelte?raw";
-import Example2 from "./examples/blur-fade-example-2.svelte";
-import Example2Raw from "./examples/blur-fade-example-2.svelte?raw";
-import Example3 from "./examples/blur-fade-example-3.svelte";
-import Example3Raw from "./examples/blur-fade-example-3.svelte?raw";
+import Example1 from "./examples/blur-fade-basic.svelte";
+import Example1Raw from "./examples/blur-fade-basic.svelte?raw";
+import Example2 from "./examples/blur-fade-custom-blur-amount.svelte";
+import Example2Raw from "./examples/blur-fade-custom-blur-amount.svelte?raw";
+import Example3 from "./examples/blur-fade-image-gallery.svelte";
+import Example3Raw from "./examples/blur-fade-image-gallery.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
   id: "blur-fade",
-  title: "",
-  description: "A description for  component.",
+  title: "Blur Fade",
+  description: "A component that animates content with blur and fade effects, supporting directional movement and intersection observer triggering.",
   category: "animation",
   badge: "new",
 };
 
 const examples: Example[] = [
   {
-    name: "Example 1",
+    name: "Basic Usage",
     preview: Example1,
     code: {
-      filename: "blur-fade-example-1.svelte",
+      filename: "blur-fade-basic.svelte",
       filecode: Example1Raw,
       lang: "svelte",
     },
   },
   {
-    name: "Example 2",
+    name: "Custom Blur Amount",
     preview: Example2,
     code: {
-      filename: "blur-fade-example-2.svelte",
+      filename: "blur-fade-custom-blur-amount.svelte",
       filecode: Example2Raw,
       lang: "svelte",
     },
   },
   {
-    name: "Example 3",
+    name: "Image Gallery",
     preview: Example3,
     code: {
-      filename: "blur-fade-example-3.svelte",
+      filename: "blur-fade-image-gallery.svelte",
       filecode: Example3Raw,
       lang: "svelte",
     },
@@ -51,9 +51,9 @@ const examples: Example[] = [
 ];
 
 const seo: SEO = {
-  title: " - SV5 Animations",
-  description: "Learn how to create  effects in Svelte using the SV5 Animations library.",
-  keywords: ["Svelte", "", "SV5 Animations", "Animation", "Web Design"],
+  title: "Blur Fade - SV5 Animations",
+  description: "Learn how to create blur fade effects in Svelte using the SV5 Animations library.",
+  keywords: ["Svelte", "Blur Fade", "SV5 Animations", "Animation", "Web Design"],
 };
 
 export const data: ComponentDoc = {
@@ -70,17 +70,27 @@ export const data: ComponentDoc = {
   seo,
   props: [
     {
-      name: "",
-      desc: "A component for .",
+      name: "BlurFade",
+      desc: "A component for creating blur and fade animations.",
       props: [
+        { name: "children", type: "Snippet", default: "-", description: "The content to animate" },
         { name: "class", type: "string", default: '""', description: "Additional CSS classes to apply" },
+        { name: "variant", type: "Variants", default: "-", description: "Custom animation variants" },
+        { name: "duration", type: "number", default: "0.4", description: "Animation duration in seconds" },
+        { name: "delay", type: "number", default: "0", description: "Animation delay in seconds" },
+        { name: "offset", type: "number", default: "6", description: "Movement offset in pixels" },
+        { name: "direction", type: '"up" | "down" | "left" | "right"', default: '"down"', description: "Animation direction" },
+        { name: "inView", type: "boolean", default: "false", description: "Whether to trigger animation on intersection" },
+        { name: "inViewMargin", type: "string", default: '"-50px"', description: "Intersection observer margin" },
+        { name: "blur", type: "string", default: '"6px"', description: "Blur amount" },
       ],
     },
   ],
   folderStructure: `src/
-â””â”€â”€ lib/
-    â””â”€â”€ components/
-        â””â”€â”€ magic-ui/
-            â””â”€â”€ blur-fade/
-                â””â”€â”€ blur-fade.svelte`,
+└── lib/
+    └── components/
+        └── magic-ui/
+            └── blur-fade/
+                ├── blur-fade.svelte
+                └── index.ts`,
 };
