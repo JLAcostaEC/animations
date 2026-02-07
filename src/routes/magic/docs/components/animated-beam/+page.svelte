@@ -28,7 +28,7 @@
     <H1 id="introduction">{data.title}</H1>
     <CopyPageDropdown componentName={data.title} {llmsTxtUrl} />
   </div>
-  <Paragraph>
+  <Paragraph class="max-w-xl">
     {data.description}
   </Paragraph>
 
@@ -55,7 +55,9 @@
     <H2 id="examples">Examples</H2>
     {#each data.examples as example}
       <div class="my-6">
-        <H3 id={example.name.toLowerCase().replace(/\s+/g, '-')}>{example.name}</H3>
+        <H3 id={example.name.toLowerCase().replace(/\s+/g, "-")}
+          >{example.name}</H3
+        >
         <PreviewComponent code={example.code}>
           <example.preview />
         </PreviewComponent>

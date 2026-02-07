@@ -25,24 +25,27 @@ export const magicUIComponents: MagicComponent[] = [
     name: "Animated Beam",
     href: "/magic/docs/components/animated-beam",
     badge: "New",
-    desc: "A component for creating animated beam effects between two elements with customizable gradients and paths.",
+    desc: "An animated beam of light which travels along a path.",
   },
   {
     id: "animated-circular-progress-bar",
     name: "Animated Circular Progress Bar",
     href: "/magic/docs/components/animated-circular-progress-bar",
     badge: "New",
+    desc: "A component that displays a circular gauge with a percentage value",
   },
   {
     id: "animated-gradient-text",
     name: "Animated Gradient Text",
     href: "/magic/docs/components/animated-gradient-text",
+    desc:'An animated gradient background which transitions between colors for text.'
   },
   {
     id: "animated-grid-pattern",
     name: "Animated Grid Pattern",
     href: "/magic/docs/components/animated-grid-pattern",
     badge: "New",
+    desc:'A animated background grid pattern made with SVGs, fully customizable using Tailwind CSS.'
   },
   {
     id: "animated-theme-toggler",

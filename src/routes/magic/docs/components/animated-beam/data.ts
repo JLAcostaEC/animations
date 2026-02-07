@@ -1,8 +1,6 @@
 ﻿import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta } from "$lib/types/structure";
-import AnimatedBeamBasicUsage from "./examples/animated-beam-basic-usage.svelte";
-import AnimatedBeamBasicUsageRaw from "./examples/animated-beam-basic-usage.svelte?raw";
 import AnimatedBeamWithCurvature from "./examples/animated-beam-with-curvature.svelte";
 import AnimatedBeamWithCurvatureRaw from "./examples/animated-beam-with-curvature.svelte?raw";
 import AnimatedBeamReverseDirection from "./examples/animated-beam-reverse-direction.svelte";
@@ -14,21 +12,12 @@ import PreviewCode from "./examples/preview.svelte?raw";
 export const meta: ComponentMeta = {
   id: "animated-beam",
   title: "Animated Beam",
-  description: "A component for creating animated beam effects between two elements with customizable gradients and paths.",
+  description: "An animated beam of light which travels along a path. Useful for showcasing the \"integration\" features of a website.",
   category: "animation",
   badge: "new",
 };
 
 const examples: Example[] = [
-  {
-    name: "Basic Usage",
-    preview: AnimatedBeamBasicUsage,
-    code: {
-      filename: "animated-beam-basic-usage.svelte",
-      filecode: AnimatedBeamBasicUsageRaw,
-      lang: "svelte",
-    },
-  },
   {
     name: "With Curvature",
     preview: AnimatedBeamWithCurvature,

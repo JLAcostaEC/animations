@@ -10,23 +10,18 @@
 </script>
 
 <div
-  class="relative flex w-full max-w-[500px] items-center justify-center overflow-hidden p-10"
+  class="relative flex min-w-70 md:min-w-125 items-center justify-center overflow-hidden md:p-10"
   bind:this={containerRef}
 >
   <div class="flex size-full flex-col items-stretch justify-between gap-10">
     <div class="flex flex-row justify-between">
       <Circle bind:ref={div1Ref}>
-        {#snippet children()}
-          <UserIcon />
-        {/snippet}
+        <UserIcon />
       </Circle>
       <Circle bind:ref={div2Ref}>
-        {#snippet children()}
-          <OpenAIIcon />
-        {/snippet}
+        <OpenAIIcon />
       </Circle>
     </div>
   </div>
-
   <AnimatedBeam duration={3} {containerRef} fromRef={div1Ref} toRef={div2Ref} />
 </div>

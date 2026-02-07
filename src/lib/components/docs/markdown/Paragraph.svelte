@@ -18,8 +18,8 @@
 <p
   {...restProps}
   class={cn(
-    "mt-4 text-base leading-relaxed text-foreground/70 first:mt-0",
-    className
+    "mt-4 text-base leading-relaxed text-muted-foreground first:mt-0",
+    className,
   )}
 >
   {@render children?.()}
