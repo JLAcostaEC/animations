@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { TextAnimate } from "$lib/components/magic-ui/text-animate";
+	import { TextAnimate } from "$lib/components/magic-ui/text-animate";
 </script>
 
 <div class="flex items-center justify-center">
-  <TextAnimate content="Slide up by word" animation="slideUp" by="word" />
+	<TextAnimate content="Slide up by word" animation="slideUp" by="word" />
 </div>

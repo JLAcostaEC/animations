@@ -62,13 +62,13 @@ With custom configuration:
   import { CoolMode } from "$lib/components/magic-ui/cool-mode";
 </script>
 
-<CoolMode 
-  options={{ 
+<CoolMode
+  options={{
     particle: "â",
     particleCount: 30,
     speedHorz: 10,
     speedUp: 20,
-    size: 25
+    size: 25,
   }}
 >
   <button>Click Me!</button>
@@ -79,24 +79,25 @@ With custom configuration:
 
 ### CoolMode
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `children` | `Snippet` | required | The content to wrap with cool mode effect |
-| `options` | `CoolParticleOptions` | `undefined` | Configuration options for particles |
+| Prop       | Type                  | Default     | Description                               |
+| ---------- | --------------------- | ----------- | ----------------------------------------- |
+| `children` | `Snippet`             | required    | The content to wrap with cool mode effect |
+| `options`  | `CoolParticleOptions` | `undefined` | Configuration options for particles       |
 
 ### CoolParticleOptions
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `particle` | `string` | `"circle"` | Particle type: `"circle"`, emoji, or image URL |
-| `particleCount` | `number` | `undefined` | Maximum number of particles |
-| `size` | `number` | random | Size of particles in pixels |
-| `speedHorz` | `number` | random | Horizontal speed of particles |
-| `speedUp` | `number` | random | Vertical speed of particles |
+| Prop            | Type     | Default     | Description                                    |
+| --------------- | -------- | ----------- | ---------------------------------------------- |
+| `particle`      | `string` | `"circle"`  | Particle type: `"circle"`, emoji, or image URL |
+| `particleCount` | `number` | `undefined` | Maximum number of particles                    |
+| `size`          | `number` | random      | Size of particles in pixels                    |
+| `speedHorz`     | `number` | random      | Horizontal speed of particles                  |
+| `speedUp`       | `number` | random      | Vertical speed of particles                    |
 
 ## Examples
 
 ### Custom Image
+
 Use your own images as particles for branded effects.
 
 ## Tips

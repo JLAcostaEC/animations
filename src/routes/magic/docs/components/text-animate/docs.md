@@ -24,19 +24,19 @@ npx shadcn-svelte@latest add https://animations.sikandarjodd.dev/r/text-animate.
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `content` | `string` | `""` | The text content to animate (required) |
-| `animation` | `"fadeIn" \| "blurIn" \| "blurInUp" \| "blurInDown" \| "slideUp" \| "slideDown" \| "slideLeft" \| "slideRight" \| "scaleUp" \| "scaleDown"` | `"fadeIn"` | The animation preset to use |
-| `by` | `"text" \| "word" \| "character" \| "line"` | `"word"` | How to split the text for animation |
-| `delay` | `number` | `0` | Delay before the animation starts (in seconds) |
-| `duration` | `number` | `0.3` | Total duration of the animation (in seconds) |
-| `variants` | `Variants` | `undefined` | Custom motion variants for the item animation |
-| `startOnView` | `boolean` | `false` | Start animation when component enters viewport |
-| `once` | `boolean` | `false` | Animate only once when in view |
-| `accessible` | `boolean` | `true` | Enable accessibility features (screen reader support) |
-| `className` | `string` | `""` | Additional CSS classes to apply to the container |
-| `segmentClassName` | `string` | `""` | Additional CSS classes to apply to each segment |
+| Prop               | Type                                                                                                                                        | Default     | Description                                           |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | ----------------------------------------------------- |
+| `content`          | `string`                                                                                                                                    | `""`        | The text content to animate (required)                |
+| `animation`        | `"fadeIn" \| "blurIn" \| "blurInUp" \| "blurInDown" \| "slideUp" \| "slideDown" \| "slideLeft" \| "slideRight" \| "scaleUp" \| "scaleDown"` | `"fadeIn"`  | The animation preset to use                           |
+| `by`               | `"text" \| "word" \| "character" \| "line"`                                                                                                 | `"word"`    | How to split the text for animation                   |
+| `delay`            | `number`                                                                                                                                    | `0`         | Delay before the animation starts (in seconds)        |
+| `duration`         | `number`                                                                                                                                    | `0.3`       | Total duration of the animation (in seconds)          |
+| `variants`         | `Variants`                                                                                                                                  | `undefined` | Custom motion variants for the item animation         |
+| `startOnView`      | `boolean`                                                                                                                                   | `false`     | Start animation when component enters viewport        |
+| `once`             | `boolean`                                                                                                                                   | `false`     | Animate only once when in view                        |
+| `accessible`       | `boolean`                                                                                                                                   | `true`      | Enable accessibility features (screen reader support) |
+| `className`        | `string`                                                                                                                                    | `""`        | Additional CSS classes to apply to the container      |
+| `segmentClassName` | `string`                                                                                                                                    | `""`        | Additional CSS classes to apply to each segment       |
 
 ## Animation Presets
 
@@ -128,7 +128,7 @@ Animate text line by line with a fade-in effect:
   content="First line appears\nThen the second line\nAnd finally the third"
   animation="fadeIn"
   by="line"
-  class="text-3xl font-bold text-center"
+  class="text-center text-3xl font-bold"
 />
 ```
 

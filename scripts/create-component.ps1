@@ -25,26 +25,16 @@ $pageSvelte = @"
 <script lang="ts">
   import { page } from "`$app/state";
   import { H1, H2, Paragraph, H3 } from "`$lib/components/docs/markdown/index";
-  import ${pascalCase}Raw from "`$lib/components/magic-ui/$kebabCase/$kebabCase.svelte?raw";
-  import type { CodeBlock } from "`$lib/components/ui/code";
 
   import { PreviewComponent } from "`$lib/components/ui/preview-component";
   import InstallComponent from "`$lib/components/docs/base/InstallComponent.svelte";
   import APITable from "`$lib/components/docs/base/APITable.svelte";
   import { CopyPageDropdown } from "`$lib/components/docs/copy-page-dropdown";
-  import SingleCodeFilename from "`$lib/components/ui/code/single-code-filename.svelte";
   import { data } from "./data";
 
-  const code: CodeBlock = {
-    filename: "${pascalCase}.svelte",
-    filecode: ${pascalCase}Raw,
-    lang: "svelte",
-    isExpand: true,
-  };
-
-  const PreviewComp = `$derived(data.preview);
-  const installUrl = `$derived(``${page.url.origin}/r/`${data.id}.json``);
-  const llmsTxtUrl = `$derived(``${page.url}/llms.txt``);
+  let PreviewComp = `$derived(data.preview);
+  let installUrl = `$derived(```${page.url.origin}/r/`${data.id}.json``);
+  let llmsTxtUrl = `$derived(```${page.url}/llms.txt``);
 </script>
 
 <div>
@@ -68,9 +58,10 @@ $pageSvelte = @"
   <H2 id="installation">Installation</H2>
   <InstallComponent
     {installUrl}
-    tailwindConfig={data.tailwind ? { code: data.tailwind } : undefined}
-    codeBlocks={[code]}
-    folderStructure={data.folderStructure}
+    tailwindConfig={{ code: data.installBlock?.tailwind }}
+    codeBlocks={data.installBlock?.installCode}
+    packages={data.installBlock?.packages}
+    folderStructure={data.installBlock?.folderStructure}
     class="my-4"
   />
 
@@ -101,10 +92,12 @@ Set-Content -Path "$baseDir\+page.svelte" -Value $pageSvelte -Encoding UTF8
 
 # Create data.ts
 $dataTs = @"
-import type { CodeBlock } from "`$lib/components/ui/code";
+import __PASCAL_CASE__Raw from "`$lib/components/magic-ui/$kebabCase/$kebabCase.svelte?raw";
+import IndexTs from "`$lib/components/magic-ui/$kebabCase/index.ts?raw";
+
 import type { Example } from "`$lib/types/examples";
 import type { SEO } from "`$lib/types/seo";
-import type { ComponentDoc, ComponentMeta } from "`$lib/types/structure";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "`$lib/types/structure";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 "@
@@ -151,9 +144,32 @@ $dataTs += @"
 ];
 
 const seo: SEO = {
-  title: "$titleCase - SV5 Animations",
-  description: "Learn how to create $titleCase effects in Svelte using the SV5 Animations library.",
-  keywords: ["Svelte", "$titleCase", "SV5 Animations", "Animation", "Web Design"],
+  title: "$titleCase - Svelte 5 Animations",
+  description: "Learn how to create $titleCase effects in Svelte using the Svelte 5 Animations library.",
+  keywords: ["Svelte", "$titleCase", "Svelte 5 Animations", "Animation", "Web Design"],
+};
+
+let installBlock : InstallComponentDocs={
+  installCode:[
+    {
+      filename: "$kebabCase.svelte",
+      filecode: __PASCAL_CASE__Raw,
+      lang: "svelte",
+      isExpand: true,
+    },
+    {
+      filename: "index.ts",
+      filecode: IndexTs,
+      lang: "typescript",
+    }
+  ],
+  folderStructure: `src/
+└── lib/
+    └── components/
+        └── magic-ui/
+            └── $kebabCase/
+                ├── $kebabCase.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -170,21 +186,17 @@ export const data: ComponentDoc = {
   seo,
   props: [
     {
-      name: "$pascalCase",
+      name: "__PASCAL_CASE__",
       desc: "A component for $titleCase.",
       props: [
         { name: "class", type: "string", default: '""', description: "Additional CSS classes to apply" },
       ],
     },
   ],
-  folderStructure: ``src/
-└── lib/
-    └── components/
-        └── magic-ui/
-            └── $kebabCase/
-                └── $kebabCase.svelte``,
+  installBlock,
 };
 "@
+$dataTs = $dataTs -replace '__PASCAL_CASE__', $pascalCase
 
 Set-Content -Path "$baseDir\data.ts" -Value $dataTs -Encoding UTF8
 
@@ -204,12 +216,12 @@ npx shadcn-svelte@latest add https://animations.sikandarjodd.dev/r/$kebabCase.js
 
 ``````svelte
 <script lang="ts">
-  import $pascalCase from "`$lib/components/magic-ui/$kebabCase/$kebabCase.svelte";
+  import __PASCAL_CASE__ from "`$lib/components/magic-ui/$kebabCase/$kebabCase.svelte";
 </script>
 
-<$pascalCase>
+<__PASCAL_CASE__>
   <!-- Your content here -->
-</$pascalCase>
+</__PASCAL_CASE__>
 ``````
 
 ## Props
@@ -224,6 +236,8 @@ npx shadcn-svelte@latest add https://animations.sikandarjodd.dev/r/$kebabCase.js
 for ($i = 1; $i -le $ExampleCount; $i++) {
     $docsMd += "`n`n### Example $i`n`nDescription for example $i."
 }
+
+$docsMd = $docsMd -replace '__PASCAL_CASE__', $pascalCase
 
 Set-Content -Path "$baseDir\docs.md" -Value $docsMd -Encoding UTF8
 
@@ -247,15 +261,16 @@ Set-Content -Path "$baseDir\llms.txt\+server.ts" -Value $serverTs -Encoding UTF8
 # Create example files
 $previewSvelte = @"
 <script lang="ts">
-  import $pascalCase from "`$lib/components/magic-ui/$kebabCase/$kebabCase.svelte";
+  import __PASCAL_CASE__ from "`$lib/components/magic-ui/$kebabCase/$kebabCase.svelte";
 </script>
 
 <div class="flex items-center justify-center w-full h-full min-h-[200px]">
-  <$pascalCase>
+  <__PASCAL_CASE__>
     Preview Example
-  </$pascalCase>
+  </__PASCAL_CASE__>
 </div>
 "@
+$previewSvelte = $previewSvelte -replace '__PASCAL_CASE__', $pascalCase
 
 Set-Content -Path "$baseDir\examples\preview.svelte" -Value $previewSvelte -Encoding UTF8
 
@@ -263,15 +278,16 @@ for ($i = 1; $i -le $ExampleCount; $i++) {
     $exampleName = "$kebabCase-example-$i"
     $exampleSvelte = @"
 <script lang="ts">
-  import $pascalCase from "`$lib/components/magic-ui/$kebabCase/$kebabCase.svelte";
+  import __PASCAL_CASE__ from "`$lib/components/magic-ui/$kebabCase/$kebabCase.svelte";
 </script>
 
 <div class="flex items-center justify-center w-full h-full min-h-[200px]">
-  <$pascalCase>
+  <__PASCAL_CASE__>
     Example $i Content
-  </$pascalCase>
+  </__PASCAL_CASE__>
 </div>
 "@
+    $exampleSvelte = $exampleSvelte -replace '__PASCAL_CASE__', $pascalCase
     Set-Content -Path "$baseDir\examples\$exampleName.svelte" -Value $exampleSvelte -Encoding UTF8
 }
 

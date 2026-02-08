@@ -1,74 +1,72 @@
 ﻿<script lang="ts">
-  import { H1, H2, Paragraph, H3 } from "$lib/components/docs/markdown/index";
-  import Raw from "$lib/components/magic-ui/animated-list/animated-list.svelte?raw";
-  import type { CodeBlock } from "$lib/components/ui/code";
+	import { H1, H2, Paragraph, H3 } from "$lib/components/docs/markdown/index";
+	import Raw from "$lib/components/magic-ui/animated-list/animated-list.svelte?raw";
+	import type { CodeBlock } from "$lib/components/ui/code";
 
-  import { PreviewComponent } from "$lib/components/ui/preview-component";
-  import InstallComponent from "$lib/components/docs/base/InstallComponent.svelte";
-  import APITable from "$lib/components/docs/base/APITable.svelte";
-  import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
-  import SingleCodeFilename from "$lib/components/ui/code/single-code-filename.svelte";
-  import { data } from "./data";
+	import { PreviewComponent } from "$lib/components/ui/preview-component";
+	import InstallComponent from "$lib/components/docs/base/InstallComponent.svelte";
+	import APITable from "$lib/components/docs/base/APITable.svelte";
+	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
+	import SingleCodeFilename from "$lib/components/ui/code/single-code-filename.svelte";
+	import { data } from "./data";
 
-  const code: CodeBlock = {
-    filename: ".svelte",
-    filecode: Raw,
-    lang: "svelte",
-    isExpand: true,
-  };
+	const code: CodeBlock = {
+		filename: ".svelte",
+		filecode: Raw,
+		lang: "svelte",
+		isExpand: true,
+	};
 
-  const PreviewComp = $derived(data.preview);
-  const installUrl = $derived(`/r/${data.id}.json`);
-  const llmsTxtUrl = $derived(`/llms.txt`);
+	const PreviewComp = $derived(data.preview);
+	const installUrl = $derived(`/r/${data.id}.json`);
+	const llmsTxtUrl = $derived(`/llms.txt`);
 </script>
 
 <div>
-  <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-    <H1 id="introduction">{data.title}</H1>
-    <CopyPageDropdown componentName={data.title} {llmsTxtUrl} />
-  </div>
-  <Paragraph>
-    {data.description}
-  </Paragraph>
+	<div class="flex flex-col justify-between gap-4 md:flex-row md:items-center">
+		<H1 id="introduction">{data.title}</H1>
+		<CopyPageDropdown componentName={data.title} {llmsTxtUrl} />
+	</div>
+	<Paragraph>
+		{data.description}
+	</Paragraph>
 
-  <!-- Preview Component -->
-  <div class="my-6">
-    <PreviewComponent code={data.previewCode}>
-      {#if PreviewComp}
-        <PreviewComp />
-      {/if}
-    </PreviewComponent>
-  </div>
+	<!-- Preview Component -->
+	<div class="my-6">
+		<PreviewComponent code={data.previewCode}>
+			{#if PreviewComp}
+				<PreviewComp />
+			{/if}
+		</PreviewComponent>
+	</div>
 
-  <H2 id="installation">Installation</H2>
-  <InstallComponent
-    {installUrl}
-    tailwindConfig={data.tailwind ? { code: data.tailwind } : undefined}
-    codeBlocks={[code]}
-    folderStructure={data.folderStructure}
-    class="my-4"
-  />
+	<H2 id="installation">Installation</H2>
+	<InstallComponent
+		{installUrl}
+		tailwindConfig={data.tailwind ? { code: data.tailwind } : undefined}
+		codeBlocks={[code]}
+		folderStructure={data.folderStructure}
+		class="my-4"
+	/>
 
-  <!-- Examples Section -->
-  {#if data.examples && data.examples.length > 0}
-    <H2 id="examples">Examples</H2>
-    {#each data.examples as example}
-      <div class="my-6">
-        <H3 id={example.name.toLowerCase().replace(/\s+/g, "-")}
-          >{example.name}</H3
-        >
-        <PreviewComponent code={example.code}>
-          <example.preview />
-        </PreviewComponent>
-      </div>
-    {/each}
-  {/if}
+	<!-- Examples Section -->
+	{#if data.examples && data.examples.length > 0}
+		<H2 id="examples">Examples</H2>
+		{#each data.examples as example}
+			<div class="my-6">
+				<H3 id={example.name.toLowerCase().replace(/\s+/g, "-")}>{example.name}</H3>
+				<PreviewComponent code={example.code}>
+					<example.preview />
+				</PreviewComponent>
+			</div>
+		{/each}
+	{/if}
 
-  <!-- Props Section -->
-  {#if data.props && data.props.length > 0}
-    <H2 id="props">Props</H2>
-    {#each data.props as prop}
-      <APITable data={prop} />
-    {/each}
-  {/if}
+	<!-- Props Section -->
+	{#if data.props && data.props.length > 0}
+		<H2 id="props">Props</H2>
+		{#each data.props as prop}
+			<APITable data={prop} />
+		{/each}
+	{/if}
 </div>

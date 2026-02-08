@@ -20,10 +20,10 @@ npx shadcn-svelte@latest add https://animations.sikandarjodd.dev/r/animated-them
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `class` | `string` | `""` | Additional CSS classes to apply |
-| `duration` | `number` | `400` | Duration of the animation in milliseconds |
+| Prop       | Type     | Default | Description                               |
+| ---------- | -------- | ------- | ----------------------------------------- |
+| `class`    | `string` | `""`    | Additional CSS classes to apply           |
+| `duration` | `number` | `400`   | Duration of the animation in milliseconds |
 
 ## Features
 

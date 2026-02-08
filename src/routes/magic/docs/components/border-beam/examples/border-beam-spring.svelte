@@ -1,18 +1,18 @@
 <script lang="ts">
-  import { BorderBeam } from "$lib/components/magic-ui/border-beam";
-  import { Button } from "$lib/components/ui/button";
+	import { BorderBeam } from "$lib/components/magic-ui/border-beam";
+	import { Button } from "$lib/components/ui/button";
 </script>
 
 <Button class="relative overflow-hidden" size="lg" variant="outline">
-  Buy Now
-  <BorderBeam
-    size={40}
-    initialOffset={20}
-    class="from-transparent via-yellow-500 to-transparent"
-    transition={{
-      type: "spring",
-      stiffness: 60,
-      damping: 20,
-    }}
-  />
+	Buy Now
+	<BorderBeam
+		size={40}
+		initialOffset={20}
+		class="from-transparent via-yellow-500 to-transparent"
+		transition={{
+			type: "spring",
+			stiffness: 60,
+			damping: 20,
+		}}
+	/>
 </Button>

@@ -22,18 +22,18 @@ npx shadcn-svelte@latest add https://animations.sikandarjodd.dev/r/blur-fade.jso
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `children` | `Snippet` | - | The content to animate |
-| `class` | `string` | `""` | Additional CSS classes to apply |
-| `variant` | `Variants` | - | Custom animation variants |
-| `duration` | `number` | `0.4` | Animation duration in seconds |
-| `delay` | `number` | `0` | Animation delay in seconds |
-| `offset` | `number` | `6` | Movement offset in pixels |
-| `direction` | `"up" \| "down" \| "left" \| "right"` | `"down"` | Animation direction |
-| `inView` | `boolean` | `false` | Whether to trigger animation on intersection |
-| `inViewMargin` | `string` | `"-50px"` | Intersection observer margin |
-| `blur` | `string` | `"6px"` | Blur amount |
+| Prop           | Type                                  | Default   | Description                                  |
+| -------------- | ------------------------------------- | --------- | -------------------------------------------- |
+| `children`     | `Snippet`                             | -         | The content to animate                       |
+| `class`        | `string`                              | `""`      | Additional CSS classes to apply              |
+| `variant`      | `Variants`                            | -         | Custom animation variants                    |
+| `duration`     | `number`                              | `0.4`     | Animation duration in seconds                |
+| `delay`        | `number`                              | `0`       | Animation delay in seconds                   |
+| `offset`       | `number`                              | `6`       | Movement offset in pixels                    |
+| `direction`    | `"up" \| "down" \| "left" \| "right"` | `"down"`  | Animation direction                          |
+| `inView`       | `boolean`                             | `false`   | Whether to trigger animation on intersection |
+| `inViewMargin` | `string`                              | `"-50px"` | Intersection observer margin                 |
+| `blur`         | `string`                              | `"6px"`   | Blur amount                                  |
 
 ## Examples
 

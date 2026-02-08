@@ -1,24 +1,21 @@
 import { onMount } from "svelte";
 
-export function useResizeObserver(
-  getContainerRef: () => HTMLElement | null,
-  callback: () => void
-) {
-  onMount(() => {
-    const containerRef = getContainerRef();
-    if (!containerRef) return;
+export function useResizeObserver(getContainerRef: () => HTMLElement | null, callback: () => void) {
+	onMount(() => {
+		const containerRef = getContainerRef();
+		if (!containerRef) return;
 
-    const resizeObserver = new ResizeObserver(() => {
-      callback();
-    });
+		const resizeObserver = new ResizeObserver(() => {
+			callback();
+		});
 
-    resizeObserver.observe(containerRef);
+		resizeObserver.observe(containerRef);
 
-    // Initial call
-    callback();
+		// Initial call
+		callback();
 
-    return () => {
-      resizeObserver.disconnect();
-    };
-  });
+		return () => {
+			resizeObserver.disconnect();
+		};
+	});
 }

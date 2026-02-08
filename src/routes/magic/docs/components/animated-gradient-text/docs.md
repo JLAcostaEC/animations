@@ -15,9 +15,7 @@ npx shadcn-svelte@latest add https://animations.sikandarjodd.dev/r/animated-grad
   import AnimatedGradientText from "$lib/components/magic-ui/animated-gradient-text/animated-gradient-text.svelte";
 </script>
 
-<AnimatedGradientText>
-  ✨ Introducing Magic UI
-</AnimatedGradientText>
+<AnimatedGradientText>✨ Introducing Magic UI</AnimatedGradientText>
 ```
 
 ## Tailwind CSS Configuration
@@ -38,12 +36,12 @@ Add the following to your `layout.css` or global CSS file:
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `speed` | `number` | `1` | Animation speed multiplier for the gradient movement |
-| `colorFrom` | `string` | `#ffaa40` | Starting color of the gradient |
-| `colorTo` | `string` | `#9c40ff` | Ending color of the gradient |
-| `class` | `string` | `""` | Additional CSS classes to apply |
+| Prop        | Type     | Default   | Description                                          |
+| ----------- | -------- | --------- | ---------------------------------------------------- |
+| `speed`     | `number` | `1`       | Animation speed multiplier for the gradient movement |
+| `colorFrom` | `string` | `#ffaa40` | Starting color of the gradient                       |
+| `colorTo`   | `string` | `#9c40ff` | Ending color of the gradient                         |
+| `class`     | `string` | `""`      | Additional CSS classes to apply                      |
 
 ## Examples
 
@@ -56,13 +54,9 @@ You can customize the animation speed using the `speed` prop:
   import AnimatedGradientText from "$lib/components/magic-ui/animated-gradient-text/animated-gradient-text.svelte";
 </script>
 
-<AnimatedGradientText speed={2}>
-  Fast Animation
-</AnimatedGradientText>
+<AnimatedGradientText speed={2}>Fast Animation</AnimatedGradientText>
 
-<AnimatedGradientText speed={0.5}>
-  Slow Animation
-</AnimatedGradientText>
+<AnimatedGradientText speed={0.5}>Slow Animation</AnimatedGradientText>
 ```
 
 ### Custom Colors

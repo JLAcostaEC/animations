@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-  import { AnimatedThemeToggler } from "$lib/components/magic-ui/animated-theme-toggler";
+	import { AnimatedThemeToggler } from "$lib/components/magic-ui/animated-theme-toggler";
 </script>
 
 <AnimatedThemeToggler />

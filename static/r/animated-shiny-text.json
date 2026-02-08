@@ -1,0 +1,29 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "animated-shiny-text",
+	"title": "Animated Shiny Text",
+	"type": "registry:block",
+	"description": "A shimmering text effect component that creates a moving shine animation across text.",
+	"css": {
+		"@keyframes shiny-text": {
+			"0%, 90%, 100%": {
+				"background-position": "calc(-100% - var(--shiny-width)) 0"
+			},
+			"30%, 60%": {
+				"background-position": "calc(100% + var(--shiny-width)) 0"
+			}
+		}
+	},
+	"cssVars": {
+		"theme": {
+			"animate-shiny-text": "shiny-text 8s infinite"
+		}
+	},
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\r\n\timport { cn } from \"$UTILS$\";\r\n\r\n\tinterface Props {\r\n\t\tchildren?: import(\"svelte\").Snippet;\r\n\t\tclass?: string;\r\n\t\tshimmerWidth?: number;\r\n\t\t[key: string]: any;\r\n\t}\r\n\r\n\tlet { children, class: className, shimmerWidth = 100, ...restProps }: Props = $props();\r\n</script>\r\n\r\n<span\r\n\tstyle=\"--shiny-width: {shimmerWidth}px\"\r\n\tclass={cn(\r\n\t\t\"mx-auto max-w-md text-neutral-600/70 dark:text-neutral-400/70\",\r\n\t\t\"animate-shiny-text bg-size-[var(--shiny-width)_100%] bg-clip-text bg-position-[0_0] bg-no-repeat [transition:background-position_1s_cubic-bezier(.6,.6,0,1)_infinite]\",\r\n\t\t\"bg-linear-to-r from-transparent via-black/80 via-50% to-transparent dark:via-white/80\",\r\n\t\tclassName\r\n\t)}\r\n\t{...restProps}\r\n>\r\n\t{@render children?.()}\r\n</span>\r\n",
+			"type": "registry:component",
+			"target": "magic/animated-shiny-text/animated-shiny-text.svelte"
+		}
+	]
+}

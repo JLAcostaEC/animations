@@ -1,0 +1,43 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "marquee",
+	"title": "Marquee",
+	"type": "registry:block",
+	"description": "A smooth scrolling marquee component with support for horizontal and vertical directions, pause on hover, and reverse animation.",
+	"css": {
+		"@keyframes marquee": {
+			"from": {
+				"transform": "translateX(0)"
+			},
+			"to": {
+				"transform": "translateX(calc(-100% - var(--gap)))"
+			}
+		},
+		"@keyframes marquee-vertical": {
+			"from": {
+				"transform": "translateY(0)"
+			},
+			"to": {
+				"transform": "translateY(calc(-100% - var(--gap)))"
+			}
+		}
+	},
+	"cssVars": {
+		"theme": {
+			"animate-marquee": "marquee var(--duration) linear infinite",
+			"animate-marquee-vertical": "marquee-vertical var(--duration) linear infinite"
+		}
+	},
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\r\n\timport { cn } from \"$UTILS$\";\r\n\timport type { Snippet } from \"svelte\";\r\n\r\n\tinterface MarqueeProps {\r\n\t\tchildren: Snippet;\r\n\t\tclass?: string;\r\n\t\treverse?: boolean;\r\n\t\tpauseOnHover?: boolean;\r\n\t\tvertical?: boolean;\r\n\t\trepeat?: number;\r\n\t\t[key: string]: any;\r\n\t}\r\n\r\n\tlet {\r\n\t\tchildren,\r\n\t\tclass: className = \"\",\r\n\t\treverse = false,\r\n\t\tpauseOnHover = false,\r\n\t\tvertical = false,\r\n\t\trepeat = 4,\r\n\t\t...rest\r\n\t}: MarqueeProps = $props();\r\n</script>\r\n\r\n<div\r\n\t{...rest}\r\n\tclass={cn(\r\n\t\t\"group flex gap-(--gap) overflow-hidden p-2 [--duration:40s] [--gap:1rem]\",\r\n\t\t{\r\n\t\t\t\"flex-row\": !vertical,\r\n\t\t\t\"flex-col\": vertical,\r\n\t\t},\r\n\t\tclassName\r\n\t)}\r\n>\r\n\t{#each Array(repeat).fill(0) as _, i (i)}\r\n\t\t<div\r\n\t\t\tclass={cn(\"flex shrink-0 justify-around gap-(--gap)\", {\r\n\t\t\t\t\"animate-marquee flex-row\": !vertical,\r\n\t\t\t\t\"animate-marquee-vertical flex-col\": vertical,\r\n\t\t\t\t\"group-hover:paused\": pauseOnHover,\r\n\t\t\t\t\"direction-[reverse]\": reverse,\r\n\t\t\t})}\r\n\t\t>\r\n\t\t\t{@render children?.()}\r\n\t\t</div>\r\n\t{/each}\r\n</div>\r\n",
+			"type": "registry:component",
+			"target": "magic/marquee/marquee.svelte"
+		},
+		{
+			"content": "import Marquee from \"./marquee.svelte\";\r\nexport { Marquee };\r\n",
+			"type": "registry:file",
+			"target": "magic/marquee/index.ts"
+		}
+	]
+}

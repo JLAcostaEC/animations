@@ -66,6 +66,6 @@ The component requires a `value` and color props for the primary and secondary g
   value={85}
   gaugePrimaryColor="#f59e0b"
   gaugeSecondaryColor="#fef3c7"
-  class="w-32 h-32"
+  class="h-32 w-32"
 />
 ```

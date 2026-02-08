@@ -1,1 +1,1 @@
-export { default as DottedMap } from './dotted-map.svelte';
+export { default as DottedMap } from "./dotted-map.svelte";

@@ -18,5 +18,24 @@ import Th from "./Th.svelte";
 import Thead from "./Thead.svelte";
 import Tr from "./Tr.svelte";
 
-
-export { H1, H2, H3, Divider, Blockquote, Link, ListItem,  Paragraph, UnorderedList, OrderedList,  Step, Steps, Strong, Table, Tbody, Td, Th, Thead, Tr };
+export {
+	H1,
+	H2,
+	H3,
+	Divider,
+	Blockquote,
+	Link,
+	ListItem,
+	Paragraph,
+	UnorderedList,
+	OrderedList,
+	Step,
+	Steps,
+	Strong,
+	Table,
+	Tbody,
+	Td,
+	Th,
+	Thead,
+	Tr,
+};

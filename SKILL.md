@@ -56,7 +56,7 @@ ALWAYS pass styles as an object via `style={{ key: value }}`, never as a string.
   style={{
     x,
     backgroundColor: "#ff0000",
-    "--custom-var": 100
+    "--custom-var": 100,
   }}
 />
 ```
@@ -74,16 +74,12 @@ For better developer experience and type safety, define variants using the `Vari
     visible: {
       opacity: 1,
       scale: 1,
-      transition: { duration: 0.5 }
-    }
+      transition: { duration: 0.5 },
+    },
   };
 </script>
 
-<motion.div
-  variants={boxVariants}
-  initial="hidden"
-  animate="visible"
-/>
+<motion.div variants={boxVariants} initial="hidden" animate="visible" />
 ```
 
 ### Supported Props
@@ -105,7 +101,7 @@ For better developer experience and type safety, define variants using the `Vari
   inViewOptions={{
     once: true,
     amount: "some", // "some" | "all" | 0..1
-    margin: "0px 0px -200px 0px"
+    margin: "0px 0px -200px 0px",
   }}
 >
   Hello

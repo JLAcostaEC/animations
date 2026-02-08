@@ -1,6 +1,7 @@
 Total number of components 70
 
 List of Components
+
 - Dotted Glow Background
 - Background Ripple Effect
 - Sparkles

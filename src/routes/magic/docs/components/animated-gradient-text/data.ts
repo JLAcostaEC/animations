@@ -9,33 +9,40 @@ import PreviewCode from "./examples/preview.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
-  id: "animated-gradient-text",
-  title: "Animated Gradient Text",
-  description: "An animated gradient background which transitions between colors for text.",
-  category: "text",
-  badge: "new",
+	id: "animated-gradient-text",
+	title: "Animated Gradient Text",
+	description: "An animated gradient background which transitions between colors for text.",
+	category: "text",
+	badge: "new",
 };
 
 const examples: Example[] = [
-  {
-    name: "Custom Speed",
-    preview: CustomSpeed,
-    code: {
-      filename: "custom-speed.svelte",
-      filecode: CustomSpeedRaw,
-      lang: "svelte",
-    },
-  },
+	{
+		name: "Custom Speed",
+		preview: CustomSpeed,
+		code: {
+			filename: "custom-speed.svelte",
+			filecode: CustomSpeedRaw,
+			lang: "svelte",
+		},
+	},
 ];
 
 const seo: SEO = {
-  title: "Animated Gradient Text - SV5 Animations",
-  description: "Learn how to create animated gradient text effects in Svelte using the SV5 Animations library.",
-  keywords: ["Svelte", "Animated Gradient Text", "SV5 Animations", "CSS Effects", "Web Design"],
+	title: "Animated Gradient Text - Svelte 5 Animations",
+	description:
+		"Learn how to create animated gradient text effects in Svelte using the Svelte 5 Animations library.",
+	keywords: [
+		"Svelte",
+		"Animated Gradient Text",
+		"Svelte 5 Animations",
+		"CSS Effects",
+		"Web Design",
+	],
 };
 
 const tailwind: CodeBlock = {
-  filecode: `@theme inline {
+	filecode: `@theme inline {
   --animate-gradient: gradient 8s linear infinite;
 
   @keyframes gradient {
@@ -44,37 +51,57 @@ const tailwind: CodeBlock = {
     }
   }
 }`,
-  filename: "routes/layout.css",
-  lang: "css",
-  highlight: [2, [4, 8]],
+	filename: "routes/layout.css",
+	lang: "css",
+	highlight: [2, [4, 8]],
 };
 
 export const data: ComponentDoc = {
-  ...meta,
-  preview: Preview,
-  previewCode: {
-    filename: "animated-text-badge.svelte",
-    filecode: PreviewCode,
-    lang: "svelte",
-    hideLines: true,
-    highlight: [2],
-  },
-  examples,
-  seo,
-  tailwind,
-  props: [
-    {
-      name: "AnimatedGradientText",
-      desc: "A text component with animated gradient background effect.",
-      props: [
-        { name: "speed", type: "number", default: "1", description: "Animation speed multiplier for the gradient movement" },
-        { name: "colorFrom", type: "string", default: "#ffaa40", description: "Starting color of the gradient" },
-        { name: "colorTo", type: "string", default: "#9c40ff", description: "Ending color of the gradient" },
-        { name: "class", type: "string", default: '""', description: "Additional CSS classes to apply" },
-      ],
-    },
-  ],
-  folderStructure: `src/
+	...meta,
+	preview: Preview,
+	previewCode: {
+		filename: "animated-text-badge.svelte",
+		filecode: PreviewCode,
+		lang: "svelte",
+		hideLines: true,
+		highlight: [2],
+	},
+	examples,
+	seo,
+	tailwind,
+	props: [
+		{
+			name: "AnimatedGradientText",
+			desc: "A text component with animated gradient background effect.",
+			props: [
+				{
+					name: "speed",
+					type: "number",
+					default: "1",
+					description: "Animation speed multiplier for the gradient movement",
+				},
+				{
+					name: "colorFrom",
+					type: "string",
+					default: "#ffaa40",
+					description: "Starting color of the gradient",
+				},
+				{
+					name: "colorTo",
+					type: "string",
+					default: "#9c40ff",
+					description: "Ending color of the gradient",
+				},
+				{
+					name: "class",
+					type: "string",
+					default: '""',
+					description: "Additional CSS classes to apply",
+				},
+			],
+		},
+	],
+	folderStructure: `src/
 └── lib/
     └── components/
         └── magic-ui/
@@ -84,5 +111,3 @@ export const data: ComponentDoc = {
 };
 
 // shadcn-svelte@latest add http://localhost:5173/r/animated-gradient-text.json
-
-

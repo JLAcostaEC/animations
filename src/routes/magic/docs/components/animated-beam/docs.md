@@ -13,6 +13,7 @@ The Animated Beam component creates smooth, animated gradient beams between two 
 ## Usage
 
 The component requires three main refs:
+
 - `containerRef`: The container element
 - `fromRef`: The starting element
 - `toRef`: The ending element
@@ -43,36 +44,40 @@ The component requires three main refs:
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `class` | `string` | `""` | Additional CSS classes |
-| `containerRef` | `HTMLElement \| null` | `null` | Container element reference |
-| `fromRef` | `HTMLElement \| null` | `null` | Starting element reference |
-| `toRef` | `HTMLElement \| null` | `null` | Ending element reference |
-| `curvature` | `number` | `0` | Path curvature (0 = straight line) |
-| `reverse` | `boolean` | `false` | Reverse animation direction |
-| `duration` | `number` | `Math.random() * 3 + 4` | Animation duration in seconds |
-| `delay` | `number` | `0` | Animation delay in seconds |
-| `pathColor` | `string` | `"gray"` | Base path color |
-| `pathWidth` | `number` | `2` | Path stroke width |
-| `pathOpacity` | `number` | `0.2` | Path opacity |
-| `gradientStartColor` | `string` | `"#ffaa40"` | Gradient start color |
-| `gradientStopColor` | `string` | `"#9c40ff"` | Gradient end color |
-| `startXOffset` | `number` | `0` | X offset for start position |
-| `startYOffset` | `number` | `0` | Y offset for start position |
-| `endXOffset` | `number` | `0` | X offset for end position |
-| `endYOffset` | `number` | `0` | Y offset for end position |
+| Prop                 | Type                  | Default                 | Description                        |
+| -------------------- | --------------------- | ----------------------- | ---------------------------------- |
+| `class`              | `string`              | `""`                    | Additional CSS classes             |
+| `containerRef`       | `HTMLElement \| null` | `null`                  | Container element reference        |
+| `fromRef`            | `HTMLElement \| null` | `null`                  | Starting element reference         |
+| `toRef`              | `HTMLElement \| null` | `null`                  | Ending element reference           |
+| `curvature`          | `number`              | `0`                     | Path curvature (0 = straight line) |
+| `reverse`            | `boolean`             | `false`                 | Reverse animation direction        |
+| `duration`           | `number`              | `Math.random() * 3 + 4` | Animation duration in seconds      |
+| `delay`              | `number`              | `0`                     | Animation delay in seconds         |
+| `pathColor`          | `string`              | `"gray"`                | Base path color                    |
+| `pathWidth`          | `number`              | `2`                     | Path stroke width                  |
+| `pathOpacity`        | `number`              | `0.2`                   | Path opacity                       |
+| `gradientStartColor` | `string`              | `"#ffaa40"`             | Gradient start color               |
+| `gradientStopColor`  | `string`              | `"#9c40ff"`             | Gradient end color                 |
+| `startXOffset`       | `number`              | `0`                     | X offset for start position        |
+| `startYOffset`       | `number`              | `0`                     | Y offset for start position        |
+| `endXOffset`         | `number`              | `0`                     | X offset for end position          |
+| `endYOffset`         | `number`              | `0`                     | Y offset for end position          |
 
 ## Examples
 
 ### Basic Usage
+
 Connect two elements with a simple animated beam.
 
 ### With Curvature
+
 Add curvature to create curved beam paths.
 
 ### Reverse Direction
+
 Reverse the animation direction for different visual effects.
 
 ### Custom Colors
+
 Customize gradient colors and path styling.

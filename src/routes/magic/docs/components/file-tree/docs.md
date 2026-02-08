@@ -21,15 +21,21 @@ npx shadcn-svelte@latest add https://animations.sikandarjodd.dev/r/file-tree.jso
 ## Usage
 
 The File Tree component consists of four main parts:
+
 - `Tree`: The root container
 - `Folder`: A collapsible folder component
 - `File`: A selectable file component
 - `CollapseButton`: A utility button to expand/collapse all folders
 
-
 ```svelte
 <script lang="ts">
-  import { Tree, Folder, File, CollapseButton, type TreeViewElement } from "$lib/components/magic-ui/file-tree";
+  import {
+    Tree,
+    Folder,
+    File,
+    CollapseButton,
+    type TreeViewElement,
+  } from "$lib/components/magic-ui/file-tree";
 
   const elements: TreeViewElement[] = [
     {
@@ -65,39 +71,39 @@ The File Tree component consists of four main parts:
 
 ### Tree
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `initialSelectedId` | `string` | `undefined` | Initial selected item ID |
-| `initialExpandedItems` | `string[]` | `[]` | Initial expanded folder IDs |
-| `elements` | `TreeViewElement[]` | `undefined` | Tree structure data |
-| `indicator` | `boolean` | `true` | Show visual indicator lines |
-| `dir` | `''rtl'' | ''ltr''` | `''ltr''` | Text direction |
-| `class` | `string` | `""` | Additional CSS classes |
+| Prop                   | Type                | Default     | Description                 |
+| ---------------------- | ------------------- | ----------- | --------------------------- | -------------- |
+| `initialSelectedId`    | `string`            | `undefined` | Initial selected item ID    |
+| `initialExpandedItems` | `string[]`          | `[]`        | Initial expanded folder IDs |
+| `elements`             | `TreeViewElement[]` | `undefined` | Tree structure data         |
+| `indicator`            | `boolean`           | `true`      | Show visual indicator lines |
+| `dir`                  | `''rtl''            | ''ltr''`    | `''ltr''`                   | Text direction |
+| `class`                | `string`            | `""`        | Additional CSS classes      |
 
 ### Folder
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `element` | `string` | required | Folder name/label |
-| `value` | `string` | required | Unique identifier |
-| `isSelectable` | `boolean` | `true` | Whether folder is selectable |
-| `class` | `string` | `""` | Additional CSS classes |
+| Prop           | Type      | Default  | Description                  |
+| -------------- | --------- | -------- | ---------------------------- |
+| `element`      | `string`  | required | Folder name/label            |
+| `value`        | `string`  | required | Unique identifier            |
+| `isSelectable` | `boolean` | `true`   | Whether folder is selectable |
+| `class`        | `string`  | `""`     | Additional CSS classes       |
 
 ### File
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `value` | `string` | required | Unique identifier |
-| `isSelectable` | `boolean` | `true` | Whether file is selectable |
-| `class` | `string` | `""` | Additional CSS classes |
+| Prop           | Type      | Default  | Description                |
+| -------------- | --------- | -------- | -------------------------- |
+| `value`        | `string`  | required | Unique identifier          |
+| `isSelectable` | `boolean` | `true`   | Whether file is selectable |
+| `class`        | `string`  | `""`     | Additional CSS classes     |
 
 ### CollapseButton
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `elements` | `TreeViewElement[]` | required | Tree elements to manage |
-| `expandAll` | `boolean` | `false` | Whether to expand all on mount |
-| `class` | `string` | `""` | Additional CSS classes |
+| Prop        | Type                | Default  | Description                    |
+| ----------- | ------------------- | -------- | ------------------------------ |
+| `elements`  | `TreeViewElement[]` | required | Tree elements to manage        |
+| `expandAll` | `boolean`           | `false`  | Whether to expand all on mount |
+| `class`     | `string`            | `""`     | Additional CSS classes         |
 
 ## Types
 

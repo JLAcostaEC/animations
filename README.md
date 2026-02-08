@@ -6,6 +6,7 @@ Built with [motion-sv](https://github.com/hanielu/motion-svelte) and Tailwind CS
 ## Installation
 
 1. Create SvelteKit project with Tailwind CSS
+
    ```bash
    pnpm dlx sv create my-app --add tailwindcss
    ```
@@ -34,6 +35,7 @@ Built with [motion-sv](https://github.com/hanielu/motion-svelte) and Tailwind CS
 ## Inspiration
 
 This project is inspired by and ports components from:
+
 - [Magic UI](https://magicui.design/) - React animation components
 
 ## Share & Support

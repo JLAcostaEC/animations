@@ -56,24 +56,26 @@ With custom spacing and glow effect:
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `width` | `number` | `16` | Horizontal spacing between dots |
-| `height` | `number` | `16` | Vertical spacing between dots |
-| `x` | `number` | `0` | X-offset of the entire pattern |
-| `y` | `number` | `0` | Y-offset of the entire pattern |
-| `cx` | `number` | `1` | X-offset of individual dots |
-| `cy` | `number` | `1` | Y-offset of individual dots |
-| `cr` | `number` | `1` | Radius of each dot |
-| `glow` | `boolean` | `false` | Enable glowing animation effect |
-| `class` | `string` | `""` | Additional CSS classes |
+| Prop     | Type      | Default | Description                     |
+| -------- | --------- | ------- | ------------------------------- |
+| `width`  | `number`  | `16`    | Horizontal spacing between dots |
+| `height` | `number`  | `16`    | Vertical spacing between dots   |
+| `x`      | `number`  | `0`     | X-offset of the entire pattern  |
+| `y`      | `number`  | `0`     | Y-offset of the entire pattern  |
+| `cx`     | `number`  | `1`     | X-offset of individual dots     |
+| `cy`     | `number`  | `1`     | Y-offset of individual dots     |
+| `cr`     | `number`  | `1`     | Radius of each dot              |
+| `glow`   | `boolean` | `false` | Enable glowing animation effect |
+| `class`  | `string`  | `""`    | Additional CSS classes          |
 
 ## Examples
 
 ### Linear Gradient Mask
+
 Create a fading effect using a linear gradient mask.
 
 ### Glow Effect
+
 Add an animated pulsing glow to dots for a dynamic background.
 
 ## Tips

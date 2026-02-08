@@ -100,5 +100,95 @@
 		"description": "Add a fun particle effect that follows mouse interactions, with support for emojis, images, and custom shapes.",
 		"registryDependencies": [],
 		"relativeUrl": "cool-mode.json"
+	},
+	{
+		"name": "shine-border",
+		"title": "Shine Border",
+		"type": "registry:block",
+		"description": "A component that adds a shining animated border effect with customizable colors, duration, and border width.",
+		"registryDependencies": [],
+		"relativeUrl": "shine-border.json"
+	},
+	{
+		"name": "animated-list",
+		"title": "Animated List",
+		"type": "registry:block",
+		"description": "A component that animates list items with smooth layout transitions, revealing items one by one from top to bottom.",
+		"registryDependencies": [
+			"motion-sv"
+		],
+		"relativeUrl": "animated-list.json"
+	},
+	{
+		"name": "animated-shiny-text",
+		"title": "Animated Shiny Text",
+		"type": "registry:block",
+		"description": "A shimmering text effect component that creates a moving shine animation across text.",
+		"registryDependencies": [],
+		"relativeUrl": "animated-shiny-text.json"
+	},
+	{
+		"name": "aurora-text",
+		"title": "Aurora Text",
+		"type": "registry:block",
+		"description": "A text component with animated aurora gradient effect that smoothly transitions between customizable colors.",
+		"registryDependencies": [],
+		"relativeUrl": "aurora-text.json"
+	},
+	{
+		"name": "avatar-circles",
+		"title": "Avatar Circles",
+		"type": "registry:block",
+		"description": "A component that displays overlapping avatar circles with optional count indicator for showing team members or contributors.",
+		"registryDependencies": [],
+		"relativeUrl": "avatar-circles.json"
+	},
+	{
+		"name": "dotted-map",
+		"title": "Dotted Map",
+		"type": "registry:block",
+		"description": "A world map component rendered with dots, supporting custom markers with staggered entrance animations.",
+		"dependencies": [
+			"svg-dotted-map"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "dotted-map.json"
+	},
+	{
+		"name": "marquee",
+		"title": "Marquee",
+		"type": "registry:block",
+		"description": "A smooth scrolling marquee component with support for horizontal and vertical directions, pause on hover, and reverse animation.",
+		"registryDependencies": [],
+		"relativeUrl": "marquee.json"
+	},
+	{
+		"name": "pixel-image",
+		"title": "Pixel Image",
+		"type": "registry:block",
+		"description": "An image component that reveals itself through a pixelated grid animation with optional grayscale to color transition.",
+		"registryDependencies": [],
+		"relativeUrl": "pixel-image.json"
+	},
+	{
+		"name": "striped-pattern",
+		"title": "Striped Pattern",
+		"type": "registry:block",
+		"description": "An SVG-based striped pattern background component with configurable direction and stripe dimensions.",
+		"registryDependencies": [],
+		"relativeUrl": "striped-pattern.json"
+	},
+	{
+		"name": "typing-animation",
+		"title": "Typing Animation",
+		"type": "registry:block",
+		"description": "A typewriter effect component that types out text with customizable speed, cursor styles, and support for cycling through multiple words.",
+		"dependencies": [
+			"runed"
+		],
+		"registryDependencies": [
+			"motion-sv"
+		],
+		"relativeUrl": "typing-animation.json"
 	}
 ]

@@ -1,0 +1,22 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "dotted-map",
+	"title": "Dotted Map",
+	"type": "registry:block",
+	"description": "A world map component rendered with dots, supporting custom markers with staggered entrance animations.",
+	"dependencies": [
+		"svg-dotted-map"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\r\n\timport { createMap } from \"svg-dotted-map\";\r\n\timport { cn } from \"$UTILS$.js\";\r\n\r\n\tinterface Marker {\r\n\t\tlat: number;\r\n\t\tlng: number;\r\n\t\tsize?: number;\r\n\t}\r\n\r\n\tinterface Props {\r\n\t\twidth?: number;\r\n\t\theight?: number;\r\n\t\tmapSamples?: number;\r\n\t\tmarkers?: Marker[];\r\n\t\tdotColor?: string;\r\n\t\tmarkerColor?: string;\r\n\t\tdotRadius?: number;\r\n\t\tstagger?: boolean;\r\n\t\tclass?: string;\r\n\t\tstyle?: string;\r\n\t}\r\n\r\n\tlet {\r\n\t\twidth = 150,\r\n\t\theight = 75,\r\n\t\tmapSamples = 5000,\r\n\t\tmarkers = [],\r\n\t\tmarkerColor = \"#FF6900\",\r\n\t\tdotColor = \"currentColor\",\r\n\t\tdotRadius = 0.2,\r\n\t\tstagger = true,\r\n\t\tclass: className,\r\n\t\tstyle,\r\n\t}: Props = $props();\r\n\r\n\tlet { points, addMarkers } = $derived(\r\n\t\tcreateMap({\r\n\t\t\twidth,\r\n\t\t\theight,\r\n\t\t\tmapSamples,\r\n\t\t})\r\n\t);\r\n\r\n\tlet processedMarkers = $derived(addMarkers(markers));\r\n\r\n\tlet staggerHelpers = $derived.by(() => {\r\n\t\tconst sorted = [...points].sort((a, b) => a.y - b.y || a.x - b.x);\r\n\t\tconst rowMap = new Map<number, number>();\r\n\t\tlet step = 0;\r\n\t\tlet prevY = Number.NaN;\r\n\t\tlet prevXInRow = Number.NaN;\r\n\r\n\t\tfor (const p of sorted) {\r\n\t\t\tif (p.y !== prevY) {\r\n\t\t\t\t// new row\r\n\t\t\t\tprevY = p.y;\r\n\t\t\t\tprevXInRow = Number.NaN;\r\n\t\t\t\tif (!rowMap.has(p.y)) rowMap.set(p.y, rowMap.size);\r\n\t\t\t}\r\n\t\t\tif (!Number.isNaN(prevXInRow)) {\r\n\t\t\t\tconst delta = p.x - prevXInRow;\r\n\t\t\t\tif (delta > 0) step = step === 0 ? delta : Math.min(step, delta);\r\n\t\t\t}\r\n\t\t\tprevXInRow = p.x;\r\n\t\t}\r\n\r\n\t\treturn { xStep: step || 1, yToRowIndex: rowMap };\r\n\t});\r\n</script>\r\n\r\n<svg\r\n\tviewBox=\"0 0 {width} {height}\"\r\n\tclass={cn(\"text-gray-500 dark:text-gray-500\", className)}\r\n\tstyle=\"width: 100%; height: 100%; {style || ''}\"\r\n>\r\n\t{#each points as point, index}\r\n\t\t{@const rowIndex = staggerHelpers.yToRowIndex.get(point.y) ?? 0}\r\n\t\t{@const offsetX = stagger && rowIndex % 2 === 1 ? staggerHelpers.xStep / 2 : 0}\r\n\t\t<circle cx={point.x + offsetX} cy={point.y} r={dotRadius} fill={dotColor} />\r\n\t{/each}\r\n\t{#each processedMarkers as marker, index}\r\n\t\t{@const rowIndex = staggerHelpers.yToRowIndex.get(marker.y) ?? 0}\r\n\t\t{@const offsetX = stagger && rowIndex % 2 === 1 ? staggerHelpers.xStep / 2 : 0}\r\n\t\t<circle\r\n\t\t\tcx={marker.x + offsetX}\r\n\t\t\tcy={marker.y}\r\n\t\t\tr={marker.size ?? dotRadius}\r\n\t\t\tfill={markerColor}\r\n\t\t/>\r\n\t{/each}\r\n</svg>\r\n",
+			"type": "registry:component",
+			"target": "magic/dotted-map/dotted-map.svelte"
+		},
+		{
+			"content": "export { default as DottedMap } from \"./dotted-map.svelte\";\r\n",
+			"type": "registry:file",
+			"target": "magic/dotted-map/index.ts"
+		}
+	]
+}
