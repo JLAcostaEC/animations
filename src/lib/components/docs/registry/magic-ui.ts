@@ -34,16 +34,34 @@ export const magicUIComponents: MagicComponent[] = [
 		desc: "A animated background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
 	},
 	{
+		id: "animated-list",
+		name: "Animated List",
+		href: "/magic/docs/components/animated-list",
+		desc: "A component that animates list items with staggered entrance animations.",
+	},
+	{
+		id: "animated-shiny-text",
+		name: "Animated Shiny Text",
+		href: "/magic/docs/components/animated-shiny-text",
+		desc: "A text component with an animated shiny/shimmer effect that travels across the text.",
+	},
+	{
 		id: "animated-theme-toggler",
 		name: "Animated Theme Toggler",
 		href: "/magic/docs/components/animated-theme-toggler",
 		desc: "An Animated theme toggler component, fully customizable using Tailwind CSS.",
 	},
 	{
-		id: "text-animate",
-		name: "Text Animate",
-		href: "/magic/docs/components/text-animate",
-		desc: "A text animation component that animates text using a variety of different animations.",
+		id: "aurora-text",
+		name: "Aurora Text",
+		href: "/magic/docs/components/aurora-text",
+		desc: "A text component with an animated aurora/northern lights effect.",
+	},
+	{
+		id: "avatar-circles",
+		name: "Avatar Circles",
+		href: "/magic/docs/components/avatar-circles",
+		desc: "A component to display overlapping avatar circles, commonly used for showing multiple users.",
 	},
 	{
 		id: "blur-fade",
@@ -70,23 +88,16 @@ export const magicUIComponents: MagicComponent[] = [
 		desc: "A customizable dot pattern background component with optional glow animations and mask effects.",
 	},
 	{
-		id: "file-tree",
-		name: "File Tree",
-		href: "/magic/docs/components/file-tree",
-		desc: "A component for creating file tree views with folder and file icons.",
-	},
-	{
 		id: "dotted-map",
 		name: "Dotted Map",
 		href: "/magic/docs/components/dotted-map",
 		desc: "A component for creating dotted map with custom dots and lines.",
 	},
 	{
-		id: "shine-border",
-		name: "Shine Border",
-		href: "/magic/docs/components/shine-border",
-		badge: "New",
-		desc: "Shine border is an animated background border effect.",
+		id: "file-tree",
+		name: "File Tree",
+		href: "/magic/docs/components/file-tree",
+		desc: "A component for creating file tree views with folder and file icons.",
 	},
 	{
 		id: "marquee",
@@ -103,11 +114,31 @@ export const magicUIComponents: MagicComponent[] = [
 		desc: "A component that displays your image with a pixelated effect, enhancing the visual appeal of any image in your website.",
 	},
 	{
+		id: "shine-border",
+		name: "Shine Border",
+		href: "/magic/docs/components/shine-border",
+		badge: "New",
+		desc: "Shine border is an animated background border effect.",
+	},
+	{
 		id: "striped-pattern",
 		name: "Striped Pattern",
 		href: "/magic/docs/components/striped-pattern",
 		badge: "New",
 		desc: "A background striped pattern made with SVGs, fully customizable using Tailwind CSS.",
+	},
+	{
+		id: "text-animate",
+		name: "Text Animate",
+		href: "/magic/docs/components/text-animate",
+		desc: "A text animation component that animates text using a variety of different animations.",
+	},
+	{
+		id: "typing-animation",
+		name: "Typing Animation",
+		href: "/magic/docs/components/typing-animation",
+		badge: "New",
+		desc: "A text component that displays a typewriter animation effect.",
 	},
 ];
 

@@ -59,7 +59,7 @@
 					</p>
 
 					<div class="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row">
-						<Button href="/magic/docs/components/animated-gradient-text" size="lg"
+						<Button href="/magic/docs/components/animated-beam" size="lg"
 							>Get Started</Button
 						>
 						<Button

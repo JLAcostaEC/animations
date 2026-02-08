@@ -1,5 +1,7 @@
 $components = @(
-    @{ name = "striped-pattern"; examples = 2 },
+    @{ name = "animated-shiny-text"; examples = 2 },
+    @{ name = "aurora-text"; examples = 2 },
+    @{ name = "avatar-circles"; examples = 2 },
     @{ name = "typing-animation"; examples = 2 }
 )
 

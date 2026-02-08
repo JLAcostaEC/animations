@@ -40,8 +40,10 @@ export type ComponentDoc = ComponentMeta & {
 	previewCode?: CodeBlock | CodeBlock[];
 	examples?: Example[];
 	seo: SEO;
+	/** @deprecated Use installBlock.tailwind instead */
 	tailwind?: CodeBlock;
 	props?: PropsTable[];
 	folderStructure?: string;
+	/** @deprecated Use installBlock.packages instead */
 	packages?: string[];
 };
