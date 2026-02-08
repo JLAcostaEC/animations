@@ -17,7 +17,7 @@
 			"target": "magic/animated-grid-pattern/animated-grid-pattern.svelte"
 		},
 		{
-			"content": "export { default as AnimatedGridPattern } from \"./animated-grid-pattern.svelte\";\r\n\r\n",
+			"content": "import AnimatedGridPattern from \"./animated-grid-pattern.svelte\";\r\nexport { AnimatedGridPattern };",
 			"type": "registry:file",
 			"target": "magic/animated-grid-pattern/index.ts"
 		}

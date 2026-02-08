@@ -14,7 +14,7 @@
 			"target": "magic/animated-theme-toggler/animated-theme-toggler.svelte"
 		},
 		{
-			"content": "export { default as AnimatedThemeToggler } from \"./animated-theme-toggler.svelte\";\r\n\r\n",
+			"content": "import AnimatedThemeToggler from \"./animated-theme-toggler.svelte\";\r\nexport { AnimatedThemeToggler };",
 			"type": "registry:file",
 			"target": "magic/animated-theme-toggler/index.ts"
 		}

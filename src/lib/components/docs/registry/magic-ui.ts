@@ -62,30 +62,33 @@ export const magicUIComponents: MagicComponent[] = [
     id: "cool-mode",
     name: "Cool Mode",
     href: "/magic/docs/components/cool-mode",
-    badge: "New",
     desc: "Add a fun particle effect that follows mouse interactions, with support for emojis, images, and custom shapes.",
   },
   {
     id: "dot-pattern",
     name: "Dot Pattern",
     href: "/magic/docs/components/dot-pattern",
-    badge: "New",
     desc: "A customizable dot pattern background component with optional glow animations and mask effects.",
   },
   {
     id: "file-tree",
     name: "File Tree",
     href: "/magic/docs/components/file-tree",
-    badge: "New",
     desc: "A component for creating file tree views with folder and file icons.",
   },
   {
     id: "dotted-map",
     name: "Dotted Map",
     href: "/magic/docs/components/dotted-map",
-    badge: "New",
     desc: "A component for creating dotted map with custom dots and lines.",
   },
+  {
+    id: "shine-border",
+    name: "Shine Border",
+    href: "/magic/docs/components/shine-border",
+    badge: "New",
+    desc: "Shine border is an animated background border effect.",
+  }
 ];
 
 /**

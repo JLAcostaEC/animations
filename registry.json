@@ -258,6 +258,43 @@
         }
       ],
       "registryDependencies": []
+    },
+    {
+      "name": "shine-border",
+      "type": "registry:block",
+      "title": "Shine Border",
+      "description": "A component that adds a shining animated border effect with customizable colors, duration, and border width.",
+      "files": [
+        {
+          "path": "./src/lib/components/magic-ui/shine-border/shine-border.svelte",
+          "type": "registry:component",
+          "target": "magic/shine-border/shine-border.svelte"
+        },
+        {
+          "path": "./src/lib/components/magic-ui/shine-border/index.ts",
+          "type": "registry:file",
+          "target": "magic/shine-border/index.ts"
+        }
+      ],
+      "registryDependencies": [],
+      "cssVars": {
+        "theme": {
+          "animate-shine": "shine var(--duration) infinite linear"
+        }
+      },
+      "css": {
+        "@keyframes shine": {
+          "0%": {
+            "background-position": "0% 0%"
+          },
+          "50%": {
+            "background-position": "100% 100%"
+          },
+          "100%": {
+            "background-position": "0% 0%"
+          }
+        }
+      }
     }
 ]
 }

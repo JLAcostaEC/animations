@@ -100,5 +100,13 @@
 		"description": "Add a fun particle effect that follows mouse interactions, with support for emojis, images, and custom shapes.",
 		"registryDependencies": [],
 		"relativeUrl": "cool-mode.json"
+	},
+	{
+		"name": "shine-border",
+		"title": "Shine Border",
+		"type": "registry:block",
+		"description": "A component that adds a shining animated border effect with customizable colors, duration, and border width.",
+		"registryDependencies": [],
+		"relativeUrl": "shine-border.json"
 	}
 ]

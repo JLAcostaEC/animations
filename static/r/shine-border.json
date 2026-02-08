@@ -1,0 +1,37 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "shine-border",
+	"title": "Shine Border",
+	"type": "registry:block",
+	"description": "A component that adds a shining animated border effect with customizable colors, duration, and border width.",
+	"css": {
+		"@keyframes shine": {
+			"0%": {
+				"background-position": "0% 0%"
+			},
+			"50%": {
+				"background-position": "100% 100%"
+			},
+			"100%": {
+				"background-position": "0% 0%"
+			}
+		}
+	},
+	"cssVars": {
+		"theme": {
+			"animate-shine": "shine var(--duration) infinite linear"
+		}
+	},
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\r\n  import { cn } from \"$UTILS$\";\r\n  import type { HTMLAttributes } from \"svelte/elements\";\r\n\r\n  interface Props extends HTMLAttributes<HTMLDivElement> {\r\n    borderWidth?: number;\r\n    duration?: number;\r\n    shineColor?: string | string[];\r\n  }\r\n\r\n  let {\r\n    borderWidth = 1,\r\n    duration = 14,\r\n    shineColor = \"#000000\",\r\n    class: className,\r\n    style,\r\n    ...restProps\r\n  }: Props = $props();\r\n\r\n  let computedStyle = $derived.by(() => {\r\n    const shineColorValue = Array.isArray(shineColor)\r\n      ? shineColor.join(\",\")\r\n      : shineColor;\r\n\r\n    const baseStyles = `\r\n\t\t\t--border-width: ${borderWidth}px;\r\n\t\t\t--duration: ${duration}s;\r\n\t\t\tbackground-image: radial-gradient(transparent,transparent, ${shineColorValue},transparent,transparent);\r\n\t\t\tbackground-size: 300% 300%;\r\n\t\t\tmask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);\r\n\t\t\t-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);\r\n\t\t\t-webkit-mask-composite: xor;\r\n\t\t\tmask-composite: exclude;\r\n\t\t\tpadding: var(--border-width);\r\n\t\t`;\r\n\r\n    return style ? `${baseStyles} ${style}` : baseStyles;\r\n  });\r\n</script>\r\n\r\n<!-- svelte-ignore element_invalid_self_closing_tag -->\r\n<div\r\n  style={computedStyle}\r\n  class={cn(\r\n    \"motion-safe:animate-shine pointer-events-none absolute inset-0 size-full rounded-[inherit] will-change-[background-position]\",\r\n    className,\r\n  )}\r\n  {...restProps}\r\n/>\r\n",
+			"type": "registry:component",
+			"target": "magic/shine-border/shine-border.svelte"
+		},
+		{
+			"content": "import ShineBorder from \"./shine-border.svelte\";\r\nexport { ShineBorder };\r\n",
+			"type": "registry:file",
+			"target": "magic/shine-border/index.ts"
+		}
+	]
+}

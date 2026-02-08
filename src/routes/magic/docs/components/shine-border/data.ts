@@ -6,10 +6,9 @@ import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
-import Example1 from "./examples/shine-border-example-1.svelte";
-import Example1Raw from "./examples/shine-border-example-1.svelte?raw";
-import Example2 from "./examples/shine-border-example-2.svelte";
-import Example2Raw from "./examples/shine-border-example-2.svelte?raw";
+
+import ShineBorderMonotone from "./examples/shine-border-monotone.svelte";
+import ShineBorderMonotoneRaw from "./examples/shine-border-monotone.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
@@ -22,29 +21,22 @@ export const meta: ComponentMeta = {
 
 const examples: Example[] = [
   {
-    name: "Example 1",
-    preview: Example1,
+    name: "Monotone",
+    preview: ShineBorderMonotone,
     code: {
-      filename: "shine-border-example-1.svelte",
-      filecode: Example1Raw,
+      filename: "shine-border-monotone.svelte",
+      filecode: ShineBorderMonotoneRaw,
       lang: "svelte",
-    },
-  },
-  {
-    name: "Example 2",
-    preview: Example2,
-    code: {
-      filename: "shine-border-example-2.svelte",
-      filecode: Example2Raw,
-      lang: "svelte",
+      isExpand: true,
+      highlight: [2, 6],
     },
   },
 ];
 
 const seo: SEO = {
-  title: " - Svelte 5 Animations",
-  description: "Learn how to create  effects in Svelte using the Svelte 5 Animations library.",
-  keywords: ["Svelte", "", "Svelte 5 Animations", "Animation", "Web Design"],
+  title: "ShineBorder - Svelte 5 Animations",
+  description: "Shine border is an animated background border effect.",
+  keywords: ["Svelte", "ShineBorder", "Svelte 5 Animations", "Animation", "Web Design"],
 };
 
 let installBlock : InstallComponentDocs={
@@ -68,7 +60,28 @@ let installBlock : InstallComponentDocs={
             └── shine-border/
                 ├── shine-border.svelte
                 └── index.ts`,
+ tailwind: {
+    filename: "src/routes/layout.css",
+    lang: "css",
+    filecode: `@theme inline {
+  --animate-shine: shine var(--duration) infinite linear;
+
+  @keyframes shine {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    to {
+      background-position: 0% 0%;
+    }
+  }
+}`,
+    highlight: [2, [4,14]],
+ }
 };
+
 
 export const data: ComponentDoc = {
   ...meta,
@@ -88,6 +101,9 @@ export const data: ComponentDoc = {
       desc: "A component for ShineBorder.",
       props: [
         { name: "class", type: "string", default: '""', description: "Additional CSS classes to apply" },
+        { name: "borderWidth", type: "number", default: "2", description: "Width of the border" },
+        { name: "duration", type: "number", default: "300", description: "Duration of the shine animation in milliseconds" },
+        { name: "shineColor", type: "string | string[]", default: '""', description: "Color(s) of the shine effect" },
       ],
     },
   ],

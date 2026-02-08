@@ -32,7 +32,7 @@
 			"target": "magic/file-tree/collapse-button.svelte"
 		},
 		{
-			"content": "export { default as Tree } from \"./file-tree.svelte\";\r\nexport { default as Folder } from \"./folder.svelte\";\r\nexport { default as File } from \"./file.svelte\";\r\nexport { default as CollapseButton } from \"./collapse-button.svelte\";\r\nexport type { TreeViewElement } from \"./file-tree.svelte\";\r\n\r\n",
+			"content": "import Tree from \"./file-tree.svelte\";\r\nimport Folder from \"./folder.svelte\";\r\nimport File from \"./file.svelte\";\r\nimport CollapseButton from \"./collapse-button.svelte\";\r\nimport type { TreeViewElement } from \"./file-tree.svelte\";\r\n\r\nexport { Tree, Folder, File, CollapseButton };\r\nexport type { TreeViewElement };",
 			"type": "registry:file",
 			"target": "magic/file-tree/index.ts"
 		}
