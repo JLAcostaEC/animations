@@ -1,0 +1,34 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "pulsating-button",
+	"title": "Pulsating Button",
+	"type": "registry:block",
+	"description": "A button component with a pulsating ring effect that expands and fades around the button.",
+	"css": {
+		"@keyframes pulse-ring": {
+			"0%": {
+				"box-shadow": "0 0 0 0 var(--pulse-color)"
+			},
+			"100%": {
+				"box-shadow": "0 0 0 8px transparent"
+			}
+		}
+	},
+	"cssVars": {
+		"theme": {
+			"animate-pulse-ring": "pulse-ring var(--duration) ease-out infinite"
+		}
+	},
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\timport type { Snippet } from \"svelte\";\n\n\tinterface PulsatingButtonProps {\n\t\tchildren: Snippet;\n\t\tclass?: string;\n\t\tpulseColor?: string;\n\t\tduration?: string;\n\t}\n\n\tlet {\n\t\tclass: className,\n\t\tchildren,\n\t\tpulseColor = \"#808080\",\n\t\tduration = \"1.5s\",\n\t\t...props\n\t}: PulsatingButtonProps = $props();\n</script>\n\n<button\n\tclass={cn(\n\t\t\"bg-primary text-primary-foreground relative flex cursor-pointer items-center justify-center rounded-lg px-4 py-2 text-center\",\n\t\tclassName\n\t)}\n\tstyle=\"--pulse-color: {pulseColor}; --duration: {duration};\"\n\t{...props}\n>\n\t<div class=\"relative z-10\">\n\t\t{@render children()}\n\t</div>\n\t<div\n\t\tclass=\"animate-pulse-ring absolute top-1/2 left-1/2 size-full -translate-x-1/2 -translate-y-1/2 rounded-lg bg-inherit\"\n\t></div>\n</button>\n",
+			"type": "registry:component",
+			"target": "magic/pulsating-button/pulsating-button.svelte"
+		},
+		{
+			"content": "export { default as PulsatingButton } from \"./pulsating-button.svelte\";\n",
+			"type": "registry:file",
+			"target": "magic/pulsating-button/index.ts"
+		}
+	]
+}

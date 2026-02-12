@@ -190,5 +190,207 @@
 			"motion-sv"
 		],
 		"relativeUrl": "typing-animation.json"
+	},
+	{
+		"name": "flickering-grid",
+		"title": "Flickering Grid",
+		"type": "registry:block",
+		"description": "An animated flickering grid pattern component that creates a dynamic canvas-based background with randomly flickering squares.",
+		"registryDependencies": [],
+		"relativeUrl": "flickering-grid.json"
+	},
+	{
+		"name": "grid-pattern",
+		"title": "Grid Pattern",
+		"type": "registry:block",
+		"description": "An SVG-based grid pattern background component with support for highlighted squares and customizable grid dimensions.",
+		"registryDependencies": [],
+		"relativeUrl": "grid-pattern.json"
+	},
+	{
+		"name": "hero-video-dialog",
+		"title": "Hero Video Dialog",
+		"type": "registry:block",
+		"description": "A video dialog component with animated entrance effects, thumbnail support, and customizable animation styles.",
+		"registryDependencies": [
+			"motion-sv"
+		],
+		"relativeUrl": "hero-video-dialog.json"
+	},
+	{
+		"name": "hyper-text",
+		"title": "Hyper Text",
+		"type": "registry:block",
+		"description": "An animated text component that creates a glitch effect by cycling through random characters before revealing the final text.",
+		"registryDependencies": [
+			"motion-sv"
+		],
+		"relativeUrl": "hyper-text.json"
+	},
+	{
+		"name": "interactive-hover-button",
+		"title": "Interactive Hover Button",
+		"type": "registry:block",
+		"description": "A button with an interactive hover effect featuring an expanding dot and sliding text animation with an arrow.",
+		"dependencies": [
+			"lucide-svelte"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "interactive-hover-button.json"
+	},
+	{
+		"name": "light-rays",
+		"title": "Light Rays",
+		"type": "registry:block",
+		"description": "A component that creates animated light rays with customizable count, color, blur, speed, and length.",
+		"registryDependencies": [
+			"motion-sv"
+		],
+		"relativeUrl": "light-rays.json"
+	},
+	{
+		"name": "line-shadow-text",
+		"title": "Line Shadow Text",
+		"type": "registry:block",
+		"description": "A text component with an animated diagonal line shadow effect that moves across the text.",
+		"registryDependencies": [
+			"motion-sv"
+		],
+		"relativeUrl": "line-shadow-text.json"
+	},
+	{
+		"name": "morphing-text",
+		"title": "Morphing Text",
+		"type": "registry:block",
+		"description": "A text component that smoothly morphs between multiple text strings with a blur transition effect.",
+		"registryDependencies": [],
+		"relativeUrl": "morphing-text.json"
+	},
+	{
+		"name": "neon-gradient-card",
+		"title": "Neon Gradient Card",
+		"type": "registry:block",
+		"description": "A card component with animated neon gradient borders and customizable colors, border size, and radius.",
+		"registryDependencies": [],
+		"relativeUrl": "neon-gradient-card.json"
+	},
+	{
+		"name": "number-ticker",
+		"title": "Number Ticker",
+		"type": "registry:block",
+		"description": "An animated number counter component with spring physics that smoothly animates from a start value to an end value.",
+		"registryDependencies": [
+			"motion-sv"
+		],
+		"relativeUrl": "number-ticker.json"
+	},
+	{
+		"name": "pulsating-button",
+		"title": "Pulsating Button",
+		"type": "registry:block",
+		"description": "A button component with a pulsating ring effect that expands and fades around the button.",
+		"registryDependencies": [],
+		"relativeUrl": "pulsating-button.json"
+	},
+	{
+		"name": "rainbow-button",
+		"title": "Rainbow Button",
+		"type": "registry:block",
+		"description": "A button component with animated rainbow gradient borders and background that cycles through multiple colors.",
+		"dependencies": [
+			"bits-ui",
+			"tailwind-variants"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "rainbow-button.json"
+	},
+	{
+		"name": "ripple",
+		"title": "Ripple",
+		"type": "registry:block",
+		"description": "A component that creates expanding ripple circles with customizable size, opacity, and number of circles.",
+		"registryDependencies": [],
+		"relativeUrl": "ripple.json"
+	},
+	{
+		"name": "ripple-button",
+		"title": "Ripple Button",
+		"type": "registry:block",
+		"description": "A button component with a ripple effect that appears on click, expanding from the click position.",
+		"dependencies": [
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "ripple-button.json"
+	},
+	{
+		"name": "scroll-progress",
+		"title": "Scroll Progress",
+		"type": "registry:block",
+		"description": "A fixed progress bar component that indicates page scroll progress with a gradient color effect.",
+		"registryDependencies": [
+			"motion-sv"
+		],
+		"relativeUrl": "scroll-progress.json"
+	},
+	{
+		"name": "shimmer-button",
+		"title": "Shimmer Button",
+		"type": "registry:block",
+		"description": "A button component with an animated shimmer effect that slides across the button surface.",
+		"registryDependencies": [],
+		"relativeUrl": "shimmer-button.json"
+	},
+	{
+		"name": "shiny-button",
+		"title": "Shiny Button",
+		"type": "registry:block",
+		"description": "A button component with a shiny gradient mask effect that animates across the text on hover and press.",
+		"registryDependencies": [
+			"motion-sv"
+		],
+		"relativeUrl": "shiny-button.json"
+	},
+	{
+		"name": "terminal",
+		"title": "Terminal",
+		"type": "registry:block",
+		"description": "A terminal-like UI component with typing animations, sequence control, and intersection observer support.",
+		"dependencies": [
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "terminal.json"
+	},
+	{
+		"name": "video-text",
+		"title": "Video Text",
+		"type": "registry:block",
+		"description": "A component that displays video content masked by text, creating a text-shaped video effect with customizable typography.",
+		"dependencies": [
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "video-text.json"
+	},
+	{
+		"name": "warp-background",
+		"title": "Warp Background",
+		"type": "registry:block",
+		"description": "A 3D perspective grid background with animated light beams that create a warping effect.",
+		"registryDependencies": [
+			"motion-sv"
+		],
+		"relativeUrl": "warp-background.json"
+	},
+	{
+		"name": "word-rotate",
+		"title": "Word Rotate",
+		"type": "registry:block",
+		"description": "A component that cycles through an array of words with smooth fade and slide animations between transitions.",
+		"registryDependencies": [
+			"motion-sv"
+		],
+		"relativeUrl": "word-rotate.json"
 	}
 ]

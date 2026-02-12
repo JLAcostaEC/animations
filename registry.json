@@ -520,6 +520,539 @@
 			],
 			"registryDependencies": ["motion-sv"],
 			"dependencies": ["runed"]
+		},
+		{
+			"name": "flickering-grid",
+			"type": "registry:block",
+			"title": "Flickering Grid",
+			"description": "An animated flickering grid pattern component that creates a dynamic canvas-based background with randomly flickering squares.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/flickering-grid/flickering-grid.svelte",
+					"type": "registry:component",
+					"target": "magic/flickering-grid/flickering-grid.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/flickering-grid/index.ts",
+					"type": "registry:file",
+					"target": "magic/flickering-grid/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
+			"name": "grid-pattern",
+			"type": "registry:block",
+			"title": "Grid Pattern",
+			"description": "An SVG-based grid pattern background component with support for highlighted squares and customizable grid dimensions.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/grid-pattern/grid-pattern.svelte",
+					"type": "registry:component",
+					"target": "magic/grid-pattern/grid-pattern.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/grid-pattern/index.ts",
+					"type": "registry:file",
+					"target": "magic/grid-pattern/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
+			"name": "hero-video-dialog",
+			"type": "registry:block",
+			"title": "Hero Video Dialog",
+			"description": "A video dialog component with animated entrance effects, thumbnail support, and customizable animation styles.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/hero-video-dialog/hero-video-dialog.svelte",
+					"type": "registry:component",
+					"target": "magic/hero-video-dialog/hero-video-dialog.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/hero-video-dialog/index.ts",
+					"type": "registry:file",
+					"target": "magic/hero-video-dialog/index.ts"
+				}
+			],
+			"registryDependencies": ["motion-sv"]
+		},
+		{
+			"name": "hyper-text",
+			"type": "registry:block",
+			"title": "Hyper Text",
+			"description": "An animated text component that creates a glitch effect by cycling through random characters before revealing the final text.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/hyper-text/hyper-text.svelte",
+					"type": "registry:component",
+					"target": "magic/hyper-text/hyper-text.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/hyper-text/index.ts",
+					"type": "registry:file",
+					"target": "magic/hyper-text/index.ts"
+				}
+			],
+			"registryDependencies": ["motion-sv"]
+		},
+		{
+			"name": "interactive-hover-button",
+			"type": "registry:block",
+			"title": "Interactive Hover Button",
+			"description": "A button with an interactive hover effect featuring an expanding dot and sliding text animation with an arrow.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/interactive-hover-button/interactive-hover-button.svelte",
+					"type": "registry:component",
+					"target": "magic/interactive-hover-button/interactive-hover-button.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/interactive-hover-button/index.ts",
+					"type": "registry:file",
+					"target": "magic/interactive-hover-button/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["lucide-svelte"]
+		},
+		{
+			"name": "light-rays",
+			"type": "registry:block",
+			"title": "Light Rays",
+			"description": "A component that creates animated light rays with customizable count, color, blur, speed, and length.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/light-rays/light-rays.svelte",
+					"type": "registry:component",
+					"target": "magic/light-rays/light-rays.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/light-rays/index.ts",
+					"type": "registry:file",
+					"target": "magic/light-rays/index.ts"
+				}
+			],
+			"registryDependencies": ["motion-sv"]
+		},
+		{
+			"name": "line-shadow-text",
+			"type": "registry:block",
+			"title": "Line Shadow Text",
+			"description": "A text component with an animated diagonal line shadow effect that moves across the text.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/line-shadow-text/line-shadow-text.svelte",
+					"type": "registry:component",
+					"target": "magic/line-shadow-text/line-shadow-text.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/line-shadow-text/index.ts",
+					"type": "registry:file",
+					"target": "magic/line-shadow-text/index.ts"
+				}
+			],
+			"registryDependencies": ["motion-sv"],
+			"cssVars": {
+				"theme": {
+					"animate-line-shadow": "line-shadow 15s linear infinite"
+				}
+			},
+			"css": {
+				"@keyframes line-shadow": {
+					"0%": {
+						"background-position": "0 0"
+					},
+					"100%": {
+						"background-position": "100% -100%"
+					}
+				}
+			}
+		},
+		{
+			"name": "morphing-text",
+			"type": "registry:block",
+			"title": "Morphing Text",
+			"description": "A text component that smoothly morphs between multiple text strings with a blur transition effect.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/morphing-text/morphing-text.svelte",
+					"type": "registry:component",
+					"target": "magic/morphing-text/morphing-text.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/morphing-text/index.ts",
+					"type": "registry:file",
+					"target": "magic/morphing-text/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
+			"name": "neon-gradient-card",
+			"type": "registry:block",
+			"title": "Neon Gradient Card",
+			"description": "A card component with animated neon gradient borders and customizable colors, border size, and radius.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/neon-gradient-card/neon-gradient-card.svelte",
+					"type": "registry:component",
+					"target": "magic/neon-gradient-card/neon-gradient-card.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/neon-gradient-card/index.ts",
+					"type": "registry:file",
+					"target": "magic/neon-gradient-card/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
+			"name": "number-ticker",
+			"type": "registry:block",
+			"title": "Number Ticker",
+			"description": "An animated number counter component with spring physics that smoothly animates from a start value to an end value.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/number-ticker/number-ticker.svelte",
+					"type": "registry:component",
+					"target": "magic/number-ticker/number-ticker.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/number-ticker/index.ts",
+					"type": "registry:file",
+					"target": "magic/number-ticker/index.ts"
+				}
+			],
+			"registryDependencies": ["motion-sv"]
+		},
+		{
+			"name": "pulsating-button",
+			"type": "registry:block",
+			"title": "Pulsating Button",
+			"description": "A button component with a pulsating ring effect that expands and fades around the button.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/pulsating-button/pulsating-button.svelte",
+					"type": "registry:component",
+					"target": "magic/pulsating-button/pulsating-button.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/pulsating-button/index.ts",
+					"type": "registry:file",
+					"target": "magic/pulsating-button/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"cssVars": {
+				"theme": {
+					"animate-pulse-ring": "pulse-ring var(--duration) ease-out infinite"
+				}
+			},
+			"css": {
+				"@keyframes pulse-ring": {
+					"0%": {
+						"box-shadow": "0 0 0 0 var(--pulse-color)"
+					},
+					"100%": {
+						"box-shadow": "0 0 0 8px transparent"
+					}
+				}
+			}
+		},
+		{
+			"name": "rainbow-button",
+			"type": "registry:block",
+			"title": "Rainbow Button",
+			"description": "A button component with animated rainbow gradient borders and background that cycles through multiple colors.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/rainbow-button/rainbow-button.svelte",
+					"type": "registry:component",
+					"target": "magic/rainbow-button/rainbow-button.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/rainbow-button/index.ts",
+					"type": "registry:file",
+					"target": "magic/rainbow-button/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["bits-ui", "tailwind-variants"],
+			"cssVars": {
+				"theme": {
+					"animate-rainbow": "rainbow var(--speed, 2s) infinite linear"
+				}
+			},
+			"css": {
+				"@keyframes rainbow": {
+					"0%": {
+						"background-position": "0%"
+					},
+					"100%": {
+						"background-position": "200%"
+					}
+				}
+			}
+		},
+		{
+			"name": "ripple",
+			"type": "registry:block",
+			"title": "Ripple",
+			"description": "A component that creates expanding ripple circles with customizable size, opacity, and number of circles.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/ripple/ripple.svelte",
+					"type": "registry:component",
+					"target": "magic/ripple/ripple.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/ripple/index.ts",
+					"type": "registry:file",
+					"target": "magic/ripple/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"cssVars": {
+				"theme": {
+					"animate-ripple": "ripple var(--duration, 2s) ease calc(var(--i, 0) * 0.2s) infinite"
+				}
+			},
+			"css": {
+				"@keyframes ripple": {
+					"0%, 100%": {
+						"transform": "translate(-50%, -50%) scale(1)"
+					},
+					"50%": {
+						"transform": "translate(-50%, -50%) scale(0.9)"
+					}
+				}
+			}
+		},
+		{
+			"name": "ripple-button",
+			"type": "registry:block",
+			"title": "Ripple Button",
+			"description": "A button component with a ripple effect that appears on click, expanding from the click position.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/ripple-button/ripple-button.svelte",
+					"type": "registry:component",
+					"target": "magic/ripple-button/ripple-button.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/ripple-button/index.ts",
+					"type": "registry:file",
+					"target": "magic/ripple-button/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["runed"],
+			"cssVars": {
+				"theme": {
+					"animate-rippling": "rippling var(--duration) ease-out"
+				}
+			},
+			"css": {
+				"@keyframes rippling": {
+					"0%": {
+						"opacity": "1",
+						"transform": "scale(0)"
+					},
+					"100%": {
+						"transform": "scale(2)",
+						"opacity": "0"
+					}
+				}
+			}
+		},
+		{
+			"name": "scroll-progress",
+			"type": "registry:block",
+			"title": "Scroll Progress",
+			"description": "A fixed progress bar component that indicates page scroll progress with a gradient color effect.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/scroll-progress/scroll-progress.svelte",
+					"type": "registry:component",
+					"target": "magic/scroll-progress/scroll-progress.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/scroll-progress/index.ts",
+					"type": "registry:file",
+					"target": "magic/scroll-progress/index.ts"
+				}
+			],
+			"registryDependencies": ["motion-sv"]
+		},
+		{
+			"name": "shimmer-button",
+			"type": "registry:block",
+			"title": "Shimmer Button",
+			"description": "A button component with an animated shimmer effect that slides across the button surface.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/shimmer-button/shimmer-button.svelte",
+					"type": "registry:component",
+					"target": "magic/shimmer-button/shimmer-button.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/shimmer-button/index.ts",
+					"type": "registry:file",
+					"target": "magic/shimmer-button/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"cssVars": {
+				"theme": {
+					"animate-shimmer-slide": "shimmer-slide var(--speed) ease-in-out infinite alternate",
+					"animate-spin-around": "spin-around calc(var(--speed) * 2) infinite linear"
+				}
+			},
+			"css": {
+				"@keyframes shimmer-slide": {
+					"to": {
+						"transform": "translate(calc(100cqw - 100%), 0)"
+					}
+				},
+				"@keyframes spin-around": {
+					"0%": {
+						"transform": "translateZ(0) rotate(0)"
+					},
+					"15%, 35%": {
+						"transform": "translateZ(0) rotate(90deg)"
+					},
+					"65%, 85%": {
+						"transform": "translateZ(0) rotate(270deg)"
+					},
+					"100%": {
+						"transform": "translateZ(0) rotate(360deg)"
+					}
+				}
+			}
+		},
+		{
+			"name": "shiny-button",
+			"type": "registry:block",
+			"title": "Shiny Button",
+			"description": "A button component with a shiny gradient mask effect that animates across the text on hover and press.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/shiny-button/shiny-button.svelte",
+					"type": "registry:component",
+					"target": "magic/shiny-button/shiny-button.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/shiny-button/index.ts",
+					"type": "registry:file",
+					"target": "magic/shiny-button/index.ts"
+				}
+			],
+			"registryDependencies": ["motion-sv"]
+		},
+		{
+			"name": "terminal",
+			"type": "registry:block",
+			"title": "Terminal",
+			"description": "A terminal-like UI component with typing animations, sequence control, and intersection observer support.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/terminal/terminal.svelte",
+					"type": "registry:component",
+					"target": "magic/terminal/terminal.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/terminal/animated-span.svelte",
+					"type": "registry:component",
+					"target": "magic/terminal/animated-span.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/terminal/typing-animation.svelte",
+					"type": "registry:component",
+					"target": "magic/terminal/typing-animation.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/terminal/index.ts",
+					"type": "registry:file",
+					"target": "magic/terminal/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["runed"],
+			"cssVars": {
+				"theme": {
+					"animate-blink-cursor": "blink-cursor 1.2s step-end infinite"
+				}
+			},
+			"css": {
+				"@keyframes blink-cursor": {
+					"0%, 49%": {
+						"opacity": "1"
+					},
+					"50%, 100%": {
+						"opacity": "0"
+					}
+				}
+			}
+		},
+		{
+			"name": "video-text",
+			"type": "registry:block",
+			"title": "Video Text",
+			"description": "A component that displays video content masked by text, creating a text-shaped video effect with customizable typography.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/video-text/video-text.svelte",
+					"type": "registry:component",
+					"target": "magic/video-text/video-text.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/video-text/index.ts",
+					"type": "registry:file",
+					"target": "magic/video-text/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["runed"]
+		},
+		{
+			"name": "warp-background",
+			"type": "registry:block",
+			"title": "Warp Background",
+			"description": "A 3D perspective grid background with animated light beams that create a warping effect.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/warp-background/warp-background.svelte",
+					"type": "registry:component",
+					"target": "magic/warp-background/warp-background.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/warp-background/index.ts",
+					"type": "registry:file",
+					"target": "magic/warp-background/index.ts"
+				}
+			],
+			"registryDependencies": ["motion-sv"]
+		},
+		{
+			"name": "word-rotate",
+			"type": "registry:block",
+			"title": "Word Rotate",
+			"description": "A component that cycles through an array of words with smooth fade and slide animations between transitions.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/word-rotate/word-rotate.svelte",
+					"type": "registry:component",
+					"target": "magic/word-rotate/word-rotate.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/word-rotate/index.ts",
+					"type": "registry:file",
+					"target": "magic/word-rotate/index.ts"
+				}
+			],
+			"registryDependencies": ["motion-sv"]
 		}
 	]
 }

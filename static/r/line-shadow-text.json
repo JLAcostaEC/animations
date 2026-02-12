@@ -1,0 +1,40 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "line-shadow-text",
+	"title": "Line Shadow Text",
+	"type": "registry:block",
+	"description": "A text component with an animated diagonal line shadow effect that moves across the text.",
+	"dependencies": [
+		"motion-sv@^0.1.10"
+	],
+	"registryDependencies": [
+		"motion-sv"
+	],
+	"css": {
+		"@keyframes line-shadow": {
+			"0%": {
+				"background-position": "0 0"
+			},
+			"100%": {
+				"background-position": "100% -100%"
+			}
+		}
+	},
+	"cssVars": {
+		"theme": {
+			"animate-line-shadow": "line-shadow 15s linear infinite"
+		}
+	},
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\n\timport { motion } from \"motion-sv\";\n\timport { cn } from \"$UTILS$\";\n\n\ttype ElementType = \"span\" | \"div\" | \"p\" | \"h1\" | \"h2\" | \"h3\" | \"h4\" | \"h5\" | \"h6\";\n\n\tinterface LineShadowTextProps {\n\t\tcontent: string;\n\t\tclass?: string;\n\t\tshadowColor?: string;\n\t\tas?: ElementType;\n\t}\n\n\tlet {\n\t\tcontent,\n\t\tclass: className,\n\t\tshadowColor = \"black\",\n\t\tas = \"span\",\n\t}: LineShadowTextProps = $props();\n\n\tlet MotionComponent = $derived(motion[as]);\n</script>\n\n<MotionComponent\n\tstyle={{ \"--shadow-color\": shadowColor }}\n\tclass={cn(\n\t\t\"relative z-0 inline-block whitespace-pre\",\n\t\t\"after:absolute after:top-[0.04em] after:left-[0.04em] after:content-[attr(data-text)]\",\n\t\t\"after:bg-[linear-gradient(45deg,transparent_45%,var(--shadow-color)_45%,var(--shadow-color)_55%,transparent_0)]\",\n\t\t\"after:-z-10 after:bg-size-[0.06em_0.06em] after:bg-clip-text after:text-transparent\",\n\t\t\"after:animate-line-shadow\",\n\t\tclassName\n\t)}\n\tdata-text={content}\n>\n\t{content}\n</MotionComponent>\n",
+			"type": "registry:component",
+			"target": "magic/line-shadow-text/line-shadow-text.svelte"
+		},
+		{
+			"content": "import LineShadowText from \"./line-shadow-text.svelte\";\nexport { LineShadowText };\n",
+			"type": "registry:file",
+			"target": "magic/line-shadow-text/index.ts"
+		}
+	]
+}
