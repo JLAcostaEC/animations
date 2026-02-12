@@ -2,11 +2,9 @@
 	import { ArrowRight } from "@lucide/svelte";
 	import { cn } from "$lib/utils";
 	import type { Snippet } from "svelte";
+	import type { HTMLButtonAttributes } from "svelte/elements";
 
-	interface InteractiveHoverButtonProps extends Omit<
-		svelte.JSX.HTMLAttributes<HTMLButtonElement>,
-		"children"
-	> {
+	interface InteractiveHoverButtonProps extends HTMLButtonAttributes {
 		children: Snippet;
 		class?: string;
 	}

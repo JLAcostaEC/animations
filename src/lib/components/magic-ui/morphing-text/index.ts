@@ -1,1 +1,2 @@
-export { default as MorphingText } from "./morphing-text.svelte";
+import MorphingText from "./morphing-text.svelte";
+export { MorphingText };

@@ -174,5 +174,5 @@
 		class="pointer-events-none"
 		style:width="{canvasSize.width}px"
 		style:height="{canvasSize.height}px"
-	/>
+	></canvas>
 </div>

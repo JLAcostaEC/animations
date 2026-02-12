@@ -11,12 +11,10 @@ import PreviewCode from "./examples/preview.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "light-rays",
 	title: "Light Rays",
-	description: "A description for Light Rays component.",
+	description: "A component with animated light rays which shine down from above.",
 	category: "animation",
 	badge: "new",
 };
-
-const examples: Example[] = [];
 
 const seo: SEO = {
 	title: "Light Rays - Svelte 5 Animations",
@@ -40,12 +38,12 @@ let installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-â””â”€â”€ lib/
-    â””â”€â”€ components/
-        â””â”€â”€ magic-ui/
-            â””â”€â”€ light-rays/
-                â”œâ”€â”€ light-rays.svelte
-                â””â”€â”€ index.ts`,
+└── lib/
+    └── components/
+        └── magic-ui/
+            └── light-rays/
+                ├── light-rays.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -58,7 +56,6 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
-	examples,
 	seo,
 	props: [
 		{
@@ -70,6 +67,42 @@ export const data: ComponentDoc = {
 					type: "string",
 					default: '""',
 					description: "Additional CSS classes to apply",
+				},
+				{
+					name: "count",
+					type: "number",
+					default: "7",
+					description: "Number of light rays to render",
+				},
+				{
+					name: "color",
+					type: "string",
+					default: '"rgba(160, 210, 255, 0.2)"',
+					description: "Color of the light rays",
+				},
+				{
+					name: "blur",
+					type: "number",
+					default: "36",
+					description: "Blur of the light rays",
+				},
+				{
+					name: "speed",
+					type: "number",
+					default: "14",
+					description: "Speed of the light rays",
+				},
+				{
+					name: "length",
+					type: "string",
+					default: '"70vh"',
+					description: "Length of the light rays",
+				},
+				{
+					name: "style",
+					type: "string",
+					default: '""',
+					description: "Additional CSS styles to apply",
 				},
 			],
 		},

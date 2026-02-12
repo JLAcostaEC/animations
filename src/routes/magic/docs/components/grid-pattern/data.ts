@@ -10,8 +10,8 @@ import PreviewCode from "./examples/preview.svelte?raw";
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
 	id: "grid-pattern",
-	title: "",
-	description: "A description for  component.",
+	title: "Grid Pattern",
+	description: "A background grid pattern made with SVGs, fully customizable using Tailwind CSS.",
 	category: "animation",
 	badge: "new",
 };
@@ -19,9 +19,10 @@ export const meta: ComponentMeta = {
 const examples: Example[] = [];
 
 const seo: SEO = {
-	title: " - Svelte 5 Animations",
-	description: "Learn how to create  effects in Svelte using the Svelte 5 Animations library.",
-	keywords: ["Svelte", "", "Svelte 5 Animations", "Animation", "Web Design"],
+	title: "Grid Pattern - Svelte 5 Animations",
+	description:
+		"Learn how to create grid pattern effects in Svelte using the Svelte 5 Animations library.",
+	keywords: ["Svelte", "Grid Pattern", "Svelte 5 Animations", "Animation", "Web Design"],
 };
 
 let installBlock: InstallComponentDocs = {
@@ -39,12 +40,12 @@ let installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-â””â”€â”€ lib/
-    â””â”€â”€ components/
-        â””â”€â”€ magic-ui/
-            â””â”€â”€ grid-pattern/
-                â”œâ”€â”€ grid-pattern.svelte
-                â””â”€â”€ index.ts`,
+└── lib/
+	└── components/
+		└── magic-ui/
+			└── grid-pattern/
+				├── grid-pattern.svelte
+				└── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -61,14 +62,50 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "",
-			desc: "A component for .",
+			name: "GridPatternProps",
+			desc: "Props for the GridPattern component",
 			props: [
+				{
+					name: "width",
+					type: "number",
+					default: "40",
+					description: "The width of each grid cell",
+				},
+				{
+					name: "height",
+					type: "number",
+					default: "40",
+					description: "The height of each grid cell",
+				},
+				{
+					name: "x",
+					type: "number",
+					default: "-1",
+					description: "The x-offset of the pattern",
+				},
+				{
+					name: "y",
+					type: "number",
+					default: "-1",
+					description: "The y-offset of the pattern",
+				},
+				{
+					name: "squares",
+					type: "Array<[x: number, y: number]>",
+					default: "undefined",
+					description: "Array of [x, y] coordinates for highlighted squares",
+				},
+				{
+					name: "strokeDasharray",
+					type: "string",
+					default: '"0"',
+					description: "Stroke dash array for dashed lines",
+				},
 				{
 					name: "class",
 					type: "string",
-					default: '""',
-					description: "Additional CSS classes to apply",
+					default: "undefined",
+					description: "Additional CSS classes",
 				},
 			],
 		},

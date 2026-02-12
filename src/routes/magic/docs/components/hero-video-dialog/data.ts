@@ -6,17 +6,32 @@ import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
+import TopInBottomOut from "./examples/hero-video-top-in-bottom-out.svelte";
+import TopInBottomOutCode from "./examples/hero-video-top-in-bottom-out.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
 	id: "hero-video-dialog",
 	title: "Hero Video Dialog",
-	description: "A description for Hero Video Dialog component.",
+	description: "A hero video dialog component.",
 	category: "animation",
 	badge: "new",
 };
 
-const examples: Example[] = [];
+const examples: Example[] = [
+	{
+		name: "Top In Bottom Out",
+		description: "Hero video dialog with top-in-bottom-out animation",
+		preview: TopInBottomOut,
+		code: {
+			filename: "hero-video-top-in-bottom-out.svelte",
+			filecode: TopInBottomOutCode,
+			lang: "svelte",
+			hideLines: true,
+			highlight: [2],
+		},
+	},
+];
 
 const seo: SEO = {
 	title: "Hero Video Dialog - Svelte 5 Animations",
@@ -40,12 +55,12 @@ let installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-â””â”€â”€ lib/
-    â””â”€â”€ components/
-        â””â”€â”€ magic-ui/
-            â””â”€â”€ hero-video-dialog/
-                â”œâ”€â”€ hero-video-dialog.svelte
-                â””â”€â”€ index.ts`,
+└── lib/
+    └── components/
+        └── magic-ui/
+            └── hero-video-dialog/
+                ├── hero-video-dialog.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -62,14 +77,38 @@ export const data: ComponentDoc = {
 	seo,
 	props: [
 		{
-			name: "HeroVideoDialog",
-			desc: "A component for Hero Video Dialog.",
+			name: "HeroVideoDialogProps",
+			desc: "Props for the HeroVideoDialog component",
 			props: [
+				{
+					name: "animationStyle",
+					type: '"from-bottom" | "from-center" | "from-top" | "from-left" | "from-right" | "fade" | "top-in-bottom-out" | "left-in-right-out"',
+					default: '"from-center"',
+					description: "The animation style for the dialog",
+				},
+				{
+					name: "videoSrc",
+					type: "string",
+					default: "undefined",
+					description: "The source URL of the video to play",
+				},
+				{
+					name: "thumbnailSrc",
+					type: "string",
+					default: "undefined",
+					description: "The source URL of the thumbnail image",
+				},
+				{
+					name: "thumbnailAlt",
+					type: "string",
+					default: '"Video thumbnail"',
+					description: "Alt text for the thumbnail image",
+				},
 				{
 					name: "class",
 					type: "string",
-					default: '""',
-					description: "Additional CSS classes to apply",
+					default: "undefined",
+					description: "Additional CSS classes",
 				},
 			],
 		},

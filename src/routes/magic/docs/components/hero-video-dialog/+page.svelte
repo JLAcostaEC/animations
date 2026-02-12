@@ -61,4 +61,31 @@
 			<APITable data={prop} />
 		{/each}
 	{/if}
+
+	<H2 id="animation-styles">Animation Styles</H2>
+	<Paragraph>The animationStyle prop accepts the following values:</Paragraph>
+	<ul class="list-disc space-y-2 pl-6">
+		<li>
+			<strong>"from-bottom"</strong>: Dialog enters from the bottom and exits to the bottom
+		</li>
+		<li>
+			<strong>"from-center"</strong>: Dialog scales up from the center and scales down to the
+			center
+		</li>
+		<li><strong>"from-top"</strong>: Dialog enters from the top and exits to the top</li>
+		<li><strong>"from-left"</strong>: Dialog enters from the left and exits to the left</li>
+		<li><strong>"from-right"</strong>: Dialog enters from the right and exits to the right</li>
+		<li><strong>"fade"</strong>: Dialog fades in and out</li>
+		<li>
+			<strong>"top-in-bottom-out"</strong>: Dialog enters from the top and exits to the bottom
+		</li>
+		<li>
+			<strong>"left-in-right-out"</strong>: Dialog enters from the left and exits to the right
+		</li>
+	</ul>
+
+	<H2>Note</H2>
+	<Paragraph
+		>If using a YouTube video, make sure to use the embed version of the video URL.</Paragraph
+	>
 </div>

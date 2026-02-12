@@ -6,17 +6,40 @@ import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
+import NumberPickerStartValue from "./examples/number-picker-start-value.svelte";
+import NumberPickerStartValueCode from "./examples/number-picker-start-value.svelte?raw";
+import NumberTickerDecimal from "./examples/number-ticker-decimal.svelte";
+import NumberTickerDecimalCode from "./examples/number-ticker-decimal.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
 	id: "number-ticker",
 	title: "Number Ticker",
-	description: "A description for Number Ticker component.",
+	description: "Animate numbers to count up or down to a target number",
 	category: "animation",
 	badge: "new",
 };
 
-const examples: Example[] = [];
+const examples: Example[] = [
+	{
+		name: "With Decimal Places",
+		preview: NumberTickerDecimal,
+		code: {
+			filename: "number-ticker.svelte",
+			filecode: NumberTickerDecimalCode,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "With Start Value",
+		preview: NumberPickerStartValue,
+		code: {
+			filename: "number-ticker.svelte",
+			filecode: NumberPickerStartValueCode,
+			lang: "svelte",
+		},
+	},
+];
 
 const seo: SEO = {
 	title: "Number Ticker - Svelte 5 Animations",
@@ -40,12 +63,12 @@ let installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-â””â”€â”€ lib/
-    â””â”€â”€ components/
-        â””â”€â”€ magic-ui/
-            â””â”€â”€ number-ticker/
-                â”œâ”€â”€ number-ticker.svelte
-                â””â”€â”€ index.ts`,
+	├── lib/
+	│   └── components/
+	│       └── magic-ui/
+	│           └── number-ticker/
+	│               ├── number-ticker.svelte
+	│               └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -63,13 +86,43 @@ export const data: ComponentDoc = {
 	props: [
 		{
 			name: "NumberTicker",
-			desc: "A component for Number Ticker.",
+			desc: "A component for animating numbers to count up or down to a target value.",
 			props: [
+				{
+					name: "value",
+					type: "number",
+					default: "undefined",
+					description: "The target number to animate to.",
+				},
+				{
+					name: "startValue",
+					type: "number",
+					default: "0",
+					description: "The starting number for the animation.",
+				},
+				{
+					name: "direction",
+					type: '"up" | "down"',
+					default: '"up"',
+					description: "The direction of the animation.",
+				},
+				{
+					name: "delay",
+					type: "number",
+					default: "0",
+					description: "Delay before starting the animation in seconds.",
+				},
+				{
+					name: "decimalPlaces",
+					type: "number",
+					default: "0",
+					description: "Number of decimal places to display.",
+				},
 				{
 					name: "class",
 					type: "string",
 					default: '""',
-					description: "Additional CSS classes to apply",
+					description: "Additional CSS classes to apply.",
 				},
 			],
 		},

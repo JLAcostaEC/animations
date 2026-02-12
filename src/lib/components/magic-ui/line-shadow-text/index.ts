@@ -1,1 +1,2 @@
-export { default as LineShadowText } from "./line-shadow-text.svelte";
+import LineShadowText from "./line-shadow-text.svelte";
+export { LineShadowText };

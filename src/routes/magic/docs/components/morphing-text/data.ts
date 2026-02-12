@@ -11,12 +11,10 @@ import PreviewCode from "./examples/preview.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "morphing-text",
 	title: "Morphing Text",
-	description: "A description for Morphing Text component.",
+	description: "A dynamic text morphing component for Magic UI.",
 	category: "animation",
 	badge: "new",
 };
-
-const examples: Example[] = [];
 
 const seo: SEO = {
 	title: "Morphing Text - Svelte 5 Animations",
@@ -40,12 +38,12 @@ let installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-â””â”€â”€ lib/
-    â””â”€â”€ components/
-        â””â”€â”€ magic-ui/
-            â””â”€â”€ morphing-text/
-                â”œâ”€â”€ morphing-text.svelte
-                â””â”€â”€ index.ts`,
+└── lib/
+    └── components/
+        └── magic-ui/
+            └── morphing-text/
+                ├── morphing-text.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -58,7 +56,6 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
-	examples,
 	seo,
 	props: [
 		{
@@ -70,6 +67,12 @@ export const data: ComponentDoc = {
 					type: "string",
 					default: '""',
 					description: "Additional CSS classes to apply",
+				},
+				{
+					name: "texts",
+					type: "string[]",
+					default: "[]",
+					description: "Array of texts to morph through",
 				},
 			],
 		},

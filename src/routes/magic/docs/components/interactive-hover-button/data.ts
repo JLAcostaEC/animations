@@ -1,7 +1,6 @@
 ﻿import InteractiveHoverButtonRaw from "$lib/components/magic-ui/interactive-hover-button/interactive-hover-button.svelte?raw";
 import IndexTs from "$lib/components/magic-ui/interactive-hover-button/index.ts?raw";
 
-import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import Preview from "./examples/preview.svelte";
@@ -11,12 +10,11 @@ import PreviewCode from "./examples/preview.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "interactive-hover-button",
 	title: "Interactive Hover Button",
-	description: "A description for Interactive Hover Button component.",
+	description:
+		"A visually engaging button component that responds to hover with dynamic transitions, adapting smoothly between light and dark modes for enhanced user interactivity.",
 	category: "animation",
 	badge: "new",
 };
-
-const examples: Example[] = [];
 
 const seo: SEO = {
 	title: "Interactive Hover Button - Svelte 5 Animations",
@@ -46,13 +44,20 @@ let installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-â””â”€â”€ lib/
-    â””â”€â”€ components/
-        â””â”€â”€ magic-ui/
-            â””â”€â”€ interactive-hover-button/
-                â”œâ”€â”€ interactive-hover-button.svelte
-                â””â”€â”€ index.ts`,
+└── lib/
+    └── components/
+        └── magic-ui/
+            └── interactive-hover-button/
+                ├── interactive-hover-button.svelte
+                └── index.ts`,
 };
+
+/*
+	interface InteractiveHoverButtonProps extends HTMLButtonAttributes {
+		children: Snippet;
+		class?: string;
+	}
+ */
 
 export const data: ComponentDoc = {
 	...meta,
@@ -64,7 +69,6 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
-	examples,
 	seo,
 	props: [
 		{
@@ -76,6 +80,12 @@ export const data: ComponentDoc = {
 					type: "string",
 					default: '""',
 					description: "Additional CSS classes to apply",
+				},
+				{
+					name: "children",
+					type: "Snippet",
+					default: "required",
+					description: "The content to display inside the button",
 				},
 			],
 		},

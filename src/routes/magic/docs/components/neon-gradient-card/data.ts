@@ -11,12 +11,10 @@ import PreviewCode from "./examples/preview.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "neon-gradient-card",
 	title: "Neon Gradient Card",
-	description: "A description for Neon Gradient Card component.",
+	description: "A beautiful neon card effect",
 	category: "animation",
 	badge: "new",
 };
-
-const examples: Example[] = [];
 
 const seo: SEO = {
 	title: "Neon Gradient Card - Svelte 5 Animations",
@@ -39,13 +37,31 @@ let installBlock: InstallComponentDocs = {
 			lang: "typescript",
 		},
 	],
+	tailwind: {
+		filename: "/src/routes/layout.css",
+		filecode: `@theme inline {
+  --animate-background-position-spin: background-position-spin 3000ms infinite
+    alternate;
+
+  @keyframes background-position-spin {
+    0% {
+      background-position: top center;
+    }
+    100% {
+      background-position: bottom center;
+    }
+  }
+}`,
+		lang: "css",
+		highlight: [2, [4, 14]],
+	},
 	folderStructure: `src/
-â””â”€â”€ lib/
-    â””â”€â”€ components/
-        â””â”€â”€ magic-ui/
-            â””â”€â”€ neon-gradient-card/
-                â”œâ”€â”€ neon-gradient-card.svelte
-                â””â”€â”€ index.ts`,
+└── lib/
+    └── components/
+        └── magic-ui/
+            └── neon-gradient-card/
+                ├── neon-gradient-card.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -58,7 +74,6 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
-	examples,
 	seo,
 	props: [
 		{
@@ -70,6 +85,30 @@ export const data: ComponentDoc = {
 					type: "string",
 					default: '""',
 					description: "Additional CSS classes to apply",
+				},
+				{
+					name: "borderSize",
+					type: "number",
+					default: "2",
+					description: "Size of the border",
+				},
+				{
+					name: "borderRadius",
+					type: "number",
+					default: "20",
+					description: "Radius of the border",
+				},
+				{
+					name: "neonColors",
+					type: "NeonColorsProps",
+					default: '{ firstColor: "#ff00aa", secondColor: "#00FFF1" }',
+					description: "Colors of the neon effect",
+				},
+				{
+					name: "children",
+					type: "Snippet",
+					default: "required",
+					description: "The content to display inside the card",
 				},
 			],
 		},

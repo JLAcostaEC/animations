@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from "svelte";
 	import { motion } from "motion-sv";
 	import { cn } from "$lib/utils";
 
@@ -15,19 +14,12 @@
 	}
 
 	interface LightRaysProps {
-		/** Optional className for styling */
 		class?: string;
-		/** Number of light rays to render */
 		count?: number;
-		/** Color of the light rays */
 		color?: string;
-		/** Blur amount in pixels */
 		blur?: number;
-		/** Animation cycle speed in seconds */
 		speed?: number;
-		/** Length of the light rays */
 		length?: string;
-		/** Additional inline styles */
 		style?: string;
 	}
 
@@ -43,9 +35,9 @@
 	}: LightRaysProps = $props();
 
 	let rays = $state<LightRay[]>([]);
-	const cycleDuration = Math.max(speed, 0.1);
+	let cycleDuration = $derived(Math.max(speed, 0.1));
 
-	const createRays = (count: number, cycle: number): LightRay[] => {
+	let createRays = (count: number, cycle: number): LightRay[] => {
 		if (count <= 0) return [];
 
 		return Array.from({ length: count }, (_, index) => {
@@ -70,9 +62,9 @@
 		});
 	};
 
-	onMount(() => {
-		rays = createRays(count, cycleDuration);
-	});
+	// onMount(() => {
+	// 	rays = createRays(count, cycleDuration);
+	// });
 
 	$effect(() => {
 		rays = createRays(count, cycleDuration);
@@ -93,15 +85,15 @@
 			aria-hidden="true"
 			class="absolute inset-0 opacity-60"
 			style="background: radial-gradient(circle at 20% 15%, color-mix(in srgb, var(--light-rays-color) 45%, transparent), transparent 70%)"
-		/>
+		></div>
 		<div
 			aria-hidden="true"
 			class="absolute inset-0 opacity-60"
 			style="background: radial-gradient(circle at 80% 10%, color-mix(in srgb, var(--light-rays-color) 35%, transparent), transparent 75%)"
-		/>
+		></div>
 		{#each rays as ray (ray.id)}
 			<motion.div
-				class="pointer-events-none absolute -top-[12%] h-[var(--light-rays-length)] origin-top -translate-x-1/2 rounded-full bg-gradient-to-b from-[color-mix(in_srgb,var(--light-rays-color)_70%,transparent)] to-transparent opacity-0 mix-blend-screen blur-[var(--light-rays-blur)]"
+				class="pointer-events-none absolute -top-[12%] h-(--light-rays-length) origin-top -translate-x-1/2 rounded-full bg-linear-to-b from-[color-mix(in_srgb,var(--light-rays-color)_70%,transparent)] to-transparent opacity-0 mix-blend-screen blur-(--light-rays-blur)"
 				style={{ left: `${ray.left}%`, width: `${ray.width}px` }}
 				initial={{ rotate: ray.rotate }}
 				animate={{

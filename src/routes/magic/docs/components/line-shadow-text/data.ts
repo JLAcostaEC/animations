@@ -11,12 +11,10 @@ import PreviewCode from "./examples/preview.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "line-shadow-text",
 	title: "Line Shadow Text",
-	description: "A description for Line Shadow Text component.",
+	description: "A text component with a moving line shadow.",
 	category: "animation",
 	badge: "new",
 };
-
-const examples: Example[] = [];
 
 const seo: SEO = {
 	title: "Line Shadow Text - Svelte 5 Animations",
@@ -40,12 +38,29 @@ let installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-â””â”€â”€ lib/
-    â””â”€â”€ components/
-        â””â”€â”€ magic-ui/
-            â””â”€â”€ line-shadow-text/
-                â”œâ”€â”€ line-shadow-text.svelte
-                â””â”€â”€ index.ts`,
+└── lib/
+    └── components/
+        └── magic-ui/
+            └── line-shadow-text/
+                ├── line-shadow-text.svelte
+                └── index.ts`,
+	tailwind: {
+		filename: "src/routes/layout.css",
+		filecode: `@theme inline {
+  --animate-line-shadow: line-shadow 15s linear infinite;
+
+  @keyframes line-shadow {
+    0% {
+      background-position: 0 0;
+    }
+    100% {
+      background-position: 100% -100%;
+    }
+  }
+}`,
+		lang: "css",
+		highlight: [2, [4, 14]],
+	},
 };
 
 export const data: ComponentDoc = {
@@ -58,7 +73,6 @@ export const data: ComponentDoc = {
 		hideLines: true,
 		highlight: [2],
 	},
-	examples,
 	seo,
 	props: [
 		{
@@ -70,6 +84,24 @@ export const data: ComponentDoc = {
 					type: "string",
 					default: '""',
 					description: "Additional CSS classes to apply",
+				},
+				{
+					name: "shadowColor",
+					type: "string",
+					default: '"black"',
+					description: "Color of the shadow",
+				},
+				{
+					name: "as",
+					type: "ElementType",
+					default: '"span"',
+					description: "HTML element to render as",
+				},
+				{
+					name: "content",
+					type: "string",
+					default: '""',
+					description: "Content of the text",
 				},
 			],
 		},

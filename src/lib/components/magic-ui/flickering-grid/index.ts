@@ -1,1 +1,2 @@
-export { default as FlickeringGrid } from "./flickering-grid.svelte";
+import FlickeringGrid from "./flickering-grid.svelte";
+export { FlickeringGrid };

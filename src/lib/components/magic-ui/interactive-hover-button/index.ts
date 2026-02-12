@@ -1,1 +1,2 @@
-export { default as InteractiveHoverButton } from "./interactive-hover-button.svelte";
+import InteractiveHoverButton from "./interactive-hover-button.svelte";
+export { InteractiveHoverButton };

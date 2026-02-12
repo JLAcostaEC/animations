@@ -61,4 +61,9 @@
 			<APITable data={prop} />
 		{/each}
 	{/if}
+
+	<Paragraph>
+		This <span>MorphingText</span> component dynamically transitions between an array of text strings,
+		creating a smooth, engaging visual effect.
+	</Paragraph>
 </div>

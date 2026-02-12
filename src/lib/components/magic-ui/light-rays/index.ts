@@ -1,1 +1,2 @@
-export { default as LightRays } from "./light-rays.svelte";
+import LightRays from "./light-rays.svelte";
+export { LightRays };

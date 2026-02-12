@@ -8,21 +8,13 @@
 	type ElementType = "div" | "span" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
 	interface HyperTextProps {
-		/** The text content to be animated */
 		text: string;
-		/** Optional className for styling */
 		class?: string;
-		/** Duration of the animation in milliseconds */
 		duration?: number;
-		/** Delay before animation starts in milliseconds */
 		delay?: number;
-		/** Component to render as - defaults to div */
 		as?: ElementType;
-		/** Whether to start animation when element comes into view */
 		startOnView?: boolean;
-		/** Whether to trigger animation on hover */
 		animateOnHover?: boolean;
-		/** Custom character set for scramble effect. Defaults to uppercase alphabet */
 		characterSet?: CharacterSet;
 	}
 
