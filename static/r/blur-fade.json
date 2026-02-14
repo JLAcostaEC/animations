@@ -5,9 +5,7 @@
 	"type": "registry:block",
 	"description": "A component that animates content with blur and fade effects, supporting directional movement and intersection observer triggering.",
 	"dependencies": [
-		"motion-sv@^0.1.10"
-	],
-	"registryDependencies": [
+		"runed",
 		"motion-sv"
 	],
 	"files": [

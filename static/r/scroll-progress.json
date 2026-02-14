@@ -5,9 +5,6 @@
 	"type": "registry:block",
 	"description": "A fixed progress bar component that indicates page scroll progress with a gradient color effect.",
 	"dependencies": [
-		"motion-sv@^0.1.10"
-	],
-	"registryDependencies": [
 		"motion-sv"
 	],
 	"files": [

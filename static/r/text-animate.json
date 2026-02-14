@@ -5,9 +5,7 @@
 	"type": "registry:block",
 	"description": "Animate text with various effects like blur, slide, scale, and fade with granular control over words, characters, or lines.",
 	"dependencies": [
-		"motion-sv@^0.1.10"
-	],
-	"registryDependencies": [
+		"runed",
 		"motion-sv"
 	],
 	"files": [

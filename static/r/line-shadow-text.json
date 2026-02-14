@@ -5,9 +5,6 @@
 	"type": "registry:block",
 	"description": "A text component with an animated diagonal line shadow effect that moves across the text.",
 	"dependencies": [
-		"motion-sv@^0.1.10"
-	],
-	"registryDependencies": [
 		"motion-sv"
 	],
 	"css": {

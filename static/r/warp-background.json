@@ -5,9 +5,6 @@
 	"type": "registry:block",
 	"description": "A 3D perspective grid background with animated light beams that create a warping effect.",
 	"dependencies": [
-		"motion-sv@^0.1.10"
-	],
-	"registryDependencies": [
 		"motion-sv"
 	],
 	"files": [

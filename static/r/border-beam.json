@@ -5,9 +5,6 @@
 	"type": "registry:block",
 	"description": "A component for creating animated border beam effects around elements with customizable gradients, duration, and direction.",
 	"dependencies": [
-		"motion-sv@^0.1.10"
-	],
-	"registryDependencies": [
 		"motion-sv"
 	],
 	"files": [

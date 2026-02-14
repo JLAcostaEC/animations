@@ -1,35 +1,77 @@
-﻿import type { CodeBlock } from "$lib/components/ui/code";
-import type { Example } from "$lib/types/examples";
+﻿import Raw from "$lib/components/magic-ui/animated-list/animated-list.svelte?raw";
+import IndexTs from "$lib/components/magic-ui/animated-list/index.ts?raw";
 import type { SEO } from "$lib/types/seo";
-import type { ComponentDoc, ComponentMeta } from "$lib/types/structure";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
+import NotificationCode from "./examples/notification.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
 	id: "animated-list",
-	title: "",
-	description: "A description for  component.",
+	title: "Animated List",
+	description: "A component for creating animated lists with smooth transitions between items.",
 	category: "animation",
 	badge: "new",
 };
 
 const seo: SEO = {
-	title: "",
-	description: "Learn how to create  effects in Svelte using the Svelte 5 Animations library.",
-	keywords: ["Svelte", "", "Svelte 5 Animations", "Animation", "Web Design"],
+	title: "Animated List",
+	description:
+		"Learn how to create animated list effects in Svelte using the Svelte 5 Animations library.",
+	keywords: ["Svelte", "Animated List", "Svelte 5 Animations", "Animation", "Web Design"],
 };
 
+let installBlock: InstallComponentDocs = {
+	packages: ["motion-sv"],
+	installCode: [
+		{
+			filename: "animated-list.svelte",
+			filecode: Raw,
+			lang: "svelte",
+			isExpand: true,
+		},
+		{
+			filename: "index.ts",
+			filecode: IndexTs,
+			lang: "typescript",
+		},
+	],
+	folderStructure: `src/
+	└── lib/
+		└── components/
+			└── magic-ui/
+				└── animated-list/
+					├── animated-list.svelte
+					└── index.ts`,
+};
+
+/*
+interface AnimatedListProps<T> {
+		items: T[];
+		class?: string;
+		delay?: number;
+		children: Snippet<[T, number]>;
+	}
+ */
 export const data: ComponentDoc = {
 	...meta,
 	preview: Preview,
-	previewCode: {
-		filename: "animated-list.svelte",
-		filecode: PreviewCode,
-		lang: "svelte",
-		hideLines: true,
-		highlight: [2],
-	},
+	previewCode: [
+		{
+			filename: "animated-list-preview.svelte",
+			filecode: PreviewCode,
+			lang: "svelte",
+			hideLines: true,
+			highlight: [2],
+		},
+		{
+			filename: "notification.svelte",
+			filecode: NotificationCode,
+			lang: "svelte",
+			hideLines: true,
+		},
+	],
 	seo,
 	props: [
 		{
@@ -42,13 +84,27 @@ export const data: ComponentDoc = {
 					default: '""',
 					description: "Additional CSS classes to apply",
 				},
+				{
+					name: "delay",
+					type: "number",
+					default: "0",
+					description: "Delay in milliseconds before the animation starts",
+				},
+				{
+					name: "items",
+					type: "T[]",
+					default: "[]",
+					description: "An array of items to be rendered in the animated list",
+				},
+				{
+					name: "children",
+					type: "Snippet<[T, number]>",
+					default: "",
+					description:
+						"A render prop function that receives each item and its index, returning a Svelte component or HTML to be rendered for that item.",
+				},
 			],
 		},
 	],
-	folderStructure: `src/
-â””â”€â”€ lib/
-    â””â”€â”€ components/
-        â””â”€â”€ magic-ui/
-            â””â”€â”€ animated-list/
-                â””â”€â”€ animated-list.svelte`,
+	installBlock,
 };

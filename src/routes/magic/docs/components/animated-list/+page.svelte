@@ -10,6 +10,7 @@
 	import SingleCodeFilename from "$lib/components/ui/code/single-code-filename.svelte";
 	import { data } from "./data";
 	import SEO from "$lib/seo/SEO.svelte";
+	import { page } from "$app/state";
 
 	const code: CodeBlock = {
 		filename: ".svelte",
@@ -18,9 +19,9 @@
 		isExpand: true,
 	};
 
-	const PreviewComp = $derived(data.preview);
-	const installUrl = $derived(`/r/${data.id}.json`);
-	const llmsTxtUrl = $derived(`/llms.txt`);
+	let PreviewComp = $derived(data.preview);
+	let installUrl = $derived(`${page.url.origin}/r/${data.id}.json`);
+	let llmsTxtUrl = $derived(`${page.url}/llms.txt`);
 </script>
 
 <SEO title={data.seo.title} description={data.seo.description} keywords={data.seo.keywords} />
@@ -45,9 +46,10 @@
 	<H2 id="installation">Installation</H2>
 	<InstallComponent
 		{installUrl}
-		tailwindConfig={data.tailwind ? { code: data.tailwind } : undefined}
-		codeBlocks={[code]}
-		folderStructure={data.folderStructure}
+		codeBlocks={data.installBlock?.installCode}
+		packages={data.installBlock?.packages}
+		folderStructure={data.installBlock?.folderStructure}
+		tailwindConfig={{ code: data.installBlock?.tailwind }}
 		class="my-4"
 	/>
 

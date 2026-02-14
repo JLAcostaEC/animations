@@ -7,24 +7,35 @@
 	"css": {
 		"@keyframes aurora": {
 			"0%": {
-				"background-position": "0% 50%"
+				"background-position": "0% 50%",
+				"transform": "rotate(-5deg) scale(0.9)"
+			},
+			"25%": {
+				"background-position": "50% 100%",
+				"transform": "rotate(5deg) scale(1.1)"
 			},
 			"50%": {
-				"background-position": "100% 50%"
+				"background-position": "100% 50%",
+				"transform": "rotate(-3deg) scale(0.95)"
+			},
+			"75%": {
+				"background-position": "50% 0%",
+				"transform": "rotate(3deg) scale(1.05)"
 			},
 			"100%": {
-				"background-position": "0% 50%"
+				"background-position": "0% 50%",
+				"transform": "rotate(-5deg) scale(0.9)"
 			}
 		}
 	},
 	"cssVars": {
 		"theme": {
-			"animate-aurora": "aurora 10s linear infinite"
+			"animate-aurora": "aurora 8s ease-in-out infinite alternate"
 		}
 	},
 	"files": [
 		{
-			"content": "<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\timport type { Snippet } from \"svelte\";\n\n\ttype AuroraTextProps = {\n\t\tchildren: Snippet;\n\t\tclass?: string;\n\t\tcolors?: string[];\n\t\tspeed?: number;\n\t};\n\n\tlet {\n\t\tchildren,\n\t\tclass: className = \"\",\n\t\tcolors = [\"#FF0080\", \"#7928CA\", \"#0070F3\", \"#38bdf8\"],\n\t\tspeed = 1,\n\t}: AuroraTextProps = $props();\n</script>\n\n<span class={cn(\"relative inline-block\", className)}>\n\t<span class=\"sr-only\">{@render children()}</span>\n\t<span\n\t\tclass=\"animate-aurora relative bg-size-[200%_auto] bg-clip-text text-transparent\"\n\t\taria-hidden=\"true\"\n\t\tstyle=\"\n    background-image: linear-gradient(135deg, ${colors.join(', ')}, ${colors[0]});\n    webkit-background-clip: text;\n    webkit-text-fill-color: transparent;\n    animation-duration: ${10 / speed}s;\"\n\t>\n\t</span>\n</span>\n",
+			"content": "<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\timport type { Snippet } from \"svelte\";\n\n\ttype AuroraTextProps = {\n\t\tchildren: Snippet;\n\t\tclass?: string;\n\t\tcolors?: string[];\n\t\tspeed?: number;\n\t};\n\n\tlet {\n\t\tchildren,\n\t\tclass: className = \"\",\n\t\tcolors = [\"#FF0080\", \"#7928CA\", \"#0070F3\", \"#38bdf8\"],\n\t\tspeed = 1,\n\t}: AuroraTextProps = $props();\n</script>\n\n<span class={cn(\"relative inline-block\", className)}>\n\t<span class=\"sr-only\">{@render children()}</span>\n\t<span\n\t\tclass=\"animate-aurora relative bg-size-[200%_auto] bg-clip-text text-transparent\"\n\t\taria-hidden=\"true\"\n\t\tstyle=\"\n    background-image: linear-gradient(135deg, {colors.join(', ')}, {colors[0]});\n    webkit-background-clip: text;\n    webkit-text-fill-color: transparent;\n    animation-duration: {10 / speed}s;\"\n\t>\n\t\t{@render children()}\n\t</span>\n</span>\n",
 			"type": "registry:component",
 			"target": "magic/aurora-text/aurora-text.svelte"
 		},

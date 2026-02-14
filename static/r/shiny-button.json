@@ -5,9 +5,6 @@
 	"type": "registry:block",
 	"description": "A button component with a shiny gradient mask effect that animates across the text on hover and press.",
 	"dependencies": [
-		"motion-sv@^0.1.10"
-	],
-	"registryDependencies": [
 		"motion-sv"
 	],
 	"files": [

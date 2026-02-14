@@ -51,7 +51,8 @@
 					"target": "magic/text-animate/index.ts"
 				}
 			],
-			"registryDependencies": ["motion-sv"]
+			"registryDependencies": [],
+			"dependencies": ["runed", "motion-sv"]
 		},
 		{
 			"name": "animated-beam",
@@ -90,7 +91,8 @@
 					"target": "magic/animated-beam/use-resize-observer.svelte.ts"
 				}
 			],
-			"registryDependencies": ["motion-sv"]
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "animated-theme-toggler",
@@ -109,7 +111,14 @@
 					"target": "magic/animated-theme-toggler/index.ts"
 				}
 			],
-			"registryDependencies": []
+			"registryDependencies": [],
+			"cssVars": {},
+			"css": {
+				"::view-transition-old(root), ::view-transition-new(root)": {
+					"animation": "none",
+					"mix-blend-mode": "normal"
+				}
+			}
 		},
 		{
 			"name": "animated-circular-progress-bar",
@@ -147,7 +156,8 @@
 					"target": "magic/animated-grid-pattern/index.ts"
 				}
 			],
-			"registryDependencies": ["motion-sv"]
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "blur-fade",
@@ -166,7 +176,8 @@
 					"target": "magic/blur-fade/index.ts"
 				}
 			],
-			"registryDependencies": ["motion-sv"]
+			"registryDependencies": [],
+			"dependencies": ["runed", "motion-sv"]
 		},
 		{
 			"name": "border-beam",
@@ -185,7 +196,8 @@
 					"target": "magic/border-beam/index.ts"
 				}
 			],
-			"registryDependencies": ["motion-sv"]
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "file-tree",
@@ -219,7 +231,8 @@
 					"target": "magic/file-tree/index.ts"
 				}
 			],
-			"registryDependencies": ["motion-sv"]
+			"registryDependencies": [],
+			"dependencies": ["lucide-svelte", "motion-sv"]
 		},
 		{
 			"name": "dot-pattern",
@@ -238,7 +251,8 @@
 					"target": "magic/dot-pattern/index.ts"
 				}
 			],
-			"registryDependencies": ["motion-sv"]
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "cool-mode",
@@ -313,7 +327,8 @@
 					"target": "magic/animated-list/index.ts"
 				}
 			],
-			"registryDependencies": ["motion-sv"]
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "animated-shiny-text",
@@ -364,19 +379,30 @@
 			"registryDependencies": [],
 			"cssVars": {
 				"theme": {
-					"animate-aurora": "aurora 10s linear infinite"
+					"animate-aurora": "aurora 8s ease-in-out infinite alternate"
 				}
 			},
 			"css": {
 				"@keyframes aurora": {
 					"0%": {
-						"background-position": "0% 50%"
+						"background-position": "0% 50%",
+						"transform": "rotate(-5deg) scale(0.9)"
+					},
+					"25%": {
+						"background-position": "50% 100%",
+						"transform": "rotate(5deg) scale(1.1)"
 					},
 					"50%": {
-						"background-position": "100% 50%"
+						"background-position": "100% 50%",
+						"transform": "rotate(-3deg) scale(0.95)"
+					},
+					"75%": {
+						"background-position": "50% 0%",
+						"transform": "rotate(3deg) scale(1.05)"
 					},
 					"100%": {
-						"background-position": "0% 50%"
+						"background-position": "0% 50%",
+						"transform": "rotate(-5deg) scale(0.9)"
 					}
 				}
 			}
@@ -518,8 +544,8 @@
 					"target": "magic/typing-animation/index.ts"
 				}
 			],
-			"registryDependencies": ["motion-sv"],
-			"dependencies": ["runed"]
+			"registryDependencies": [],
+			"dependencies": ["runed", "motion-sv"]
 		},
 		{
 			"name": "flickering-grid",
@@ -576,7 +602,8 @@
 					"target": "magic/hero-video-dialog/index.ts"
 				}
 			],
-			"registryDependencies": ["motion-sv"]
+			"registryDependencies": [],
+			"dependencies": ["lucide-svelte", "motion-sv"]
 		},
 		{
 			"name": "hyper-text",
@@ -595,7 +622,8 @@
 					"target": "magic/hyper-text/index.ts"
 				}
 			],
-			"registryDependencies": ["motion-sv"]
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "interactive-hover-button",
@@ -634,7 +662,8 @@
 					"target": "magic/light-rays/index.ts"
 				}
 			],
-			"registryDependencies": ["motion-sv"]
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "line-shadow-text",
@@ -653,7 +682,8 @@
 					"target": "magic/line-shadow-text/index.ts"
 				}
 			],
-			"registryDependencies": ["motion-sv"],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"],
 			"cssVars": {
 				"theme": {
 					"animate-line-shadow": "line-shadow 15s linear infinite"
@@ -725,7 +755,8 @@
 					"target": "magic/number-ticker/index.ts"
 				}
 			],
-			"registryDependencies": ["motion-sv"]
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "pulsating-button",
@@ -884,7 +915,8 @@
 					"target": "magic/scroll-progress/index.ts"
 				}
 			],
-			"registryDependencies": ["motion-sv"]
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "shimmer-button",
@@ -949,7 +981,8 @@
 					"target": "magic/shiny-button/index.ts"
 				}
 			],
-			"registryDependencies": ["motion-sv"]
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "terminal",
@@ -1033,7 +1066,8 @@
 					"target": "magic/warp-background/index.ts"
 				}
 			],
-			"registryDependencies": ["motion-sv"]
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
 		},
 		{
 			"name": "word-rotate",
@@ -1052,7 +1086,8 @@
 					"target": "magic/word-rotate/index.ts"
 				}
 			],
-			"registryDependencies": ["motion-sv"]
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
 		}
 	]
 }

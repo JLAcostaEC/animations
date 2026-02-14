@@ -12,9 +12,11 @@
 		"title": "Text Animate",
 		"type": "registry:block",
 		"description": "Animate text with various effects like blur, slide, scale, and fade with granular control over words, characters, or lines.",
-		"registryDependencies": [
+		"dependencies": [
+			"runed",
 			"motion-sv"
 		],
+		"registryDependencies": [],
 		"relativeUrl": "text-animate.json"
 	},
 	{
@@ -22,9 +24,10 @@
 		"title": "Animated Beam",
 		"type": "registry:block",
 		"description": "A component for creating animated beam effects between two elements with customizable gradients and paths.",
-		"registryDependencies": [
+		"dependencies": [
 			"motion-sv"
 		],
+		"registryDependencies": [],
 		"relativeUrl": "animated-beam.json"
 	},
 	{
@@ -48,9 +51,10 @@
 		"title": "Animated Grid Pattern",
 		"type": "registry:block",
 		"description": "An animated grid pattern component that creates a dynamic background with moving squares that fade in and out.",
-		"registryDependencies": [
+		"dependencies": [
 			"motion-sv"
 		],
+		"registryDependencies": [],
 		"relativeUrl": "animated-grid-pattern.json"
 	},
 	{
@@ -58,9 +62,11 @@
 		"title": "Blur Fade",
 		"type": "registry:block",
 		"description": "A component that animates content with blur and fade effects, supporting directional movement and intersection observer triggering.",
-		"registryDependencies": [
+		"dependencies": [
+			"runed",
 			"motion-sv"
 		],
+		"registryDependencies": [],
 		"relativeUrl": "blur-fade.json"
 	},
 	{
@@ -68,9 +74,10 @@
 		"title": "Border Beam",
 		"type": "registry:block",
 		"description": "A component for creating animated border beam effects around elements with customizable gradients, duration, and direction.",
-		"registryDependencies": [
+		"dependencies": [
 			"motion-sv"
 		],
+		"registryDependencies": [],
 		"relativeUrl": "border-beam.json"
 	},
 	{
@@ -78,9 +85,11 @@
 		"title": "File Tree",
 		"type": "registry:block",
 		"description": "An interactive file tree component with expandable folders, selectable files, and smooth animations.",
-		"registryDependencies": [
+		"dependencies": [
+			"lucide-svelte",
 			"motion-sv"
 		],
+		"registryDependencies": [],
 		"relativeUrl": "file-tree.json"
 	},
 	{
@@ -88,9 +97,10 @@
 		"title": "Dot Pattern",
 		"type": "registry:block",
 		"description": "A customizable dot pattern background component with optional glow animations and mask effects.",
-		"registryDependencies": [
+		"dependencies": [
 			"motion-sv"
 		],
+		"registryDependencies": [],
 		"relativeUrl": "dot-pattern.json"
 	},
 	{
@@ -114,9 +124,10 @@
 		"title": "Animated List",
 		"type": "registry:block",
 		"description": "A component that animates list items with smooth layout transitions, revealing items one by one from top to bottom.",
-		"registryDependencies": [
+		"dependencies": [
 			"motion-sv"
 		],
+		"registryDependencies": [],
 		"relativeUrl": "animated-list.json"
 	},
 	{
@@ -184,11 +195,10 @@
 		"type": "registry:block",
 		"description": "A typewriter effect component that types out text with customizable speed, cursor styles, and support for cycling through multiple words.",
 		"dependencies": [
-			"runed"
-		],
-		"registryDependencies": [
+			"runed",
 			"motion-sv"
 		],
+		"registryDependencies": [],
 		"relativeUrl": "typing-animation.json"
 	},
 	{
@@ -212,9 +222,11 @@
 		"title": "Hero Video Dialog",
 		"type": "registry:block",
 		"description": "A video dialog component with animated entrance effects, thumbnail support, and customizable animation styles.",
-		"registryDependencies": [
+		"dependencies": [
+			"lucide-svelte",
 			"motion-sv"
 		],
+		"registryDependencies": [],
 		"relativeUrl": "hero-video-dialog.json"
 	},
 	{
@@ -222,9 +234,10 @@
 		"title": "Hyper Text",
 		"type": "registry:block",
 		"description": "An animated text component that creates a glitch effect by cycling through random characters before revealing the final text.",
-		"registryDependencies": [
+		"dependencies": [
 			"motion-sv"
 		],
+		"registryDependencies": [],
 		"relativeUrl": "hyper-text.json"
 	},
 	{
@@ -243,9 +256,10 @@
 		"title": "Light Rays",
 		"type": "registry:block",
 		"description": "A component that creates animated light rays with customizable count, color, blur, speed, and length.",
-		"registryDependencies": [
+		"dependencies": [
 			"motion-sv"
 		],
+		"registryDependencies": [],
 		"relativeUrl": "light-rays.json"
 	},
 	{
@@ -253,9 +267,10 @@
 		"title": "Line Shadow Text",
 		"type": "registry:block",
 		"description": "A text component with an animated diagonal line shadow effect that moves across the text.",
-		"registryDependencies": [
+		"dependencies": [
 			"motion-sv"
 		],
+		"registryDependencies": [],
 		"relativeUrl": "line-shadow-text.json"
 	},
 	{
@@ -279,9 +294,10 @@
 		"title": "Number Ticker",
 		"type": "registry:block",
 		"description": "An animated number counter component with spring physics that smoothly animates from a start value to an end value.",
-		"registryDependencies": [
+		"dependencies": [
 			"motion-sv"
 		],
+		"registryDependencies": [],
 		"relativeUrl": "number-ticker.json"
 	},
 	{
@@ -328,9 +344,10 @@
 		"title": "Scroll Progress",
 		"type": "registry:block",
 		"description": "A fixed progress bar component that indicates page scroll progress with a gradient color effect.",
-		"registryDependencies": [
+		"dependencies": [
 			"motion-sv"
 		],
+		"registryDependencies": [],
 		"relativeUrl": "scroll-progress.json"
 	},
 	{
@@ -346,9 +363,10 @@
 		"title": "Shiny Button",
 		"type": "registry:block",
 		"description": "A button component with a shiny gradient mask effect that animates across the text on hover and press.",
-		"registryDependencies": [
+		"dependencies": [
 			"motion-sv"
 		],
+		"registryDependencies": [],
 		"relativeUrl": "shiny-button.json"
 	},
 	{
@@ -378,9 +396,10 @@
 		"title": "Warp Background",
 		"type": "registry:block",
 		"description": "A 3D perspective grid background with animated light beams that create a warping effect.",
-		"registryDependencies": [
+		"dependencies": [
 			"motion-sv"
 		],
+		"registryDependencies": [],
 		"relativeUrl": "warp-background.json"
 	},
 	{
@@ -388,9 +407,10 @@
 		"title": "Word Rotate",
 		"type": "registry:block",
 		"description": "A component that cycles through an array of words with smooth fade and slide animations between transitions.",
-		"registryDependencies": [
+		"dependencies": [
 			"motion-sv"
 		],
+		"registryDependencies": [],
 		"relativeUrl": "word-rotate.json"
 	}
 ]

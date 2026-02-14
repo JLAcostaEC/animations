@@ -23,10 +23,11 @@
 		class="animate-aurora relative bg-size-[200%_auto] bg-clip-text text-transparent"
 		aria-hidden="true"
 		style="
-    background-image: linear-gradient(135deg, ${colors.join(', ')}, ${colors[0]});
+    background-image: linear-gradient(135deg, {colors.join(', ')}, {colors[0]});
     webkit-background-clip: text;
     webkit-text-fill-color: transparent;
-    animation-duration: ${10 / speed}s;"
+    animation-duration: {10 / speed}s;"
 	>
+		{@render children()}
 	</span>
 </span>

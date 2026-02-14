@@ -5,9 +5,6 @@
 	"type": "registry:block",
 	"description": "An animated text component that creates a glitch effect by cycling through random characters before revealing the final text.",
 	"dependencies": [
-		"motion-sv@^0.1.10"
-	],
-	"registryDependencies": [
 		"motion-sv"
 	],
 	"files": [

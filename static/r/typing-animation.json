@@ -5,9 +5,7 @@
 	"type": "registry:block",
 	"description": "A typewriter effect component that types out text with customizable speed, cursor styles, and support for cycling through multiple words.",
 	"dependencies": [
-		"runed"
-	],
-	"registryDependencies": [
+		"runed",
 		"motion-sv"
 	],
 	"files": [

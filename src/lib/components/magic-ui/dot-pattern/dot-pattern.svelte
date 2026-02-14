@@ -24,9 +24,6 @@
 		 * The radius of each dot
 		 */
 		cr?: number;
-		/**
-		 * Additional CSS classes to apply to the SVG container
-		 */
 		class?: string;
 		/**
 		 * Whether dots should have a glowing animation effect

@@ -5,29 +5,11 @@
 	import type { HTMLButtonAttributes } from "svelte/elements";
 
 	interface FileProps extends HTMLButtonAttributes {
-		/**
-		 * Unique value for this file
-		 */
 		value: string;
-		/**
-		 * Whether the file is selectable
-		 */
 		isSelectable?: boolean;
-		/**
-		 * Whether the file is selected
-		 */
 		isSelect?: boolean;
-		/**
-		 * Custom file icon
-		 */
 		fileIcon?: Snippet;
-		/**
-		 * Children content
-		 */
 		children: Snippet;
-		/**
-		 * Additional CSS classes
-		 */
 		class?: string;
 	}
 

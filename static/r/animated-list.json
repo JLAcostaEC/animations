@@ -5,9 +5,6 @@
 	"type": "registry:block",
 	"description": "A component that animates list items with smooth layout transitions, revealing items one by one from top to bottom.",
 	"dependencies": [
-		"motion-sv@^0.1.10"
-	],
-	"registryDependencies": [
 		"motion-sv"
 	],
 	"files": [
@@ -17,7 +14,7 @@
 			"target": "magic/animated-list/animated-list.svelte"
 		},
 		{
-			"content": "export { default as AnimatedList } from \"./animated-list.svelte\";\n",
+			"content": "import AnimatedList from \"./animated-list.svelte\";\nexport { AnimatedList };\n",
 			"type": "registry:file",
 			"target": "magic/animated-list/index.ts"
 		}

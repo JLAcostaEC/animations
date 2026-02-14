@@ -5,9 +5,6 @@
 	"type": "registry:block",
 	"description": "A component for creating animated beam effects between two elements with customizable gradients and paths.",
 	"dependencies": [
-		"motion-sv@^0.1.10"
-	],
-	"registryDependencies": [
 		"motion-sv"
 	],
 	"files": [

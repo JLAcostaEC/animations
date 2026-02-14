@@ -5,9 +5,6 @@
 	"type": "registry:block",
 	"description": "A component that creates animated light rays with customizable count, color, blur, speed, and length.",
 	"dependencies": [
-		"motion-sv@^0.1.10"
-	],
-	"registryDependencies": [
 		"motion-sv"
 	],
 	"files": [
