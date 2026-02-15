@@ -19,24 +19,24 @@ Built with [motion-sv](https://github.com/hanielu/motion-svelte) and Tailwind CS
 
 3. Install motion-sv library:
    ```bash
-   pnpm i motion-sv
+   pnpm add motion-sv
    ```
 
 ## Usage
 
 1. Visit any component page
-2. Install via CLI or copy manually:
+2. Install component via CLI or copy manually:
    ```bash
-   npx shadcn-svelte@latest add "https://animation-svelte.vercel.app/r/animated-beam.json"
+   pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/morphing-text.json
    ```
 3. Check out the examples for more usage patterns
-4. Found an issue? Reach out via [Twitter](https://twitter.com/Sikandar_Bhide) or open a [GitHub issue](https://github.com/SikandarJODD/animations/issues)
+4. Found an issue? Reach out via [Twitter](https://x.com/Sikandar_Bhide) or open a [GitHub issue](https://github.com/SikandarJODD/animations/issues)
 
 ## Inspiration
 
-This project is inspired by and ports components from:
+This project is inspired by Magic UI
 
-- [Magic UI](https://magicui.design/) - React animation components
+- [Magic UI](https://magicui.design/)
 
 ## Share & Support
 
