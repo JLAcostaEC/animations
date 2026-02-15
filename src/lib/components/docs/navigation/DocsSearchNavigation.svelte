@@ -24,7 +24,7 @@
 		{
 			id: "installation",
 			name: "Installation",
-			href: "magic/docs/installation",
+			href: "/magic/docs/installation",
 		},
 	];
 </script>

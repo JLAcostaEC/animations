@@ -15,17 +15,17 @@
 				url: "#",
 				items: [
 					{
-						title: "Installation",
-						url: "#",
+						title: "Introduction",
+						url: "/magic/docs",
 					},
 					{
-						title: "Project Structure",
-						url: "#",
+						title: "Installation",
+						url: "/magic/docs/installation",
 					},
 				] as NavItem[],
 			},
 			{
-				title: "Text Animations",
+				title: "Components",
 				url: "#",
 				items: magicUIComponents.map((c) => ({
 					title: c.name,
@@ -41,7 +41,7 @@
 	// import SearchForm from "./search-form.svelte";
 	// import VersionSwitcher from "./version-switcher.svelte";
 	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
-	import { ScrollArea } from "$lib/components/ui/scroll-area/index.js";
+	import { ScrollArea, ScrollFadeEffect } from "$lib/components/ui/scroll-area/index.js";
 	import Badge from "$lib/components/ui/badge/badge.svelte";
 	import { page } from "$app/state";
 	import type { ComponentProps } from "svelte";
@@ -54,7 +54,11 @@
     <VersionSwitcher versions={data.versions} defaultVersion={data.versions[0]} />
     <SearchForm />
   </Sidebar.Header> -->
-	<ScrollArea class="max-h-[calc(100vh-6rem)] pr-1">
+	<ScrollArea
+		class="max-h-[calc(100vh-6rem)] py-4 pr-1"
+		scrollbarXClasses="hidden"
+		scrollbarYClasses="hidden"
+	>
 		<Sidebar.Content>
 			<!-- We create a Sidebar.Group for each parent. -->
 			{#each data.navMain as group (group.title)}
@@ -71,9 +75,15 @@
 												{#if item.badge}
 													<Badge
 														variant="secondary"
-														class={item.badge === "Beta"
-															? "ml-auto border-yellow-500/30 bg-yellow-500/20 px-1.5 py-0 text-[10px] text-yellow-600 dark:bg-yellow-500/20 dark:text-yellow-400"
-															: "ml-auto px-1.5 py-0 text-[10px]"}
+														class={[
+															item.badge === "New" &&
+																" border-green-500/30 bg-green-500/20  text-[10px] text-green-600 dark:bg-green-500/15 dark:text-green-400",
+															item.badge === "Beta" &&
+																" border-yellow-500/30 bg-yellow-500/20 text-[10px] text-yellow-600 dark:bg-yellow-500/20 dark:text-yellow-400",
+															item.badge === "Updated" &&
+																"border-cyan-500/30 bg-cyan-500/20  text-[10px] text-cyan-600 dark:bg-cyan-500/15 dark:text-cyan-400",
+															"ml-auto px-1.5 py-0 text-[10px]",
+														]}
 													>
 														{item.badge}
 													</Badge>
@@ -89,5 +99,5 @@
 			{/each}
 		</Sidebar.Content>
 	</ScrollArea>
-	<Sidebar.Rail />
+	<!-- <Sidebar.Rail /> -->
 </Sidebar.Root>

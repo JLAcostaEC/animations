@@ -12,6 +12,13 @@
 <CommandPrimitive.List
 	bind:ref
 	data-slot="command-list"
-	class={cn("max-h-[300px] scroll-py-1 overflow-x-hidden overflow-y-auto", className)}
+	data-orientation="vertical"
+	style="--bottom-mask-height: 20px; --top-mask-height: 0px;"
+	class={cn(
+		"max-h-75 scroll-py-1 overflow-x-hidden overflow-y-auto",
+		"no-scrollbar data-[orientation=horizontal]:overflow-x-auto data-[orientation=vertical]:overflow-y-auto",
+		"data-[orientation=horizontal]:scroll-fade-effect-x data-[orientation=vertical]:scroll-fade-effect-y",
+		className
+	)}
 	{...restProps}
 />
