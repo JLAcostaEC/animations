@@ -1,0 +1,39 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "meteors",
+	"title": "Meteors",
+	"type": "registry:block",
+	"description": "A meteor shower effect component with customizable number of meteors and animated falling effects.",
+	"css": {
+		"@keyframes meteor": {
+			"0%": {
+				"transform": "rotate(var(--angle)) translateX(0)",
+				"opacity": "1"
+			},
+			"70%": {
+				"opacity": "1"
+			},
+			"100%": {
+				"transform": "rotate(var(--angle)) translateX(-500px)",
+				"opacity": "0"
+			}
+		}
+	},
+	"cssVars": {
+		"theme": {
+			"animate-meteor": "meteor 5s linear infinite"
+		}
+	},
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\r\n\timport { cn } from \"$UTILS$\";\r\n\timport { onMount } from \"svelte\";\r\n\r\n\tinterface Props {\r\n\t\tnumber?: number;\r\n\t\tminDelay?: number;\r\n\t\tmaxDelay?: number;\r\n\t\tminDuration?: number;\r\n\t\tmaxDuration?: number;\r\n\t\tangle?: number;\r\n\t\tclass?: string;\r\n\t}\r\n\r\n\tlet {\r\n\t\tnumber = 20,\r\n\t\tminDelay = 0.2,\r\n\t\tmaxDelay = 1.2,\r\n\t\tminDuration = 2,\r\n\t\tmaxDuration = 10,\r\n\t\tangle = 215,\r\n\t\tclass: className,\r\n\t}: Props = $props();\r\n\r\n\tlet meteorStyles: Array<{\r\n\t\tangle: string;\r\n\t\ttop: string;\r\n\t\tleft: string;\r\n\t\tanimationDelay: string;\r\n\t\tanimationDuration: string;\r\n\t}> = $state([]);\r\n\r\n\tlet updateMeteors = () => {\r\n\t\tconst styles = [...new Array(number)].map(() => ({\r\n\t\t\tangle: -angle + \"deg\",\r\n\t\t\ttop: \"-5%\",\r\n\t\t\tleft: `calc(0% + ${Math.floor(Math.random() * window.innerWidth)}px)`,\r\n\t\t\tanimationDelay: Math.random() * (maxDelay - minDelay) + minDelay + \"s\",\r\n\t\t\tanimationDuration:\r\n\t\t\t\tMath.floor(Math.random() * (maxDuration - minDuration) + minDuration) + \"s\",\r\n\t\t}));\r\n\t\tmeteorStyles = styles;\r\n\t};\r\n\tonMount(() => {\r\n\t\tupdateMeteors();\r\n\t});\r\n</script>\r\n\r\n{#each meteorStyles as style, idx (idx)}\r\n\t<span\r\n\t\tstyle=\"--angle: {style.angle}; top: {style.top}; left: {style.left}; animation-delay: {style.animationDelay}; animation-duration: {style.animationDuration};\"\r\n\t\tclass={cn(\r\n\t\t\t\"animate-meteor pointer-events-none absolute size-0.5 rotate-(--angle) rounded-full bg-zinc-500 shadow-[0_0_0_1px_#ffffff10]\",\r\n\t\t\tclassName\r\n\t\t)}\r\n\t>\r\n\t\t<div\r\n\t\t\tclass=\"pointer-events-none absolute top-1/2 -z-10 h-px w-12.5 -translate-y-1/2 bg-linear-to-r from-zinc-500 to-transparent\"\r\n\t\t></div>\r\n\t</span>\r\n{/each}\r\n",
+			"type": "registry:component",
+			"target": "magic/meteors/meteors.svelte"
+		},
+		{
+			"content": "import Meteors from \"./meteors.svelte\";\r\nexport { Meteors };\r\n",
+			"type": "registry:file",
+			"target": "magic/meteors/index.ts"
+		}
+	]
+}

@@ -490,6 +490,45 @@
 			}
 		},
 		{
+			"name": "meteors",
+			"type": "registry:block",
+			"title": "Meteors",
+			"description": "A meteor shower effect component with customizable number of meteors and animated falling effects.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/meteors/meteors.svelte",
+					"type": "registry:component",
+					"target": "magic/meteors/meteors.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/meteors/index.ts",
+					"type": "registry:file",
+					"target": "magic/meteors/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"cssVars": {
+				"theme": {
+					"animate-meteor": "meteor 5s linear infinite"
+				}
+			},
+			"css": {
+				"@keyframes meteor": {
+					"0%": {
+						"transform": "rotate(var(--angle)) translateX(0)",
+						"opacity": "1"
+					},
+					"70%": {
+						"opacity": "1"
+					},
+					"100%": {
+						"transform": "rotate(var(--angle)) translateX(-500px)",
+						"opacity": "0"
+					}
+				}
+			}
+		},
+		{
 			"name": "pixel-image",
 			"type": "registry:block",
 			"title": "Pixel Image",

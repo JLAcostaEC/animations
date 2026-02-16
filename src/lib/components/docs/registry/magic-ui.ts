@@ -273,6 +273,13 @@ export const magicUIComponents: MagicComponent[] = [
 		badge: "Beta",
 		desc: "A vertical rotation of words",
 	},
+	{
+		id: "meteors",
+		name: "Meteors",
+		href: "/magic/docs/components/meteors",
+		badge: "New",
+		desc: "A meteor shower effect.",
+	},
 ];
 
 /**

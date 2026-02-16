@@ -21,12 +21,12 @@
 	},
 	"files": [
 		{
-			"content": "<script lang=\"ts\">\n\timport { cn } from \"$UTILS$\";\n\timport type { Snippet } from \"svelte\";\n\n\tinterface PulsatingButtonProps {\n\t\tchildren: Snippet;\n\t\tclass?: string;\n\t\tpulseColor?: string;\n\t\tduration?: string;\n\t}\n\n\tlet {\n\t\tclass: className,\n\t\tchildren,\n\t\tpulseColor = \"#808080\",\n\t\tduration = \"1.5s\",\n\t\t...props\n\t}: PulsatingButtonProps = $props();\n</script>\n\n<button\n\tclass={cn(\n\t\t\"bg-primary text-primary-foreground relative flex cursor-pointer items-center justify-center rounded-lg px-4 py-2 text-center\",\n\t\tclassName\n\t)}\n\tstyle=\"--pulse-color: {pulseColor}; --duration: {duration};\"\n\t{...props}\n>\n\t<div class=\"relative z-10\">\n\t\t{@render children()}\n\t</div>\n\t<div\n\t\tclass=\"animate-pulse-ring absolute top-1/2 left-1/2 size-full -translate-x-1/2 -translate-y-1/2 rounded-lg bg-inherit\"\n\t></div>\n</button>\n",
+			"content": "<script lang=\"ts\">\r\n\timport { cn } from \"$UTILS$\";\r\n\timport type { Snippet } from \"svelte\";\r\n\r\n\tinterface PulsatingButtonProps {\r\n\t\tchildren: Snippet;\r\n\t\tclass?: string;\r\n\t\tpulseColor?: string;\r\n\t\tduration?: string;\r\n\t}\r\n\r\n\tlet {\r\n\t\tclass: className,\r\n\t\tchildren,\r\n\t\tpulseColor = \"#808080\",\r\n\t\tduration = \"1.5s\",\r\n\t\t...props\r\n\t}: PulsatingButtonProps = $props();\r\n</script>\r\n\r\n<button\r\n\tclass={cn(\r\n\t\t\"bg-primary text-primary-foreground relative flex cursor-pointer items-center justify-center rounded-lg px-4 py-2 text-center\",\r\n\t\tclassName\r\n\t)}\r\n\tstyle=\"--pulse-color: {pulseColor}; --duration: {duration};\"\r\n\t{...props}\r\n>\r\n\t<div class=\"relative z-10\">\r\n\t\t{@render children()}\r\n\t</div>\r\n\t<div\r\n\t\tclass=\"animate-pulse-ring absolute top-1/2 left-1/2 size-full -translate-x-1/2 -translate-y-1/2 rounded-lg bg-inherit\"\r\n\t></div>\r\n</button>\r\n",
 			"type": "registry:component",
 			"target": "magic/pulsating-button/pulsating-button.svelte"
 		},
 		{
-			"content": "export { default as PulsatingButton } from \"./pulsating-button.svelte\";\n",
+			"content": "export { default as PulsatingButton } from \"./pulsating-button.svelte\";\r\n",
 			"type": "registry:file",
 			"target": "magic/pulsating-button/index.ts"
 		}
