@@ -152,6 +152,13 @@ export const magicUIComponents: MagicComponent[] = [
 		desc: "An infinite scrolling component that can be used to display text, images, or videos.",
 	},
 	{
+		id: "meteors",
+		name: "Meteors",
+		href: "/magic/docs/components/meteors",
+		badge: "New",
+		desc: "A meteor shower effect.",
+	},
+	{
 		id: "morphing-text",
 		name: "Morphing Text",
 		href: "/magic/docs/components/morphing-text",
@@ -272,13 +279,6 @@ export const magicUIComponents: MagicComponent[] = [
 		href: "/magic/docs/components/word-rotate",
 		badge: "Beta",
 		desc: "A vertical rotation of words",
-	},
-	{
-		id: "meteors",
-		name: "Meteors",
-		href: "/magic/docs/components/meteors",
-		badge: "New",
-		desc: "A meteor shower effect.",
 	},
 ];
 

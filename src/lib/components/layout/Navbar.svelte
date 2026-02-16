@@ -20,6 +20,7 @@
 	// import AppSearchbar from "./app-searchbar.svelte";
 	import LightSwitch from "../ui/light-switch/light-switch.svelte";
 	import DocsSearchNavigation from "../docs/navigation/DocsSearchNavigation.svelte";
+	import { magicUIComponents } from "$lib/components/docs/registry/magic-ui";
 	// import McpDialog from "./mcp-dialog.svelte";
 
 	type MobileNavigationSubItem = {
@@ -44,9 +45,30 @@
 	let mobileNavigationLinks: MobileNavigationItem[] = [
 		{ href: "/", label: "Home", icon: HomeIcon },
 		{
-			href: "/docs/introduction",
-			label: "Documentation",
-			icon: BookOpenIcon,
+			label: "GET STARTED",
+			submenu: true,
+			items: [
+				{
+					href: "/magic/docs",
+					label: "Introduction",
+					description: "Get started with Magic UI components",
+				},
+				{
+					href: "/magic/docs/installation",
+					label: "Installation",
+					description: "How to install and set up",
+				},
+			],
+		},
+		{
+			label: "COMPONENTS",
+			submenu: true,
+			items: magicUIComponents.map((component) => ({
+				href: component.href,
+				label: component.name,
+				description: component.desc,
+				badge: component.badge,
+			})),
 		},
 	];
 
@@ -91,6 +113,8 @@
 			icon: ZapIcon,
 		},
 	];
+
+	let popoverOpen = $state(false);
 </script>
 
 <header
@@ -100,7 +124,7 @@
 		<!-- Left side  -->
 		<div class="flex items-center gap-2">
 			<!-- Mobile menu trigger  -->
-			<Popover>
+			<Popover bind:open={popoverOpen}>
 				<PopoverTrigger class="md:hidden">
 					{#snippet child({ props })}
 						<Button
@@ -157,6 +181,8 @@
 													{#each link.items as item}
 														<li>
 															<NavigationMenuLink
+																onclick={() =>
+																	(popoverOpen = false)}
 																href={item.href}
 																class="hover:bg-accent hover:text-accent-foreground flex flex-col gap-0.5 rounded-md px-3 py-2 text-sm transition-colors"
 															>
@@ -316,11 +342,7 @@
 		<!-- Right side  -->
 		<div class="flex items-center gap-2 md:gap-2">
 			<!-- Search Bar -->
-			<div class="hidden md:block">
-				<!-- <McpDialog /> -->
-				<!-- <AppSearchbar /> -->
-				<DocsSearchNavigation />
-			</div>
+			<DocsSearchNavigation />
 			<Button
 				variant="ghost"
 				size="icon"
