@@ -16,61 +16,11 @@
 		NavigationMenuRoot,
 		NavigationMenuTrigger,
 	} from "$lib/components/ui/navigation-menu";
-	import { Popover, PopoverContent, PopoverTrigger } from "$lib/components/ui/popover";
-	// import AppSearchbar from "./app-searchbar.svelte";
 	import LightSwitch from "../ui/light-switch/light-switch.svelte";
 	import DocsSearchNavigation from "../docs/navigation/DocsSearchNavigation.svelte";
 	import { magicUIComponents } from "$lib/components/docs/registry/magic-ui";
+	import MobileNavbarSheet from "./MobileNavbarSheet.svelte";
 	// import McpDialog from "./mcp-dialog.svelte";
-
-	type MobileNavigationSubItem = {
-		href: string;
-		label: string;
-		icon?: Component;
-		description?: string;
-		badge?: string;
-	};
-
-	type MobileNavigationItem = {
-		label: string;
-		href?: string;
-		icon?: Component;
-		description?: string;
-		submenu?: boolean;
-		type?: "simple" | "description" | "icon";
-		items?: MobileNavigationSubItem[];
-	};
-
-	// Mobile navigation with organized sections
-	let mobileNavigationLinks: MobileNavigationItem[] = [
-		{ href: "/", label: "Home", icon: HomeIcon },
-		{
-			label: "GET STARTED",
-			submenu: true,
-			items: [
-				{
-					href: "/magic/docs",
-					label: "Introduction",
-					description: "Get started with Magic UI components",
-				},
-				{
-					href: "/magic/docs/installation",
-					label: "Installation",
-					description: "How to install and set up",
-				},
-			],
-		},
-		{
-			label: "COMPONENTS",
-			submenu: true,
-			items: magicUIComponents.map((component) => ({
-				href: component.href,
-				label: component.name,
-				description: component.desc,
-				badge: component.badge,
-			})),
-		},
-	];
 
 	type ComponentDropdownItem = {
 		href: string;
@@ -113,8 +63,6 @@
 			icon: ZapIcon,
 		},
 	];
-
-	let popoverOpen = $state(false);
 </script>
 
 <header
@@ -124,137 +72,7 @@
 		<!-- Left side  -->
 		<div class="flex items-center gap-2">
 			<!-- Mobile menu trigger  -->
-			<Popover bind:open={popoverOpen}>
-				<PopoverTrigger class="md:hidden">
-					{#snippet child({ props })}
-						<Button
-							class="group size-8 md:hidden"
-							variant="ghost"
-							size="icon"
-							{...props}
-						>
-							<svg
-								class="pointer-events-none"
-								width={16}
-								height={16}
-								viewBox="0 0 24 24"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<path
-									d="M4 12L20 12"
-									class="origin-center -translate-y-1.75 transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-x-0 group-aria-expanded:translate-y-0 group-aria-expanded:rotate-315"
-								/>
-								<path
-									d="M4 12H20"
-									class="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,0.25,1.8)] group-aria-expanded:rotate-45"
-								/>
-								<path
-									d="M4 12H20"
-									class="origin-center translate-y-1.75 transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-135"
-								/>
-							</svg>
-						</Button>
-					{/snippet}
-				</PopoverTrigger>
-				<PopoverContent
-					align="start"
-					class="dark-scrollbar z-50 max-h-[calc(100vh-10rem)] w-72 overflow-y-auto p-0 md:hidden"
-				>
-					<div class="p-2">
-						<NavigationMenuRoot class="max-w-none *:w-full">
-							<NavigationMenuList class="flex-col items-start gap-0">
-								{#each mobileNavigationLinks as link, index (link.label)}
-									<NavigationMenuItem class="w-full">
-										{#if link.submenu}
-											<div
-												class="text-muted-foreground px-3 py-2 text-xs font-semibold tracking-wide uppercase"
-											>
-												{link.label}
-											</div>
-											{#if link.items}
-												<ul class="space-y-0.5 pb-2">
-													{#each link.items as item}
-														<li>
-															<NavigationMenuLink
-																onclick={() =>
-																	(popoverOpen = false)}
-																href={item.href}
-																class="hover:bg-accent hover:text-accent-foreground flex flex-col gap-0.5 rounded-md px-3 py-2 text-sm transition-colors"
-															>
-																<div
-																	class="flex w-full items-center justify-between"
-																>
-																	<span class="font-medium"
-																		>{item.label}</span
-																	>
-																	{#if item.badge}
-																		<Badge
-																			variant="secondary"
-																			class="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 h-4 border px-1 py-0 text-[10px] font-semibold uppercase"
-																		>
-																			{item.badge}
-																		</Badge>
-																	{/if}
-																</div>
-																{#if item.description}
-																	<span
-																		class="text-muted-foreground line-clamp-1 text-xs"
-																	>
-																		{item.description}
-																	</span>
-																{/if}
-															</NavigationMenuLink>
-														</li>
-													{/each}
-												</ul>
-											{/if}
-										{:else}
-											<a
-												href={link.href || "#"}
-												class="hover:bg-accent hover:text-accent-foreground flex w-full flex-row items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors"
-											>
-												{#if link.icon}
-													<!-- <svelte:component this={link.icon} class="size-4 shrink-0" /> -->
-													{@const NavIcon = link.icon}
-													<NavIcon
-														class="size-4 shrink-0"
-														strokeWidth={1.4}
-													/>
-												{/if}
-												<span class="flex items-center gap-1.5">
-													{link.label}
-													{#if link.label === "Playground"}
-														<Badge
-															variant="secondary"
-															class="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 h-4 border px-1 py-0 text-[10px] font-semibold"
-														>
-															New
-														</Badge>
-													{/if}
-												</span>
-											</a>
-										{/if}
-
-										<!-- Add separator between sections -->
-										{#if index < mobileNavigationLinks.length - 1}
-											<div
-												role="separator"
-												aria-orientation="horizontal"
-												class="bg-border my-2 h-px w-full"
-											></div>
-										{/if}
-									</NavigationMenuItem>
-								{/each}
-							</NavigationMenuList>
-						</NavigationMenuRoot>
-					</div>
-				</PopoverContent>
-			</Popover>
+			<MobileNavbarSheet />
 			<!-- Main nav  -->
 			<div class="flex items-center gap-6">
 				<a href="/" class="text-primary hover:text-primary/90"> Svelte Animations </a>
