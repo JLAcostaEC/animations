@@ -22,13 +22,15 @@
 		class: className,
 	}: Props = $props();
 
-	let meteorStyles: Array<{
+	type MeteorStyle = {
 		angle: string;
 		top: string;
 		left: string;
 		animationDelay: string;
 		animationDuration: string;
-	}> = $state([]);
+	};
+
+	let meteorStyles: MeteorStyle[] = $state([]);
 
 	let updateMeteors = () => {
 		const styles = [...new Array(number)].map(() => ({
