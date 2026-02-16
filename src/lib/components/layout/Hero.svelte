@@ -15,7 +15,7 @@
 			class={cn("mask-[radial-gradient(800px_circle_at_top_center,white,transparent)]")}
 		/>
 		<section>
-			<div class="relative pt-6 md:pt-20">
+			<div class="relative pt-14 md:pt-20">
 				<div class="mx-auto max-w-7xl px-2 md:px-6">
 					<div class="text-center sm:mx-auto lg:mt-0 lg:mr-auto">
 						<div class="mt-0">
@@ -144,14 +144,14 @@
 							</h2> -->
 						</div>
 						<p
-							class="text-muted-foreground mx-auto mt-6 max-w-3xl text-sm text-balance md:mt-10 md:text-lg"
+							class="text-muted-foreground mx-auto mt-6 max-w-3xl px-1 text-base text-balance md:mt-10 md:px-0 md:text-lg"
 						>
 							50+ free and open-source animated components and effects built with
 							Svelte, Typescript, Tailwind CSS, and Motion SV.
 						</p>
 
 						<div
-							class="mt-9 flex flex-col items-center justify-center gap-4 md:flex-row"
+							class="mt-10 flex flex-col items-center justify-center gap-4 md:mt-9 md:flex-row"
 						>
 							<!-- <div
                 class="bg-foreground border p-0.5"

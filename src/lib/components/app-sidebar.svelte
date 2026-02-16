@@ -45,15 +45,33 @@
 	import Badge from "$lib/components/ui/badge/badge.svelte";
 	import { page } from "$app/state";
 	import type { ComponentProps } from "svelte";
+	import { GalleryVerticalEndIcon } from "@lucide/svelte";
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
 </script>
 
 <Sidebar.Root class="mt-16" {...restProps} bind:ref>
 	<!-- <Sidebar.Header>
-    <VersionSwitcher versions={data.versions} defaultVersion={data.versions[0]} />
-    <SearchForm />
-  </Sidebar.Header> -->
+		<Sidebar.Menu>
+			<Sidebar.MenuItem>
+				<Sidebar.MenuButton size="lg">
+					{#snippet child({ props })}
+						<a href="##" {...props}>
+							<div
+								class="bg-sidebar-primary text-sidebar-primary-foreground flex aspect-square size-8 items-center justify-center rounded-lg"
+							>
+								<GalleryVerticalEndIcon class="size-4" />
+							</div>
+							<div class="flex flex-col gap-0.5 leading-none">
+								<span class="font-medium">Documentation</span>
+								<span class="">v1.0.0</span>
+							</div>
+						</a>
+					{/snippet}
+				</Sidebar.MenuButton>
+			</Sidebar.MenuItem>
+		</Sidebar.Menu>
+	</Sidebar.Header> -->
 	<ScrollArea
 		class="max-h-[calc(100vh-6rem)] py-4 pr-1"
 		scrollbarXClasses="hidden"
