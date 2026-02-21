@@ -471,5 +471,16 @@
 		],
 		"registryDependencies": [],
 		"relativeUrl": "lens.json"
+	},
+	{
+		"name": "magic-card",
+		"title": "Magic Card",
+		"type": "registry:block",
+		"description": "A spotlight effect that follows your mouse cursor and highlights borders on hover.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "magic-card.json"
 	}
 ]

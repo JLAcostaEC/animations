@@ -1237,6 +1237,26 @@
 			],
 			"registryDependencies": [],
 			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "magic-card",
+			"type": "registry:block",
+			"title": "Magic Card",
+			"description": "A spotlight effect that follows your mouse cursor and highlights borders on hover.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/magic-card/magic-card.svelte",
+					"type": "registry:component",
+					"target": "magic/magic-card/magic-card.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/magic-card/index.ts",
+					"type": "registry:file",
+					"target": "magic/magic-card/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
 		}
 	]
 }

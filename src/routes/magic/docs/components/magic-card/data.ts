@@ -6,6 +6,12 @@ import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
+import GradientShowcase from "./examples/gradient-showcase.svelte";
+import GradientShowcaseRaw from "./examples/gradient-showcase.svelte?raw";
+import CardGrid from "./examples/card-grid.svelte";
+import CardGridRaw from "./examples/card-grid.svelte?raw";
+import PricingCard from "./examples/pricing-card.svelte";
+import PricingCardRaw from "./examples/pricing-card.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
@@ -17,7 +23,38 @@ export const meta: ComponentMeta = {
 	badge: "new",
 };
 
-const examples: Example[] = [];
+const examples: Example[] = [
+	{
+		name: "Gradient Showcase",
+		description: "Magic cards with different gradient color combinations.",
+		preview: GradientShowcase,
+		code: {
+			filename: "gradient-showcase.svelte",
+			filecode: GradientShowcaseRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Card Grid",
+		description: "Display multiple magic cards in a responsive grid layout.",
+		preview: CardGrid,
+		code: {
+			filename: "card-grid.svelte",
+			filecode: CardGridRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Pricing Cards",
+		description: "Use magic cards to create attractive pricing cards.",
+		preview: PricingCard,
+		code: {
+			filename: "pricing-card.svelte",
+			filecode: PricingCardRaw,
+			lang: "svelte",
+		},
+	},
+];
 
 const seo: SEO = {
 	title: "Magic Card",
@@ -68,8 +105,9 @@ export const data: ComponentDoc = {
 			highlight: [2],
 		},
 	],
-	examples,
+	// examples,
 	seo,
+	packages: ["motion-sv"],
 	props: [
 		{
 			name: "MagicCard",
@@ -90,31 +128,31 @@ export const data: ComponentDoc = {
 				{
 					name: "gradientSize",
 					type: "number",
-					default: "0",
+					default: "200",
 					description: "Size of the gradient circle.",
 				},
 				{
 					name: "gradientColor",
 					type: "string",
-					default: '"#fff"',
+					default: '"#262626"',
 					description: "Color of the gradient overlay.",
 				},
 				{
 					name: "gradientOpacity",
 					type: "number",
-					default: "0",
+					default: "0.8",
 					description: "Opacity of the gradient overlay.",
 				},
 				{
 					name: "gradientFrom",
 					type: "string",
-					default: '"#000"',
+					default: '"#9E7AFF"',
 					description: "Starting color of the border gradient.",
 				},
 				{
 					name: "gradientTo",
 					type: "string",
-					default: '"#000"',
+					default: '"#FE8BBB"',
 					description: "Ending color of the border gradient.",
 				},
 			],
