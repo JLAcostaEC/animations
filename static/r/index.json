@@ -249,6 +249,15 @@
 		"relativeUrl": "hyper-text.json"
 	},
 	{
+		"name": "icon-cloud",
+		"title": "Icon Cloud",
+		"type": "registry:block",
+		"description": "An interactive 3D tag cloud component that displays icons or images in a sphere formation with smooth rotation and drag interactions.",
+		"dependencies": [],
+		"registryDependencies": [],
+		"relativeUrl": "icon-cloud.json"
+	},
+	{
 		"name": "interactive-hover-button",
 		"title": "Interactive Hover Button",
 		"type": "registry:block",
@@ -451,5 +460,16 @@
 		],
 		"registryDependencies": [],
 		"relativeUrl": "dock.json"
+	},
+	{
+		"name": "lens",
+		"title": "Lens",
+		"type": "registry:block",
+		"description": "An interactive component that enables zooming into images, videos and other elements.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "lens.json"
 	}
 ]

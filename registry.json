@@ -665,6 +665,26 @@
 			"dependencies": ["motion-sv"]
 		},
 		{
+			"name": "icon-cloud",
+			"type": "registry:block",
+			"title": "Icon Cloud",
+			"description": "An interactive 3D tag cloud component that displays icons or images in a sphere formation with smooth rotation and drag interactions.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/icon-cloud/icon-cloud.svelte",
+					"type": "registry:component",
+					"target": "magic/icon-cloud/icon-cloud.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/icon-cloud/index.ts",
+					"type": "registry:file",
+					"target": "magic/icon-cloud/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": []
+		},
+		{
 			"name": "interactive-hover-button",
 			"type": "registry:block",
 			"title": "Interactive Hover Button",
@@ -1193,6 +1213,26 @@
 					"path": "./src/lib/components/magic-ui/dock/index.ts",
 					"type": "registry:file",
 					"target": "magic/dock/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "lens",
+			"type": "registry:block",
+			"title": "Lens",
+			"description": "An interactive component that enables zooming into images, videos and other elements.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/lens/lens.svelte",
+					"type": "registry:component",
+					"target": "magic/lens/lens.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/lens/index.ts",
+					"type": "registry:file",
+					"target": "magic/lens/index.ts"
 				}
 			],
 			"registryDependencies": [],

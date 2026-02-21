@@ -6,7 +6,7 @@
 		"javascript",
 		"dart",
 		"java",
-		"react",
+		"svelte",
 		"flutter",
 		"android",
 		"html5",

@@ -7,6 +7,9 @@ import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/typ
 import Preview from "./examples/preview.svelte";
 import PreviewCode from "./examples/preview.svelte?raw";
 
+import Images from "./examples/images.svelte";
+import ImagesCode from "./examples/images.svelte?raw";
+
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
 	id: "icon-cloud",
@@ -16,7 +19,14 @@ export const meta: ComponentMeta = {
 	badge: "new",
 };
 
-const examples: Example[] = [];
+const examples: Example[] = [
+	{
+		name: "Images",
+		description: "Icon cloud using images from Simple Icons CDN.",
+		preview: Images,
+		code: { filename: "images.svelte", filecode: ImagesCode, lang: "svelte" },
+	},
+];
 
 const seo: SEO = {
 	title: "Icon Cloud",
@@ -47,14 +57,6 @@ let installBlock: InstallComponentDocs = {
                 ├── icon-cloud.svelte
                 └── index.ts`,
 };
-
-/*
-interface IconCloudProps {
-		icons?: Component[];
-		images?: string[];
-		class?: string;
-	}
-*/
 
 export const data: ComponentDoc = {
 	...meta,
