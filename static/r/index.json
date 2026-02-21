@@ -440,5 +440,16 @@
 		"dependencies": [],
 		"registryDependencies": [],
 		"relativeUrl": "dither-shader.json"
+	},
+	{
+		"name": "dock",
+		"title": "Dock",
+		"type": "registry:block",
+		"description": "A macOS-style dock component with smooth magnification animation on hover, inspired by the macOS dock.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "dock.json"
 	}
 ]
