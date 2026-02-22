@@ -24,6 +24,10 @@ import AnimatedBeamReverseDirection from "./examples/animated-beam-reverse-direc
 import AnimatedBeamReverseDirectionRaw from "./examples/animated-beam-reverse-direction.svelte?raw";
 import AnimatedBeamBiDirectional from "./examples/animated-beam-bi-directional.svelte";
 import AnimatedBeamBiDirectionalRaw from "./examples/animated-beam-bi-directional.svelte?raw";
+import AnimatedMultibeamExample from "./examples/animated-multibeam-example.svelte";
+import AnimatedMultibeamExampleRaw from "./examples/animated-multibeam-example.svelte?raw";
+import AnimatedBeamMultipleOutputs from "./examples/animated-beam-multiple-outputs.svelte";
+import AnimatedBeamMultipleOutputsRaw from "./examples/animated-beam-multiple-outputs.svelte?raw";
 
 let installBlock: InstallComponentDocs = {
 	packages: ["motion-sv"],
@@ -113,6 +117,26 @@ const examples: Example[] = [
 		code: {
 			filename: "animated-beam-bi-directional.svelte",
 			filecode: AnimatedBeamBiDirectionalRaw,
+			lang: "svelte",
+			isExpand: true,
+		},
+	},
+	{
+		name: "Multiple Beams Inputs",
+		preview: AnimatedMultibeamExample,
+		code: {
+			filename: "animated-multibeam-example.svelte",
+			filecode: AnimatedMultibeamExampleRaw,
+			lang: "svelte",
+			isExpand: true,
+		},
+	},
+	{
+		name: "Multiple Beams Outputs",
+		preview: AnimatedBeamMultipleOutputs,
+		code: {
+			filename: "animated-beam-multiple-outputs.svelte",
+			filecode: AnimatedBeamMultipleOutputsRaw,
 			lang: "svelte",
 			isExpand: true,
 		},
