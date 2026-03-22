@@ -214,13 +214,13 @@ export const magicUIComponents: MagicComponent[] = [
 		badge: "New",
 		desc: "A dynamic text morphing component for Magic UI.",
 	},
-	{
-		id: "motion-grid",
-		name: "Motion Grid",
-		href: "/magic/docs/components/motion-grid",
-		badge: "New",
-		desc: "A frame-based 2D grid animation primitive with active/inactive cell states.",
-	},
+	// {
+	// 	id: "motion-grid",
+	// 	name: "Motion Grid",
+	// 	href: "/magic/docs/components/motion-grid",
+	// 	badge: "New",
+	// 	desc: "A frame-based 2D grid animation primitive with active/inactive cell states.",
+	// },
 	{
 		id: "neon-gradient-card",
 		name: "Neon Gradient Card",
