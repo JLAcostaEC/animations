@@ -2,7 +2,6 @@
 	import { cn } from "$lib/utils";
 	import type { Snippet } from "svelte";
 	import type { HTMLAttributes } from "svelte/elements";
-	import TexturedImage from "./image.avif";
 
 	type BookSize = "sm" | "default" | "lg";
 
@@ -26,6 +25,7 @@
 		size?: BookSize;
 		class?: string;
 		textured?: boolean;
+		textureUrl?: string;
 		style?: string;
 	}
 
@@ -34,6 +34,7 @@
 		size = "default",
 		class: className,
 		textured = false,
+		textureUrl,
 		style,
 		...props
 	}: Props = $props();
@@ -60,10 +61,10 @@
 				{@render children?.()}
 			</div>
 
-			{#if textured}
+			{#if textured && textureUrl}
 				<div
 					class="pointer-events-none absolute inset-0 rotate-180 bg-cover bg-no-repeat opacity-50 mix-blend-hard-light brightness-110"
-					style="border-radius: {borderRadius}; background-image: url({TexturedImage});"
+					style={`border-radius: ${borderRadius}; background-image: url(${textureUrl});`}
 				></div>
 			{/if}
 		</div>
@@ -79,7 +80,7 @@
 				"absolute inset-y-0 left-0 flex size-full flex-col justify-end overflow-hidden p-[12%]",
 				className || defaultColorClasses
 			)}
-			style="transform: translateZ(-25px); border-radius: ${borderRadius};"
+			style="transform: translateZ(-25px); border-radius: {borderRadius};"
 		></div>
 	</div>
 </div>

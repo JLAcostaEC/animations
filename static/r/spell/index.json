@@ -1,0 +1,10 @@
+[
+	{
+		"name": "perspective-book",
+		"title": "Perspective Book",
+		"type": "registry:block",
+		"description": "A 3D book cover wrapper with a hover tilt effect and optional textured overlay.",
+		"registryDependencies": [],
+		"relativeUrl": "perspective-book.json"
+	}
+]

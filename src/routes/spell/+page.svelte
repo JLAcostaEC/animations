@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { PerspectiveBook } from "$lib/components/spell/perspective-book";
 	import { Code2, Cog } from "@lucide/svelte";
+
+	const textureUrl = "/image.avif";
 </script>
 
 <div class="flex min-h-screen flex-col items-center justify-center gap-6">
-	<PerspectiveBook textured  size="lg">
+	<PerspectiveBook textured {textureUrl} size="lg">
 		<div class="flex h-full flex-col justify-between">
 			<div class="flex flex-col gap-4">
 				<div class="flex items-start justify-between gap-4">
@@ -30,7 +32,11 @@
 		</div>
 	</PerspectiveBook>
 
-	<PerspectiveBook class="h-full justify-start bg-[#4D4E41] text-yellow-300" textured>
+	<PerspectiveBook
+		class="h-full justify-start bg-[#4D4E41] text-yellow-300"
+		textured
+		{textureUrl}
+	>
 		<div class="flex h-full flex-col justify-between">
 			<div class="flex flex-col gap-4">
 				<h2 class="leading-4 font-semibold">The Art of Doing Science and Engineering</h2>

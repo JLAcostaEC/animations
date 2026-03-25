@@ -1,0 +1,26 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry.json",
+	"name": "spell",
+	"homepage": "https://sv-animations.vercel.app",
+	"items": [
+		{
+			"name": "perspective-book",
+			"type": "registry:block",
+			"title": "Perspective Book",
+			"description": "A 3D book cover wrapper with a hover tilt effect and optional textured overlay.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/perspective-book/perspective-book.svelte",
+					"type": "registry:component",
+					"target": "spell/perspective-book/perspective-book.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/perspective-book/index.ts",
+					"type": "registry:file",
+					"target": "spell/perspective-book/index.ts"
+				}
+			],
+			"registryDependencies": []
+		}
+	]
+}
