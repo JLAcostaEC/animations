@@ -97,6 +97,14 @@
 								Components
 							</NavigationMenuLink>
 						</NavigationMenuItem>
+						<NavigationMenuItem>
+							<NavigationMenuLink
+								href="/spell"
+								class="text-muted-foreground hover:text-primary focus:text-primary data-active:bg-accent/50 data-active:text-accent-foreground bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-transparent focus:bg-transparent"
+							>
+								Spell
+							</NavigationMenuLink>
+						</NavigationMenuItem>
 
 						<!-- Components Menu -->
 						<!-- <NavigationMenuItem>
