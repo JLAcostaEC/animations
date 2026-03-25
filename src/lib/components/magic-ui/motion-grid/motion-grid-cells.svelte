@@ -15,25 +15,27 @@
 
 	let { activeProps, inactiveProps, ...props }: MotionGridCellsProps = $props();
 
-	const context = useMotionGridContext();
+	let context = useMotionGridContext();
+	let cellRef = $state<HTMLDivElement | null>(null);
 
-	const animate = $derived(context.animate());
-	const index = $derived(context.index());
-	const cols = $derived(context.cols());
-	const rows = $derived(context.rows());
-	const frames = $derived(context.frames());
-	const duration = $derived(context.duration());
+	let animate = $derived(context.animate());
+	let index = $derived(context.index());
+	let cols = $derived(context.cols());
+	let rows = $derived(context.rows());
+	let frames = $derived(context.frames());
+	let duration = $derived(context.duration());
+	let transitionDuration = $derived(duration / 1000);
 
-	const active = $derived.by(() => {
+	let active = $derived.by(() => {
 		return new Set<number>(frames[index]?.map(([x, y]) => y * cols + x) ?? []);
 	});
 
-	const totalCells = $derived(cols * rows);
+	let totalCells = $derived(cols * rows);
 
-	const baseClass = $derived(props.class);
-	const baseStyle = $derived(props.style as StyleValue);
-	const baseProps = $derived.by(() => {
-		const { class: _class, style: _style, ...rest } = props;
+	let baseClass = $derived(props.class);
+	let baseStyle = $derived(props.style as StyleValue);
+	let baseProps = $derived.by(() => {
+		const { class: _class, style: _style, ref: _ref, ...rest } = props;
 		return rest;
 	});
 </script>
@@ -45,12 +47,14 @@
 	{@const variantStyle = variantProps.style}
 	{@const mergedClass = cn(baseClass, variantClass)}
 	{@const mergedStyle = mergeStyles(baseStyle, variantStyle as StyleValue)}
-	{@const restVariantProps = { ...variantProps, class: mergedClass, style: mergedStyle }}
+	{@const { ref: _variantRef, ...variantRestProps } = variantProps}
+	{@const restVariantProps = { ...variantRestProps, class: mergedClass, style: mergedStyle }}
 
 	<motion.div
+		bind:ref={cellRef}
 		data-active={isActive}
 		data-animate={animate}
-		transition={{ duration, ease: "easeInOut" }}
+		transition={{ duration: transitionDuration, ease: "easeInOut" }}
 		{...baseProps}
 		{...restVariantProps}
 	/>

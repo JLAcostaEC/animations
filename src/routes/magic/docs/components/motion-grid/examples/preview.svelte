@@ -34,7 +34,7 @@
 	<motion.div layout="preserve-aspect">
 		<MotionGrid gridSize={[5, 5]} frames={currentState.frames} class="w-fit gap-0.5">
 			<MotionGridCells
-				class="size-[3px] aspect-square rounded-full bg-white/20 data-[active=true]:bg-white/70 dark:bg-black/20 dark:data-[active=true]:bg-black/70"
+				class="aspect-square size-[3px] rounded-full bg-white/20 data-[active=true]:bg-white/70 dark:bg-black/20 dark:data-[active=true]:bg-black/70"
 			/>
 		</MotionGrid>
 	</motion.div>

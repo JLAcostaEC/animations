@@ -3,9 +3,7 @@ import type { RotatingTextContextType } from "./types";
 
 const ROTATING_TEXT_CONTEXT_KEY = Symbol("rotating-text-context");
 
-export function setRotatingTextContext(
-	value: RotatingTextContextType
-): RotatingTextContextType {
+export function setRotatingTextContext(value: RotatingTextContextType): RotatingTextContextType {
 	setContext(ROTATING_TEXT_CONTEXT_KEY, value);
 	return value;
 }

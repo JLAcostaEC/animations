@@ -17,7 +17,9 @@
 			props.class
 		)}
 	>
-		<MotionGridCells class="size-2 rounded-full bg-foreground/15 data-[active=true]:bg-foreground/90" />
+		<MotionGridCells
+			class="bg-foreground/15 data-[active=true]:bg-foreground/90 size-2 rounded-full"
+		/>
 	</motion.div>
 {/snippet}
 
