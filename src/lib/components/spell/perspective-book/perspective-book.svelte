@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { asset } from "$app/paths";
 	import { cn } from "$lib/utils";
 	import type { Snippet } from "svelte";
 	import type { HTMLAttributes } from "svelte/elements";
@@ -34,7 +35,7 @@
 		size = "default",
 		class: className,
 		textured = false,
-		textureUrl,
+		textureUrl = asset("/image.avif"),
 		style,
 		...props
 	}: Props = $props();

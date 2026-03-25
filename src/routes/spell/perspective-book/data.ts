@@ -4,6 +4,8 @@ import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/typ
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
+import TexturedExample from "./examples/textured-example.svelte";
+import TexturedExampleRaw from "./examples/textured-example.svelte?raw";
 
 export const textureDownloadUrl = "/image.avif";
 
@@ -37,12 +39,12 @@ const installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-|-- lib/
-|   \`-- components/
-|       \`-- spell/
-|           \`-- perspective-book/
-|               |-- perspective-book.svelte
-|               \`-- index.ts`,
+	├── lib/
+	│   ├── components/
+	│   │   ├── spell/
+	│   │   │   ├── perspective-book/
+	│   │   │   │   ├── index.ts
+	│   │   │   │   └── perspective-book.svelte`,
 };
 
 export const data: ComponentDoc = {
@@ -58,21 +60,18 @@ export const data: ComponentDoc = {
 	examples: [
 		{
 			name: "Textured Cover Preview",
-			description:
-				"A textured cover using the hosted site asset. In your own app, place the downloaded file in static and pass that path via textureUrl.",
-			preview: Preview,
+			preview: TexturedExample,
 			code: {
 				filename: "preview.svelte",
-				filecode: PreviewCodeRaw,
+				filecode: TexturedExampleRaw,
 				lang: "svelte",
+				highlight: [2, [28, 54]],
 			},
 		},
 	],
 	seo,
 	props: [
 		{
-			name: "PerspectiveBook",
-			desc: "A wrapper that renders slotted content as a 3D book cover with depth layers and optional texture.",
 			props: [
 				{
 					name: "size",

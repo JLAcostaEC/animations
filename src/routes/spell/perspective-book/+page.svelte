@@ -4,11 +4,10 @@
 	import APITable from "$lib/components/docs/base/APITable.svelte";
 	import { CopyPageDropdown } from "$lib/components/docs/copy-page-dropdown";
 	import { H1, H2, H3, Paragraph } from "$lib/components/docs/markdown/index";
-	import * as Alert from "$lib/components/ui/alert/index.js";
 	import { Button } from "$lib/components/ui/button";
+	import * as Item from "$lib/components/ui/item";
 	import { PreviewComponent } from "$lib/components/ui/preview-component";
 	import SEO from "$lib/seo/SEO.svelte";
-	import AlertCircleIcon from "@lucide/svelte/icons/alert-circle";
 	import DownloadIcon from "@lucide/svelte/icons/download";
 	import { data, textureDownloadUrl } from "./data";
 
@@ -34,10 +33,7 @@
 	</section>
 
 	<section>
-		<PreviewComponent
-			code={data.previewCode}
-			class="bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.65),_transparent_58%)]"
-		>
+		<PreviewComponent code={data.previewCode}>
 			{#if PreviewComp}
 				<PreviewComp />
 			{/if}
@@ -53,38 +49,24 @@
 			class="mt-4"
 		/>
 
-		<Alert.Root class="mt-6">
-			<AlertCircleIcon />
-			<Alert.Title>Optional Texture Download</Alert.Title>
-			<Alert.Description>
-				<div class="space-y-3">
-					<p>
-						The registry install does not bundle the texture image. If you want the
-						textured finish, download the file below and place it in your app at
-						<code class="bg-muted rounded px-1 py-0.5 text-xs">
-							static/perspective-book-texture.avif
-						</code>.
-					</p>
-					<p>
-						Then pass
-						<code class="bg-muted rounded px-1 py-0.5 text-xs">
-							textureUrl="/perspective-book-texture.avif"
-						</code>
-						alongside
-						<code class="bg-muted rounded px-1 py-0.5 text-xs">textured</code>.
-					</p>
-					<Button
-						href={textureDownloadUrl}
-						download="perspective-book-texture.avif"
-						size="sm"
-						class="w-fit"
-					>
-						<DownloadIcon class="size-4" />
-						Download Texture
-					</Button>
-				</div>
-			</Alert.Description>
-		</Alert.Root>
+		<Item.Root variant="outline" size="sm" class="mt-6">
+			<Item.Content>
+				<Item.Title>Note</Item.Title>
+				<Item.Description>
+					Download the texture image if you want the textured finish for this component.
+				</Item.Description>
+			</Item.Content>
+			<Item.Actions>
+				<Button
+					href={textureDownloadUrl}
+					download="perspective-book-texture.avif"
+					size="sm"
+				>
+					<DownloadIcon class="size-4" />
+					Download
+				</Button>
+			</Item.Actions>
+		</Item.Root>
 	</section>
 
 	<section>
