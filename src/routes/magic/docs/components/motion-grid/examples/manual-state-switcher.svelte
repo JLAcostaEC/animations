@@ -1,6 +1,10 @@
 <script lang="ts">
 	import { MotionGrid, MotionGridCells } from "$lib/components/magic-ui/motion-grid";
-	import { motionGridStateOrder, motionGridStates, type MotionGridStateKey } from "./state-frames";
+	import {
+		motionGridStateOrder,
+		motionGridStates,
+		type MotionGridStateKey,
+	} from "./state-frames";
 
 	let selected: MotionGridStateKey = "importing";
 </script>
@@ -24,7 +28,7 @@
 	<div class="flex items-center gap-3">
 		<MotionGrid gridSize={[5, 5]} frames={motionGridStates[selected].frames} class="gap-1">
 			<MotionGridCells
-				class="bg-muted size-2.5 rounded-full data-[active=true]:bg-foreground"
+				class="bg-muted data-[active=true]:bg-foreground size-2.5 rounded-full"
 				activeProps={{ animate: { scale: 1.1 } }}
 			/>
 		</MotionGrid>

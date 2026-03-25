@@ -12,7 +12,19 @@
 		};
 	}
 
+	function withRefProp<T extends Record<string, unknown>>(props: T) {
+		return Object.defineProperty(props, "ref", {
+			enumerable: true,
+			configurable: true,
+			get: () => ref,
+			set: (value) => {
+				ref = value as HTMLDivElement | null;
+			},
+		}) as T & { ref: HTMLDivElement | null };
+	}
+
 	let {
+		ref = $bindable(null),
 		gridSize,
 		frames,
 		duration = 200,
@@ -49,6 +61,11 @@
 	});
 
 	$effect(() => {
+		frames;
+		index = 0;
+	});
+
+	$effect(() => {
 		if (frames.length === 0) {
 			index = 0;
 			return;
@@ -62,33 +79,33 @@
 	$effect(() => {
 		if (!animate || frames.length === 0) return;
 
-		const interval = setInterval(() => {
+		let interval = setInterval(() => {
 			index = (index + 1) % frames.length;
 		}, duration);
 
 		return () => clearInterval(interval);
 	});
 
-	const baseStyle = $derived({
+	let baseStyle = $derived({
 		display: "grid",
 		gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
 		gridAutoRows: "1fr",
 	});
 
-	const mergedProps = $derived.by(() => {
-		const style = mergeStyles(baseStyle, restProps.style as StyleValue);
-		return {
+	let mergedProps = $derived.by(() => {
+		let style = mergeStyles(baseStyle, restProps.style as StyleValue);
+		return withRefProp({
 			...restProps,
 			"data-animate": animate,
 			style,
-		} as MotionGridCellMotionProps;
+		}) as MotionGridCellMotionProps;
 	});
 </script>
 
 {#if child}
 	{@render child({ props: mergedProps })}
 {:else}
-	<motion.div {...mergedProps}>
+	<motion.div bind:ref {...mergedProps}>
 		{@render children?.()}
 	</motion.div>
 {/if}
