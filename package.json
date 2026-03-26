@@ -11,7 +11,7 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"build:blocks": "pnpm shadcn-svelte registry build",
-		"build:spell-blocks": "pnpm shadcn-svelte registry build ./spell-registry.json -o ./static/r/spell",
+		"build:spell-blocks": "pnpm shadcn-svelte registry build ./spell-registry.json -o ./static/s",
 		"lint": "prettier --check .",
 		"format": "prettier --write ."
 	},
@@ -44,6 +44,7 @@
 		"mode-watcher": "^1.1.0",
 		"motion-sv": "^0.1.10",
 		"package-manager-detector": "^1.6.0",
+		"qrcode": "^1.5.4",
 		"runed": "^0.37.1",
 		"shadcn-svelte": "^1.1.0",
 		"shiki": "^3.21.0",
