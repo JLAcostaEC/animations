@@ -1,11 +1,9 @@
 <script lang="ts">
 	import { AnimatedCheckbox } from "$lib/components/spell/animated-checkbox";
-	import {
-		ColorSelector,
-		type ColorSelectorColor,
-	} from "$lib/components/spell/color-selector";
+	import { ColorSelector, type ColorSelectorColor } from "$lib/components/spell/color-selector";
 	import LabelInput from "$lib/components/spell/label-input/label-input.svelte";
 	import { QRCode } from "$lib/components/spell/qrcode";
+	import { Signature } from "$lib/components/spell/signature";
 
 	let value: ColorSelectorColor = $state("teal");
 </script>
@@ -41,5 +39,8 @@
 		<AnimatedCheckbox title="Implement Checkbox" />
 		<AnimatedCheckbox title="Write documentation" />
 		<AnimatedCheckbox title="Add tests" defaultChecked />
+	</div>
+	<div class="flex items-center justify-center">
+		<Signature class="dark:invert-100" text="Bhide Svelte" fontSize={16} color="#1D1D1F" />
 	</div>
 </div>
