@@ -18,6 +18,18 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/perspective-book",
 		desc: "A 3D book-cover wrapper with hover depth and optional texture.",
 	},
+	{
+		id: "text-marquee",
+		name: "Text Marquee",
+		href: "/spell/text-marquee",
+		desc: "A vertical text rotator with snippet-based prefix and row composition.",
+	},
+	{
+		id: "blur-reveal",
+		name: "Blur Reveal",
+		href: "/spell/blur-reveal",
+		desc: "A text-only blur and stagger reveal for hero copy, headings, and announcements.",
+	},
 ];
 
 export function getPrevNext(currentId: string) {

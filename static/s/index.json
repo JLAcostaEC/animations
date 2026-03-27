@@ -6,5 +6,24 @@
 		"description": "A 3D book cover wrapper with a hover tilt effect and optional textured overlay.",
 		"registryDependencies": [],
 		"relativeUrl": "perspective-book.json"
+	},
+	{
+		"name": "text-marquee",
+		"title": "Text Marquee",
+		"type": "registry:block",
+		"description": "A vertical text rotator with snippet-based prefix and row composition.",
+		"registryDependencies": [],
+		"relativeUrl": "text-marquee.json"
+	},
+	{
+		"name": "blur-reveal",
+		"title": "Blur Reveal",
+		"type": "registry:block",
+		"description": "A text-only blur and stagger reveal for hero copy, headings, and announcements.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "blur-reveal.json"
 	}
 ]

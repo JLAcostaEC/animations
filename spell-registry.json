@@ -21,6 +21,45 @@
 				}
 			],
 			"registryDependencies": []
+		},
+		{
+			"name": "text-marquee",
+			"type": "registry:block",
+			"title": "Text Marquee",
+			"description": "A vertical text rotator with snippet-based prefix and row composition.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/text-marquee/text-marquee.svelte",
+					"type": "registry:component",
+					"target": "spell/text-marquee/text-marquee.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/text-marquee/index.ts",
+					"type": "registry:file",
+					"target": "spell/text-marquee/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
+			"name": "blur-reveal",
+			"type": "registry:block",
+			"title": "Blur Reveal",
+			"description": "A text-only blur and stagger reveal for hero copy, headings, and announcements.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/blur-reveal/blur-reveal.svelte",
+					"type": "registry:component",
+					"target": "spell/blur-reveal/blur-reveal.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/blur-reveal/index.ts",
+					"type": "registry:file",
+					"target": "spell/blur-reveal/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
 		}
 	]
 }
