@@ -62,6 +62,26 @@
 			"dependencies": ["motion-sv"]
 		},
 		{
+			"name": "words-stagger",
+			"type": "registry:block",
+			"title": "Words Stagger",
+			"description": "A word-by-word blur and lift reveal for hero copy, launch messaging, and editorial headings.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/words-stagger/words-stagger.svelte",
+					"type": "registry:component",
+					"target": "spell/words-stagger/words-stagger.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/words-stagger/index.ts",
+					"type": "registry:file",
+					"target": "spell/words-stagger/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
 			"name": "randomized-text",
 			"type": "registry:block",
 			"title": "Randomized Text",

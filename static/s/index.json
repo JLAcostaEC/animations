@@ -27,6 +27,17 @@
 		"relativeUrl": "blur-reveal.json"
 	},
 	{
+		"name": "words-stagger",
+		"title": "Words Stagger",
+		"type": "registry:block",
+		"description": "A word-by-word blur and lift reveal for hero copy, launch messaging, and editorial headings.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "words-stagger.json"
+	},
+	{
 		"name": "randomized-text",
 		"title": "Randomized Text",
 		"type": "registry:block",

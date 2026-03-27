@@ -31,6 +31,12 @@ export const spellUIComponents: SpellComponent[] = [
 		desc: "A text-only blur and stagger reveal for hero copy, headings, and announcements.",
 	},
 	{
+		id: "words-stagger",
+		name: "Words Stagger",
+		href: "/spell/words-stagger",
+		desc: "A word-by-word blur and lift reveal for hero copy, launch messaging, and editorial headings.",
+	},
+	{
 		id: "randomized-text",
 		name: "Randomized Text",
 		href: "/spell/randomized-text",
