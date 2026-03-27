@@ -8,6 +8,36 @@
 		"relativeUrl": "perspective-book.json"
 	},
 	{
+		"name": "badge",
+		"title": "Badge",
+		"type": "registry:block",
+		"description": "A compact pill badge with multi-color variants, optional link mode, and size presets.",
+		"dependencies": [
+			"tailwind-variants"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "badge.json"
+	},
+	{
+		"name": "kbd",
+		"title": "KBD",
+		"type": "registry:block",
+		"description": "A tactile keyboard shortcut keycap with optional live keyboard listening.",
+		"dependencies": [
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "kbd.json"
+	},
+	{
+		"name": "marquee",
+		"title": "Marquee",
+		"type": "registry:block",
+		"description": "A reusable horizontal or vertical marquee with optional fade edges and hover pause.",
+		"registryDependencies": [],
+		"relativeUrl": "marquee.json"
+	},
+	{
 		"name": "text-marquee",
 		"title": "Text Marquee",
 		"type": "registry:block",

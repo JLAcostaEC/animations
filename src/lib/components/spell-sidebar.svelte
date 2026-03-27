@@ -1,32 +1,6 @@
-<script lang="ts" module>
-	import { spellUIComponents } from "$lib/components/docs/registry/spell_ui";
-
-	const navigationGroups = [
-		{
-			title: "Overview",
-			items: spellUIComponents
-				.filter((item) => item.href === "/spell")
-				.map((item) => ({
-					title: item.name,
-					url: item.href,
-					badge: item.badge,
-				})),
-		},
-		{
-			title: "Components",
-			items: spellUIComponents
-				.filter((item) => item.href !== "/spell")
-				.map((item) => ({
-					title: item.name,
-					url: item.href,
-					badge: item.badge,
-				})),
-		},
-	];
-</script>
-
 <script lang="ts">
 	import { page } from "$app/state";
+	import { spellUISidebarGroups } from "$lib/components/docs/registry/spell_ui";
 	import Badge from "$lib/components/ui/badge/badge.svelte";
 	import { ScrollArea } from "$lib/components/ui/scroll-area/index.js";
 	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
@@ -47,7 +21,7 @@
 		scrollbarYClasses="hidden"
 	>
 		<Sidebar.Content>
-			{#each navigationGroups as group (group.title)}
+			{#each spellUISidebarGroups as group (group.title)}
 				{#if group.items.length}
 					<Sidebar.Group>
 						<Sidebar.GroupLabel>{group.title}</Sidebar.GroupLabel>
@@ -55,10 +29,10 @@
 							<Sidebar.Menu>
 								{#each group.items as item}
 									<Sidebar.MenuItem>
-										<Sidebar.MenuButton isActive={isActive(item.url)}>
+										<Sidebar.MenuButton isActive={isActive(item.href)}>
 											{#snippet child({ props })}
-												<a href={item.url} {...props}>
-													{item.title}
+												<a href={item.href} {...props}>
+													{item.name}
 													{#if item.badge}
 														<Badge
 															variant="secondary"

@@ -1,6 +1,6 @@
 import { json } from "@sveltejs/kit";
+import type { Preview, SpotifyUrlInfoModule } from "spotify-url-info";
 import type { RequestHandler } from "./$types";
-import spotifyUrlInfo, { type Preview } from "spotify-url-info";
 
 interface SpotifyPreviewResponse {
 	title: string;
@@ -13,6 +13,14 @@ interface SpotifyPreviewResponse {
 interface SpotifyErrorResponse {
 	error: string;
 }
+
+const previewRequestOptions: RequestInit = {
+	headers: {
+		"user-agent":
+			"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36",
+		"accept-language": "en-US,en;q=0.9",
+	},
+};
 
 function normalizeSpotifyUrl(url: string): string {
 	return url.replace(/\/intl-[a-z]{2}\//i, "/");
@@ -32,19 +40,26 @@ export const GET: RequestHandler = async ({ url, fetch }) => {
 	const spotifyUrl = url.searchParams.get("url");
 
 	if (!spotifyUrl) {
-		return json<SpotifyErrorResponse>({ error: "URL is required" }, { status: 400 });
+		return json({ error: "URL is required" } satisfies SpotifyErrorResponse, { status: 400 });
 	}
 
 	try {
 		const normalizedUrl = normalizeSpotifyUrl(spotifyUrl);
-		const { getPreview } = spotifyUrlInfo(fetch);
-		const preview = await getPreview(normalizedUrl);
+		const spotifyUrlInfoModule = (await import("spotify-url-info")) as unknown as {
+			default?: SpotifyUrlInfoModule;
+		} & SpotifyUrlInfoModule;
+		const createSpotifyUrlInfo = spotifyUrlInfoModule.default ?? spotifyUrlInfoModule;
+		const { getPreview } = createSpotifyUrlInfo(fetch);
+		const preview = await getPreview(normalizedUrl, previewRequestOptions);
 
-		return json<SpotifyPreviewResponse>(toPreviewResponse(preview));
-	} catch {
-		return json<SpotifyErrorResponse>(
-			{ error: "Failed to fetch Spotify data" },
-			{ status: 500 }
-		);
+		return json(toPreviewResponse(preview) satisfies SpotifyPreviewResponse);
+	} catch (error) {
+		if (error instanceof TypeError) {
+			return json({ error: error.message } satisfies SpotifyErrorResponse, { status: 400 });
+		}
+
+		return json({ error: "Failed to fetch Spotify data" } satisfies SpotifyErrorResponse, {
+			status: 500,
+		});
 	}
 };

@@ -1,0 +1,106 @@
+import KbdRaw from "$lib/components/spell/kbd/kbd.svelte?raw";
+import IndexTsRaw from "$lib/components/spell/kbd/index.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { SEO } from "$lib/types/seo";
+import Preview from "./examples/preview.svelte";
+import PreviewCodeRaw from "./examples/preview.svelte?raw";
+import LiveKeyboardExample from "./examples/live-keyboard-example.svelte";
+import LiveKeyboardExampleRaw from "./examples/live-keyboard-example.svelte?raw";
+
+export const meta: ComponentMeta = {
+	id: "spell/kbd",
+	title: "KBD",
+	description:
+		"A tactile keyboard shortcut keycap for docs, commands, and menus, with optional live keyboard listening.",
+	category: "spell",
+};
+
+const seo: SEO = {
+	title: "KBD",
+	description:
+		"Learn how to use the KBD spell component in Svelte, including shortcut composition, active states, and live keyboard listening.",
+	keywords: ["Svelte", "KBD", "Spell", "Svelte Animations", "Keyboard Shortcut", "runed"],
+};
+
+const installBlock: InstallComponentDocs = {
+	installCode: [
+		{
+			filename: "kbd.svelte",
+			filecode: KbdRaw,
+			lang: "svelte",
+			isExpand: true,
+		},
+		{
+			filename: "index.ts",
+			filecode: IndexTsRaw,
+			lang: "typescript",
+		},
+	],
+	packages: ["runed"],
+	folderStructure: `src/
+lib/
+  components/
+    spell/
+      kbd/
+        kbd.svelte
+        index.ts`,
+};
+
+export const data: ComponentDoc = {
+	...meta,
+	preview: Preview,
+	previewCode: {
+		filename: "preview.svelte",
+		filecode: PreviewCodeRaw,
+		lang: "svelte",
+		hideLines: true,
+	},
+	installBlock,
+	examples: [
+		{
+			name: "Live Keyboard Listening",
+			description:
+				"Enable keyboard listening to highlight the keycap automatically when the matching shortcut is currently pressed.",
+			preview: LiveKeyboardExample,
+			code: {
+				filename: "live-keyboard-example.svelte",
+				filecode: LiveKeyboardExampleRaw,
+				lang: "svelte",
+			},
+		},
+	],
+	seo,
+	props: [
+		{
+			props: [
+				{
+					name: "keys",
+					type: "(string | { display: string; key: string })[]",
+					default: "[]",
+					description:
+						"Defines the rendered shortcut sequence. Object items let you separate the display label from the key used for matching.",
+				},
+				{
+					name: "active",
+					type: "boolean",
+					default: "false",
+					description:
+						"Forces the pressed visual state without listening for keyboard input.",
+				},
+				{
+					name: "listenToKeyboard",
+					type: "boolean",
+					default: "false",
+					description:
+						"Listens for matching pressed keys and toggles the active state automatically.",
+				},
+				{
+					name: "class",
+					type: "string | undefined",
+					default: "undefined",
+					description: "Custom classes merged onto the root kbd element.",
+				},
+			],
+		},
+	],
+};

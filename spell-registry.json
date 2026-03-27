@@ -23,6 +23,110 @@
 			"registryDependencies": []
 		},
 		{
+			"name": "badge",
+			"type": "registry:block",
+			"title": "Badge",
+			"description": "A compact pill badge with multi-color variants, optional link mode, and size presets.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/badge/badge.svelte",
+					"type": "registry:component",
+					"target": "spell/badge/badge.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/badge/index.ts",
+					"type": "registry:file",
+					"target": "spell/badge/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["tailwind-variants"]
+		},
+		{
+			"name": "kbd",
+			"type": "registry:block",
+			"title": "KBD",
+			"description": "A tactile keyboard shortcut keycap with optional live keyboard listening.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/kbd/kbd.svelte",
+					"type": "registry:component",
+					"target": "spell/kbd/kbd.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/kbd/index.ts",
+					"type": "registry:file",
+					"target": "spell/kbd/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["runed"]
+		},
+		{
+			"name": "marquee",
+			"type": "registry:block",
+			"title": "Marquee",
+			"description": "A reusable horizontal or vertical marquee with optional fade edges and hover pause.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/marquee/marquee.svelte",
+					"type": "registry:component",
+					"target": "spell/marquee/marquee.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/marquee/index.ts",
+					"type": "registry:file",
+					"target": "spell/marquee/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
+			"name": "spotify-card",
+			"type": "registry:block",
+			"title": "Spotify Card",
+			"description": "A Spotify preview card with blurred artwork, playback controls, and server-fetched metadata.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/spotify-card/spotify-card.svelte",
+					"type": "registry:component",
+					"target": "spell/spotify-card/spotify-card.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/spotify-card/index.ts",
+					"type": "registry:file",
+					"target": "spell/spotify-card/index.ts"
+				},
+				{
+					"path": "./src/routes/api/spotify/+server.ts",
+					"type": "registry:file",
+					"target": "routes/api/spotify/+server.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["spotify-url-info"]
+		},
+		{
+			"name": "qrcode",
+			"type": "registry:block",
+			"title": "QRCode",
+			"description": "A rounded QR code renderer with circular modules and stylized finder patterns.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/qrcode/qrcode.svelte",
+					"type": "registry:component",
+					"target": "spell/qrcode/qrcode.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/qrcode/index.ts",
+					"type": "registry:file",
+					"target": "spell/qrcode/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["qrcode"]
+		},
+		{
 			"name": "text-marquee",
 			"type": "registry:block",
 			"title": "Text Marquee",

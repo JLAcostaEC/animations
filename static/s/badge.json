@@ -1,0 +1,25 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "badge",
+	"title": "Badge",
+	"type": "registry:block",
+	"description": "A compact pill badge with multi-color variants, optional link mode, and size presets.",
+	"dependencies": [
+		"tailwind-variants"
+	],
+	"devDependencies": [
+		"tailwind-variants@^3.2.2"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\" module>\r\n\timport { type VariantProps, tv } from \"tailwind-variants\";\r\n\r\n\texport const badgeVariants = tv({\r\n\t\tbase: \"inline-flex items-center justify-center rounded-sm text-xs leading-none font-medium\",\r\n\t\tvariants: {\r\n\t\t\tvariant: {\r\n\t\t\t\tdefault:\r\n\t\t\t\t\t\"bg-neutral-700 text-neutral-100 dark:bg-neutral-200 dark:text-neutral-800\",\r\n\t\t\t\tsecondary: \"bg-secondary text-secondary-foreground\",\r\n\t\t\t\toutline: \"border-input bg-background border\",\r\n\t\t\t\tdestructive:\r\n\t\t\t\t\t\"bg-destructive dark:text-destructive-foreground text-primary-foreground\",\r\n\t\t\t\tred: \"bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400\",\r\n\t\t\t\tblue: \"bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400\",\r\n\t\t\t\tgreen: \"bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400\",\r\n\t\t\t\tyellow: \"bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400\",\r\n\t\t\t\tpurple: \"bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400\",\r\n\t\t\t\tpink: \"bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-400\",\r\n\t\t\t\torange: \"bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-400\",\r\n\t\t\t\tcyan: \"bg-cyan-100 text-cyan-700 dark:bg-cyan-900/30 dark:text-cyan-400\",\r\n\t\t\t\tindigo: \"bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400\",\r\n\t\t\t\tviolet: \"bg-violet-100 text-violet-700 dark:bg-violet-900/30 dark:text-violet-400\",\r\n\t\t\t\trose: \"bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-400\",\r\n\t\t\t\tamber: \"bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400\",\r\n\t\t\t\tlime: \"bg-lime-100 text-lime-700 dark:bg-lime-900/30 dark:text-lime-400\",\r\n\t\t\t\temerald:\r\n\t\t\t\t\t\"bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400\",\r\n\t\t\t\tsky: \"bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-400\",\r\n\t\t\t\tslate: \"bg-slate-100 text-slate-700 dark:bg-slate-900/30 dark:text-slate-400\",\r\n\t\t\t\tfuchsia:\r\n\t\t\t\t\t\"bg-fuchsia-100 text-fuchsia-700 dark:bg-fuchsia-900/30 dark:text-fuchsia-400\",\r\n\t\t\t},\r\n\t\t\tsize: {\r\n\t\t\t\tdefault: \"px-1.5 py-1\",\r\n\t\t\t\tsm: \"p-1\",\r\n\t\t\t},\r\n\t\t},\r\n\t\tdefaultVariants: {\r\n\t\t\tvariant: \"default\",\r\n\t\t\tsize: \"default\",\r\n\t\t},\r\n\t});\r\n\r\n\texport type BadgeVariant = VariantProps<typeof badgeVariants>[\"variant\"];\r\n\texport type BadgeSize = VariantProps<typeof badgeVariants>[\"size\"];\r\n</script>\r\n\r\n<script lang=\"ts\">\r\n\timport type { HTMLAnchorAttributes } from \"svelte/elements\";\r\n\timport { cn, type WithElementRef } from \"$UTILS$.js\";\r\n\r\n\tlet {\r\n\t\tref = $bindable(null),\r\n\t\thref,\r\n\t\tclass: className,\r\n\t\tvariant = \"default\",\r\n\t\tsize = \"default\",\r\n\t\tchildren,\r\n\t\t...restProps\r\n\t}: WithElementRef<HTMLAnchorAttributes> & {\r\n\t\tvariant?: BadgeVariant;\r\n\t\tsize?: BadgeSize;\r\n\t} = $props();\r\n</script>\r\n\r\n<svelte:element\r\n\tthis={href ? \"a\" : \"span\"}\r\n\tbind:this={ref}\r\n\tdata-slot=\"badge\"\r\n\t{href}\r\n\tclass={cn(badgeVariants({ variant, size }), className)}\r\n\t{...restProps}\r\n>\r\n\t{@render children?.()}\r\n</svelte:element>\r\n",
+			"type": "registry:component",
+			"target": "spell/badge/badge.svelte"
+		},
+		{
+			"content": "import Badge from \"./badge.svelte\";\n\nexport { Badge };\nexport { badgeVariants, type BadgeSize, type BadgeVariant } from \"./badge.svelte\";\n",
+			"type": "registry:file",
+			"target": "spell/badge/index.ts"
+		}
+	]
+}
