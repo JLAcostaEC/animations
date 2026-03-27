@@ -3,6 +3,7 @@ export interface SpellComponent {
 	name: string;
 	href: string;
 	desc?: string;
+	badge?: "Beta" | "New" | "Updated";
 }
 
 export const spellUIComponents: SpellComponent[] = [
@@ -41,6 +42,13 @@ export const spellUIComponents: SpellComponent[] = [
 		name: "Randomized Text",
 		href: "/spell/randomized-text",
 		desc: "A stable randomized text reveal for hero copy, labels, and editorial callouts.",
+	},
+	{
+		id: "expanded-input",
+		name: "Expanded Input",
+		href: "/spell/expanded-input",
+		desc: "A particle input companion that explodes emoji or custom items as you type.",
+		badge: "Beta",
 	},
 ];
 

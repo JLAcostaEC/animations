@@ -9,6 +9,7 @@
 				.map((item) => ({
 					title: item.name,
 					url: item.href,
+					badge: item.badge,
 				})),
 		},
 		{
@@ -18,6 +19,7 @@
 				.map((item) => ({
 					title: item.name,
 					url: item.href,
+					badge: item.badge,
 				})),
 		},
 	];
@@ -25,6 +27,7 @@
 
 <script lang="ts">
 	import { page } from "$app/state";
+	import Badge from "$lib/components/ui/badge/badge.svelte";
 	import { ScrollArea } from "$lib/components/ui/scroll-area/index.js";
 	import * as Sidebar from "$lib/components/ui/sidebar/index.js";
 	import type { ComponentProps } from "svelte";
@@ -54,7 +57,25 @@
 									<Sidebar.MenuItem>
 										<Sidebar.MenuButton isActive={isActive(item.url)}>
 											{#snippet child({ props })}
-												<a href={item.url} {...props}>{item.title}</a>
+												<a href={item.url} {...props}>
+													{item.title}
+													{#if item.badge}
+														<Badge
+															variant="secondary"
+															class={[
+																item.badge === "New" &&
+																	"border-green-500/30 bg-green-500/20 text-[10px] text-green-600 dark:bg-green-500/15 dark:text-green-400",
+																item.badge === "Beta" &&
+																	"border-yellow-500/30 bg-yellow-500/20 text-[10px] text-yellow-600 dark:bg-yellow-500/20 dark:text-yellow-400",
+																item.badge === "Updated" &&
+																	"border-cyan-500/30 bg-cyan-500/20 text-[10px] text-cyan-600 dark:bg-cyan-500/15 dark:text-cyan-400",
+																"ml-auto px-1.5 py-0 text-[10px]",
+															]}
+														>
+															{item.badge}
+														</Badge>
+													{/if}
+												</a>
 											{/snippet}
 										</Sidebar.MenuButton>
 									</Sidebar.MenuItem>
