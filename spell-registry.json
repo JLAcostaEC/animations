@@ -60,6 +60,26 @@
 			],
 			"registryDependencies": [],
 			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "randomized-text",
+			"type": "registry:block",
+			"title": "Randomized Text",
+			"description": "A stable randomized text reveal for hero copy, labels, and editorial callouts.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/randomized-text/randomized-text.svelte",
+					"type": "registry:component",
+					"target": "spell/randomized-text/randomized-text.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/randomized-text/index.ts",
+					"type": "registry:file",
+					"target": "spell/randomized-text/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
 		}
 	]
 }

@@ -5,7 +5,7 @@ A vertical text rotator for spell-style hero sections, with snippet-based prefix
 ## Installation
 
 ```bash
-npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/spell/text-marquee.json
+npx shadcn-svelte@latest add https://sv-animations.vercel.app/s/text-marquee.json
 ```
 
 ## Usage

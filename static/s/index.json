@@ -25,5 +25,16 @@
 		],
 		"registryDependencies": [],
 		"relativeUrl": "blur-reveal.json"
+	},
+	{
+		"name": "randomized-text",
+		"title": "Randomized Text",
+		"type": "registry:block",
+		"description": "A stable randomized text reveal for hero copy, labels, and editorial callouts.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "randomized-text.json"
 	}
 ]

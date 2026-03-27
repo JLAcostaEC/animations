@@ -30,6 +30,12 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/blur-reveal",
 		desc: "A text-only blur and stagger reveal for hero copy, headings, and announcements.",
 	},
+	{
+		id: "randomized-text",
+		name: "Randomized Text",
+		href: "/spell/randomized-text",
+		desc: "A stable randomized text reveal for hero copy, labels, and editorial callouts.",
+	},
 ];
 
 export function getPrevNext(currentId: string) {

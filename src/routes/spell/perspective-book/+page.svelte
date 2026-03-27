@@ -12,7 +12,8 @@
 	import { data, textureDownloadUrl } from "./data";
 
 	let PreviewComp = $derived(data.preview);
-	let installUrl = $derived(`${page.url.origin}/r/${data.id}.json`);
+	let installSlug = $derived(data.id.replace("spell/", ""));
+	let installUrl = $derived(`${page.url.origin}/s/${installSlug}.json`);
 
 	const getURLPath = (url: string) => url.split("?")[0].split("#")[0];
 	let llmsTxtUrl = $derived(`${getURLPath(page.url.pathname)}/llms.txt`);
@@ -92,7 +93,7 @@
 		<H2 id="props">Props</H2>
 		<div class="mt-3 space-y-6">
 			{#each data.props ?? [] as prop}
-				<APITable data={prop} />
+				<APITable data={prop.props} />
 			{/each}
 		</div>
 	</section>

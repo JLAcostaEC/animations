@@ -5,7 +5,7 @@ A 3D book-cover wrapper for spell-style showcases, with layered depth, hover per
 ## Installation
 
 ```bash
-npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/spell/perspective-book.json
+npx shadcn-svelte@latest add https://sv-animations.vercel.app/s/perspective-book.json
 ```
 
 ## Usage
