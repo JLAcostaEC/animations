@@ -1,7 +1,15 @@
 <script lang="ts">
-	import ExpandedInput from "$lib/components/spell/expanded-input/expanded-input.svelte";
+	import { ExplodingInput } from "$lib/components/spell/exploding-input";
 
-	const emojis = ["🤩", "👾", "😺", "👻", "🎃", "🖤", "🗯️"];
+	const emojis = [
+		"\u{1F929}",
+		"\u{1F47E}",
+		"\u{1F63A}",
+		"\u{1F47B}",
+		"\u{1F383}",
+		"\u{1F5A4}",
+		"\u{1F5EF}",
+	];
 </script>
 
 <div class="flex justify-center py-8">
@@ -11,7 +19,7 @@
 			placeholder="try@spell.here"
 			class="h-10 w-72 border-b bg-background p-0 text-base font-medium outline-none placeholder:font-medium"
 		/>
-		<ExpandedInput
+		<ExplodingInput
 			class="z-50"
 			items={emojis}
 			direction={{ horizontal: "left", vertical: "top" }}
@@ -22,6 +30,6 @@
 			{#snippet children(item)}
 				<span class="text-4xl">{item}</span>
 			{/snippet}
-		</ExpandedInput>
+		</ExplodingInput>
 	</label>
 </div>

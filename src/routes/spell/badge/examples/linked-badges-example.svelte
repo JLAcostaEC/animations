@@ -36,7 +36,7 @@
 			Docs
 		</Badge>
 		<Badge
-			href="/spell/expanded-input"
+			href="/spell/exploding-input"
 			variant="amber"
 			size="sm"
 			class="transition-opacity hover:opacity-80"

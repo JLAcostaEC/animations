@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ExpandedInput from "$lib/components/spell/expanded-input/expanded-input.svelte";
+	import { ExplodingInput } from "$lib/components/spell/exploding-input";
 
 	function makeBadgeDataUrl(fill: string, accent: string) {
 		const svg = `
@@ -28,7 +28,7 @@
 			placeholder="drop image particles"
 			class="h-10 w-80 rounded-none border-b bg-background p-0 text-base font-medium outline-none placeholder:font-medium"
 		/>
-		<ExpandedInput
+		<ExplodingInput
 			items={badges}
 			count={2}
 			duration={2.6}
@@ -42,6 +42,6 @@
 					class="h-9 w-9 rounded-xl object-cover shadow-[0_8px_24px_rgba(15,23,42,0.16)]"
 				/>
 			{/snippet}
-		</ExpandedInput>
+		</ExplodingInput>
 	</label>
 </div>

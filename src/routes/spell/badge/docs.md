@@ -34,7 +34,7 @@ Set `href` to render the badge as an anchor. This works well for filter chips, m
 <div class="flex flex-wrap gap-2">
   <Badge href="/spell/randomized-text" variant="sky" size="sm">Text</Badge>
   <Badge href="/spell/perspective-book" variant="violet" size="sm">3D</Badge>
-  <Badge href="/spell/expanded-input" variant="amber" size="sm">Input</Badge>
+  <Badge href="/spell/exploding-input" variant="amber" size="sm">Input</Badge>
 </div>
 ```
 

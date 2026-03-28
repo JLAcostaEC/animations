@@ -223,6 +223,185 @@
 			],
 			"registryDependencies": [],
 			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "special-text",
+			"type": "registry:block",
+			"title": "Special Text",
+			"description": "A scrambled text reveal with optional viewport triggering and plain text or slotted content input.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/special-text/special-text.svelte",
+					"type": "registry:component",
+					"target": "spell/special-text/special-text.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/special-text/index.ts",
+					"type": "registry:file",
+					"target": "spell/special-text/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "highlighted-text",
+			"type": "registry:block",
+			"title": "Highlighted Text",
+			"description": "An inline highlight sweep that reveals text from configurable directions with optional viewport triggers.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/highlighted-text/highlighted-text.svelte",
+					"type": "registry:component",
+					"target": "spell/highlighted-text/highlighted-text.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/highlighted-text/index.ts",
+					"type": "registry:file",
+					"target": "spell/highlighted-text/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "slide-up-text",
+			"type": "registry:block",
+			"title": "Slide Up Text",
+			"description": "A configurable text reveal that slides words, characters, or lines upward with staggered motion.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/slide-up-text/slide-up-text.svelte",
+					"type": "registry:component",
+					"target": "spell/slide-up-text/slide-up-text.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/slide-up-text/index.ts",
+					"type": "registry:file",
+					"target": "spell/slide-up-text/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "signature",
+			"type": "registry:block",
+			"title": "Signature",
+			"description": "A handwritten signature renderer that animates glyph paths from downloaded font data.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/signature/signature.svelte",
+					"type": "registry:component",
+					"target": "spell/signature/signature.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/signature/index.ts",
+					"type": "registry:file",
+					"target": "spell/signature/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["opentype.js"]
+		},
+		{
+			"name": "gradient-wave-text",
+			"type": "registry:block",
+			"title": "Gradient Wave Text",
+			"description": "A flowing gradient text effect with radial or linear bands, custom colors, and view-triggered playback.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/gradient-wave-text/gradient-wave-text.svelte",
+					"type": "registry:component",
+					"target": "spell/gradient-wave-text/gradient-wave-text.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/gradient-wave-text/index.ts",
+					"type": "registry:file",
+					"target": "spell/gradient-wave-text/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "color-selector",
+			"type": "registry:block",
+			"title": "Color Selector",
+			"description": "A compact swatch picker with preset or custom CSS colors, form support, and size variants.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/color-selector/color-selector.svelte",
+					"type": "registry:component",
+					"target": "spell/color-selector/color-selector.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/color-selector/index.ts",
+					"type": "registry:file",
+					"target": "spell/color-selector/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["tailwind-variants"]
+		},
+		{
+			"name": "label-input",
+			"type": "registry:block",
+			"title": "Label Input",
+			"description": "A floating-label input with ring-color variants and password visibility toggle support.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/label-input/label-input.svelte",
+					"type": "registry:component",
+					"target": "spell/label-input/label-input.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/label-input/index.ts",
+					"type": "registry:file",
+					"target": "spell/label-input/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["tailwind-variants", "@lucide/svelte"]
+		},
+		{
+			"name": "animated-checkbox",
+			"type": "registry:block",
+			"title": "Animated Checkbox",
+			"description": "A motion-driven checkbox row with animated checkmark drawing and strike-through feedback.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/animated-checkbox/animated-checkbox.svelte",
+					"type": "registry:component",
+					"target": "spell/animated-checkbox/animated-checkbox.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/animated-checkbox/index.ts",
+					"type": "registry:file",
+					"target": "spell/animated-checkbox/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "exploding-input",
+			"type": "registry:block",
+			"title": "Exploding Input",
+			"description": "A particle input companion that launches custom items outward from the cursor as you type.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/exploding-input/exploding-input.svelte",
+					"type": "registry:component",
+					"target": "spell/exploding-input/exploding-input.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/exploding-input/index.ts",
+					"type": "registry:file",
+					"target": "spell/exploding-input/index.ts"
+				}
+			],
+			"registryDependencies": []
 		}
 	]
 }

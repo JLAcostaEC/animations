@@ -388,15 +388,15 @@
 
 <div
 	bind:this={ref}
-	data-slot="expanded-input"
-	class={cn("spell-expanded-input", className)}
+	data-slot="exploding-input"
+	class={cn("spell-exploding-input", className)}
 	style={rootStyle}
 	aria-hidden="true"
 	{...restProps}
 >
 	{#each particles as particle (particle.id)}
 		<div
-			data-slot="expanded-input-particle"
+			data-slot="exploding-input-particle"
 			class="pointer-events-none absolute left-0 top-0 flex items-center justify-center will-change-transform"
 			style={`transform: translate(${particle.x}px, ${particle.y}px) translate(-50%, -50%) scale(${particle.scale}) rotate(${particle.rotate}deg); opacity: ${particle.opacity}; transform-origin: 50% 50%;`}
 		>
