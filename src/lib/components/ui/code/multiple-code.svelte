@@ -80,7 +80,7 @@
 			class="w-full rounded-none border-none "
 			code={selectedCode.filecode}
 			highlight={selectedCode.highlight}
-			hideLines={selectedCode.hideLines}
+			hideLines={false}
 		>
 			<Code.CopyButton />
 		</Code.Root>

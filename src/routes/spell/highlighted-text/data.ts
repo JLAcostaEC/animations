@@ -73,6 +73,7 @@ export const data: ComponentDoc = {
 				filename: "direction-example.svelte",
 				filecode: DirectionExampleRaw,
 				lang: "svelte",
+				highlight: [[2, 4], 8],
 			},
 		},
 	],

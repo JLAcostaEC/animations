@@ -64,10 +64,10 @@
 			<Tr>
 				{#each tableKeys as key, index (key)}
 					<Td>
-						<span class="inline-flex items-center">
+						<span class="inline-flex items-center gap-1">
 							<code
 								class={cn(
-									"bg-muted/40 text-foreground  rounded-sm border px-1.5 py-0.5 font-normal"
+									"dark:bg-muted/50 bg-muted/75 rounded-md px-2 py-0.5 font-mono text-sm text-neutral-600 dark:text-neutral-300"
 								)}
 							>
 								{key === "default" && row.required

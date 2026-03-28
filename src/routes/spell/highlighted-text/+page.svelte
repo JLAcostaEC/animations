@@ -25,13 +25,13 @@
 			<CopyPageDropdown componentName={data.title} {llmsTxtUrl} />
 		</div>
 
-		<div class="mt-4 space-y-3">
+		<div class="mt-3 max-w-2xl">
 			<Paragraph>{data.description}</Paragraph>
 		</div>
 	</section>
 
 	<section>
-		<PreviewComponent code={data.previewCode}>
+		<PreviewComponent  code={data.previewCode}>
 			{#if PreviewComp}
 				<PreviewComp />
 			{/if}

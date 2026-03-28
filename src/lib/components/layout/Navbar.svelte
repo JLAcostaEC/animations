@@ -16,6 +16,7 @@
 	import LightSwitch from "../ui/light-switch/light-switch.svelte";
 	import DocsSearchNavigation from "../docs/navigation/DocsSearchNavigation.svelte";
 	import MobileNavbarSheet from "./MobileNavbarSheet.svelte";
+	import { cn } from "$lib/utils";
 
 	type NavigationItem = {
 		href: string;
@@ -58,7 +59,7 @@
 		{
 			href: "/spell",
 			title: "Svelte Spell UI",
-			description: "Minimal spell-style components and docs for Svelte.",
+			description: "Refined UI components for Design Engineers.",
 			icon: BookOpenIcon,
 		},
 	];
@@ -93,8 +94,8 @@
 							>
 								Components
 							</NavigationMenuTrigger>
-							<NavigationMenuContent class='p-0'>
-								<ul class="grid w-[32rem] gap-2 p-2 md:grid-cols-2">
+							<NavigationMenuContent class="p-0">
+								<ul class="grid w-[18rem] gap-2 p-1 md:grid-cols-1">
 									{#each navigationItems as item (item.href)}
 										<li>
 											<NavigationMenuLink href={item.href}>
@@ -107,20 +108,18 @@
 															{#if item.icon}
 																{@const Icon = item.icon}
 																<div
-																	class="bg-muted text-muted-foreground group-hover:bg-accent-foreground/10 group-hover:text-accent-foreground mt-0.5 flex size-8 shrink-0 items-center justify-center rounded-md transition-colors"
+																	class={cn(
+																		"bg-secondary outline-border/60 [&_svg]:text-foreground flex aspect-square size-9 items-center justify-center rounded-lg border shadow-xs outline outline-offset-2  [&_svg]:size-4"
+																	)}
 																>
 																	<Icon class="size-4" strokeWidth={1.6} />
 																</div>
 															{/if}
 															<div class="space-y-1">
-																<div
-																	class="text-sm leading-none font-medium"
-																>
+																<div class="text-sm leading-none font-medium">
 																	{item.title}
 																</div>
-																<p
-																	class="text-muted-foreground line-clamp-1 text-xs leading-snug"
-																>
+																<p class="text-muted-foreground line-clamp-1 text-xs leading-snug">
 																	{item.description}
 																</p>
 															</div>

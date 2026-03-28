@@ -44,6 +44,9 @@
 	--color-3: hsl(210 100% 63%);
 	--color-4: hsl(195 100% 63%);
 	--color-5: hsl(90 100% 63%);
+
+	/* Code highlight */
+	--code-highlight-bg: oklch(24.03% 0.02991 177.063 / 0.844);
 }
 
 .dark {
@@ -131,8 +134,12 @@
 	--color-4: var(--color-4);
 	--color-5: var(--color-5);
 
+	/* Code highlight */
+	--color-highlight-bg: var(--code-highlight-bg);
+
 	/* Font */
 	--font-sans: "Geist", sans-serif;
+	--font-mono: "Geist Mono", monospace;
 
 	/* Svelte Magic UI */
 	--animate-gradient: gradient 8s linear infinite;

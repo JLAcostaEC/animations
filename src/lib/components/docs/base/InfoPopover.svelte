@@ -82,22 +82,26 @@
 	});
 </script>
 
-<div class="relative ml-1.5 inline-flex items-center align-middle">
+<div class="relative inline-flex items-center align-middle">
 	<button
 		bind:this={triggerRef}
 		onclick={toggle}
-		class="text-foreground/70 hover:text-foreground transition-[color] duration-150 ease-out"
+		class="text-foreground/70 hover:text-foreground hover:bg-accent rounded-md p-1 transition-colors duration-150 ease-out"
 		aria-label="More info"
 	>
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="2"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			class="lucide lucide-info text-muted-foreground size-4"
 			aria-hidden="true"
-			width="16"
-			height="16"
-			fill="currentColor"
-			viewBox="0 0 256 256"
-			><path
-				d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24Zm0,192a88,88,0,1,1,88-88A88.1,88.1,0,0,1,128,216Zm16-40a8,8,0,0,1-8,8,16,16,0,0,1-16-16V128a8,8,0,0,1,0-16,16,16,0,0,1,16,16v40A8,8,0,0,1,144,176ZM112,84a12,12,0,1,1,12,12A12,12,0,0,1,112,84Z"
+			><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"
 			></path></svg
 		>
 	</button>
@@ -106,7 +110,7 @@
 		<div
 			bind:this={popoverRef}
 			transition:scale={{ duration: 150, start: 0.95 }}
-			class="border-border bg-card text-foreground fixed z-50 w-64 rounded-lg border p-3 text-sm leading-normal shadow-lg"
+			class="border-border bg-card text-foreground fixed z-50 w-72 rounded-lg border p-2 text-sm leading-normal shadow-lg"
 			style="top: {coords.top}px; left: {coords.left}px; transform: {transform};"
 		>
 			{description}

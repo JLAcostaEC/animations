@@ -38,14 +38,14 @@
 		{@render children()}
 	{:else}
 		<div
-			class="mx-auto flex w-full max-w-7xl items-start gap-x-8 px-4 py-6 sm:px-6 lg:pr-4 lg:pl-8"
+			class="mx-auto grid w-full max-w-7xl grid-cols-1 gap-y-10 px-4 py-6 sm:px-6 xl:grid-cols-[minmax(0,1fr)_14rem] xl:items-start xl:gap-x-10 xl:gap-y-0 lg:pr-2 lg:pl-12"
 		>
-			<main class="w-full sm:max-w-4xl" bind:this={toc.ref}>
+			<main class="min-w-0 w-full max-w-5xl xl:justify-self-center 2xl:max-w-6xl" bind:this={toc.ref}>
 				{@render children()}
 				<DocsNavigation previous={navigation.previous} next={navigation.next} />
 			</main>
 
-			<aside class="sticky top-24 hidden w-56 shrink-0 xl:block">
+			<aside class="sticky top-24 hidden w-full xl:block">
 				<div>
 					<h2 class="mb-2 text-sm font-medium">On this page</h2>
 				</div>
