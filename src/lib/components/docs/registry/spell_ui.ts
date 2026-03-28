@@ -17,7 +17,14 @@ export const spellUIComponents: SpellComponent[] = [
 		name: "Overview",
 		href: "/spell",
 		category: "Overview",
-		desc: "Browse spell-style animation components and starter docs.",
+		desc: "A landing page for Spell UI with a hero introduction and live component showcase.",
+	},
+	{
+		id: "introduction",
+		name: "Introduction",
+		href: "/spell/introduction",
+		category: "Overview",
+		desc: "Learn what Spell UI for Svelte is, why it exists, and where the project draws inspiration.",
 	},
 	{
 		id: "perspective-book",
