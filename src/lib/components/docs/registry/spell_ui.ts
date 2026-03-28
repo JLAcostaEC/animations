@@ -35,6 +35,13 @@ export const spellUIComponents: SpellComponent[] = [
 		badge: "New",
 	},
 	{
+		id: "bar-spinner",
+		name: "Bar Spinner",
+		href: "/spell/bar-spinner",
+		category: "Components",
+		desc: "A compact loading spinner built from twelve fading bars for inline waits, cards, and dialogs.",
+	},
+	{
 		id: "kbd",
 		name: "KBD",
 		href: "/spell/kbd",
