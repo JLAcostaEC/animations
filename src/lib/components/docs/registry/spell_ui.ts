@@ -67,6 +67,14 @@ export const spellUIComponents: SpellComponent[] = [
 		badge: "New",
 	},
 	{
+		id: "logo-carousel",
+		name: "Logo Carousel",
+		href: "/spell/logo-carousel",
+		category: "Components",
+		desc: "A grouped logo carousel with staggered enter and exit motion between rotating sets.",
+		badge: "New",
+	},
+	{
 		id: "text-marquee",
 		name: "Text Marquee",
 		href: "/spell/text-marquee",

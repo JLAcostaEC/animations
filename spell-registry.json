@@ -82,6 +82,25 @@
 			"registryDependencies": []
 		},
 		{
+			"name": "logo-carousel",
+			"type": "registry:block",
+			"title": "Logo Carousel",
+			"description": "A grouped logo carousel with staggered enter and exit motion between rotating sets.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/logo-carousel/logo-carousel.svelte",
+					"type": "registry:component",
+					"target": "spell/logo-carousel/logo-carousel.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/logo-carousel/index.ts",
+					"type": "registry:file",
+					"target": "spell/logo-carousel/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
 			"name": "spotify-card",
 			"type": "registry:block",
 			"title": "Spotify Card",

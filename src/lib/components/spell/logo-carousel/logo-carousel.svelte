@@ -1,9 +1,9 @@
 <script lang="ts" generics="T">
-	import { cn } from "$lib/utils";
+	import { cn, type WithoutChildren } from "$lib/utils";
 	import type { Snippet } from "svelte";
 	import type { HTMLAttributes } from "svelte/elements";
 
-	interface Props extends HTMLAttributes<HTMLDivElement> {
+	type Props = WithoutChildren<HTMLAttributes<HTMLDivElement>> & {
 		items: T[];
 		children: Snippet<[T, number]>;
 		stagger?: number;
@@ -12,7 +12,7 @@
 		duration?: number;
 		interval?: number;
 		initialDelay?: number;
-	}
+	};
 
 	let {
 		items,

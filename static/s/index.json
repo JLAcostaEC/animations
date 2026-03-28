@@ -38,6 +38,36 @@
 		"relativeUrl": "marquee.json"
 	},
 	{
+		"name": "logo-carousel",
+		"title": "Logo Carousel",
+		"type": "registry:block",
+		"description": "A grouped logo carousel with staggered enter and exit motion between rotating sets.",
+		"registryDependencies": [],
+		"relativeUrl": "logo-carousel.json"
+	},
+	{
+		"name": "spotify-card",
+		"title": "Spotify Card",
+		"type": "registry:block",
+		"description": "A Spotify preview card with blurred artwork, playback controls, and server-fetched metadata.",
+		"dependencies": [
+			"spotify-url-info"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "spotify-card.json"
+	},
+	{
+		"name": "qrcode",
+		"title": "QRCode",
+		"type": "registry:block",
+		"description": "A rounded QR code renderer with circular modules and stylized finder patterns.",
+		"dependencies": [
+			"qrcode"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "qrcode.json"
+	},
+	{
 		"name": "text-marquee",
 		"title": "Text Marquee",
 		"type": "registry:block",
