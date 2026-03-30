@@ -73,7 +73,7 @@ export const data: ComponentDoc = {
 	installBlock,
 	examples: [
 		{
-			name: "Character Split",
+			name: "Split by",
 			description:
 				"Switch to grapheme-safe character splitting and trigger the reveal when the copy enters the viewport.",
 			preview: CharacterSplitExample,

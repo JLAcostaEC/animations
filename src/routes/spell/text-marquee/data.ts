@@ -62,19 +62,6 @@ export const data: ComponentDoc = {
 		hideLines: true,
 	},
 	installBlock,
-	examples: [
-		{
-			name: "Tuned Timing",
-			description:
-				"Adjust height, row height, and speed to create a tighter, faster announcement-style marquee.",
-			preview: TuningExample,
-			code: {
-				filename: "tuning-example.svelte",
-				filecode: TuningExampleRaw,
-				lang: "svelte",
-			},
-		},
-	],
 	seo,
 	props: [
 		{

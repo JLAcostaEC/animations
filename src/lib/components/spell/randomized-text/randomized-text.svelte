@@ -235,7 +235,7 @@
 
 <MotionComponent
 	bind:ref={element}
-	class={cn("break-words whitespace-pre-wrap", className)}
+	class={cn("break-words whitespace-pre-line", className)}
 	style={rootStyle}
 	initial="hidden"
 	animate={shouldAnimate ? "visible" : "hidden"}
@@ -250,14 +250,14 @@
 		{#if token.kind === "segment"}
 			<motion.span
 				aria-hidden="true"
-				class={split === "words" ? "inline-block whitespace-pre" : "inline-block"}
+				class={split === "words" ? "inline-block whitespace-nowrap" : "inline-block"}
 				custom={token.delay}
 				variants={itemVariants}
 			>
 				{token.content}
 			</motion.span>
 		{:else}
-			<span aria-hidden="true" class="whitespace-pre-wrap">{token.value}</span>
+			<span aria-hidden="true" class="whitespace-nowrap">{token.value}</span>
 		{/if}
 	{/each}
 </MotionComponent>

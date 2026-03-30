@@ -67,12 +67,10 @@ export const data: ComponentDoc = {
 	installBlock,
 	examples: [
 		{
-			name: "Custom Signature",
-			description:
-				"Customize the text, color, and font size while waiting for viewport entry before drawing the signature.",
+			name: "Color",
 			preview: CustomSignatureExample,
 			code: {
-				filename: "custom-signature-example.svelte",
+				filename: "color-example.svelte",
 				filecode: CustomSignatureExampleRaw,
 				lang: "svelte",
 			},
