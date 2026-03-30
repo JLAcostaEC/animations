@@ -4,14 +4,15 @@ import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/typ
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import LinkedBadgesExample from "./examples/linked-badges-example.svelte";
-import LinkedBadgesExampleRaw from "./examples/linked-badges-example.svelte?raw";
+import ColorBadgesExample from "./examples/color-badges-example.svelte";
+import ColorBadgesExampleRaw from "./examples/color-badges-example.svelte?raw";
+import BadgesSizeExample from "./examples/badges-size-example.svelte";
+import BadgesSizeExampleRaw from "./examples/badges-size-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "spell/badge",
 	title: "Badge",
-	description:
-		"A compact spell badge for statuses, filters, and tags, with multi-color variants, optional link mode, and two size presets.",
+	description: "A badge component with multiple color variants and sizes.",
 	category: "spell",
 };
 
@@ -58,14 +59,23 @@ export const data: ComponentDoc = {
 	installBlock,
 	examples: [
 		{
-			name: "Linked Badges",
-			description:
-				"Provide an href to render anchor badges, then switch to the compact size for tag rows, filters, and metadata links.",
-			preview: LinkedBadgesExample,
+			name: "Color",
+			preview: ColorBadgesExample,
 			code: {
-				filename: "linked-badges-example.svelte",
-				filecode: LinkedBadgesExampleRaw,
+				filename: "color-badges-example.svelte",
+				filecode: ColorBadgesExampleRaw,
 				lang: "svelte",
+			},
+		},
+		{
+			name: "Sizes",
+			preview: BadgesSizeExample,
+			code: {
+				filename: "badges-size-example.svelte",
+				filecode: BadgesSizeExampleRaw,
+				lang: "svelte",
+				hideLines: true,
+				highlight: [2],
 			},
 		},
 	],
@@ -77,32 +87,26 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet",
 					required: true,
-					description:
-						"The badge label or custom inline content rendered inside the component.",
 				},
 				{
 					name: "href",
 					type: "string | undefined",
 					default: "undefined",
-					description: "When provided, the badge renders as an anchor instead of a span.",
 				},
 				{
 					name: "variant",
 					type: '"default" | "secondary" | "outline" | "destructive" | "red" | "blue" | "green" | "yellow" | "purple" | "pink" | "orange" | "cyan" | "indigo" | "violet" | "rose" | "amber" | "lime" | "emerald" | "sky" | "slate" | "fuchsia"',
 					default: '"default"',
-					description: "Controls the visual treatment and color palette of the badge.",
 				},
 				{
 					name: "size",
 					type: '"default" | "sm"',
 					default: '"default"',
-					description: "Controls the badge padding footprint.",
 				},
 				{
 					name: "class",
 					type: "string | undefined",
 					default: "undefined",
-					description: "Custom classes merged onto the badge root element.",
 				},
 			],
 		},

@@ -61,14 +61,14 @@
 </script>
 
 <SEOComponent title={seo.title} description={seo.description} keywords={seo.keywords} />
-<div class="space-y-8 md:space-y-10">
+<div class="space-y-8 md:space-y-8">
 	<section>
 		<div class="flex flex-col justify-between gap-3 md:flex-row md:items-center md:gap-4">
 			<H1 id="introduction">{title}</H1>
 			<CopyPageDropdown componentName={title} {llmsTxtUrl} />
 		</div>
 
-		<div class="mt-4 space-y-3">
+		<div class="mt-3 max-w-2xl">
 			<Paragraph class={descriptionClass}>
 				{description}
 			</Paragraph>

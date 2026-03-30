@@ -13,7 +13,7 @@
 
 <th
 	{...restProps}
-	class={cn("text-foreground h-12 px-6 text-left align-middle font-normal", className)}
+	class={cn("text-muted-foreground h-12 px-6 text-left align-middle font-normal", className)}
 >
 	{@render children?.()}
 </th>

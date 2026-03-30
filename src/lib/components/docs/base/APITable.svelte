@@ -10,7 +10,7 @@
 	import { H3 } from "../markdown";
 
 	type PropDef = {
-		name: string;
+		name?: string;
 		type: string;
 		default?: string;
 		required?: boolean;
@@ -18,7 +18,7 @@
 	};
 
 	type PropsTable = {
-		name: string;
+		name?: string;
 		desc?: string;
 		props: PropDef[];
 	};
@@ -40,9 +40,11 @@
 
 {#if isPropsTable(data)}
 	<div class="space-y-2">
-		<H3 id={data.name} class="mt-0 text-xl font-semibold">
-			{data.name}
-		</H3>
+		{#if data.name}
+			<H3 id={data.name} class="mt-0 text-xl font-semibold">
+				{data.name}
+			</H3>
+		{/if}
 		{#if data.desc}
 			<p class="text-muted-foreground m-0 leading-relaxed">
 				{data.desc}

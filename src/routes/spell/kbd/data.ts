@@ -6,6 +6,8 @@ import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import LiveKeyboardExample from "./examples/live-keyboard-example.svelte";
 import LiveKeyboardExampleRaw from "./examples/live-keyboard-example.svelte?raw";
+import CustomDisplayExample from "./examples/custom-display-example.svelte";
+import CustomDisplayExampleRaw from "./examples/custom-display-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "spell/kbd",
@@ -68,6 +70,15 @@ export const data: ComponentDoc = {
 				lang: "svelte",
 			},
 		},
+		{
+			name: "Custom Display with Keyboard Listener",
+			preview: CustomDisplayExample,
+			code: {
+				filename: "custom-display-example.svelte",
+				filecode: CustomDisplayExampleRaw,
+				lang: "svelte",
+			},
+		},
 	],
 	seo,
 	props: [
@@ -77,28 +88,21 @@ export const data: ComponentDoc = {
 					name: "keys",
 					type: "(string | { display: string; key: string })[]",
 					default: "[]",
-					description:
-						"Defines the rendered shortcut sequence. Object items let you separate the display label from the key used for matching.",
 				},
 				{
 					name: "active",
 					type: "boolean",
 					default: "false",
-					description:
-						"Forces the pressed visual state without listening for keyboard input.",
 				},
 				{
 					name: "listenToKeyboard",
 					type: "boolean",
 					default: "false",
-					description:
-						"Listens for matching pressed keys and toggles the active state automatically.",
 				},
 				{
 					name: "class",
 					type: "string | undefined",
 					default: "undefined",
-					description: "Custom classes merged onto the root kbd element.",
 				},
 			],
 		},

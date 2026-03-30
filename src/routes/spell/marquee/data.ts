@@ -6,6 +6,8 @@ import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import VerticalExample from "./examples/vertical-example.svelte";
 import VerticalExampleRaw from "./examples/vertical-example.svelte?raw";
+import PauseOnHoverExample from "./examples/pause-on-hover-example.svelte";
+import PauseOnHoverExampleRaw from "./examples/pause-on-hover-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "spell/marquee",
@@ -57,6 +59,16 @@ export const data: ComponentDoc = {
 	installBlock,
 	examples: [
 		{
+			name: "Pause on Hover",
+			preview: PauseOnHoverExample,
+			code: {
+				filename: "pause-on-hover-example.svelte",
+				filecode: PauseOnHoverExampleRaw,
+				lang: "svelte",
+				highlight: [2],
+			},
+		},
+		{
 			name: "Vertical Stack",
 			description:
 				"Switch the direction to vertical and tune the fade amount to create a stacked announcement or feature rail.",
@@ -65,6 +77,7 @@ export const data: ComponentDoc = {
 				filename: "vertical-example.svelte",
 				filecode: VerticalExampleRaw,
 				lang: "svelte",
+				highlight: [2],
 			},
 		},
 	],
