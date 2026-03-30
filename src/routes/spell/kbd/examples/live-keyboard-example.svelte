@@ -1,13 +1,14 @@
 <script lang="ts">
-	import { KBD } from "$lib/components/spell/KBD";
+	import { Kbd } from "$lib/components/spell/keyboard-shortcut";
+
 </script>
 
 <div class="flex flex-wrap gap-4">
-	<KBD keys={["command"]} listenToKeyboard />
-	<KBD keys={["control"]} listenToKeyboard />
-	<KBD keys={["alt"]} listenToKeyboard />
-	<KBD keys={["up"]} listenToKeyboard />
-	<KBD keys={["down"]} listenToKeyboard />
-	<KBD keys={["left"]} listenToKeyboard />
-	<KBD keys={["right"]} listenToKeyboard />
+	<Kbd keys={["command"]} listenToKeyboard />
+	<Kbd keys={["control"]} listenToKeyboard />
+	<Kbd keys={["alt"]} listenToKeyboard />
+	<Kbd keys={["up"]} listenToKeyboard />
+	<Kbd keys={["down"]} listenToKeyboard />
+	<Kbd keys={["left"]} listenToKeyboard />
+	<Kbd keys={["right"]} listenToKeyboard />
 </div>
