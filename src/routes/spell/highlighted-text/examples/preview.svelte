@@ -2,8 +2,7 @@
 	import { HighlightedText } from "$lib/components/spell/highlighted-text";
 </script>
 
-<div class="flex justify-center py-12">
-	<p class="max-w-2xl text-center text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
-		Build interfaces that feel <HighlightedText>alive</HighlightedText>.
-	</p>
+<div class="flex items-center text-2xl font-medium tracking-[-.03em] md:text-4xl">
+	You&nbsp;<HighlightedText>can</HighlightedText>&nbsp;just&nbsp;
+	<HighlightedText delay={0.4} from="left">ship things.</HighlightedText>
 </div>

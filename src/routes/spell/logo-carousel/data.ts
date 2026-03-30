@@ -4,8 +4,6 @@ import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/typ
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import TwoUpExample from "./examples/two-up-example.svelte";
-import TwoUpExampleRaw from "./examples/two-up-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "spell/logo-carousel",
@@ -62,19 +60,6 @@ export const data: ComponentDoc = {
 		hideLines: true,
 	},
 	installBlock,
-	examples: [
-		{
-			name: "Two Up Rotation",
-			description:
-				"Reduce the group size to two and tighten the timing for a more editorial, high-attention brand rail.",
-			preview: TwoUpExample,
-			code: {
-				filename: "two-up-example.svelte",
-				filecode: TwoUpExampleRaw,
-				lang: "svelte",
-			},
-		},
-	],
 	seo,
 	props: [
 		{

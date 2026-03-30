@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { cn } from "$lib/utils";
-	import { motion, useInView, type Variants } from "motion-sv";
-	import type { Snippet } from "svelte";
+	import { motion, type Variants } from "motion-sv";
 
 	type BlurRevealElement = "span" | "div" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
@@ -24,13 +23,11 @@
 		  };
 
 	type BlurRevealProps = {
-		children: Snippet;
+		content: string;
 		class?: string;
 		style?: string;
 		as?: BlurRevealElement;
 		delay?: number;
-		speedReveal?: number;
-		speedSegment?: number;
 		stagger?: number;
 		duration?: number;
 		trigger?: boolean;
@@ -42,15 +39,13 @@
 	};
 
 	let {
-		children,
+		content,
 		class: className,
 		style: styleAttribute,
 		as = "p",
 		delay = 0,
-		speedReveal = 1.5,
-		speedSegment = 0.5,
-		stagger,
-		duration,
+		stagger = 0.025,
+		duration = 0.3,
 		trigger = true,
 		triggerOnView = false,
 		once = true,
@@ -61,16 +56,12 @@
 
 	let MotionComponent = $derived(motion[as]);
 	let element = $state<HTMLElement | null>(null);
-	let sourceElement = $state<HTMLSpanElement | null>(null);
-	let snippetText = $state("");
+	let isInView = $state(false);
+	let hasEnteredView = $state(false);
 	let animationCycle = $state(0);
 	let completedCycle = $state(0);
 
 	let previousShouldAnimate = false;
-	let view = useInView(
-		() => (triggerOnView ? element : null)!,
-		() => ({ once, amount: 0.2 }) as any
-	);
 
 	function splitIntoCharacters(value: string) {
 		if (typeof Intl !== "undefined" && "Segmenter" in Intl) {
@@ -118,43 +109,10 @@
 		return entries.length > 0 ? Object.fromEntries(entries) : undefined;
 	}
 
-	// Snippet content is rendered into a hidden source node, then flattened to plain text for animation.
-	function syncSnippetText() {
-		snippetText = sourceElement?.textContent?.replace(/\r\n?/g, "\n") ?? "";
-	}
-
-	// Motion handles viewport tracking; this effect only keeps the snippet text in sync.
-	$effect(() => {
-		if (!sourceElement) {
-			snippetText = "";
-			return;
-		}
-
-		syncSnippetText();
-
-		let observer = new MutationObserver(() => syncSnippetText());
-		observer.observe(sourceElement, {
-			childList: true,
-			subtree: true,
-			characterData: true,
-		});
-
-		return () => observer.disconnect();
-	});
-
-	let resolvedText = $derived(snippetText);
 	let rootStyle = $derived(parseStyleAttribute(styleAttribute));
 	let safeDelay = $derived(Math.max(delay, 0));
-	let safeSpeedReveal = $derived(Math.max(speedReveal, 0.01));
-	let safeSpeedSegment = $derived(Math.max(speedSegment, 0.01));
-	let isInView = $derived(triggerOnView ? view.isInView : true);
-
-	// Match the React component's speed-based API by converting speeds into actual motion timings.
-	let resolvedStagger = $derived(stagger === undefined ? 0.03 / safeSpeedReveal : Math.max(stagger, 0));
-	let resolvedDuration = $derived(
-		duration === undefined ? 0.3 / safeSpeedSegment : Math.max(duration, 0.01)
-	);
-
+	let safeStagger = $derived(Math.max(stagger, 0));
+	let safeDuration = $derived(Math.max(duration, 0.01));
 	let letterSpacingValue = $derived.by(() => {
 		if (letterSpacing === undefined) {
 			return undefined;
@@ -164,7 +122,7 @@
 	});
 
 	let tokens = $derived.by<RenderToken[]>(() => {
-		let entries = resolvedText.match(/\S+|\s+/g) ?? [];
+		let entries = content.match(/\S+|\s+/g) ?? [];
 		let renderTokens: RenderToken[] = [];
 		let cursor = 0;
 
@@ -208,7 +166,7 @@
 		hidden: {
 			opacity: 0,
 			transition: {
-				staggerChildren: resolvedStagger,
+				staggerChildren: safeStagger,
 				staggerDirection: -1,
 			},
 		},
@@ -216,7 +174,7 @@
 			opacity: 1,
 			transition: {
 				delayChildren: safeDelay,
-				staggerChildren: resolvedStagger,
+				staggerChildren: safeStagger,
 			},
 		},
 	}));
@@ -227,7 +185,7 @@
 			filter: "blur(12px)",
 			y: 10,
 			transition: {
-				duration: resolvedDuration,
+				duration: safeDuration,
 			},
 		},
 		visible: {
@@ -235,12 +193,41 @@
 			filter: "blur(0px)",
 			y: 0,
 			transition: {
-				duration: resolvedDuration,
+				duration: safeDuration,
 			},
 		},
 	}));
 
-	let shouldAnimate = $derived(totalUnits > 0 && trigger && isInView);
+	$effect(() => {
+		if (!triggerOnView || !element) {
+			isInView = false;
+			return;
+		}
+
+		let observer = new IntersectionObserver(
+			([entry]) => {
+				if (!entry) {
+					return;
+				}
+
+				if (entry.isIntersecting) {
+					isInView = true;
+					hasEnteredView = true;
+				} else if (!once) {
+					isInView = false;
+				}
+			},
+			{ threshold: 0.2 }
+		);
+
+		observer.observe(element);
+
+		return () => observer.disconnect();
+	});
+
+	let shouldAnimate = $derived(
+		totalUnits > 0 && trigger && (!triggerOnView || (once ? hasEnteredView : isInView))
+	);
 
 	$effect(() => {
 		if (shouldAnimate && !previousShouldAnimate) {
@@ -252,7 +239,6 @@
 		previousShouldAnimate = shouldAnimate;
 	});
 
-	// Fire onComplete from the final animated unit so each reveal cycle reports completion only once.
 	function handleUnitComplete(definition: unknown, unitIndex: number) {
 		if (definition !== "visible" || !shouldAnimate || unitIndex !== lastUnitIndex) {
 			return;
@@ -276,9 +262,7 @@
 	exit="hidden"
 	variants={containerVariants}
 >
-	<span bind:this={sourceElement} class="sr-only">
-		{@render children()}
-	</span>
+	<span class="sr-only">{content}</span>
 
 	{#each tokens as token (token.id)}
 		{#if token.kind === "word"}

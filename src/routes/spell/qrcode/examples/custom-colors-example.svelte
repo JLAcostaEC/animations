@@ -2,24 +2,20 @@
 	import { QRCode } from "$lib/components/spell/qrcode";
 </script>
 
-<div class="mx-auto grid w-full max-w-xl gap-4 md:grid-cols-2">
-	<div class="bg-card rounded-[28px] border p-4 shadow-sm">
-		<QRCode
-			value="https://example.com/invite"
-			size={180}
-			fgColor="#0f172a"
-			bgColor="#f8fafc"
-			errorCorrectionLevel="H"
-		/>
+<div class="flex flex-wrap items-center justify-center gap-6">
+	<div
+		class="dark:border-input w-[105px] rounded-lg p-2 shadow-[0_0_0_1px_rgba(0,0,0,.08),_0px_2px_2px_rgba(0,0,0,.04)] md:w-[140px] dark:border [&_svg]:h-auto [&_svg]:w-full"
+	>
+		<QRCode value="https://sv-blocks.vercel.app" size={140} fgColor="#c2410c" bgColor="var(--background)" />
 	</div>
-
-	<div class="rounded-[28px] bg-[#111827] p-4 shadow-sm">
-		<QRCode
-			value="https://example.com/ticket"
-			size={180}
-			fgColor="#f59e0b"
-			bgColor="#111827"
-			errorCorrectionLevel="Q"
-		/>
+	<div
+		class="dark:border-input w-[105px] rounded-lg p-2 shadow-[0_0_0_1px_rgba(0,0,0,.08),_0px_2px_2px_rgba(0,0,0,.04)] md:w-[140px] dark:border [&_svg]:h-auto [&_svg]:w-full"
+	>
+		<QRCode value="https://sv-efferd.pages.dev" size={140} fgColor="#1d4ed8" bgColor="var(--background)" />
+	</div>
+	<div
+		class="dark:border-input w-[105px] rounded-lg p-2 shadow-[0_0_0_1px_rgba(0,0,0,.08),_0px_2px_2px_rgba(0,0,0,.04)] md:w-[140px] dark:border [&_svg]:h-auto [&_svg]:w-full"
+	>
+		<QRCode value="https://svelte-ai-elements.vercel.app" size={140} fgColor="#15803d" bgColor="var(--background)" />
 	</div>
 </div>

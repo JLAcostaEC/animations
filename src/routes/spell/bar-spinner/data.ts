@@ -64,12 +64,10 @@ export const data: ComponentDoc = {
 	installBlock,
 	examples: [
 		{
-			name: "Sizes and Colors",
-			description:
-				"Adjust the spinner footprint and tint to match subtle inline status text, darker card surfaces, or more prominent loading states.",
+			name: "Size",
 			preview: SizeAndColorExample,
 			code: {
-				filename: "size-and-color-example.svelte",
+				filename: "size-example.svelte",
 				filecode: SizeAndColorExampleRaw,
 				lang: "svelte",
 			},
@@ -83,19 +81,16 @@ export const data: ComponentDoc = {
 					name: "size",
 					type: "number",
 					default: "20",
-					description: "Controls the rendered width and height of the spinner in pixels.",
 				},
 				{
 					name: "color",
 					type: "string",
 					default: '"currentColor"',
-					description: "Sets the bar fill color using any valid CSS color value.",
 				},
 				{
 					name: "class",
 					type: "string | undefined",
 					default: "undefined",
-					description: "Custom classes merged onto the root wrapper element.",
 				},
 			],
 		},

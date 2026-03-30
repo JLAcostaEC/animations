@@ -1,32 +1,36 @@
 <script lang="ts">
 	import { Marquee } from "$lib/components/spell/marquee";
-	import { Avatar, AvatarImage, AvatarFallback } from "$lib/components/ui/avatar";
-	const users = [
-		{ id: "alice", name: "Alice", role: "Product Manager", initials: "AL" },
-		{ id: "bob", name: "Bob", role: "Software Engineer", initials: "BO" },
-		{ id: "carol", name: "Carol", role: "UX Designer", initials: "CA" },
-		{ id: "david", name: "David", role: "Data Scientist", initials: "DA" },
-		{ id: "emma", name: "Emma", role: "Marketing Lead", initials: "EM" },
-		{ id: "frank", name: "Frank", role: "DevOps Engineer", initials: "FR" },
-		{ id: "grace", name: "Grace", role: "Design Engineer", initials: "GR" },
-		{ id: "henry", name: "Henry", role: "QA Specialist", initials: "HE" },
+	import { cn } from "$lib/utils";
+
+	const notifications = [
+		{ text: "New message received", time: "2 min ago", type: "info" },
+		{ text: "Upload completed", time: "5 min ago", type: "success" },
+		{ text: "Meeting starting soon", time: "10 min ago", type: "warning" },
+		{ text: "Task completed", time: "15 min ago", type: "success" },
+		{ text: "New follower", time: "20 min ago", type: "info" },
+		{ text: "System update available", time: "30 min ago", type: "warning" },
 	];
 </script>
 
-<Marquee pauseOnHover class="py-4">
-	{#each users as user}
-		<div class="mx-2 flex gap-3 rounded-md border p-3 shadow-xs">
-			<Avatar class="my-auto size-9 border">
-				<AvatarImage
-					src={`https://api.dicebear.com/9.x/dylan/svg?backgroundColor=b6e3f4,c0aede,d1d4f9&seed=${user.id}`}
-					alt={`@${user.id}`}
-				/>
-				<AvatarFallback>{user.initials}</AvatarFallback>
-			</Avatar>
-			<div class="flex flex-col justify-between">
-				<h1 class="text-sm font-medium">{user.name}</h1>
-				<p class="text-muted-foreground text-xs">{user.role}</p>
+<div class="h-75">
+	<Marquee direction="up" class="h-full">
+		{#each notifications as notification, index}
+			<div class="bg-card mx-4 my-2 flex items-center gap-3 rounded-md border p-3">
+				<div
+					class={cn(
+						"h-2 w-2 rounded-full",
+						notification.type === "success" && "bg-green-500",
+						notification.type === "warning" && "bg-yellow-500",
+						notification.type === "info" && "bg-blue-500"
+					)}
+				></div>
+				<div class="flex-1">
+					<p class="text-sm font-medium">{notification.text}</p>
+					<p class="text-muted-foreground text-xs">
+						{notification.time}
+					</p>
+				</div>
 			</div>
-		</div>
-	{/each}
-</Marquee>
+		{/each}
+	</Marquee>
+</div>

@@ -4,8 +4,8 @@ import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/typ
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import TunedHeadingExample from "./examples/tuned-heading-example.svelte";
-import TunedHeadingExampleRaw from "./examples/tuned-heading-example.svelte?raw";
+import SpeedExample from "./examples/speed-example.svelte";
+import SpeedExampleRaw from "./examples/speed-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "spell/blur-reveal",
@@ -18,7 +18,7 @@ export const meta: ComponentMeta = {
 const seo: SEO = {
 	title: "Blur Reveal",
 	description:
-		"Learn how to use the Blur Reveal spell component in Svelte, including string-based content, stagger timing, and view-triggered animation.",
+		"Learn how to use the Blur Reveal spell component in Svelte, including snippet-based text, speed-driven timing, and view-triggered animation.",
 	keywords: [
 		"Svelte",
 		"Blur Reveal",
@@ -64,14 +64,14 @@ export const data: ComponentDoc = {
 	installBlock,
 	examples: [
 		{
-			name: "Tuned Heading",
-			description:
-				"Use a tighter stagger, shorter duration, and alternate semantic tag to create a snappier hero-heading reveal.",
-			preview: TunedHeadingExample,
+			name: "Speed",
+			preview: SpeedExample,
 			code: {
-				filename: "tuned-heading-example.svelte",
-				filecode: TunedHeadingExampleRaw,
+				filename: "speed-example.svelte",
+				filecode: SpeedExampleRaw,
 				lang: "svelte",
+				hideLines: true,
+				highlight: [2],
 			},
 		},
 	],
@@ -80,10 +80,11 @@ export const data: ComponentDoc = {
 		{
 			props: [
 				{
-					name: "content",
-					type: "string",
+					name: "children",
+					type: "Snippet",
 					required: true,
-					description: "Plain text content that will be split into animated grapheme-safe characters.",
+					description:
+						"Plain text snippet content flattened into grapheme-safe characters before animation.",
 				},
 				{
 					name: "as",
@@ -98,16 +99,31 @@ export const data: ComponentDoc = {
 					description: "Adds a delay in seconds before the reveal sequence begins.",
 				},
 				{
-					name: "stagger",
+					name: "speedReveal",
 					type: "number",
-					default: "0.03",
-					description: "Controls the delay between each character and space reveal in seconds.",
+					default: "1.5",
+					description:
+						"Higher values tighten the stagger delay between animated characters.",
+				},
+				{
+					name: "speedSegment",
+					type: "number",
+					default: "0.5",
+					description: "Higher values shorten the per-character reveal duration.",
+				},
+				{
+					name: "stagger",
+					type: "number | undefined",
+					default: "undefined",
+					description:
+						"Optional direct override for the computed character stagger timing.",
 				},
 				{
 					name: "duration",
-					type: "number",
-					default: "0.3",
-					description: "Sets the per-character reveal duration in seconds.",
+					type: "number | undefined",
+					default: "undefined",
+					description:
+						"Optional direct override for the computed per-character reveal duration.",
 				},
 				{
 					name: "trigger",
@@ -125,7 +141,8 @@ export const data: ComponentDoc = {
 					name: "once",
 					type: "boolean",
 					default: "true",
-					description: "When using triggerOnView, controls whether the reveal runs only on first entry.",
+					description:
+						"When using triggerOnView, controls whether the reveal runs only on first entry.",
 				},
 				{
 					name: "letterSpacing",
@@ -143,7 +160,8 @@ export const data: ComponentDoc = {
 					name: "onComplete",
 					type: "() => void",
 					default: "undefined",
-					description: "Called after the final animated unit completes the visible transition.",
+					description:
+						"Called after the final animated unit completes the visible transition.",
 				},
 				{
 					name: "class",
