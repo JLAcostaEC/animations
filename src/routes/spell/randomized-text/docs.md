@@ -17,9 +17,10 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/s/randomized-text.
 
 <RandomizedText
   as="h1"
-  content="Spell copy that resolves with a loose, organic rhythm."
   class="max-w-[14ch] text-4xl font-semibold tracking-tight sm:text-5xl"
-/>
+>
+  Spell copy that resolves with a loose, organic rhythm.
+</RandomizedText>
 ```
 
 ## Character Split
@@ -32,12 +33,13 @@ Set `split="chars"` to animate grapheme-safe characters instead of whole words. 
 </script>
 
 <RandomizedText
-  content="Built for launch week."
   split="chars"
   triggerOnView
   once={false}
   class="text-3xl font-medium tracking-tight"
-/>
+>
+  Built for launch week.
+</RandomizedText>
 ```
 
 ## View Trigger
@@ -49,20 +51,16 @@ Use `triggerOnView` to start the animation only after the component enters the v
   import { RandomizedText } from "$lib/components/spell/randomized-text";
 </script>
 
-<RandomizedText
-  content="This line waits until it scrolls into frame."
-  delay={0.1}
-  triggerOnView
-  once
-  class="text-2xl font-semibold"
-/>
+<RandomizedText delay={0.1} triggerOnView once class="text-2xl font-semibold">
+  This line waits until it scrolls into frame.
+</RandomizedText>
 ```
 
 ## Props
 
 | Prop            | Type                                                                     | Default     | Description                                                                  |
 | --------------- | ------------------------------------------------------------------------ | ----------- | ---------------------------------------------------------------------------- |
-| `content`       | `string`                                                                 | required    | Plain text content used to build the animated token list.                    |
+| `children`      | `Snippet`                                                                | required    | Plain text snippet content used to build the animated token list.            |
 | `as`            | `"span" \| "div" \| "p" \| "h1" \| "h2" \| "h3" \| "h4" \| "h5" \| "h6"` | `"span"`    | Sets the semantic tag used for the animated root element.                    |
 | `split`         | `"words" \| "chars"`                                                     | `"words"`   | Controls whether the reveal animates full words or grapheme-safe characters. |
 | `delay`         | `number`                                                                 | `0.2`       | Adds a base delay in seconds before token-specific jitter is applied.        |

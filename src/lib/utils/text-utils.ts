@@ -13,6 +13,7 @@ function createSegmenter(granularity: Intl.SegmenterOptions["granularity"]) {
 		return null;
 	}
 
+	// Let the runtime locale decide word and grapheme boundaries.
 	return new Intl.Segmenter(undefined, { granularity });
 }
 
@@ -21,6 +22,7 @@ export function normalizeSourceText(value: string | null | undefined) {
 }
 
 export function readNormalizedTextContent(node: Node | null | undefined) {
+	// Hidden source nodes can carry CRLF from DOM textContent.
 	return normalizeSourceText(node?.textContent ?? "");
 }
 
@@ -68,6 +70,7 @@ export function segmentText(value: string): TextToken[] {
 				currentText = "";
 			}
 
+			// Keep whitespace separate so spacing and newlines stay intact.
 			tokens.push({
 				kind: "whitespace",
 				value: segment,

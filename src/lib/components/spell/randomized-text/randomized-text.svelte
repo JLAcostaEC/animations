@@ -1,9 +1,10 @@
 <script lang="ts">
 	import { cn } from "$lib/utils";
-	import { motion, type Variants } from "motion-sv";
+	import { readNormalizedTextContent, segmentText, splitGraphemes } from "$lib/utils/text-utils";
+	import { motion, useInView, type Variants } from "motion-sv";
+	import type { Snippet } from "svelte";
 
 	type RandomizedTextElement = "span" | "div" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-
 	type SplitType = "words" | "chars";
 
 	type RandomizedToken =
@@ -21,7 +22,7 @@
 		  };
 
 	type RandomizedTextProps = {
-		content: string;
+		children: Snippet;
 		class?: string;
 		style?: string;
 		as?: RandomizedTextElement;
@@ -34,7 +35,7 @@
 	};
 
 	let {
-		content,
+		children,
 		class: className,
 		style: styleAttribute,
 		as = "span",
@@ -48,17 +49,12 @@
 
 	let MotionComponent = $derived(motion[as]);
 	let element = $state<HTMLElement | null>(null);
-	let isInView = $state(false);
-	let hasEnteredView = $state(false);
-
-	function splitIntoCharacters(value: string) {
-		if (typeof Intl !== "undefined" && "Segmenter" in Intl) {
-			const segmenter = new Intl.Segmenter("en", { granularity: "grapheme" });
-			return Array.from(segmenter.segment(value), ({ segment }) => segment);
-		}
-
-		return Array.from(value);
-	}
+	let sourceElement = $state<HTMLSpanElement | null>(null);
+	let sourceText = $state("");
+	let view = useInView(
+		() => (triggerOnView ? element : null)!,
+		() => ({ once, amount: 0.2 }) as any
+	);
 
 	function normalizeStyleName(property: string) {
 		if (property.startsWith("--")) {
@@ -119,10 +115,14 @@
 		return baseDelay + primaryJitter + secondaryJitter;
 	}
 
-	const expoOut = (time: number) => (time === 1 ? 1 : 1 - Math.pow(2, -10 * time));
+	function syncSourceText() {
+		sourceText = readNormalizedTextContent(sourceElement);
+	}
 
+	const expoOut = (time: number) => (time === 1 ? 1 : 1 - Math.pow(2, -10 * time));
 	const safeDelay = $derived(Math.max(delay, 0));
 	const safeDuration = $derived(Math.max(duration, 0.01));
+	const isInView = $derived(triggerOnView ? view.isInView : true);
 
 	const parsedStyle = $derived(parseStyleAttribute(styleAttribute));
 	const rootStyle = $derived.by(() => ({
@@ -132,12 +132,14 @@
 	}));
 
 	const tokens = $derived.by<RandomizedToken[]>(() => {
-		if (!content) {
+		if (!sourceText) {
 			return [];
 		}
 
 		if (split === "chars") {
-			return splitIntoCharacters(content).map((segment, index) => {
+			let segmentIndex = 0;
+
+			return splitGraphemes(sourceText).map((segment, index) => {
 				if (/^\s+$/.test(segment)) {
 					return {
 						kind: "whitespace",
@@ -146,41 +148,52 @@
 					};
 				}
 
-				return {
-					kind: "segment",
+				const token = {
+					kind: "segment" as const,
 					id: `char-${index}`,
 					content: segment,
-					index,
-					delay: createStableDelay(`chars:${index}:${segment}:${content}`, safeDelay),
+					index: segmentIndex,
+					delay: createStableDelay(
+						`chars:${segmentIndex}:${segment}:${sourceText}`,
+						safeDelay
+					),
 				};
+
+				segmentIndex += 1;
+				return token;
 			});
 		}
 
-		const entries = content.match(/\S+|\s+/g) ?? [];
 		let segmentIndex = 0;
 
-		return entries.map((entry, index) => {
-			if (/^\s+$/.test(entry)) {
+		return segmentText(sourceText).map((token, index) => {
+			if (token.kind === "whitespace") {
 				return {
 					kind: "whitespace",
 					id: `space-${index}`,
-					value: entry,
+					value: token.value,
 				};
 			}
 
-			const token = {
+			const segmentToken = {
 				kind: "segment" as const,
 				id: `word-${index}`,
-				content: entry,
+				content: token.value,
 				index: segmentIndex,
-				delay: createStableDelay(`words:${segmentIndex}:${entry}:${content}`, safeDelay),
+				delay: createStableDelay(
+					`words:${segmentIndex}:${token.value}:${sourceText}`,
+					safeDelay
+				),
 			};
 
 			segmentIndex += 1;
-
-			return token;
+			return segmentToken;
 		});
 	});
+
+	const segmentCount = $derived(
+		tokens.reduce((count, token) => count + (token.kind === "segment" ? 1 : 0), 0)
+	);
 
 	const containerVariants = $derived.by<Variants>(() => ({
 		hidden: { opacity: 0 },
@@ -199,48 +212,40 @@
 		}),
 	}));
 
+	const shouldAnimate = $derived(segmentCount > 0 && trigger && isInView);
+
 	$effect(() => {
-		if (!triggerOnView || !element) {
-			isInView = false;
+		if (!sourceElement) {
+			sourceText = "";
 			return;
 		}
 
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				if (!entry) {
-					return;
-				}
+		syncSourceText();
 
-				if (entry.isIntersecting) {
-					isInView = true;
-					hasEnteredView = true;
-				} else if (!once) {
-					isInView = false;
-				}
-			},
-			{ threshold: 0.2 }
-		);
-
-		observer.observe(element);
+		const observer = new MutationObserver(() => syncSourceText());
+		observer.observe(sourceElement, {
+			childList: true,
+			subtree: true,
+			characterData: true,
+		});
 
 		return () => observer.disconnect();
 	});
-
-	const shouldAnimate = $derived(
-		trigger && (!triggerOnView || (once ? hasEnteredView : isInView))
-	);
 </script>
 
 <MotionComponent
 	bind:ref={element}
 	class={cn("break-words whitespace-pre-wrap", className)}
 	style={rootStyle}
-	aria-label={content}
 	initial="hidden"
 	animate={shouldAnimate ? "visible" : "hidden"}
 	exit="hidden"
 	variants={containerVariants}
 >
+	<span bind:this={sourceElement} class="sr-only">
+		{@render children()}
+	</span>
+
 	{#each tokens as token (token.id)}
 		{#if token.kind === "segment"}
 			<motion.span

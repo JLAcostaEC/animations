@@ -1,5 +1,6 @@
 import WordsStaggerRaw from "$lib/components/spell/words-stagger/words-stagger.svelte?raw";
 import IndexTsRaw from "$lib/components/spell/words-stagger/index.ts?raw";
+import SharedTextUtilsRaw from "$lib/utils/text-utils.ts?raw";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
@@ -42,9 +43,17 @@ const installBlock: InstallComponentDocs = {
 			filecode: IndexTsRaw,
 			lang: "typescript",
 		},
+		{
+			filename: "src/lib/utils/text-utils.ts",
+			filecode: SharedTextUtilsRaw,
+			lang: "typescript",
+		},
 	],
+	packages: ["motion-sv"],
 	folderStructure: `src/
 lib/
+  utils/
+    text-utils.ts
   components/
     spell/
       words-stagger/
@@ -80,11 +89,11 @@ export const data: ComponentDoc = {
 		{
 			props: [
 				{
-					name: "content",
-					type: "string",
+					name: "children",
+					type: "Snippet",
 					required: true,
 					description:
-						"Plain text content that is normalized and split into animated words.",
+						"Plain text snippet content that is flattened and split into animated words.",
 				},
 				{
 					name: "as",

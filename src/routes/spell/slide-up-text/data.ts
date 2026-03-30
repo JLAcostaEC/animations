@@ -1,6 +1,6 @@
 import SlideUpTextRaw from "$lib/components/spell/slide-up-text/slide-up-text.svelte?raw";
 import IndexTsRaw from "$lib/components/spell/slide-up-text/index.ts?raw";
-import SharedTextUtilsRaw from "$lib/components/spell/_shared/text-utils.ts?raw";
+import SharedTextUtilsRaw from "$lib/utils/text-utils.ts?raw";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
@@ -44,7 +44,7 @@ const installBlock: InstallComponentDocs = {
 			lang: "typescript",
 		},
 		{
-			filename: "../_shared/text-utils.ts",
+			filename: "src/lib/utils/text-utils.ts",
 			filecode: SharedTextUtilsRaw,
 			lang: "typescript",
 		},
@@ -52,10 +52,10 @@ const installBlock: InstallComponentDocs = {
 	packages: ["motion-sv"],
 	folderStructure: `src/
 lib/
+  utils/
+    text-utils.ts
   components/
     spell/
-      _shared/
-        text-utils.ts
       slide-up-text/
         index.ts
         slide-up-text.svelte`,

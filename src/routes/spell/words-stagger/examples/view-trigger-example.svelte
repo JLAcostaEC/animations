@@ -26,7 +26,6 @@
 
 		<WordsStagger
 			as="p"
-			content="This line waits for the viewport, then steps through each word with a tighter editorial rhythm."
 			class="max-w-[28ch] text-2xl font-medium tracking-tight sm:text-3xl"
 			delay={0.05}
 			stagger={0.075}
@@ -35,6 +34,9 @@
 			once={false}
 			onStart={() => (starts += 1)}
 			onComplete={() => (completes += 1)}
-		/>
+		>
+			This line waits for the viewport, then steps through each word with a tighter editorial
+			rhythm.
+		</WordsStagger>
 	</div>
 </div>

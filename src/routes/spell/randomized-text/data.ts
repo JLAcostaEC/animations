@@ -1,5 +1,6 @@
 import RandomizedTextRaw from "$lib/components/spell/randomized-text/randomized-text.svelte?raw";
 import IndexTsRaw from "$lib/components/spell/randomized-text/index.ts?raw";
+import SharedTextUtilsRaw from "$lib/utils/text-utils.ts?raw";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
@@ -42,9 +43,17 @@ const installBlock: InstallComponentDocs = {
 			filecode: IndexTsRaw,
 			lang: "typescript",
 		},
+		{
+			filename: "src/lib/utils/text-utils.ts",
+			filecode: SharedTextUtilsRaw,
+			lang: "typescript",
+		},
 	],
+	packages: ["motion-sv"],
 	folderStructure: `src/
 lib/
+  utils/
+    text-utils.ts
   components/
     spell/
       randomized-text/
@@ -80,10 +89,11 @@ export const data: ComponentDoc = {
 		{
 			props: [
 				{
-					name: "content",
-					type: "string",
+					name: "children",
+					type: "Snippet",
 					required: true,
-					description: "Plain text content used to build the animated token list.",
+					description:
+						"Plain text snippet content used to build the animated token list.",
 				},
 				{
 					name: "as",

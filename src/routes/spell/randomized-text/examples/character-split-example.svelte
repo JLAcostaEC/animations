@@ -16,12 +16,13 @@
 
 		<RandomizedText
 			as="span"
-			content="Built for launch week."
 			split="chars"
 			class="text-3xl font-medium tracking-tight sm:text-4xl"
 			delay={0.1}
 			triggerOnView
 			once={false}
-		/>
+		>
+			Built for launch week.
+		</RandomizedText>
 	</div>
 </div>

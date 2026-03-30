@@ -107,5 +107,102 @@
 		],
 		"registryDependencies": [],
 		"relativeUrl": "randomized-text.json"
+	},
+	{
+		"name": "special-text",
+		"title": "Special Text",
+		"type": "registry:block",
+		"description": "A scrambled text reveal with optional viewport triggering and plain text or slotted content input.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "special-text.json"
+	},
+	{
+		"name": "highlighted-text",
+		"title": "Highlighted Text",
+		"type": "registry:block",
+		"description": "An inline highlight sweep that reveals text from configurable directions with optional viewport triggers.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "highlighted-text.json"
+	},
+	{
+		"name": "slide-up-text",
+		"title": "Slide Up Text",
+		"type": "registry:block",
+		"description": "A configurable text reveal that slides words, characters, or lines upward with staggered motion.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "slide-up-text.json"
+	},
+	{
+		"name": "signature",
+		"title": "Signature",
+		"type": "registry:block",
+		"description": "A handwritten signature renderer that animates glyph paths from downloaded font data.",
+		"dependencies": [
+			"opentype.js"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "signature.json"
+	},
+	{
+		"name": "gradient-wave-text",
+		"title": "Gradient Wave Text",
+		"type": "registry:block",
+		"description": "A flowing gradient text effect with radial or linear bands, custom colors, and view-triggered playback.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "gradient-wave-text.json"
+	},
+	{
+		"name": "color-selector",
+		"title": "Color Selector",
+		"type": "registry:block",
+		"description": "A compact swatch picker with preset or custom CSS colors, form support, and size variants.",
+		"dependencies": [
+			"tailwind-variants"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "color-selector.json"
+	},
+	{
+		"name": "label-input",
+		"title": "Label Input",
+		"type": "registry:block",
+		"description": "A floating-label input with ring-color variants and password visibility toggle support.",
+		"dependencies": [
+			"tailwind-variants",
+			"@lucide/svelte"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "label-input.json"
+	},
+	{
+		"name": "animated-checkbox",
+		"title": "Animated Checkbox",
+		"type": "registry:block",
+		"description": "A motion-driven checkbox row with animated checkmark drawing and strike-through feedback.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "animated-checkbox.json"
+	},
+	{
+		"name": "exploding-input",
+		"title": "Exploding Input",
+		"type": "registry:block",
+		"description": "A particle input companion that launches custom items outward from the cursor as you type.",
+		"registryDependencies": [],
+		"relativeUrl": "exploding-input.json"
 	}
 ]

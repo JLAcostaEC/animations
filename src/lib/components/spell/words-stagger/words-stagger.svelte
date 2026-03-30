@@ -1,11 +1,26 @@
 <script lang="ts">
 	import { cn } from "$lib/utils";
-	import { motion, type Variants } from "motion-sv";
+	import { readNormalizedTextContent, segmentText } from "$lib/utils/text-utils";
+	import { motion, useInView, type Variants } from "motion-sv";
+	import type { Snippet } from "svelte";
 
 	type WordsStaggerElement = "span" | "div" | "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
+	type WordToken =
+		| {
+				kind: "word";
+				id: string;
+				content: string;
+				index: number;
+		  }
+		| {
+				kind: "whitespace";
+				id: string;
+				value: string;
+		  };
+
 	type WordsStaggerProps = {
-		content: string;
+		children: Snippet;
 		class?: string;
 		style?: string;
 		as?: WordsStaggerElement;
@@ -20,7 +35,7 @@
 	};
 
 	let {
-		content,
+		children,
 		class: className,
 		style: styleAttribute,
 		as = "div",
@@ -36,12 +51,16 @@
 
 	let MotionComponent = $derived(motion[as]);
 	let element = $state<HTMLElement | null>(null);
-	let isInView = $state(false);
-	let hasEnteredView = $state(false);
+	let sourceElement = $state<HTMLSpanElement | null>(null);
+	let sourceText = $state("");
 	let animationCycle = $state(0);
 	let completedCycle = $state(0);
 
 	let previousShouldAnimate = false;
+	let view = useInView(
+		() => (triggerOnView ? element : null)!,
+		() => ({ once, amount: 0.2 }) as any
+	);
 
 	function normalizeStyleName(property: string) {
 		if (property.startsWith("--")) {
@@ -80,17 +99,44 @@
 		return entries.length > 0 ? Object.fromEntries(entries) : undefined;
 	}
 
+	function syncSourceText() {
+		sourceText = readNormalizedTextContent(sourceElement);
+	}
+
 	const safeDelay = $derived(Math.max(delay, 0));
 	const safeStagger = $derived(Math.max(stagger, 0));
 	const safeSpeed = $derived(Math.max(speed, 0.01));
 	const rootStyle = $derived(parseStyleAttribute(styleAttribute));
 
-	const normalizedContent = $derived.by(() =>
-		content.trim().split(/\s+/).filter(Boolean).join(" ")
-	);
+	const tokens = $derived.by<WordToken[]>(() => {
+		let wordIndex = 0;
 
-	const words = $derived.by(() => (normalizedContent ? normalizedContent.split(" ") : []));
-	const lastWordIndex = $derived(words.length - 1);
+		return segmentText(sourceText).map((token, tokenIndex) => {
+			if (token.kind === "whitespace") {
+				return {
+					kind: "whitespace",
+					id: `whitespace-${tokenIndex}`,
+					value: token.value,
+				};
+			}
+
+			const word = {
+				kind: "word" as const,
+				id: `word-${tokenIndex}`,
+				content: token.value,
+				index: wordIndex,
+			};
+
+			wordIndex += 1;
+			return word;
+		});
+	});
+
+	const wordCount = $derived(
+		tokens.reduce((count, token) => count + (token.kind === "word" ? 1 : 0), 0)
+	);
+	const lastWordIndex = $derived(wordCount - 1);
+	const isInView = $derived(triggerOnView ? view.isInView : true);
 
 	const transition = $derived.by(() => ({
 		type: "tween" as const,
@@ -123,36 +169,25 @@
 		},
 	}));
 
+	const shouldAnimate = $derived(wordCount > 0 && trigger && isInView);
+
 	$effect(() => {
-		if (!triggerOnView || !element) {
-			isInView = false;
+		if (!sourceElement) {
+			sourceText = "";
 			return;
 		}
 
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				if (!entry) {
-					return;
-				}
+		syncSourceText();
 
-				if (entry.isIntersecting) {
-					isInView = true;
-					hasEnteredView = true;
-				} else if (!once) {
-					isInView = false;
-				}
-			},
-			{ threshold: 0.2 }
-		);
-
-		observer.observe(element);
+		const observer = new MutationObserver(() => syncSourceText());
+		observer.observe(sourceElement, {
+			childList: true,
+			subtree: true,
+			characterData: true,
+		});
 
 		return () => observer.disconnect();
 	});
-
-	const shouldAnimate = $derived(
-		words.length > 0 && trigger && (!triggerOnView || (once ? hasEnteredView : isInView))
-	);
 
 	$effect(() => {
 		if (shouldAnimate && !previousShouldAnimate) {
@@ -180,26 +215,29 @@
 
 <MotionComponent
 	bind:ref={element}
-	class={cn("flex flex-wrap", className)}
+	class={cn("whitespace-pre-wrap", className)}
 	style={rootStyle}
 	initial="hidden"
 	animate={shouldAnimate ? "visible" : "hidden"}
 	exit="hidden"
 	variants={containerVariants}
 >
-	<span class="sr-only">{normalizedContent}</span>
+	<span bind:this={sourceElement} class="sr-only">
+		{@render children()}
+	</span>
 
-	{#each words as word, index (`${word}-${index}`)}
-		<motion.span
-			class="inline-block"
-			aria-hidden="true"
-			variants={wordVariants}
-			onAnimationComplete={(definition) => handleWordComplete(definition, index)}
-		>
-			{word}
-			{#if index < words.length - 1}
-				<span class="inline-block">&nbsp;</span>
-			{/if}
-		</motion.span>
+	{#each tokens as token (token.id)}
+		{#if token.kind === "word"}
+			<motion.span
+				class="inline-block"
+				aria-hidden="true"
+				variants={wordVariants}
+				onAnimationComplete={(definition) => handleWordComplete(definition, token.index)}
+			>
+				{token.content}
+			</motion.span>
+		{:else}
+			<span aria-hidden="true" class="whitespace-pre-wrap">{token.value}</span>
+		{/if}
 	{/each}
 </MotionComponent>
