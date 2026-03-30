@@ -1,0 +1,22 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry-item.json",
+	"name": "animated-checkbox",
+	"title": "Animated Checkbox",
+	"type": "registry:block",
+	"description": "A motion-driven checkbox row with animated checkmark drawing and strike-through feedback.",
+	"dependencies": [
+		"motion-sv"
+	],
+	"files": [
+		{
+			"content": "<script lang=\"ts\">\r\n\timport { cn } from '$UTILS$';\r\n\timport { motion } from 'motion-sv';\r\n\timport type { HTMLAttributes } from 'svelte/elements';\r\n\r\n\ttype AnimatedCheckboxProps = HTMLAttributes<HTMLButtonElement> & {\r\n\t\ttitle?: string;\r\n\t\tchecked?: boolean;\r\n\t\tdefaultChecked?: boolean;\r\n\t\tclass?: string;\r\n\t\tonCheckedChange?: (checked: boolean) => void;\r\n\t};\r\n\r\n\tconst springTransition = {\r\n\t\ttype: 'spring',\r\n\t\tduration: 0.4,\r\n\t\tbounce: 0.2\r\n\t} as const;\r\n\r\n\tlet {\r\n\t\ttitle = 'Implement Checkbox',\r\n\t\tchecked = undefined,\r\n\t\tdefaultChecked = false,\r\n\t\tclass: className,\r\n\t\tonCheckedChange,\r\n\t\t...props\r\n\t}: AnimatedCheckboxProps = $props();\r\n\r\n\tlet internalChecked = $state(defaultChecked);\n\r\n\tconst isControlled = $derived(checked !== undefined);\r\n\tconst isChecked = $derived(isControlled ? checked : internalChecked);\r\n\r\n\tfunction handleToggle() {\r\n\t\tconst nextChecked = !isChecked;\r\n\r\n\t\tif (!isControlled) {\r\n\t\t\tinternalChecked = nextChecked;\r\n\t\t}\r\n\r\n\t\tonCheckedChange?.(nextChecked);\r\n\t}\r\n</script>\r\n\r\n<button\r\n\ttype=\"button\"\r\n\tclass={cn(\r\n\t\t'group flex items-center gap-3 text-left select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-slate-500 dark:focus-visible:ring-offset-slate-950',\r\n\t\tclassName\r\n\t)}\r\n\trole=\"checkbox\"\r\n\taria-checked={isChecked}\r\n\tonclick={handleToggle}\r\n\t{...props}\r\n>\r\n\t<div\r\n\t\tclass={cn(\r\n\t\t\t'flex size-[18px] items-center justify-center rounded-[6px] border-[1.5px] transition-colors duration-200',\r\n\t\t\tisChecked\r\n\t\t\t\t? 'border-transparent bg-slate-950 text-white dark:bg-slate-50 dark:text-slate-950'\r\n\t\t\t\t: 'border-slate-400/50 bg-transparent text-slate-950 group-hover:border-slate-500/70 dark:border-slate-500/60 dark:text-slate-50 dark:group-hover:border-slate-400'\r\n\t\t)}\r\n\t>\r\n\t\t<svg viewBox=\"0 0 20 20\" class=\"size-full\">\r\n\t\t\t<motion.path\r\n\t\t\t\td=\"M 0 4.5 L 3.182 8 L 10 0\"\r\n\t\t\t\tfill=\"transparent\"\r\n\t\t\t\tstroke=\"currentColor\"\r\n\t\t\t\tstroke-width={1.5}\r\n\t\t\t\tstroke-linecap=\"round\"\r\n\t\t\t\tstroke-linejoin=\"round\"\r\n\t\t\t\ttransform=\"translate(5 6)\"\r\n\t\t\t\tinitial={{ pathLength: defaultChecked ? 1 : 0, opacity: defaultChecked ? 1 : 0 }}\r\n\t\t\t\tanimate={{\r\n\t\t\t\t\tpathLength: isChecked ? 1 : 0,\r\n\t\t\t\t\topacity: isChecked ? 1 : 0\r\n\t\t\t\t}}\r\n\t\t\t\ttransition={{\r\n\t\t\t\t\tpathLength: { ease: 'easeOut', duration: 0.3 },\r\n\t\t\t\t\topacity: { duration: 0 }\r\n\t\t\t\t}}\r\n\t\t\t/>\r\n\t\t</svg>\r\n\t</div>\r\n\r\n\t<div class=\"relative\">\r\n\t\t<span\r\n\t\t\tclass={cn(\r\n\t\t\t\t'text-base font-medium transition-colors duration-200',\r\n\t\t\t\tisChecked\r\n\t\t\t\t\t? 'text-slate-500 dark:text-slate-400'\r\n\t\t\t\t\t: 'text-slate-950 dark:text-slate-50'\r\n\t\t\t)}\r\n\t\t>\r\n\t\t\t{title}\r\n\t\t</span>\r\n\r\n\t\t<motion.div\r\n\t\t\tclass=\"absolute top-1/2 left-0 h-[1.5px] -translate-y-1/2 bg-slate-500 dark:bg-slate-400\"\r\n\t\t\tinitial={{ width: defaultChecked ? '100%' : 0, opacity: defaultChecked ? 1 : 0 }}\r\n\t\t\tanimate={{\r\n\t\t\t\twidth: isChecked ? '100%' : 0,\r\n\t\t\t\topacity: isChecked ? 1 : 0\r\n\t\t\t}}\r\n\t\t\ttransition={springTransition}\r\n\t\t/>\r\n\t</div>\r\n</button>\r\n",
+			"type": "registry:component",
+			"target": "spell/animated-checkbox/animated-checkbox.svelte"
+		},
+		{
+			"content": "import AnimatedCheckbox from \"./animated-checkbox.svelte\";\r\nexport { AnimatedCheckbox };",
+			"type": "registry:file",
+			"target": "spell/animated-checkbox/index.ts"
+		}
+	]
+}

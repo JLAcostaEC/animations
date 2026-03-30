@@ -285,7 +285,7 @@
 <span
 	bind:this={element}
 	class={cn(
-		split === "lines" ? "inline-flex flex-col items-start" : "whitespace-pre-wrap",
+		split === "lines" ? "inline-flex flex-col items-start" : "whitespace-nowrap",
 		className
 	)}
 	{...props}

@@ -20,7 +20,7 @@
 	},
 	{
 		"name": "kbd",
-		"title": "KBD",
+		"title": "Keyboard Shortcuts",
 		"type": "registry:block",
 		"description": "A tactile keyboard shortcut keycap with optional live keyboard listening.",
 		"dependencies": [

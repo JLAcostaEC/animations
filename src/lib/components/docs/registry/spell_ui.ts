@@ -39,7 +39,7 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/badge",
 		category: "Components",
 		desc: "A compact pill badge with multi-color variants, optional link mode, and size presets.",
-		badge: "New",
+
 	},
 
 	{
@@ -48,7 +48,7 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/kbd",
 		category: "Components",
 		desc: "Display keyboard shortcuts with proper key symbols.",
-		badge: "New",
+
 	},
 	{
 		id: "marquee",
@@ -56,7 +56,7 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/marquee",
 		category: "Components",
 		desc: "A reusable horizontal or vertical marquee with optional fade edges and hover pause.",
-		badge: "New",
+
 	},
 	{
 		id: "spotify-card",
@@ -64,7 +64,7 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/spotify-card",
 		category: "Components",
 		desc: "A Spotify preview card with blurred artwork, playback controls, and server-fetched metadata.",
-		badge: "New",
+
 	},
 	{
 		id: "qrcode",
@@ -72,7 +72,7 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/qrcode",
 		category: "Components",
 		desc: "A rounded QR code renderer with circular modules and stylized finder patterns.",
-		badge: "New",
+
 	},
 	{
 		id: "logo-carousel",
@@ -80,7 +80,7 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/logo-carousel",
 		category: "Components",
 		desc: "A grouped logo carousel with staggered enter and exit motion between rotating sets.",
-		badge: "New",
+
 	},
 	{
 		id: "bar-spinner",
@@ -102,7 +102,7 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/special-text",
 		category: "Text Animations",
 		desc: "A scrambled text reveal with optional viewport triggering and plain text or slotted content input.",
-		badge: "New",
+
 	},
 	{
 		id: "highlighted-text",
@@ -110,7 +110,7 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/highlighted-text",
 		category: "Text Animations",
 		desc: "An inline highlight sweep that reveals text from configurable directions with optional viewport triggers.",
-		badge: "New",
+
 	},
 	{
 		id: "slide-up-text",
@@ -118,7 +118,7 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/slide-up-text",
 		category: "Text Animations",
 		desc: "A configurable text reveal that slides words, characters, or lines upward with staggered motion.",
-		badge: "New",
+
 	},
 	{
 		id: "text-marquee",
@@ -140,7 +140,7 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/signature",
 		category: "Text Animations",
 		desc: "A handwritten signature renderer that animates glyph paths from downloaded font data.",
-		badge: "New",
+
 	},
 	{
 		id: "randomized-text",
@@ -155,7 +155,7 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/gradient-wave-text",
 		category: "Text Animations",
 		desc: "A flowing gradient text effect with radial or linear bands, custom colors, and view-triggered playback.",
-		badge: "New",
+
 	},
 	{
 		id: "color-selector",
@@ -163,7 +163,7 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/color-selector",
 		category: "Inputs",
 		desc: "A compact swatch picker with preset or custom CSS colors and size variants.",
-		badge: "New",
+
 	},
 	{
 		id: "label-input",
@@ -171,7 +171,7 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/label-input",
 		category: "Inputs",
 		desc: "A floating-label input with ring-color variants and password visibility toggle support.",
-		badge: "New",
+
 	},
 	{
 		id: "animated-checkbox",
@@ -179,7 +179,7 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/animated-checkbox",
 		category: "Inputs",
 		desc: "A motion-driven checkbox row with animated checkmark drawing and strike-through feedback.",
-		badge: "New",
+
 	},
 	{
 		id: "exploding-input",

@@ -5,8 +5,10 @@ import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/typ
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import ViewTriggerExample from "./examples/view-trigger-example.svelte";
-import ViewTriggerExampleRaw from "./examples/view-trigger-example.svelte?raw";
+import WordsStaggerSpeedExample from "./examples/words-stagger-speed-example.svelte";
+import WordsStaggerSpeedExampleRaw from "./examples/words-stagger-speed-example.svelte?raw";
+import WordsStaggerExample from "./examples/words-stagger-example.svelte";
+import WordsStaggerExampleRaw from "./examples/words-stagger-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "spell/words-stagger",
@@ -73,13 +75,20 @@ export const data: ComponentDoc = {
 	installBlock,
 	examples: [
 		{
-			name: "View Trigger",
-			description:
-				"Replay the stagger on re-entry and surface lifecycle callbacks while keeping the reveal timing tighter and more editorial.",
-			preview: ViewTriggerExample,
+			name: "Speed",
+			preview: WordsStaggerSpeedExample,
 			code: {
-				filename: "view-trigger-example.svelte",
-				filecode: ViewTriggerExampleRaw,
+				filename: "speed-example.svelte",
+				filecode: WordsStaggerSpeedExampleRaw,
+				lang: "svelte",
+			},
+		},
+		{
+			name: "Stagger",
+			preview: WordsStaggerExample,
+			code: {
+				filename: "stagger-example.svelte",
+				filecode: WordsStaggerExampleRaw,
 				lang: "svelte",
 			},
 		},

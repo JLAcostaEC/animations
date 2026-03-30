@@ -215,7 +215,7 @@
 
 <MotionComponent
 	bind:ref={element}
-	class={cn("whitespace-pre-wrap", className)}
+	class={cn("whitespace-nowrap", className)}
 	style={rootStyle}
 	initial="hidden"
 	animate={shouldAnimate ? "visible" : "hidden"}

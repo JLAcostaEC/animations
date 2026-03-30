@@ -16,7 +16,7 @@
 
 <Sidebar.Root class="mt-16 border-none" {...restProps} bind:ref>
 	<ScrollArea
-		class="max-h-[calc(100vh-6rem)] py-4 pr-1"
+		class="max-h-[calc(100vh-6rem)] pt-4 pb-8 pr-1"
 		scrollbarXClasses="hidden"
 		scrollbarYClasses="hidden"
 	>

@@ -5,8 +5,10 @@ import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/typ
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import CharacterSplitExample from "./examples/character-split-example.svelte";
-import CharacterSplitExampleRaw from "./examples/character-split-example.svelte?raw";
+import CharacterSplitExample from "./examples/split-by-example.svelte";
+import CharacterSplitExampleRaw from "./examples/split-by-example.svelte?raw";
+import FromSlideUpExample from "./examples/from-slide-up-example.svelte";
+import FromSlideUpExampleRaw from "./examples/from-slide-up-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "spell/slide-up-text",
@@ -73,9 +75,7 @@ export const data: ComponentDoc = {
 	installBlock,
 	examples: [
 		{
-			name: "Character Split",
-			description:
-				"Switch to character splitting and stagger from the center for a denser, more cinematic text reveal.",
+			name: "Split By",
 			preview: CharacterSplitExample,
 			code: {
 				filename: "character-split-example.svelte",
@@ -83,6 +83,16 @@ export const data: ComponentDoc = {
 				lang: "svelte",
 			},
 		},
+		{
+			name: "From",
+			preview: FromSlideUpExample,
+			code:{
+				filename: "from-slide-up-example.svelte",
+				filecode: FromSlideUpExampleRaw,
+				lang: "svelte",
+				hideLines: true,
+			}
+		}
 	],
 	seo,
 	props: [
