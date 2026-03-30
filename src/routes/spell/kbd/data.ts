@@ -1,5 +1,5 @@
-import KbdRaw from "$lib/components/spell/kbd/kbd.svelte?raw";
-import IndexTsRaw from "$lib/components/spell/kbd/index.ts?raw";
+import KbdRaw from "$lib/components/spell/keyboard-shortcut/keyboard-shortcut.svelte?raw";
+import IndexTsRaw from "$lib/components/spell/keyboard-shortcut/index.ts?raw";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
@@ -11,23 +11,23 @@ import CustomDisplayExampleRaw from "./examples/custom-display-example.svelte?ra
 
 export const meta: ComponentMeta = {
 	id: "spell/kbd",
-	title: "KBD",
+	title: "Keyboard Shortcut",
 	description:
 		"A tactile keyboard shortcut keycap for docs, commands, and menus, with optional live keyboard listening.",
 	category: "spell",
 };
 
 const seo: SEO = {
-	title: "KBD",
+	title: "Keyboard Shortcut",
 	description:
-		"Learn how to use the KBD spell component in Svelte, including shortcut composition, active states, and live keyboard listening.",
-	keywords: ["Svelte", "KBD", "Spell", "Svelte Animations", "Keyboard Shortcut", "runed"],
+		"Learn how to use the Keyboard Shortcut spell component in Svelte, including shortcut composition, active states, and live keyboard listening.",
+	keywords: ["Svelte", "Keyboard Shortcut", "Spell", "Svelte Animations", "runed"],
 };
 
 const installBlock: InstallComponentDocs = {
 	installCode: [
 		{
-			filename: "kbd.svelte",
+			filename: "keyboard-shortcut.svelte",
 			filecode: KbdRaw,
 			lang: "svelte",
 			isExpand: true,
@@ -43,8 +43,8 @@ const installBlock: InstallComponentDocs = {
 lib/
   components/
     spell/
-      kbd/
-        kbd.svelte
+      keyboard-shortcut/
+        keyboard-shortcut.svelte
         index.ts`,
 };
 
