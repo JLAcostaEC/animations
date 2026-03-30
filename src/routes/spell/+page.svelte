@@ -6,13 +6,12 @@
 </script>
 
 <SEO
-	title="Spell UI"
+	title="Svelte Spell UI"
 	description="Refined UI components for Design Engineers, rebuilt for Svelte 5 and inspired by the original Spell UI experience."
 	keywords={[
 		"Spell UI",
 		"Svelte Spell UI",
 		"Svelte 5",
-		"spell.sh",
 		"UI components",
 		"Design engineering",
 	]}
@@ -23,5 +22,5 @@
 		<SpellOverviewHero />
 	</div>
 
-	<SpellOverviewShowcase items={spellOverviewShowcaseItems} />
+	<!-- <SpellOverviewShowcase items={spellOverviewShowcaseItems} /> -->
 </div>

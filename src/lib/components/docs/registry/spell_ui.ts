@@ -140,6 +140,7 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/signature",
 		category: "Text Animations",
 		desc: "A handwritten signature renderer that animates glyph paths from downloaded font data.",
+		badge:'New'
 
 	},
 	{
@@ -155,6 +156,7 @@ export const spellUIComponents: SpellComponent[] = [
 		href: "/spell/gradient-wave-text",
 		category: "Text Animations",
 		desc: "A flowing gradient text effect with radial or linear bands, custom colors, and view-triggered playback.",
+		badge: "New"
 
 	},
 	{
