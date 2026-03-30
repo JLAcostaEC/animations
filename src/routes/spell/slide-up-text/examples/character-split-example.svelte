@@ -10,13 +10,14 @@
 			Character Split
 		</p>
 		<SlideUpText
-			text="CENTERED STAGGER"
 			split="characters"
 			from="center"
 			stagger={0.04}
 			delay={0.05}
 			class="text-xl font-semibold tracking-[0.22em] uppercase"
 			charClass="pr-[0.02em]"
-		/>
+		>
+			CENTERED STAGGER
+		</SlideUpText>
 	</div>
 </div>

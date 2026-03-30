@@ -1,5 +1,6 @@
 import SlideUpTextRaw from "$lib/components/spell/slide-up-text/slide-up-text.svelte?raw";
 import IndexTsRaw from "$lib/components/spell/slide-up-text/index.ts?raw";
+import SharedTextUtilsRaw from "$lib/components/spell/_shared/text-utils.ts?raw";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
@@ -42,12 +43,19 @@ const installBlock: InstallComponentDocs = {
 			filecode: IndexTsRaw,
 			lang: "typescript",
 		},
+		{
+			filename: "../_shared/text-utils.ts",
+			filecode: SharedTextUtilsRaw,
+			lang: "typescript",
+		},
 	],
 	packages: ["motion-sv"],
 	folderStructure: `src/
 lib/
   components/
     spell/
+      _shared/
+        text-utils.ts
       slide-up-text/
         index.ts
         slide-up-text.svelte`,
@@ -81,11 +89,11 @@ export const data: ComponentDoc = {
 		{
 			props: [
 				{
-					name: "text",
-					type: "string",
+					name: "children",
+					type: "Snippet",
 					required: true,
 					description:
-						"Plain text content that is split into animated words, characters, or lines.",
+						"Plain text snippet content that is flattened and split into animated units.",
 				},
 				{
 					name: "split",
@@ -128,7 +136,7 @@ export const data: ComponentDoc = {
 						"Starts the animation immediately when not using viewport triggering.",
 				},
 				{
-					name: "inView",
+					name: "triggerOnView",
 					type: "boolean",
 					default: "false",
 					description: "Waits to animate until the component enters the viewport.",
@@ -138,7 +146,7 @@ export const data: ComponentDoc = {
 					type: "boolean",
 					default: "true",
 					description:
-						"When using inView, controls whether the reveal runs only on first entry.",
+						"When using triggerOnView, controls whether the reveal runs only on first entry.",
 				},
 				{
 					name: "onStart",

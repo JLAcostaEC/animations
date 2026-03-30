@@ -7,9 +7,8 @@
 		<p class="text-muted-foreground mb-3 text-xs font-semibold tracking-[0.28em] uppercase">
 			Hero Copy
 		</p>
-		<SlideUpText
-			text="Slide the message in with calm, measured timing."
-			class="max-w-[17ch] text-3xl font-semibold tracking-tight sm:text-4xl"
-		/>
+		<SlideUpText class="max-w-[17ch] text-3xl font-semibold tracking-tight sm:text-4xl">
+			Slide the message in with calm, measured timing.
+		</SlideUpText>
 	</div>
 </div>

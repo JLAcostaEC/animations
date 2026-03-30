@@ -1,24 +1,34 @@
 <script lang="ts">
-	import { cn } from '$lib/utils';
-	import { motion, type AnimationOptions, type Variants } from 'motion-sv';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import { cn } from "$lib/utils";
+	import { readNormalizedTextContent, segmentText, splitGraphemes } from "../_shared/text-utils";
+	import { motion, useInView, type AnimationOptions, type Variants } from "motion-sv";
+	import type { Snippet } from "svelte";
+	import type { HTMLAttributes } from "svelte/elements";
 
-	type SplitMode = 'words' | 'characters' | 'lines';
-	type StaggerFrom = 'first' | 'last' | 'center';
+	type SplitMode = "words" | "characters" | "lines";
+	type StaggerFrom = "first" | "last" | "center";
 
 	type CharacterUnit = {
+		id: string;
 		value: string;
 		index: number;
 	};
 
-	type RenderGroup = {
-		characters: CharacterUnit[];
-		needsSpace: boolean;
-		spaceIndex?: number;
-	};
+	type RenderItem =
+		| {
+				kind: "group";
+				id: string;
+				characters: CharacterUnit[];
+		  }
+		| {
+				kind: "whitespace";
+				id: string;
+				value: string;
+				index: number;
+		  };
 
 	interface SlideUpTextProps extends HTMLAttributes<HTMLSpanElement> {
-		text: string;
+		children: Snippet;
 		split?: SplitMode;
 		delay?: number;
 		stagger?: number;
@@ -30,22 +40,22 @@
 		autoStart?: boolean;
 		onStart?: () => void;
 		onComplete?: () => void;
-		inView?: boolean;
+		triggerOnView?: boolean;
 		once?: boolean;
 	}
 
 	const defaultTransition: AnimationOptions = {
-		type: 'tween',
+		type: "tween",
 		ease: [0.625, 0.05, 0, 1],
-		duration: 0.5
+		duration: 0.5,
 	};
 
 	let {
-		text,
-		split = 'words',
+		children,
+		split = "words",
 		delay = 0,
 		stagger = 0.1,
-		from = 'first',
+		from = "first",
 		transition = defaultTransition,
 		class: className,
 		wordClass,
@@ -53,69 +63,107 @@
 		autoStart = true,
 		onStart,
 		onComplete,
-		inView = false,
+		triggerOnView = false,
 		once = true,
 		...props
 	}: SlideUpTextProps = $props();
 
 	let element = $state<HTMLSpanElement | null>(null);
+	let sourceElement = $state<HTMLSpanElement | null>(null);
+	let sourceText = $state("");
 	let isAnimating = $state(false);
-	let hasEnteredView = $state(false);
+	let animationCycle = $state(0);
+	let completedCycle = $state(0);
 	let hasPlayedInView = false;
 
-	function splitIntoCharacters(value: string) {
-		if (typeof Intl !== 'undefined' && 'Segmenter' in Intl) {
-			const segmenter = new Intl.Segmenter('en', { granularity: 'grapheme' });
-			return Array.from(segmenter.segment(value), ({ segment }) => segment);
-		}
+	let previousSourceText = "";
+	let previousShouldAnimate = false;
+	let view = useInView(
+		() => (triggerOnView ? element : null)!,
+		() => ({ once, amount: 0.2 }) as any
+	);
 
-		return Array.from(value);
+	function syncSourceText() {
+		sourceText = readNormalizedTextContent(sourceElement);
 	}
 
-	const groups = $derived.by<RenderGroup[]>(() => {
-		const entries = split === 'lines' ? text.split('\n') : text.split(' ');
-		const renderGroups: RenderGroup[] = [];
+	const items = $derived.by<RenderItem[]>(() => {
+		if (!sourceText) {
+			return [];
+		}
+
+		if (split === "lines") {
+			return sourceText.split("\n").map((line, index) => ({
+				kind: "group" as const,
+				id: `line-${index}`,
+				characters: [
+					{
+						id: `line-${index}-0`,
+						value: line || "\u00A0",
+						index,
+					},
+				],
+			}));
+		}
+
+		let renderItems: RenderItem[] = [];
 		let cursor = 0;
 
-		for (const [index, entry] of entries.entries()) {
-			const characters =
-				split === 'characters'
-					? splitIntoCharacters(entry).map((value, characterIndex) => ({
+		for (let [tokenIndex, token] of segmentText(sourceText).entries()) {
+			if (token.kind === "whitespace") {
+				renderItems.push({
+					kind: "whitespace",
+					id: `whitespace-${tokenIndex}`,
+					value: token.value,
+					index: cursor,
+				});
+
+				cursor += 1;
+				continue;
+			}
+
+			let characters =
+				split === "characters"
+					? splitGraphemes(token.value).map((value, characterIndex) => ({
+							id: `token-${tokenIndex}-${characterIndex}`,
 							value,
-							index: cursor + characterIndex
+							index: cursor + characterIndex,
 						}))
-					: [{ value: entry, index: cursor }];
+					: [
+							{
+								id: `token-${tokenIndex}-0`,
+								value: token.value,
+								index: cursor,
+							},
+						];
 
 			cursor += characters.length;
 
-			const needsSpace = split !== 'lines' && index !== entries.length - 1;
-			const spaceIndex = needsSpace ? cursor : undefined;
-
-			if (needsSpace) {
-				cursor += 1;
-			}
-
-			renderGroups.push({
+			renderItems.push({
+				kind: "group",
+				id: `group-${tokenIndex}`,
 				characters,
-				needsSpace,
-				spaceIndex
 			});
 		}
 
-		return renderGroups;
+		return renderItems;
 	});
 
 	const totalUnits = $derived(
-		groups.reduce((sum, group) => sum + group.characters.length + (group.needsSpace ? 1 : 0), 0)
+		items.reduce((sum, item) => sum + (item.kind === "group" ? item.characters.length : 1), 0)
 	);
 
+	const lastUnitIndex = $derived(totalUnits - 1);
+	const isInView = $derived(triggerOnView ? view.isInView : true);
+	const shouldAnimate = $derived(totalUnits > 0 && isAnimating && isInView);
+
 	function getStaggerDelay(index: number) {
-		if (from === 'last') {
+		if (from === "last") {
 			return Math.max(0, totalUnits - 1 - index) * stagger;
 		}
 
-		if (from === 'center') {
-			const center = Math.floor(totalUnits / 2);
+		if (from === "center") {
+			let center = Math.floor(totalUnits / 2);
 			return Math.abs(center - index) * stagger;
 		}
 
@@ -123,19 +171,38 @@
 	}
 
 	const variants = $derived.by<Variants>(() => ({
-		hidden: { y: '100%' },
+		hidden: { y: "100%" },
 		visible: (index: number) => ({
 			y: 0,
 			transition: {
 				...transition,
-				delay: delay + (typeof transition.delay === 'number' ? transition.delay : 0) + getStaggerDelay(index)
-			}
-		})
+				delay:
+					delay +
+					(typeof transition.delay === "number" ? transition.delay : 0) +
+					getStaggerDelay(index),
+			},
+		}),
 	}));
 
 	function startInternalAnimation() {
+		if (!sourceText) {
+			return;
+		}
+
 		isAnimating = true;
-		onStart?.();
+	}
+
+	function handleUnitComplete(definition: unknown, unitIndex: number) {
+		if (definition !== "visible" || !shouldAnimate || unitIndex !== lastUnitIndex) {
+			return;
+		}
+
+		if (completedCycle === animationCycle) {
+			return;
+		}
+
+		completedCycle = animationCycle;
+		onComplete?.();
 	}
 
 	export function startAnimation() {
@@ -147,7 +214,35 @@
 	}
 
 	$effect(() => {
-		if (!autoStart || inView) {
+		if (!sourceElement) {
+			sourceText = "";
+			return;
+		}
+
+		syncSourceText();
+
+		let observer = new MutationObserver(() => syncSourceText());
+		observer.observe(sourceElement, {
+			childList: true,
+			subtree: true,
+			characterData: true,
+		});
+
+		return () => observer.disconnect();
+	});
+
+	$effect(() => {
+		if (sourceText === previousSourceText) {
+			return;
+		}
+
+		previousSourceText = sourceText;
+		hasPlayedInView = false;
+		reset();
+	});
+
+	$effect(() => {
+		if (!sourceText || !autoStart || triggerOnView) {
 			return;
 		}
 
@@ -155,99 +250,85 @@
 	});
 
 	$effect(() => {
-		if (!inView || !element) {
+		if (!triggerOnView) {
 			return;
 		}
 
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				if (!entry) {
-					return;
-				}
+		if (!isInView) {
+			if (!once) {
+				hasPlayedInView = false;
+				reset();
+			}
 
-				if (entry.isIntersecting) {
-					if (once && hasPlayedInView) {
-						return;
-					}
+			return;
+		}
 
-					hasEnteredView = true;
-					hasPlayedInView = true;
-					startInternalAnimation();
-				} else if (!once) {
-					hasEnteredView = false;
-					isAnimating = false;
-				}
-			},
-			{ threshold: 0.2 }
-		);
+		if (!sourceText || (once && hasPlayedInView)) {
+			return;
+		}
 
-		observer.observe(element);
-
-		return () => observer.disconnect();
+		hasPlayedInView = true;
+		startInternalAnimation();
 	});
 
-	const shouldAnimate = $derived(inView ? hasEnteredView && isAnimating : isAnimating);
+	$effect(() => {
+		if (shouldAnimate && !previousShouldAnimate) {
+			animationCycle += 1;
+			completedCycle = 0;
+			onStart?.();
+		}
+
+		previousShouldAnimate = shouldAnimate;
+	});
 </script>
 
 <span
 	bind:this={element}
 	class={cn(
-		'flex flex-wrap whitespace-pre-wrap',
-		split === 'lines' && 'flex-col items-start',
+		split === "lines" ? "inline-flex flex-col items-start" : "whitespace-pre-wrap",
 		className
 	)}
 	{...props}
 >
-	<span class="sr-only">{text}</span>
+	<span bind:this={sourceElement} class="sr-only">
+		{@render children()}
+	</span>
 
-	{#each groups as group, groupIndex (groupIndex)}
-		<span
-			aria-hidden="true"
-			class={cn(split === 'lines' ? 'inline-flex overflow-hidden' : 'inline-flex overflow-hidden', wordClass)}
-		>
-			{#each group.characters as character, characterIndex (`${groupIndex}-${characterIndex}`)}
-				<span class={cn('relative overflow-hidden whitespace-pre-wrap', charClass)}>
-					<motion.span
-						class="inline-block"
-						initial="hidden"
-						animate={shouldAnimate ? 'visible' : 'hidden'}
-						custom={character.index}
-						{variants}
-						onAnimationComplete={(definition) => {
-							if (
-								definition === 'visible' &&
-								shouldAnimate &&
-								groupIndex === groups.length - 1 &&
-								characterIndex === group.characters.length - 1 &&
-								!group.needsSpace
-							) {
-								onComplete?.();
-							}
-						}}
-					>
-						{character.value}
-					</motion.span>
-				</span>
-			{/each}
-
-			{#if group.needsSpace}
-				<span class="relative overflow-hidden whitespace-pre-wrap">
-					<motion.span
-						class="inline-block"
-						initial="hidden"
-						animate={shouldAnimate ? 'visible' : 'hidden'}
-						custom={group.spaceIndex}
-						{variants}
-						onAnimationComplete={(definition) => {
-							if (definition === 'visible' && shouldAnimate && groupIndex === groups.length - 1) {
-								onComplete?.();
-							}
-						}}
-					>
-						{' '}
-					</motion.span>
-				</span>
-			{/if}
-		</span>
+	{#each items as item (item.id)}
+		{#if item.kind === "group"}
+			<span
+				aria-hidden="true"
+				class={cn("inline-flex overflow-hidden whitespace-pre-wrap", wordClass)}
+			>
+				{#each item.characters as character (character.id)}
+					<span class={cn("relative overflow-hidden whitespace-pre-wrap", charClass)}>
+						<motion.span
+							class="inline-block whitespace-pre-wrap"
+							initial="hidden"
+							animate={shouldAnimate ? "visible" : "hidden"}
+							custom={character.index}
+							{variants}
+							onAnimationComplete={(definition) =>
+								handleUnitComplete(definition, character.index)}
+						>
+							{character.value}
+						</motion.span>
+					</span>
+				{/each}
+			</span>
+		{:else}
+			<span aria-hidden="true" class="relative overflow-hidden whitespace-pre-wrap">
+				<motion.span
+					class="inline-block whitespace-pre-wrap"
+					initial="hidden"
+					animate={shouldAnimate ? "visible" : "hidden"}
+					custom={item.index}
+					{variants}
+					onAnimationComplete={(definition) => handleUnitComplete(definition, item.index)}
+				>
+					{item.value}
+				</motion.span>
+			</span>
+		{/if}
 	{/each}
 </span>

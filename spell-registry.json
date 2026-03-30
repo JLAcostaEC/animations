@@ -271,6 +271,11 @@
 			"description": "A configurable text reveal that slides words, characters, or lines upward with staggered motion.",
 			"files": [
 				{
+					"path": "./src/lib/components/spell/_shared/text-utils.ts",
+					"type": "registry:file",
+					"target": "spell/_shared/text-utils.ts"
+				},
+				{
 					"path": "./src/lib/components/spell/slide-up-text/slide-up-text.svelte",
 					"type": "registry:component",
 					"target": "spell/slide-up-text/slide-up-text.svelte"
