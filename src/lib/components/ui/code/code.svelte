@@ -51,7 +51,7 @@
 	}
 
 	:global(pre.shiki) {
-		@apply overflow-x-auto rounded-lg bg-inherit py-4 text-sm;
+		@apply overflow-x-auto rounded-lg bg-inherit py-2 text-sm;
 		-ms-overflow-style: none;
 		scrollbar-width: none;
 	}
@@ -76,13 +76,13 @@
 		content: counter(step);
 		counter-increment: step;
 		display: inline-block;
-		width: 1.8rem;
-		margin-right: 1.4rem;
+		width: 1.6rem;
+		margin-right: 1rem;
 		text-align: right;
 	}
 
 	:global(pre.line-numbers .line::before) {
-		@apply text-muted-foreground;
+		@apply text-muted-foreground font-mono text-xs;
 	}
 
 	:global(pre .line.line--highlighted) {
@@ -98,6 +98,6 @@
 	}
 
 	:global(pre.line-numbers .line) {
-		@apply px-2;
+		@apply px-1;
 	}
 </style>

@@ -22,7 +22,7 @@ export type PropDef = {
 };
 
 export type PropsTable = {
-	name: string;
+	name?: string;
 	desc?: string;
 	props: PropDef[];
 };

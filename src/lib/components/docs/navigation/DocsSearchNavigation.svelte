@@ -1,9 +1,14 @@
 <script lang="ts">
+	import { Badge } from "$lib/components/ui/badge";
 	import Button from "$lib/components/ui/button/button.svelte";
 	import * as Command from "$lib/components/ui/command/index.js";
 	import * as Kbd from "$lib/components/ui/kbd/index.js";
-	import { Group } from "@lucide/svelte";
-	import { magicUIComponents, type MagicComponent } from "../registry";
+	import {
+		magicUIComponents,
+		spellUIComponents,
+		type MagicComponent,
+		type SpellComponent,
+	} from "../registry";
 
 	let open = $state(false);
 
@@ -27,6 +32,10 @@
 			href: "/magic/docs/installation",
 		},
 	];
+
+	const spellComponents: SpellComponent[] = spellUIComponents.filter(
+		(component) => component.category !== "Overview"
+	);
 </script>
 
 <svelte:document onkeydown={handleKeydown} />
@@ -145,6 +154,45 @@
 					</svg>
 					{component.name}</Command.LinkItem
 				>
+			{/each}
+		</Command.Group>
+		<Command.Group heading="Spell UI">
+			{#each spellComponents as component}
+				<Command.LinkItem
+					value={component.id}
+					onclick={() => (open = false)}
+					href={component.href}
+					class="justify-between gap-3"
+				>
+					<span class="flex items-center gap-2">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="16"
+							height="16"
+							viewBox="0 0 24 24"
+							fill="none"
+							role="img"
+							color="currentColor"
+						>
+							<circle opacity="0.2" cx="12" cy="12" r="10" fill="currentColor"></circle>
+							<circle
+								cx="12"
+								cy="12"
+								r="10"
+								stroke="currentColor"
+								stroke-width="1.5"
+								stroke-linejoin="round"
+							></circle>
+						</svg>
+						<span>{component.name}</span>
+					</span>
+					<Badge
+						variant="secondary"
+						class="bg-primary/10 text-primary hover:bg-primary/20 h-5 shrink-0 px-1.5 text-[10px] font-medium"
+					>
+						Spell
+					</Badge>
+				</Command.LinkItem>
 			{/each}
 		</Command.Group>
 	</Command.List>

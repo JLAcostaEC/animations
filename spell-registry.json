@@ -1,0 +1,422 @@
+{
+	"$schema": "https://shadcn-svelte.com/schema/registry.json",
+	"name": "spell",
+	"homepage": "https://sv-animations.vercel.app",
+	"items": [
+		{
+			"name": "perspective-book",
+			"type": "registry:block",
+			"title": "Perspective Book",
+			"description": "A 3D book cover wrapper with a hover tilt effect and optional textured overlay.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/perspective-book/perspective-book.svelte",
+					"type": "registry:component",
+					"target": "spell/perspective-book/perspective-book.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/perspective-book/index.ts",
+					"type": "registry:file",
+					"target": "spell/perspective-book/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
+			"name": "badge",
+			"type": "registry:block",
+			"title": "Badge",
+			"description": "A compact pill badge with multi-color variants, optional link mode, and size presets.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/badge/badge.svelte",
+					"type": "registry:component",
+					"target": "spell/badge/badge.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/badge/index.ts",
+					"type": "registry:file",
+					"target": "spell/badge/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["tailwind-variants"]
+		},
+		{
+			"name": "kbd",
+			"type": "registry:block",
+			"title": "Keyboard Shortcuts",
+			"description": "A tactile keyboard shortcut keycap with optional live keyboard listening.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/keyboard-shortcut/keyboard-shortcut.svelte",
+					"type": "registry:component",
+					"target": "spell/keyboard-shortcut/keyboard-shortcut.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/keyboard-shortcut/index.ts",
+					"type": "registry:file",
+					"target": "spell/keyboard-shortcut/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["runed"]
+		},
+		{
+			"name": "marquee",
+			"type": "registry:block",
+			"title": "Marquee",
+			"description": "A reusable horizontal or vertical marquee with optional fade edges and hover pause.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/marquee/marquee.svelte",
+					"type": "registry:component",
+					"target": "spell/marquee/marquee.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/marquee/index.ts",
+					"type": "registry:file",
+					"target": "spell/marquee/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
+			"name": "logo-carousel",
+			"type": "registry:block",
+			"title": "Logo Carousel",
+			"description": "A grouped logo carousel with staggered enter and exit motion between rotating sets.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/logo-carousel/logo-carousel.svelte",
+					"type": "registry:component",
+					"target": "spell/logo-carousel/logo-carousel.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/logo-carousel/index.ts",
+					"type": "registry:file",
+					"target": "spell/logo-carousel/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
+			"name": "spotify-card",
+			"type": "registry:block",
+			"title": "Spotify Card",
+			"description": "A Spotify preview card with blurred artwork, playback controls, and server-fetched metadata.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/spotify-card/spotify-card.svelte",
+					"type": "registry:component",
+					"target": "spell/spotify-card/spotify-card.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/spotify-card/index.ts",
+					"type": "registry:file",
+					"target": "spell/spotify-card/index.ts"
+				},
+				{
+					"path": "./src/routes/api/spotify/+server.ts",
+					"type": "registry:file",
+					"target": "routes/api/spotify/+server.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["spotify-url-info"]
+		},
+		{
+			"name": "qrcode",
+			"type": "registry:block",
+			"title": "QRCode",
+			"description": "A rounded QR code renderer with circular modules and stylized finder patterns.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/qrcode/qrcode.svelte",
+					"type": "registry:component",
+					"target": "spell/qrcode/qrcode.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/qrcode/index.ts",
+					"type": "registry:file",
+					"target": "spell/qrcode/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["qrcode"]
+		},
+		{
+			"name": "text-marquee",
+			"type": "registry:block",
+			"title": "Text Marquee",
+			"description": "A vertical text rotator with snippet-based prefix and row composition.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/text-marquee/text-marquee.svelte",
+					"type": "registry:component",
+					"target": "spell/text-marquee/text-marquee.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/text-marquee/index.ts",
+					"type": "registry:file",
+					"target": "spell/text-marquee/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
+			"name": "blur-reveal",
+			"type": "registry:block",
+			"title": "Blur Reveal",
+			"description": "A text-only blur and stagger reveal for hero copy, headings, and announcements.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/blur-reveal/blur-reveal.svelte",
+					"type": "registry:component",
+					"target": "spell/blur-reveal/blur-reveal.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/blur-reveal/index.ts",
+					"type": "registry:file",
+					"target": "spell/blur-reveal/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "words-stagger",
+			"type": "registry:block",
+			"title": "Words Stagger",
+			"description": "A word-by-word blur and lift reveal for hero copy, launch messaging, and editorial headings.",
+			"files": [
+				{
+					"path": "./src/lib/utils/text-utils.ts",
+					"type": "registry:file",
+					"target": "utils/text-utils.ts"
+				},
+				{
+					"path": "./src/lib/components/spell/words-stagger/words-stagger.svelte",
+					"type": "registry:component",
+					"target": "spell/words-stagger/words-stagger.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/words-stagger/index.ts",
+					"type": "registry:file",
+					"target": "spell/words-stagger/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "randomized-text",
+			"type": "registry:block",
+			"title": "Randomized Text",
+			"description": "A stable randomized text reveal for hero copy, labels, and editorial callouts.",
+			"files": [
+				{
+					"path": "./src/lib/utils/text-utils.ts",
+					"type": "registry:file",
+					"target": "utils/text-utils.ts"
+				},
+				{
+					"path": "./src/lib/components/spell/randomized-text/randomized-text.svelte",
+					"type": "registry:component",
+					"target": "spell/randomized-text/randomized-text.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/randomized-text/index.ts",
+					"type": "registry:file",
+					"target": "spell/randomized-text/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "special-text",
+			"type": "registry:block",
+			"title": "Special Text",
+			"description": "A scrambled text reveal with optional viewport triggering and plain text or slotted content input.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/special-text/special-text.svelte",
+					"type": "registry:component",
+					"target": "spell/special-text/special-text.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/special-text/index.ts",
+					"type": "registry:file",
+					"target": "spell/special-text/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "highlighted-text",
+			"type": "registry:block",
+			"title": "Highlighted Text",
+			"description": "An inline highlight sweep that reveals text from configurable directions with optional viewport triggers.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/highlighted-text/highlighted-text.svelte",
+					"type": "registry:component",
+					"target": "spell/highlighted-text/highlighted-text.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/highlighted-text/index.ts",
+					"type": "registry:file",
+					"target": "spell/highlighted-text/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "slide-up-text",
+			"type": "registry:block",
+			"title": "Slide Up Text",
+			"description": "A configurable text reveal that slides words, characters, or lines upward with staggered motion.",
+			"files": [
+				{
+					"path": "./src/lib/utils/text-utils.ts",
+					"type": "registry:file",
+					"target": "utils/text-utils.ts"
+				},
+				{
+					"path": "./src/lib/components/spell/slide-up-text/slide-up-text.svelte",
+					"type": "registry:component",
+					"target": "spell/slide-up-text/slide-up-text.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/slide-up-text/index.ts",
+					"type": "registry:file",
+					"target": "spell/slide-up-text/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "signature",
+			"type": "registry:block",
+			"title": "Signature",
+			"description": "A handwritten signature renderer that animates glyph paths from downloaded font data.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/signature/signature.svelte",
+					"type": "registry:component",
+					"target": "spell/signature/signature.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/signature/index.ts",
+					"type": "registry:file",
+					"target": "spell/signature/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["opentype.js"]
+		},
+		{
+			"name": "gradient-wave-text",
+			"type": "registry:block",
+			"title": "Gradient Wave Text",
+			"description": "A flowing gradient text effect with radial or linear bands, custom colors, and view-triggered playback.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/gradient-wave-text/gradient-wave-text.svelte",
+					"type": "registry:component",
+					"target": "spell/gradient-wave-text/gradient-wave-text.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/gradient-wave-text/index.ts",
+					"type": "registry:file",
+					"target": "spell/gradient-wave-text/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "color-selector",
+			"type": "registry:block",
+			"title": "Color Selector",
+			"description": "A compact swatch picker with preset or custom CSS colors, form support, and size variants.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/color-selector/color-selector.svelte",
+					"type": "registry:component",
+					"target": "spell/color-selector/color-selector.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/color-selector/index.ts",
+					"type": "registry:file",
+					"target": "spell/color-selector/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["tailwind-variants"]
+		},
+		{
+			"name": "label-input",
+			"type": "registry:block",
+			"title": "Label Input",
+			"description": "A floating-label input with ring-color variants and password visibility toggle support.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/label-input/label-input.svelte",
+					"type": "registry:component",
+					"target": "spell/label-input/label-input.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/label-input/index.ts",
+					"type": "registry:file",
+					"target": "spell/label-input/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["tailwind-variants", "@lucide/svelte"]
+		},
+		{
+			"name": "animated-checkbox",
+			"type": "registry:block",
+			"title": "Animated Checkbox",
+			"description": "A motion-driven checkbox row with animated checkmark drawing and strike-through feedback.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/animated-checkbox/animated-checkbox.svelte",
+					"type": "registry:component",
+					"target": "spell/animated-checkbox/animated-checkbox.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/animated-checkbox/index.ts",
+					"type": "registry:file",
+					"target": "spell/animated-checkbox/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
+			"name": "exploding-input",
+			"type": "registry:block",
+			"title": "Exploding Input",
+			"description": "A particle input companion that launches custom items outward from the cursor as you type.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/exploding-input/exploding-input.svelte",
+					"type": "registry:component",
+					"target": "spell/exploding-input/exploding-input.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/exploding-input/index.ts",
+					"type": "registry:file",
+					"target": "spell/exploding-input/index.ts"
+				}
+			],
+			"registryDependencies": []
+		}
+	]
+}

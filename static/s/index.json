@@ -1,0 +1,208 @@
+[
+	{
+		"name": "perspective-book",
+		"title": "Perspective Book",
+		"type": "registry:block",
+		"description": "A 3D book cover wrapper with a hover tilt effect and optional textured overlay.",
+		"registryDependencies": [],
+		"relativeUrl": "perspective-book.json"
+	},
+	{
+		"name": "badge",
+		"title": "Badge",
+		"type": "registry:block",
+		"description": "A compact pill badge with multi-color variants, optional link mode, and size presets.",
+		"dependencies": [
+			"tailwind-variants"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "badge.json"
+	},
+	{
+		"name": "kbd",
+		"title": "Keyboard Shortcuts",
+		"type": "registry:block",
+		"description": "A tactile keyboard shortcut keycap with optional live keyboard listening.",
+		"dependencies": [
+			"runed"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "kbd.json"
+	},
+	{
+		"name": "marquee",
+		"title": "Marquee",
+		"type": "registry:block",
+		"description": "A reusable horizontal or vertical marquee with optional fade edges and hover pause.",
+		"registryDependencies": [],
+		"relativeUrl": "marquee.json"
+	},
+	{
+		"name": "logo-carousel",
+		"title": "Logo Carousel",
+		"type": "registry:block",
+		"description": "A grouped logo carousel with staggered enter and exit motion between rotating sets.",
+		"registryDependencies": [],
+		"relativeUrl": "logo-carousel.json"
+	},
+	{
+		"name": "spotify-card",
+		"title": "Spotify Card",
+		"type": "registry:block",
+		"description": "A Spotify preview card with blurred artwork, playback controls, and server-fetched metadata.",
+		"dependencies": [
+			"spotify-url-info"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "spotify-card.json"
+	},
+	{
+		"name": "qrcode",
+		"title": "QRCode",
+		"type": "registry:block",
+		"description": "A rounded QR code renderer with circular modules and stylized finder patterns.",
+		"dependencies": [
+			"qrcode"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "qrcode.json"
+	},
+	{
+		"name": "text-marquee",
+		"title": "Text Marquee",
+		"type": "registry:block",
+		"description": "A vertical text rotator with snippet-based prefix and row composition.",
+		"registryDependencies": [],
+		"relativeUrl": "text-marquee.json"
+	},
+	{
+		"name": "blur-reveal",
+		"title": "Blur Reveal",
+		"type": "registry:block",
+		"description": "A text-only blur and stagger reveal for hero copy, headings, and announcements.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "blur-reveal.json"
+	},
+	{
+		"name": "words-stagger",
+		"title": "Words Stagger",
+		"type": "registry:block",
+		"description": "A word-by-word blur and lift reveal for hero copy, launch messaging, and editorial headings.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "words-stagger.json"
+	},
+	{
+		"name": "randomized-text",
+		"title": "Randomized Text",
+		"type": "registry:block",
+		"description": "A stable randomized text reveal for hero copy, labels, and editorial callouts.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "randomized-text.json"
+	},
+	{
+		"name": "special-text",
+		"title": "Special Text",
+		"type": "registry:block",
+		"description": "A scrambled text reveal with optional viewport triggering and plain text or slotted content input.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "special-text.json"
+	},
+	{
+		"name": "highlighted-text",
+		"title": "Highlighted Text",
+		"type": "registry:block",
+		"description": "An inline highlight sweep that reveals text from configurable directions with optional viewport triggers.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "highlighted-text.json"
+	},
+	{
+		"name": "slide-up-text",
+		"title": "Slide Up Text",
+		"type": "registry:block",
+		"description": "A configurable text reveal that slides words, characters, or lines upward with staggered motion.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "slide-up-text.json"
+	},
+	{
+		"name": "signature",
+		"title": "Signature",
+		"type": "registry:block",
+		"description": "A handwritten signature renderer that animates glyph paths from downloaded font data.",
+		"dependencies": [
+			"opentype.js"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "signature.json"
+	},
+	{
+		"name": "gradient-wave-text",
+		"title": "Gradient Wave Text",
+		"type": "registry:block",
+		"description": "A flowing gradient text effect with radial or linear bands, custom colors, and view-triggered playback.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "gradient-wave-text.json"
+	},
+	{
+		"name": "color-selector",
+		"title": "Color Selector",
+		"type": "registry:block",
+		"description": "A compact swatch picker with preset or custom CSS colors, form support, and size variants.",
+		"dependencies": [
+			"tailwind-variants"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "color-selector.json"
+	},
+	{
+		"name": "label-input",
+		"title": "Label Input",
+		"type": "registry:block",
+		"description": "A floating-label input with ring-color variants and password visibility toggle support.",
+		"dependencies": [
+			"tailwind-variants",
+			"@lucide/svelte"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "label-input.json"
+	},
+	{
+		"name": "animated-checkbox",
+		"title": "Animated Checkbox",
+		"type": "registry:block",
+		"description": "A motion-driven checkbox row with animated checkmark drawing and strike-through feedback.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "animated-checkbox.json"
+	},
+	{
+		"name": "exploding-input",
+		"title": "Exploding Input",
+		"type": "registry:block",
+		"description": "A particle input companion that launches custom items outward from the cursor as you type.",
+		"registryDependencies": [],
+		"relativeUrl": "exploding-input.json"
+	}
+]

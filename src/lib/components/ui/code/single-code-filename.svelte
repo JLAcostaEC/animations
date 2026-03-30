@@ -36,10 +36,10 @@
 			<Code.Overflow collapsed={true}>
 				<Code.Root
 					lang={code.lang}
-					class="w-full rounded-none border-none"
+					class="w-full rounded-none bg-background border-none"
 					code={code.filecode}
 					highlight={code.highlight}
-					hideLines={code.hideLines}
+					hideLines={false}
 				>
 					<!-- <Code.CopyButton /> -->
 				</Code.Root>
@@ -47,10 +47,10 @@
 		{:else}
 			<Code.Root
 				lang={code.lang}
-				class="w-full rounded-none border-none"
+				class="w-full rounded-none bg-background border-none"
 				code={code.filecode}
 				highlight={code.highlight}
-				hideLines={code.hideLines}
+				hideLines={false}
 			></Code.Root>
 		{/if}
 	</div>

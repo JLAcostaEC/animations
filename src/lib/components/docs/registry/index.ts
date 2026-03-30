@@ -6,6 +6,11 @@
  */
 
 export * from "./magic-ui";
+export {
+	spellUIComponents,
+	type SpellComponent,
+	getPrevNext as getSpellPrevNext,
+} from "./spell_ui";
 
 // Future libraries:
 // export * from "./aceternity-ui";
