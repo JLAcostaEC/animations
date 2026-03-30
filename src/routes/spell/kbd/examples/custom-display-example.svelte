@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { KBD } from "$lib/components/spell/kbd";
 </script>
 
