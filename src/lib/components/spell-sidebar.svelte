@@ -7,11 +7,6 @@
 	import type { ComponentProps } from "svelte";
 
 	let { ref = $bindable(null), ...restProps }: ComponentProps<typeof Sidebar.Root> = $props();
-
-	function isActive(url: string) {
-		const pathname = page.url.pathname;
-		return pathname === url || (url !== "/" && pathname.startsWith(`${url}/`));
-	}
 </script>
 
 <Sidebar.Root class="mt-16 border-none" {...restProps} bind:ref>
@@ -29,7 +24,7 @@
 							<Sidebar.Menu>
 								{#each group.items as item}
 									<Sidebar.MenuItem>
-										<Sidebar.MenuButton isActive={isActive(item.href)}>
+										<Sidebar.MenuButton isActive={page.url.pathname === item.href}>
 											{#snippet child({ props })}
 												<a href={item.href} {...props}>
 													{item.name}

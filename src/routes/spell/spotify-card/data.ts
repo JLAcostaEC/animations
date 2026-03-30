@@ -7,6 +7,7 @@ import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import WidthExample from "./examples/width-example.svelte";
 import WidthExampleRaw from "./examples/width-example.svelte?raw";
+import type { CodeBlock } from "$lib/components/ui/code";
 
 export const meta: ComponentMeta = {
 	id: "spell/spotify-card",
@@ -43,11 +44,6 @@ const installBlock: InstallComponentDocs = {
 			filecode: IndexTsRaw,
 			lang: "typescript",
 		},
-		{
-			filename: "src/routes/api/spotify/+server.ts",
-			filecode: SpotifyServerRaw,
-			lang: "typescript",
-		},
 	],
 	packages: ["spotify-url-info"],
 	folderStructure: `src/
@@ -63,6 +59,14 @@ routes/
       +server.ts`,
 };
 
+export let apiRouteCode: CodeBlock = {
+	filename: "+server.ts",
+	filecode: SpotifyServerRaw,
+	lang: "typescript",
+	isExpand: false,
+	highlight: [2],
+};
+
 export const data: ComponentDoc = {
 	...meta,
 	preview: Preview,
@@ -73,19 +77,6 @@ export const data: ComponentDoc = {
 		hideLines: true,
 	},
 	installBlock,
-	examples: [
-		{
-			name: "Custom Width",
-			description:
-				"Constrain the card width and use it inside a denser media layout while keeping the same API-backed data flow.",
-			preview: WidthExample,
-			code: {
-				filename: "width-example.svelte",
-				filecode: WidthExampleRaw,
-				lang: "svelte",
-			},
-		},
-	],
 	seo,
 	props: [
 		{
