@@ -8,7 +8,7 @@ import ControlledStateExample from "./examples/controlled-state-example.svelte";
 import ControlledStateExampleRaw from "./examples/controlled-state-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "spell/animated-checkbox",
+	id: "animated-checkbox",
 	title: "Animated Checkbox",
 	description: "Animated checkbox with spring transitions and strike-through text effect.",
 	category: "spell",

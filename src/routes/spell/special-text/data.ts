@@ -8,7 +8,7 @@ import ViewportReplayExample from "./examples/viewport-replay-example.svelte";
 import ViewportReplayExampleRaw from "./examples/viewport-replay-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "spell/special-text",
+	id: "special-text",
 	title: "Special Text",
 	description: "Animated text with scramble effect.",
 	category: "spell",

@@ -8,7 +8,7 @@ import SizeVariationExample from "./examples/size-variation-example.svelte";
 import SizeVariationExampleRaw from "./examples/size-variation-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "spell/color-selector",
+	id: "color-selector",
 	title: "Color Selector",
 	description: "Interactive color picker component.",
 	category: "spell",

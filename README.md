@@ -8,7 +8,7 @@ Built with [motion-sv](https://github.com/hanielu/motion-svelte) and Tailwind CS
 1. Create SvelteKit project with Tailwind CSS
 
    ```bash
-   pnpm dlx sv create my-app --add tailwindcss
+   pnpm dlx sv create my-app --add tailwin/dcss
    ```
 
 2. Initialize shadcn-svelte

@@ -10,7 +10,7 @@ import RingColorExample from "./examples/ring-color-example.svelte";
 import RingColorExampleRaw from "./examples/ring-color-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "spell/label-input",
+	id: "label-input",
 	title: "Label Input",
 	description: "Input field with floating label and password visibility toggle.",
 	category: "spell",

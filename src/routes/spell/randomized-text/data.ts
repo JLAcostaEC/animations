@@ -9,7 +9,7 @@ import CharacterSplitExample from "./examples/character-split-example.svelte";
 import CharacterSplitExampleRaw from "./examples/character-split-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "spell/randomized-text",
+	id: "randomized-text",
 	title: "Randomized Text",
 	description:
 		"A text reveal with stable, randomized per-token delays for spell-style headlines, labels, and editorial callouts.",

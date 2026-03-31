@@ -8,7 +8,7 @@ import DirectionExample from "./examples/direction-example.svelte";
 import DirectionExampleRaw from "./examples/direction-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "spell/highlighted-text",
+	id: "highlighted-text",
 	title: "Highlighted Text",
 	description: "Text with sliding background highlight animation using mix-blend-mode.",
 	category: "spell",

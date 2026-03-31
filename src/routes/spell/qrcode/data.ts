@@ -8,7 +8,7 @@ import CustomColorsExample from "./examples/custom-colors-example.svelte";
 import CustomColorsExampleRaw from "./examples/custom-colors-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "spell/qrcode",
+	id: "qrcode",
 	title: "QRCode",
 	description: "QR code generator with rounded finder patterns and dot-style data modules.",
 	category: "spell",

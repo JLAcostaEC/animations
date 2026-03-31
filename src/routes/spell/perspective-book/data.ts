@@ -10,7 +10,7 @@ import TexturedExampleRaw from "./examples/textured-example.svelte?raw";
 export const textureDownloadUrl = "/image.avif";
 
 export const meta: ComponentMeta = {
-	id: "spell/perspective-book",
+	id: "perspective-book",
 	title: "Perspective Book",
 	description: "A 3D book component with hover animation and customizable appearance.",
 	category: "spell",

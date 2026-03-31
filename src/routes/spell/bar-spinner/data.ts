@@ -8,7 +8,7 @@ import SizeAndColorExample from "./examples/size-and-color-example.svelte";
 import SizeAndColorExampleRaw from "./examples/size-and-color-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "spell/bar-spinner",
+	id: "bar-spinner",
 	title: "Bar Spinner",
 	description:
 		"A compact loading spinner made from twelve fading bars, ideal for inline waits, cards, dialogs, and button-adjacent status indicators.",

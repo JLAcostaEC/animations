@@ -8,7 +8,7 @@ import CustomSignatureExample from "./examples/custom-signature-example.svelte";
 import CustomSignatureExampleRaw from "./examples/custom-signature-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "spell/signature",
+	id: "signature",
 	title: "Signature",
 	description: "Animated signature component with handwriting effect using custom fonts.",
 	category: "spell",

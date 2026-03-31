@@ -10,7 +10,7 @@ import BadgesSizeExample from "./examples/badges-size-example.svelte";
 import BadgesSizeExampleRaw from "./examples/badges-size-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "spell/badge",
+	id: "badge",
 	title: "Badge",
 	description: "A badge component with multiple color variants and sizes.",
 	category: "spell",

@@ -49,7 +49,8 @@
 	}: ComponentDocPageProps = $props();
 
 	let PreviewComp = $derived(preview);
-	let installUrl = $derived(`${page.url.origin}/r/${id}.json`);
+	let isSpellRoute = $derived(page.url.pathname.split("/").includes("spell"));
+	let installUrl = $derived(`${page.url.origin}/${isSpellRoute ? "s" : "r"}/${id}.json`);
 
 	let getURLPath = (url: string) => {
 		// clean url by removing query params and hash
@@ -58,6 +59,8 @@
 	};
 
 	let llmsTxtUrl = $derived(`${getURLPath(page.url.pathname)}/llms.txt`);
+	// $inspect("Spell", isSpellRoute);
+	// $inspect("Install URL", isSpellRoute);
 </script>
 
 <SEOComponent title={seo.title} description={seo.description} keywords={seo.keywords} />

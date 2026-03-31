@@ -8,7 +8,7 @@ import LinearBandsExample from "./examples/linear-bands-example.svelte";
 import LinearBandsExampleRaw from "./examples/linear-bands-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "spell/gradient-wave-text",
+	id: "gradient-wave-text",
 	title: "Gradient Wave Text",
 	description: "Apple-style animated gradient text with wave effect.",
 	category: "spell",

@@ -10,7 +10,7 @@ import PauseOnHoverExample from "./examples/pause-on-hover-example.svelte";
 import PauseOnHoverExampleRaw from "./examples/pause-on-hover-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "spell/marquee",
+	id: "marquee",
 	title: "Marquee",
 	description: "Infinite scrolling marquee component with customizable speed and direction.",
 	category: "spell",

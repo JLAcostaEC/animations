@@ -11,7 +11,7 @@ import WordsStaggerExample from "./examples/words-stagger-example.svelte";
 import WordsStaggerExampleRaw from "./examples/words-stagger-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "spell/words-stagger",
+	id: "words-stagger",
 	title: "Words Stagger",
 	description: "Word-by-word text animation with blur, transform, and opacity effects.",
 	category: "spell",

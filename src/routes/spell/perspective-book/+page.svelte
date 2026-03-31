@@ -12,7 +12,8 @@
 	import { data, textureDownloadUrl } from "./data";
 
 	let PreviewComp = $derived(data.preview);
-	let installUrl = $derived(`${page.url.origin}/r/${data.id}.json`);
+	let isSpellRoute = $derived(page.url.pathname.split("/").includes("spell"));
+	let installUrl = $derived(`${page.url.origin}/${isSpellRoute ? "s" : "r"}/${data.id}.json`);
 
 	let getURLPath = (url: string) => {
 		// clean url by removing query params and hash
@@ -21,6 +22,8 @@
 	};
 
 	let llmsTxtUrl = $derived(`${getURLPath(page.url.pathname)}/llms.txt`);
+	$inspect("Spell", isSpellRoute);
+	$inspect("Install URL", isSpellRoute);
 </script>
 
 <SEOComponent

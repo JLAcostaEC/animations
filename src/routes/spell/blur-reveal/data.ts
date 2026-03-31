@@ -8,7 +8,7 @@ import SpeedExample from "./examples/speed-example.svelte";
 import SpeedExampleRaw from "./examples/speed-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "spell/blur-reveal",
+	id: "blur-reveal",
 	title: "Blur Reveal",
 	description: "Animated text reveal with blur effect.",
 	category: "spell",
