@@ -8,6 +8,8 @@ import EmojiExample from "./examples/emoji-example.svelte";
 import EmojiExampleRaw from "./examples/emoji-example.svelte?raw";
 import ImageExample from "./examples/image-example.svelte";
 import ImageExampleRaw from "./examples/image-example.svelte?raw";
+import SvelteIconExample from "./examples/svelte-icon-example.svelte";
+import SvelteIconExampleRaw from "./examples/svelte-icon-example.svelte?raw";
 import SvgComponentsExample from "./examples/svg-components-example.svelte";
 import SvgComponentsExampleRaw from "./examples/svg-components-example.svelte?raw";
 
@@ -48,12 +50,12 @@ const installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-lib/
-  components/
-    spell/
-      exploding-input/
-        exploding-input.svelte
-        index.ts`,
+└── lib/
+    └── components/
+        └── spell/
+            └── exploding-input/
+                ├── exploding-input.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -69,8 +71,6 @@ export const data: ComponentDoc = {
 	examples: [
 		{
 			name: "Emoji Particles",
-			description:
-				"Swap the default squares for emoji bursts and tune the direction and particle count for a more playful typing effect.",
 			preview: EmojiExample,
 			code: {
 				filename: "emoji-example.svelte",
@@ -97,6 +97,17 @@ export const data: ComponentDoc = {
 			code: {
 				filename: "svg-components-example.svelte",
 				filecode: SvgComponentsExampleRaw,
+				lang: "svelte",
+			},
+		},
+		{
+			name: "Shared Svelte Icon",
+			description:
+				"Reuse the Svelte logo component from the shared icons folder and burst branded particles directly from the input cursor.",
+			preview: SvelteIconExample,
+			code: {
+				filename: "svelte-icon-example.svelte",
+				filecode: SvelteIconExampleRaw,
 				lang: "svelte",
 			},
 		},
