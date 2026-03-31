@@ -10,7 +10,7 @@ import CustomDisplayExample from "./examples/custom-display-example.svelte";
 import CustomDisplayExampleRaw from "./examples/custom-display-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "spell/kbd",
+	id: "kbd",
 	title: "Keyboard Shortcut",
 	description: "Display keyboard shortcuts with proper key symbols.",
 	category: "spell",

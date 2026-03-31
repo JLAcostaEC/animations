@@ -14,7 +14,7 @@ import SvgComponentsExample from "./examples/svg-components-example.svelte";
 import SvgComponentsExampleRaw from "./examples/svg-components-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "spell/exploding-input",
+	id: "exploding-input",
 	title: "Exploding Input",
 	description:
 		"A particle input companion that launches squares, emoji, images, or custom snippets outward from the cursor as user types.",

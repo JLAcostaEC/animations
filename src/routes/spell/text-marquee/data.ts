@@ -6,7 +6,7 @@ import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "spell/text-marquee",
+	id: "text-marquee",
 	title: "Text Marquee",
 	description: "Animated text marquee component with vertical scrolling.",
 	category: "spell",

@@ -6,7 +6,7 @@ import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "spell/logo-carousel",
+	id: "logo-carousel",
 	title: "Logo Carousel",
 	description:
 		"Animated carousel component that cycles through sets of logos with staggered animations.",

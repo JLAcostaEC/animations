@@ -11,7 +11,7 @@ import FromSlideUpExample from "./examples/from-slide-up-example.svelte";
 import FromSlideUpExampleRaw from "./examples/from-slide-up-example.svelte?raw";
 
 export const meta: ComponentMeta = {
-	id: "spell/slide-up-text",
+	id: "slide-up-text",
 	title: "Slide Up Text",
 	description: "Text animation that slides up from bottom with stagger effect.",
 	category: "spell",

@@ -10,7 +10,7 @@ import WidthExampleRaw from "./examples/width-example.svelte?raw";
 import type { CodeBlock } from "$lib/components/ui/code";
 
 export const meta: ComponentMeta = {
-	id: "spell/spotify-card",
+	id: "spotify-card",
 	title: "Spotify Card",
 	description: "Display Spotify tracks with album art and blurred background.",
 	category: "spell",
