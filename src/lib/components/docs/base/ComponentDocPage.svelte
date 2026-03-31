@@ -101,10 +101,15 @@
 			<H2 id="examples">Examples</H2>
 			<div class="mt-4 space-y-8">
 				{#each examples as example}
-					<div class="space-y-3">
+					<div class="space-y-0">
 						<H3 id={example.name.toLowerCase().replace(/\s+/g, "-")} class="mt-0">
 							{example.name}
 						</H3>
+						<!-- {#if example.description}
+							<Paragraph>
+								{example.description}
+							</Paragraph>
+						{/if} -->
 						<PreviewComponent code={example.code}>
 							<example.preview />
 						</PreviewComponent>

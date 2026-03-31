@@ -12,8 +12,7 @@ import type { CodeBlock } from "$lib/components/ui/code";
 export const meta: ComponentMeta = {
 	id: "spell/spotify-card",
 	title: "Spotify Card",
-	description:
-		"A Spotify preview card for spell-style media sections, with blurred artwork, optional audio preview playback, and server-fetched metadata.",
+	description: "Display Spotify tracks with album art and blurred background.",
 	category: "spell",
 };
 
@@ -47,23 +46,24 @@ const installBlock: InstallComponentDocs = {
 	],
 	packages: ["spotify-url-info"],
 	folderStructure: `src/
-lib/
-  components/
-    spell/
-      spotify-card/
-        spotify-card.svelte
-        index.ts
+└── lib/
+    └── components/
+        └── spell/
+            └── marquee/
+                ├── marquee.svelte
+                └── index.ts
+--------------------------------------
 routes/
-  api/
-    spotify/
-      +server.ts`,
+└── api/
+	└── spotify/
+		└── +server.ts`,
 };
 
 export let apiRouteCode: CodeBlock = {
 	filename: "+server.ts",
 	filecode: SpotifyServerRaw,
 	lang: "typescript",
-	isExpand: false,
+	isExpand: true,
 	highlight: [2],
 };
 
@@ -90,8 +90,8 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "''",
 					description: "Custom classes merged onto the root card wrapper.",
 				},
 			],

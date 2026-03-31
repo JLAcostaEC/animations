@@ -10,8 +10,7 @@ import CustomColorsExampleRaw from "./examples/custom-colors-example.svelte?raw"
 export const meta: ComponentMeta = {
 	id: "spell/qrcode",
 	title: "QRCode",
-	description:
-		"A rounded QR code renderer for spell-style cards, tickets, and landing pages, with circular modules and stylized finder patterns.",
+	description: "QR code generator with rounded finder patterns and dot-style data modules.",
 	category: "spell",
 };
 
@@ -38,12 +37,12 @@ const installBlock: InstallComponentDocs = {
 	],
 	packages: ["qrcode"],
 	folderStructure: `src/
-lib/
-  components/
-    spell/
-      qrcode/
-        qrcode.svelte
-        index.ts`,
+└── lib/
+    └── components/
+        └── spell/
+            └── qrcode/
+                ├── qrcode.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -106,8 +105,8 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "''",
 					description: "Custom classes merged onto the root SVG element.",
 				},
 			],

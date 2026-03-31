@@ -13,8 +13,7 @@ import WordsStaggerExampleRaw from "./examples/words-stagger-example.svelte?raw"
 export const meta: ComponentMeta = {
 	id: "spell/words-stagger",
 	title: "Words Stagger",
-	description:
-		"A word-by-word blur and lift reveal for spell-style hero copy, launch messaging, and editorial headings.",
+	description: "Word-by-word text animation with blur, transform, and opacity effects.",
 	category: "spell",
 };
 
@@ -150,25 +149,25 @@ export const data: ComponentDoc = {
 				{
 					name: "onStart",
 					type: "() => void",
-					default: "undefined",
+					default: "",
 					description: "Called once when a new visible stagger cycle begins.",
 				},
 				{
 					name: "onComplete",
 					type: "() => void",
-					default: "undefined",
+					default: "",
 					description: "Called after the final word completes the visible transition.",
 				},
 				{
 					name: "class",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "",
 					description: "Custom classes applied to the animated root element.",
 				},
 				{
 					name: "style",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "",
 					description: "Inline styles forwarded to the animated root element.",
 				},
 			],

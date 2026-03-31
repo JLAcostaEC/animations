@@ -143,14 +143,14 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "",
 					description: "Custom classes applied to the animated root element.",
 				},
 				{
 					name: "style",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "",
 					description: "Inline styles forwarded to the animated root element.",
 				},
 			],

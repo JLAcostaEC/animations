@@ -10,8 +10,7 @@ import SizeVariationExampleRaw from "./examples/size-variation-example.svelte?ra
 export const meta: ComponentMeta = {
 	id: "spell/color-selector",
 	title: "Color Selector",
-	description:
-		"A compact swatch picker with preset or custom CSS colors, optional form support, and size variants for toolbars, cards, and settings panels.",
+	description: "Interactive color picker component.",
 	category: "spell",
 };
 
@@ -45,12 +44,12 @@ const installBlock: InstallComponentDocs = {
 	],
 	packages: ["tailwind-variants"],
 	folderStructure: `src/
-lib/
-  components/
-    spell/
-      color-selector/
-        color-selector.svelte
-        index.ts`,
+└── lib/
+    └── components/
+        └── spell/
+            └── color-selector/
+                ├── color-selector.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -89,39 +88,39 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "size",
-					type: '"sm" | "default" | "lg" | undefined',
+					type: '"sm" | "default" | "lg"',
 					default: '"default"',
 					description: "Controls the diameter of each swatch button.",
 				},
 				{
 					name: "defaultValue",
-					type: "ColorSelectorColor | undefined",
-					default: "undefined",
+					type: "ColorSelectorColor",
+					default: "",
 					description: "Sets the initial selected swatch for uncontrolled usage.",
 				},
 				{
 					name: "value",
-					type: "ColorSelectorColor | undefined",
-					default: "undefined",
+					type: "ColorSelectorColor",
+					default: "",
 					description: "Controlled selected color value. Supports `bind:value`.",
 				},
 				{
 					name: "name",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "",
 					description:
 						"When provided, renders a hidden input so the selected value participates in native form submission.",
 				},
 				{
 					name: "onColorSelect",
 					type: "((color: ColorSelectorColor) => void) | undefined",
-					default: "undefined",
+					default: "",
 					description: "Callback fired when a swatch is selected.",
 				},
 				{
 					name: "class",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "",
 					description: "Custom classes merged onto the radiogroup root.",
 				},
 			],

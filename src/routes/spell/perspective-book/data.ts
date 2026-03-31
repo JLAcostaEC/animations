@@ -89,14 +89,9 @@ export const data: ComponentDoc = {
 					default: "false",
 				},
 				{
-					name: "textureUrl",
-					type: "string | undefined",
-					default: "",
-				},
-				{
 					name: "class",
 					type: "string",
-					default: "",
+					default: "''",
 				},
 				{
 					name: "style",

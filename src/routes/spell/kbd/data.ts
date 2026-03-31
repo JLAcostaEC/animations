@@ -12,8 +12,7 @@ import CustomDisplayExampleRaw from "./examples/custom-display-example.svelte?ra
 export const meta: ComponentMeta = {
 	id: "spell/kbd",
 	title: "Keyboard Shortcut",
-	description:
-		"A tactile keyboard shortcut keycap for docs, commands, and menus, with optional live keyboard listening.",
+	description: "Display keyboard shortcuts with proper key symbols.",
 	category: "spell",
 };
 
@@ -21,7 +20,7 @@ const seo: SEO = {
 	title: "Keyboard Shortcut",
 	description:
 		"Learn how to use the Keyboard Shortcut spell component in Svelte, including shortcut composition, active states, and live keyboard listening.",
-	keywords: ["Svelte", "Keyboard Shortcut", "Spell", "Svelte Animations", "runed"],
+	keywords: ["Svelte Spell UI", "Keyboard Shortcut", "Spell", "Svelte Animations", "runed"],
 };
 
 const installBlock: InstallComponentDocs = {
@@ -40,12 +39,12 @@ const installBlock: InstallComponentDocs = {
 	],
 	packages: ["runed"],
 	folderStructure: `src/
-lib/
-  components/
-    spell/
-      keyboard-shortcut/
-        keyboard-shortcut.svelte
-        index.ts`,
+└── lib/
+    └── components/
+        └── spell/
+            └── keyboard-shortcut/
+                ├── keyboard-shortcut.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -56,6 +55,7 @@ export const data: ComponentDoc = {
 		filecode: PreviewCodeRaw,
 		lang: "svelte",
 		hideLines: true,
+		highlight:[2]
 	},
 	installBlock,
 	examples: [
@@ -102,7 +102,7 @@ export const data: ComponentDoc = {
 				{
 					name: "class",
 					type: "string | undefined",
-					default: "undefined",
+					default: "''",
 				},
 			],
 		},
