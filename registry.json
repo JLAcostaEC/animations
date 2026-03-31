@@ -761,6 +761,41 @@
 			}
 		},
 		{
+			"name": "motion-grid",
+			"type": "registry:block",
+			"title": "Motion Grid",
+			"description": "A frame-based 2D grid animation primitive with active/inactive cell states.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic-ui/motion-grid/motion-grid.svelte",
+					"type": "registry:component",
+					"target": "magic/motion-grid/motion-grid.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/motion-grid/motion-grid-cells.svelte",
+					"type": "registry:component",
+					"target": "magic/motion-grid/motion-grid-cells.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/motion-grid/index.ts",
+					"type": "registry:file",
+					"target": "magic/motion-grid/index.ts"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/motion-grid/types.ts",
+					"type": "registry:file",
+					"target": "magic/motion-grid/types.ts"
+				},
+				{
+					"path": "./src/lib/components/magic-ui/motion-grid/use-motion-grid-context.svelte.ts",
+					"type": "registry:file",
+					"target": "magic/motion-grid/use-motion-grid-context.svelte.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
 			"name": "morphing-text",
 			"type": "registry:block",
 			"title": "Morphing Text",
