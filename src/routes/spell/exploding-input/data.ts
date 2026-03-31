@@ -15,7 +15,7 @@ export const meta: ComponentMeta = {
 	id: "spell/exploding-input",
 	title: "Exploding Input",
 	description:
-		"A particle input companion that launches squares, emoji, images, or custom snippets outward from the cursor as people type.",
+		"A particle input companion that launches squares, emoji, images, or custom snippets outward from the cursor as user types.",
 	category: "spell",
 };
 
@@ -167,8 +167,8 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "",
 					description: "Custom classes merged onto the fixed overlay root element.",
 				},
 			],

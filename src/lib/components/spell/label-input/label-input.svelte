@@ -2,7 +2,7 @@
 	import { type VariantProps, tv } from "tailwind-variants";
 
 	export const labelInputVariants = tv({
-		base: "peer text-primary block h-10 w-full rounded-lg border px-3.5 text-sm shadow-xs transition-[color,box-shadow,border-color] outline-none autofill:shadow-[inset_0_0_0px_1000px_var(--color-background)] focus:ring-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-700/75 dark:bg-neutral-950",
+		base: "peer text-primary block h-10 w-full rounded-lg border px-3.5 text-sm shadow-xs transition-[color,box-shadow,border-color] outline-none autofill:shadow-[inset_0_0_0px_1000px_var(--color-background)] focus:ring-[2px] disabled:cursor-not-allowed disabled:opacity-50 dark:border-neutral-700/75 dark:bg-neutral-950",
 		variants: {
 			ringColor: {
 				muted: "border-input bg-background focus:ring-muted!",

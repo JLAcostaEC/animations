@@ -6,8 +6,8 @@
 
 <div class="mx-auto flex w-full max-w-sm flex-col gap-4 py-8">
 	<AnimatedCheckbox
-		title={checked ? "Launch checklist complete" : "Launch checklist ready"}
-		checked={checked}
+		title="Controlled State Example"
+		{checked}
 		onCheckedChange={(value) => (checked = value)}
 	/>
 

@@ -10,8 +10,7 @@ import ControlledStateExampleRaw from "./examples/controlled-state-example.svelt
 export const meta: ComponentMeta = {
 	id: "spell/animated-checkbox",
 	title: "Animated Checkbox",
-	description:
-		"A motion-driven checkbox row with animated checkmark drawing and a title strike-through for task lists, onboarding steps, and lightweight toggles.",
+	description: "Animated checkbox with spring transitions and strike-through text effect.",
 	category: "spell",
 };
 
@@ -45,12 +44,12 @@ const installBlock: InstallComponentDocs = {
 	],
 	packages: ["motion-sv"],
 	folderStructure: `src/
-lib/
-  components/
-    spell/
-      animated-checkbox/
-        animated-checkbox.svelte
-        index.ts`,
+└── lib/
+    └── components/
+        └── spell/
+            └── animated-checkbox/
+                ├── animated-checkbox.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -73,6 +72,7 @@ export const data: ComponentDoc = {
 				filename: "controlled-state-example.svelte",
 				filecode: ControlledStateExampleRaw,
 				lang: "svelte",
+				highlight: [2],
 			},
 		},
 	],
@@ -88,8 +88,8 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "checked",
-					type: "boolean | undefined",
-					default: "undefined",
+					type: "boolean",
+					default: "false",
 					description:
 						"Controlled checked state. Provide this together with `onCheckedChange` for fully managed behavior.",
 				},
@@ -102,13 +102,13 @@ export const data: ComponentDoc = {
 				{
 					name: "onCheckedChange",
 					type: "((checked: boolean) => void) | undefined",
-					default: "undefined",
+					default: "",
 					description: "Callback fired whenever the checkbox toggles.",
 				},
 				{
 					name: "class",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "",
 					description: "Custom classes merged onto the clickable button root.",
 				},
 			],
