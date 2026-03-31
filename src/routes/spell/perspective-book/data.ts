@@ -12,8 +12,7 @@ export const textureDownloadUrl = "/image.avif";
 export const meta: ComponentMeta = {
 	id: "spell/perspective-book",
 	title: "Perspective Book",
-	description:
-		"A 3D book-cover wrapper for spell-style showcases, with layered depth, hover perspective, and an optional texture overlay.",
+	description: "A 3D book component with hover animation and customizable appearance.",
 	category: "spell",
 };
 
@@ -21,7 +20,13 @@ const seo: SEO = {
 	title: "Perspective Book",
 	description:
 		"Learn how to use the Perspective Book spell component in Svelte, including installation, textured covers, and composition patterns.",
-	keywords: ["Svelte", "Perspective Book", "Spell", "Svelte Animations", "3D Card", "Book Cover"],
+	keywords: [
+		"Svelte Spell UI",
+		"Perspective Book",
+		"Svelte Spell",
+		"Svelte Animations",
+		"Book Cover",
+	],
 };
 
 const installBlock: InstallComponentDocs = {
@@ -39,12 +44,12 @@ const installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-	├── lib/
-	│   ├── components/
-	│   │   ├── spell/
-	│   │   │   ├── perspective-book/
-	│   │   │   │   ├── index.ts
-	│   │   │   │   └── perspective-book.svelte`,
+└── lib/
+    └── components/
+        └── spell/
+            └── perspective-book/
+                ├── perspective-book.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -59,7 +64,7 @@ export const data: ComponentDoc = {
 	installBlock,
 	examples: [
 		{
-			name: "Textured Cover Preview",
+			name: "Textured Preview",
 			preview: TexturedExample,
 			code: {
 				filename: "preview.svelte",
@@ -77,32 +82,26 @@ export const data: ComponentDoc = {
 					name: "size",
 					type: '"sm" | "default" | "lg"',
 					default: '"default"',
-					description: "Controls the rendered width and spine translation of the book.",
 				},
 				{
 					name: "textured",
 					type: "boolean",
 					default: "false",
-					description: "Enables the texture overlay when a textureUrl is also provided.",
 				},
 				{
 					name: "textureUrl",
 					type: "string | undefined",
-					default: "undefined",
-					description:
-						"Optional URL for the texture image, usually served from your app's static folder.",
+					default: "",
 				},
 				{
 					name: "class",
 					type: "string",
-					default: "undefined",
-					description: "Custom classes applied to the front and back cover surfaces.",
+					default: "",
 				},
 				{
 					name: "style",
 					type: "string",
-					default: "undefined",
-					description: "Inline styles applied to the outer perspective wrapper.",
+					default: "",
 				},
 			],
 		},
