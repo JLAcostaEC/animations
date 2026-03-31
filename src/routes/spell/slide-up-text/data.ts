@@ -13,8 +13,7 @@ import FromSlideUpExampleRaw from "./examples/from-slide-up-example.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "spell/slide-up-text",
 	title: "Slide Up Text",
-	description:
-		"A staggered text reveal that slides words, characters, or lines upward for hero copy, editorial headlines, and callouts.",
+	description: "Text animation that slides up from bottom with stagger effect.",
 	category: "spell",
 };
 
@@ -53,14 +52,12 @@ const installBlock: InstallComponentDocs = {
 	],
 	packages: ["motion-sv"],
 	folderStructure: `src/
-lib/
-  utils/
-    text-utils.ts
-  components/
-    spell/
-      slide-up-text/
-        index.ts
-        slide-up-text.svelte`,
+└── lib/
+    └── components/
+        └── spell/
+            └── slide-up-text/
+                ├── slide-up-text.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -70,7 +67,6 @@ export const data: ComponentDoc = {
 		filename: "preview.svelte",
 		filecode: PreviewCodeRaw,
 		lang: "svelte",
-		hideLines: true,
 	},
 	installBlock,
 	examples: [
@@ -78,7 +74,7 @@ export const data: ComponentDoc = {
 			name: "Split By",
 			preview: CharacterSplitExample,
 			code: {
-				filename: "character-split-example.svelte",
+				filename: "split-by-example.svelte",
 				filecode: CharacterSplitExampleRaw,
 				lang: "svelte",
 			},
@@ -86,13 +82,13 @@ export const data: ComponentDoc = {
 		{
 			name: "From",
 			preview: FromSlideUpExample,
-			code:{
+			code: {
 				filename: "from-slide-up-example.svelte",
 				filecode: FromSlideUpExampleRaw,
 				lang: "svelte",
 				hideLines: true,
-			}
-		}
+			},
+		},
 	],
 	seo,
 	props: [
@@ -161,31 +157,31 @@ export const data: ComponentDoc = {
 				{
 					name: "onStart",
 					type: "() => void",
-					default: "undefined",
+					default: "",
 					description: "Called when the component starts a new animation cycle.",
 				},
 				{
 					name: "onComplete",
 					type: "() => void",
-					default: "undefined",
+					default: "",
 					description: "Called after the final visible unit finishes animating.",
 				},
 				{
 					name: "class",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "",
 					description: "Custom classes applied to the root wrapper.",
 				},
 				{
 					name: "wordClass",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "''",
 					description: "Custom classes applied to each word or line wrapper.",
 				},
 				{
 					name: "charClass",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "",
 					description: "Custom classes applied to each character wrapper.",
 				},
 			],

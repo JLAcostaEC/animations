@@ -10,8 +10,7 @@ import DirectionExampleRaw from "./examples/direction-example.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "spell/highlighted-text",
 	title: "Highlighted Text",
-	description:
-		"An inline highlight sweep for editorial emphasis, callouts, and hero phrases, with configurable reveal direction and optional viewport triggers.",
+	description: "Text with sliding background highlight animation using mix-blend-mode.",
 	category: "spell",
 };
 
@@ -45,12 +44,12 @@ const installBlock: InstallComponentDocs = {
 	],
 	packages: ["motion-sv"],
 	folderStructure: `src/
-lib/
-  components/
-    spell/
-      highlighted-text/
-        highlighted-text.svelte
-        index.ts`,
+└── lib/
+    └── components/
+        └── spell/
+            └── highlighted-text/
+                ├── highlighted-text.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -73,7 +72,6 @@ export const data: ComponentDoc = {
 				filename: "direction-example.svelte",
 				filecode: DirectionExampleRaw,
 				lang: "svelte",
-				highlight: [[2, 4], 8],
 			},
 		},
 	],
@@ -114,8 +112,8 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "",
 					description: "Custom classes applied to the outer inline wrapper.",
 				},
 			],

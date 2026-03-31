@@ -10,8 +10,7 @@ import CustomSignatureExampleRaw from "./examples/custom-signature-example.svelt
 export const meta: ComponentMeta = {
 	id: "spell/signature",
 	title: "Signature",
-	description:
-		"A handwritten signature renderer that draws glyph paths from the Lastoria font for sign-offs, certificates, and personalized callouts.",
+	description: "Animated signature component with handwriting effect using custom fonts.",
 	category: "spell",
 };
 
@@ -83,7 +82,7 @@ export const data: ComponentDoc = {
 				{
 					name: "text",
 					type: "string",
-					default: '"Signature"',
+					default: "''",
 					description:
 						"The text converted into animated SVG paths using the downloaded font file.",
 				},
@@ -129,8 +128,8 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "",
 					description: "Custom classes applied to the root SVG element.",
 				},
 			],

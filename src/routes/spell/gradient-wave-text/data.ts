@@ -10,8 +10,7 @@ import LinearBandsExampleRaw from "./examples/linear-bands-example.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "spell/gradient-wave-text",
 	title: "Gradient Wave Text",
-	description:
-		"A flowing gradient-text effect with layered color bands, radial or linear direction, and optional viewport-triggered playback.",
+	description: "Apple-style animated gradient text with wave effect.",
 	category: "spell",
 };
 
@@ -45,12 +44,12 @@ const installBlock: InstallComponentDocs = {
 	],
 	packages: ["motion-sv"],
 	folderStructure: `src/
-lib/
-  components/
-    spell/
-      gradient-wave-text/
-        gradient-wave-text.svelte
-        index.ts`,
+└── lib/
+    └── components/
+        └── spell/
+            └── gradient-wave-text/
+                ├── gradient-wave-text.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -66,8 +65,6 @@ export const data: ComponentDoc = {
 	examples: [
 		{
 			name: "Linear Bands",
-			description:
-				"Switch to linear mode, align the content left, and provide custom band colors for a more editorial gradient treatment.",
 			preview: LinearBandsExample,
 			code: {
 				filename: "linear-bands-example.svelte",
@@ -82,7 +79,7 @@ export const data: ComponentDoc = {
 			props: [
 				{
 					name: "children",
-					type: "Snippet | undefined",
+					type: "Snippet",
 					required: true,
 					description: "The text content rendered inside the animated gradient mask.",
 				},
@@ -161,33 +158,33 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "customColors",
-					type: "string[] | undefined",
-					default: "undefined",
+					type: "string[]",
+					default: "",
 					description: "Overrides the default gradient palette with a custom color list.",
 				},
 				{
 					name: "ariaLabel",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "",
 					description:
 						"Provides an accessible label when the rendered content should be announced as an image-like effect.",
 				},
 				{
 					name: "role",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "",
 					description: "Overrides the computed root role if you need explicit semantics.",
 				},
 				{
 					name: "class",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "",
 					description: "Custom classes applied to the root wrapper.",
 				},
 				{
 					name: "style",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "",
 					description: "Inline styles merged onto the root wrapper.",
 				},
 			],

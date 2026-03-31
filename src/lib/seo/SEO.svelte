@@ -15,7 +15,7 @@
 	let { title, description, keywords, images }: Props = $props();
 
 	let canonical = $derived(page.url.origin);
-	$inspect("Canonical URL:", canonical);
+	// $inspect("Canonical URL:", canonical);
 	/*
     [
 			{

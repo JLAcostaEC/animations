@@ -7,7 +7,7 @@
 		<RandomizedText split="chars" class="text-2xl font-semibold tracking-tighter md:text-3xl">
 			Introducing Spell UI
 		</RandomizedText>
-		<RandomizedText class="text-muted-foreground text-base font-[550] tracking-tight">
+		<RandomizedText  class="text-muted-foreground text-base font-[550] tracking-tight">
 			Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae doloremque alias aliquam
 			neque eligendi? Vel dolore quibusdam corrupti corporis sapiente. Eveniet facilis, error
 			voluptatem alias fugiat est fuga? Commodi, officia?

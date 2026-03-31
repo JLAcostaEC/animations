@@ -10,8 +10,7 @@ import SpeedExampleRaw from "./examples/speed-example.svelte?raw";
 export const meta: ComponentMeta = {
 	id: "spell/blur-reveal",
 	title: "Blur Reveal",
-	description:
-		"A text-only blur and stagger reveal for spell-style hero copy, headings, and announcement lines.",
+	description: "Animated text reveal with blur effect.",
 	category: "spell",
 };
 
@@ -44,12 +43,12 @@ const installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-	â”œâ”€â”€ lib/
-	â”‚   â”œâ”€â”€ components/
-	â”‚   â”‚   â”œâ”€â”€ spell/
-	â”‚   â”‚   â”‚   â”œâ”€â”€ blur-reveal/
-	â”‚   â”‚   â”‚   â”‚   â”œâ”€â”€ index.ts
-	â”‚   â”‚   â”‚   â”‚   â””â”€â”€ blur-reveal.svelte`,
+└── lib/
+    └── components/
+        └── spell/
+            └── blur-reveal/
+                ├── blur-reveal.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -113,14 +112,14 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "stagger",
-					type: "number | undefined",
+					type: "number",
 					default: "undefined",
 					description:
 						"Optional direct override for the computed character stagger timing.",
 				},
 				{
 					name: "duration",
-					type: "number | undefined",
+					type: "number",
 					default: "undefined",
 					description:
 						"Optional direct override for the computed per-character reveal duration.",
@@ -146,33 +145,33 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "letterSpacing",
-					type: "string | number | undefined",
+					type: "string | number",
 					default: "undefined",
 					description: "Applies extra spacing between animated characters.",
 				},
 				{
 					name: "onStart",
 					type: "() => void",
-					default: "undefined",
+					default: "",
 					description: "Called when a new reveal cycle begins.",
 				},
 				{
 					name: "onComplete",
 					type: "() => void",
-					default: "undefined",
+					default: "",
 					description:
 						"Called after the final animated unit completes the visible transition.",
 				},
 				{
 					name: "class",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "''",
 					description: "Custom classes applied to the animated root element.",
 				},
 				{
 					name: "style",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "''",
 					description: "Inline styles forwarded to the animated root element.",
 				},
 			],

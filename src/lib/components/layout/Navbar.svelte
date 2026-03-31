@@ -57,7 +57,7 @@
 		// 	icon: ZapIcon,
 		// },
 		{
-			href: "/spell",
+			href: "/spell/perspective-book",
 			title: "Svelte Spell UI",
 			description: "Refined UI components for Design Engineers.",
 			icon: BookOpenIcon,
@@ -112,14 +112,21 @@
 																		"bg-secondary outline-border/60 [&_svg]:text-foreground flex aspect-square size-9 items-center justify-center rounded-lg border shadow-xs outline outline-offset-2  [&_svg]:size-4"
 																	)}
 																>
-																	<Icon class="size-4" strokeWidth={1.6} />
+																	<Icon
+																		class="size-4"
+																		strokeWidth={1.6}
+																	/>
 																</div>
 															{/if}
 															<div class="space-y-1">
-																<div class="text-sm leading-none font-medium">
+																<div
+																	class="text-sm leading-none font-medium"
+																>
 																	{item.title}
 																</div>
-																<p class="text-muted-foreground line-clamp-1 text-xs leading-snug">
+																<p
+																	class="text-muted-foreground line-clamp-1 text-xs leading-snug"
+																>
 																	{item.description}
 																</p>
 															</div>

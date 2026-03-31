@@ -26,7 +26,6 @@
 		size?: BookSize;
 		class?: string;
 		textured?: boolean;
-		textureUrl?: string;
 		style?: string;
 	}
 
@@ -35,10 +34,13 @@
 		size = "default",
 		class: className,
 		textured = false,
-		textureUrl = asset("/image.avif"),
 		style,
 		...props
 	}: Props = $props();
+
+	// you need to download the texture image
+	// place it inside /static folder
+	let textureUrl = asset("/perspective-book-textured.avif");
 </script>
 
 <div class="group z-10 h-min w-min perspective-[900px]" {style} {...props}>

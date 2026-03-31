@@ -3,6 +3,6 @@
 </script>
 
 <SpotifyCard
-	url="https://open.spotify.com/track/0DTSnA1bcVI5niJzoyBPyZ"
-	class="max-h-25 max-w-82"
+	url="https://open.spotify.com/track/4n7jnSxVLd8QioibtTDBDq"
+	class="max-h-25 max-w-100"
 />

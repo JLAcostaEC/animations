@@ -5,14 +5,14 @@
 <div class="flex min-h-[200px] w-[500px] flex-col items-center justify-start gap-4">
 	<div class="justif-start flex flex-col items-start gap-1">
 		<span class="text-muted-foreground font-mono text-sm"> BY CHARACTERS </span>
-		<RandomizedText split="chars" class="text-base font-medium tracking-tight" triggerOnView>
+		<RandomizedText split="chars" class="text-base font-medium tracking-tight" triggerOnView once={false}>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis debitis ipsam saepe
 			incidunt laboriosam eaque quasi commodi beatae excepturi quos!
 		</RandomizedText>
 	</div>
 	<div class="justif-start flex flex-col items-start gap-1">
-		<span class="text-muted-foreground font-mono text-sm"> BY WORDS </span>
-		<RandomizedText class="text-base font-medium tracking-tight" triggerOnView>
+		<span class="text-muted-foreground font-mono text-sm"> BY WORDS WITH DELAY (0.5s)</span>
+		<RandomizedText delay={0.5} class="text-base font-medium tracking-tight" triggerOnView once={false}>
 			Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis debitis ipsam saepe
 			incidunt laboriosam eaque quasi commodi beatae excepturi quos!
 		</RandomizedText>

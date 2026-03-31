@@ -6,12 +6,13 @@ import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import PasswordToggleExample from "./examples/password-toggle-example.svelte";
 import PasswordToggleExampleRaw from "./examples/password-toggle-example.svelte?raw";
+import RingColorExample from "./examples/ring-color-example.svelte";
+import RingColorExampleRaw from "./examples/ring-color-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "spell/label-input",
 	title: "Label Input",
-	description:
-		"A floating-label input with ring-color variants, password visibility toggle support, and sensible defaults for forms, auth screens, and settings pages.",
+	description: "Input field with floating label and password visibility toggle.",
 	category: "spell",
 };
 
@@ -45,12 +46,12 @@ const installBlock: InstallComponentDocs = {
 	],
 	packages: ["tailwind-variants", "@lucide/svelte"],
 	folderStructure: `src/
-lib/
-  components/
-    spell/
-      label-input/
-        label-input.svelte
-        index.ts`,
+└── lib/
+    └── components/
+        └── spell/
+            └── label-input/
+                ├── label-input.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -66,13 +67,21 @@ export const data: ComponentDoc = {
 	examples: [
 		{
 			name: "Password Toggle",
-			description:
-				"Use password mode for built-in visibility controls, then mix in different ring colors to match account settings or onboarding flows.",
 			preview: PasswordToggleExample,
 			code: {
 				filename: "password-toggle-example.svelte",
 				filecode: PasswordToggleExampleRaw,
 				lang: "svelte",
+			},
+		},
+		{
+			name: "Ring Color",
+			preview: RingColorExample,
+			code: {
+				filename: "ring-color-example.svelte",
+				filecode: RingColorExampleRaw,
+				lang: "svelte",
+				highlight: [2],
 			},
 		},
 	],

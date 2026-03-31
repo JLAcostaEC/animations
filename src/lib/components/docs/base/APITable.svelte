@@ -8,6 +8,8 @@
 	import InfoPopover from "./InfoPopover.svelte";
 	import { cn } from "$lib/utils";
 	import { H3 } from "../markdown";
+	import { page } from "$app/state";
+	import { watch } from "runed";
 
 	type PropDef = {
 		name?: string;
@@ -34,8 +36,27 @@
 	};
 
 	let tableData = $derived(isPropsTable(data) ? data.props : data);
-	let tableHeaders = ["Name", "Type", "Default", "Description"];
-	let tableKeys = ["name", "type", "default", "description"];
+	let tableHeaders = $state(["Name", "Type", "Default", "Description"]);
+	let tableKeys = $state(["name", "type", "default", "description"]);
+
+	let doesIncludeSpell: boolean = $derived.by(() => {
+		let url = page.url.pathname;
+		return url.includes("spell");
+	});
+
+	watch(
+		() => doesIncludeSpell,
+		() => {
+			if (doesIncludeSpell) {
+				tableHeaders = ["Prop", "Type", "Default"];
+				tableKeys = ["name", "type", "default"];
+			} else {
+				tableHeaders = ["Name", "Type", "Default", "Description"];
+				tableKeys = ["name", "type", "default", "description"];
+				// reset table data to original if it was modified for spell pages
+			}
+		}
+	);
 </script>
 
 {#if isPropsTable(data)}

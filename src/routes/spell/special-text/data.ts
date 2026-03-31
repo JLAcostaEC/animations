@@ -10,8 +10,7 @@ import ViewportReplayExampleRaw from "./examples/viewport-replay-example.svelte?
 export const meta: ComponentMeta = {
 	id: "spell/special-text",
 	title: "Special Text",
-	description:
-		"A scrambled text reveal for labels, product copy, and hero accents, with support for either a text prop or slotted content.",
+	description: "Animated text with scramble effect.",
 	category: "spell",
 };
 
@@ -38,12 +37,12 @@ const installBlock: InstallComponentDocs = {
 	],
 	packages: ["motion-sv"],
 	folderStructure: `src/
-lib/
-  components/
-    spell/
-      special-text/
-        index.ts
-        special-text.svelte`,
+└── lib/
+    └── components/
+        └── spell/
+            └── special-text/
+                ├── special-text.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -58,14 +57,13 @@ export const data: ComponentDoc = {
 	installBlock,
 	examples: [
 		{
-			name: "Viewport Replay",
-			description:
-				"Use slotted content, add a small delay, and let the reveal replay when the text re-enters the viewport.",
+			name: "Speed",
 			preview: ViewportReplayExample,
 			code: {
-				filename: "viewport-replay-example.svelte",
+				filename: "speed-example.svelte",
 				filecode: ViewportReplayExampleRaw,
 				lang: "svelte",
+				highlight:[2]
 			},
 		},
 	],
@@ -101,7 +99,7 @@ export const data: ComponentDoc = {
 					description: "Adds a delay in seconds before the scramble sequence begins.",
 				},
 				{
-					name: "inView",
+					name: "triggerOnView",
 					type: "boolean",
 					default: "false",
 					description: "Waits to animate until the component enters the viewport.",
@@ -115,8 +113,8 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "",
 					description: "Custom classes applied to the animated root span.",
 				},
 			],

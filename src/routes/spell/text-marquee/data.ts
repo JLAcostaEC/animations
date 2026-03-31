@@ -4,14 +4,11 @@ import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/typ
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
-import TuningExample from "./examples/tuning-example.svelte";
-import TuningExampleRaw from "./examples/tuning-example.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "spell/text-marquee",
 	title: "Text Marquee",
-	description:
-		"A vertical text rotator for spell-style hero sections, with snippet-based prefix and row composition.",
+	description: "Animated text marquee component with vertical scrolling.",
 	category: "spell",
 };
 
@@ -44,12 +41,12 @@ const installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-	├── lib/
-	│   ├── components/
-	│   │   ├── spell/
-	│   │   │   ├── text-marquee/
-	│   │   │   │   ├── index.ts
-	│   │   │   │   └── text-marquee.svelte`,
+└── lib/
+    └── components/
+        └── spell/
+            └── text-marquee/
+                ├── marquee.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -81,8 +78,8 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "prefix",
-					type: "Snippet | undefined",
-					default: "undefined",
+					type: "Snippet",
+					default: "",
 					description: "Optional snippet rendered once before the animated viewport.",
 				},
 				{
@@ -106,14 +103,14 @@ export const data: ComponentDoc = {
 				},
 				{
 					name: "class",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "",
 					description: "Custom classes applied to the root wrapper.",
 				},
 				{
 					name: "style",
-					type: "string | undefined",
-					default: "undefined",
+					type: "string",
+					default: "",
 					description: "Inline styles forwarded to the root wrapper.",
 				},
 			],

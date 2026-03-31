@@ -39,12 +39,12 @@ const installBlock: InstallComponentDocs = {
 	],
 	packages: ["tailwind-variants"],
 	folderStructure: `src/
-lib/
-  components/
-    spell/
-      badge/
-        badge.svelte
-        index.ts`,
+└── lib/
+    └── components/
+        └── spell/
+            └── badge/
+                ├── badge.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {

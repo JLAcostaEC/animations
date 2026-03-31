@@ -12,8 +12,7 @@ import PauseOnHoverExampleRaw from "./examples/pause-on-hover-example.svelte?raw
 export const meta: ComponentMeta = {
 	id: "spell/marquee",
 	title: "Marquee",
-	description:
-		"A reusable spell marquee for looping logos, tags, or headlines horizontally or vertically, with optional fade edges and hover pause.",
+	description: "Infinite scrolling marquee component with customizable speed and direction.",
 	category: "spell",
 };
 
@@ -39,12 +38,12 @@ const installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-lib/
-  components/
-    spell/
-      marquee/
-        marquee.svelte
-        index.ts`,
+└── lib/
+    └── components/
+        └── spell/
+            └── marquee/
+                ├── marquee.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -89,54 +88,41 @@ export const data: ComponentDoc = {
 					name: "children",
 					type: "Snippet",
 					required: true,
-					description:
-						"Snippet content rendered twice to create the seamless looping marquee.",
 				},
 				{
 					name: "duration",
 					type: "number",
 					default: "20",
-					description: "Sets the total animation duration in seconds.",
 				},
 				{
 					name: "pauseOnHover",
 					type: "boolean",
 					default: "false",
-					description:
-						"Pauses the marquee animation while the user hovers the container.",
 				},
 				{
 					name: "direction",
 					type: '"left" | "right" | "up" | "down"',
 					default: '"left"',
-					description:
-						"Controls whether the marquee scrolls horizontally or vertically and in which direction.",
 				},
 				{
 					name: "fade",
 					type: "boolean",
 					default: "true",
-					description:
-						"Adds mask-based fade edges to soften the start and end of the marquee viewport.",
 				},
 				{
 					name: "fadeAmount",
 					type: "number",
 					default: "10",
-					description:
-						"Controls how much of the marquee edges are faded, clamped between 0 and 50.",
 				},
 				{
 					name: "class",
-					type: "string | undefined",
-					default: "undefined",
-					description: "Custom classes applied to the outer marquee container.",
+					type: "string",
+					default: "''",
 				},
 				{
 					name: "style",
-					type: "string | undefined",
-					default: "undefined",
-					description: "Inline styles forwarded to the outer marquee container.",
+					type: "string",
+					default: "''",
 				},
 			],
 		},

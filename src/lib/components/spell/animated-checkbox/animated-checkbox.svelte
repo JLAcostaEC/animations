@@ -26,7 +26,7 @@
 		...props
 	}: AnimatedCheckboxProps = $props();
 
-	let internalChecked = $state(defaultChecked);
+	let internalChecked = $derived(defaultChecked);
 
 	const isControlled = $derived(checked !== undefined);
 	const isChecked = $derived(isControlled ? checked : internalChecked);

@@ -9,7 +9,7 @@ export const meta: ComponentMeta = {
 	id: "spell/logo-carousel",
 	title: "Logo Carousel",
 	description:
-		"A grouped logo carousel that rotates brand marks with staggered enter and exit motion for landing pages, partner walls, and launch sections.",
+		"Animated carousel component that cycles through sets of logos with staggered animations.",
 	category: "spell",
 };
 
@@ -42,12 +42,12 @@ const installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-lib/
-  components/
-    spell/
-      logo-carousel/
-        logo-carousel.svelte
-        index.ts`,
+└── lib/
+    └── components/
+        └── spell/
+            └── logo-carousel/
+                ├── logo-carousel.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -68,29 +68,21 @@ export const data: ComponentDoc = {
 					name: "items",
 					type: "T[]",
 					required: true,
-					description:
-						"The list of items split into groups and rotated through the carousel.",
 				},
 				{
 					name: "children",
 					type: "Snippet<[T, number]>",
 					required: true,
-					description:
-						"A snippet used to render each item card or logo, receiving the current item and its index inside the group.",
 				},
 				{
 					name: "stagger",
 					type: "number",
 					default: "0.14",
-					description:
-						"Sets the delay in seconds between each item animation inside the active group.",
 				},
 				{
 					name: "count",
-					type: "number | undefined",
-					default: "undefined",
-					description:
-						"Controls how many items appear per group before the carousel advances to the next set.",
+					type: "number",
+					default: "",
 				},
 				{
 					name: "duration",
@@ -103,22 +95,16 @@ export const data: ComponentDoc = {
 					name: "interval",
 					type: "number",
 					default: "2500",
-					description:
-						"Defines how long each group stays visible before the carousel advances, in milliseconds.",
 				},
 				{
 					name: "initialDelay",
 					type: "number",
 					default: "500",
-					description:
-						"Adds a delay before the first animated transition starts, in milliseconds.",
 				},
 				{
 					name: "class",
-					type: "string | undefined",
-					default: "undefined",
-					description:
-						"Custom classes merged onto each visible group row inside the carousel.",
+					type: "string",
+					default: "''",
 				},
 			],
 		},
