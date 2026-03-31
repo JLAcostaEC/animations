@@ -43,6 +43,25 @@
 			"dependencies": ["tailwind-variants"]
 		},
 		{
+			"name": "bar-spinner",
+			"type": "registry:block",
+			"title": "Bar Spinner",
+			"description": "A compact loading spinner made from twelve fading bars, ideal for inline waits, cards, dialogs, and button-adjacent status indicators.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/bar-spinner/bar-spinner.svelte",
+					"type": "registry:component",
+					"target": "spell/bar-spinner/bar-spinner.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/bar-spinner/index.ts",
+					"type": "registry:file",
+					"target": "spell/bar-spinner/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
 			"name": "kbd",
 			"type": "registry:block",
 			"title": "Keyboard Shortcuts",
