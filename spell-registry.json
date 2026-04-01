@@ -1,12 +1,16 @@
 {
 	"$schema": "https://shadcn-svelte.com/schema/registry.json",
-	"name": "spell",
-	"homepage": "https://sv-animations.vercel.app",
+	"name": "sv-spell",
+	"homepage": "https://sv-animations.vercel.app/spell",
 	"items": [
 		{
 			"name": "perspective-book",
 			"type": "registry:block",
 			"title": "Perspective Book",
+			"author": "SikandarJODD",
+			"meta": {
+				"docs": "Add perspective-book-textured.avif image inside /static folder"
+			},
 			"description": "A 3D book cover wrapper with a hover tilt effect and optional textured overlay.",
 			"files": [
 				{
@@ -137,8 +141,8 @@
 				},
 				{
 					"path": "./src/routes/api/spotify/+server.ts",
-					"type": "registry:file",
-					"target": "routes/api/spotify/+server.ts"
+					"type": "registry:page",
+					"target": "src/routes/api/spotify/+server.ts"
 				}
 			],
 			"registryDependencies": [],

@@ -1,7 +1,7 @@
 {
 	"$schema": "https://shadcn-svelte.com/schema/registry.json",
-	"name": "acme",
-	"homepage": "https://acme.com",
+	"name": "Svelte Animations",
+	"homepage": "https://sv-animations.vercel.app",
 	"items": [
 		{
 			"name": "animated-gradient-text",
