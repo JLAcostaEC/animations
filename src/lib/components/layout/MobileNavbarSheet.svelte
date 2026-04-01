@@ -42,7 +42,10 @@
 		href: component.href,
 		label: component.name,
 		description: component.desc,
+		badge: component.badge,
 	}));
+
+	const hasSpellUIUpdates = spellItems.some((item) => item.badge === "New");
 
 	function isActive(href: string) {
 		const pathname = page.url.pathname;
@@ -91,7 +94,21 @@
 
 			<Separator class="my-4" />
 			<div class="space-y-2">
-				{#each [{ title: "Get Started", items: getStartedItems, open: true }, { title: "Components", items: componentItems, open: isSectionOpen(componentItems) }, { title: "Spell UI", items: spellItems, open: isSectionOpen(spellItems) }] as section (section.title)}
+				{#each [
+					{ title: "Get Started", items: getStartedItems, open: true, badge: undefined },
+					{
+						title: "Components",
+						items: componentItems,
+						open: isSectionOpen(componentItems),
+						badge: undefined,
+					},
+					{
+						title: "Svelte Spell UI",
+						items: spellItems,
+						open: isSectionOpen(spellItems),
+						badge: hasSpellUIUpdates ? "New" : undefined,
+					},
+				] as section (section.title)}
 					<details
 						class="group border-border overflow-hidden rounded-lg border"
 						open={section.open}
@@ -99,7 +116,17 @@
 						<summary
 							class="hover:bg-accent/50 flex cursor-pointer list-none items-center justify-between px-4 py-3 text-sm font-medium"
 						>
-							<span>{section.title}</span>
+							<div class="flex items-center gap-2">
+								<span>{section.title}</span>
+								{#if section.badge}
+									<Badge
+										variant="secondary"
+										class="bg-primary/10 text-primary hover:bg-primary/20 h-5 px-1.5 text-[10px] font-semibold tracking-[0.12em] uppercase"
+									>
+										{section.badge}
+									</Badge>
+								{/if}
+							</div>
 							<ChevronDownIcon
 								class="text-muted-foreground size-4 transition-transform group-open:rotate-180"
 							/>

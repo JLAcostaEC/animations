@@ -1,9 +1,14 @@
 <script>
 	import Button from "$lib/components/ui/button/button.svelte";
+	import { spellUIComponents } from "$lib/components/docs/registry/spell_ui";
 	import { cn } from "$lib/utils";
 	import ArrowRight from "@lucide/svelte/icons/arrow-right";
 	import GridPattern from "../magic-ui/grid-pattern/grid-pattern.svelte";
 	import * as Icons from "$lib/components/icons";
+
+	const spellComponentCount = spellUIComponents.filter(
+		(component) => component.category !== "Overview"
+	).length;
 </script>
 
 <div>
@@ -20,20 +25,23 @@
 					<div class="text-center sm:mx-auto lg:mt-0 lg:mr-auto">
 						<div class="mt-0">
 							<a
-								href="/magic/docs/components/morphing-text"
-								class="hover:bg-muted dark:hover:border-t-border bg-muted dark:bg-muted/60 group mx-auto flex w-fit items-center gap-2 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 backdrop-blur-xs transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
+								href="/spell"
+								class="hover:bg-muted dark:hover:border-t-border bg-muted dark:bg-muted/60 group mx-auto flex w-fit max-w-[min(100%,30rem)] items-center gap-2 rounded-full border p-1 pl-3 shadow-md shadow-zinc-950/5 backdrop-blur-xs transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950 sm:pl-4"
 							>
-								<span class="text-foreground flex items-center gap-1.5 text-sm">
+								<span
+									class="text-foreground flex min-w-0 items-center gap-2 text-left text-xs sm:text-sm"
+								>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										width="18"
 										height="18"
 										viewBox="0 0 24 24"
-										class="fill-sky-500 text-sky-500"
+										class="fill-sky-500 text-sky-500 shrink-0 mb-0.5"
 										fill-opacity="0.1"
 										xmlns:xlink="http://www.w3.org/1999/xlink"
 										role="img"
 										stroke-opacity="0.7"
+
 									>
 										<path
 											d="M13.7276 3.44418L15.4874 6.99288C15.7274 7.48687 16.3673 7.9607 16.9073 8.05143L20.0969 8.58575C22.1367 8.92853 22.6167 10.4206 21.1468 11.8925L18.6671 14.3927C18.2471 14.8161 18.0172 15.6327 18.1471 16.2175L18.8571 19.3125C19.417 21.7623 18.1271 22.71 15.9774 21.4296L12.9877 19.6452C12.4478 19.3226 11.5579 19.3226 11.0079 19.6452L8.01827 21.4296C5.8785 22.71 4.57865 21.7522 5.13859 19.3125L5.84851 16.2175C5.97849 15.6327 5.74852 14.8161 5.32856 14.3927L2.84884 11.8925C1.389 10.4206 1.85895 8.92853 3.89872 8.58575L7.08837 8.05143C7.61831 7.9607 8.25824 7.48687 8.49821 6.99288L10.258 3.44418C11.2179 1.51861 12.7777 1.51861 13.7276 3.44418Z"
@@ -43,10 +51,12 @@
 											stroke-linejoin="round"
 										></path>
 									</svg>
-									New Morphing Text
+									<span class="text-balance font-mono leading-snug">
+										{spellComponentCount}+ New Components
+									</span>
 								</span>
 								<div
-									class="bg-background group-hover:bg-muted size-6 overflow-hidden rounded-full duration-500"
+									class="bg-muted group-hover:bg-muted size-6 shrink-0 overflow-hidden rounded-full duration-500"
 								>
 									<div class="flex size-6">
 										<ArrowRight class="m-auto size-3" />
