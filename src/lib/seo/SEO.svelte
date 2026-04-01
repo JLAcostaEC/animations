@@ -12,7 +12,17 @@
 			alt?: string;
 		}[];
 	};
-	let { title, description, keywords, images }: Props = $props();
+	let {
+		title,
+		description,
+		keywords,
+		images = [
+			{
+				url: "https://sv-animations.vercel.app/og.png",
+				alt: "Svelte Animations",
+			},
+		],
+	}: Props = $props();
 
 	let canonical = $derived(page.url.origin);
 	// $inspect("Canonical URL:", canonical);
@@ -39,6 +49,7 @@
 <MetaTags
 	{title}
 	titleTemplate="%s - Svelte Animations"
+	{keywords}
 	{description}
 	{canonical}
 	openGraph={{

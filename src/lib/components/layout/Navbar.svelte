@@ -23,6 +23,7 @@
 		title: string;
 		description: string;
 		icon?: Component;
+		badge?: "new";
 	};
 
 	const navigationItems: NavigationItem[] = [
@@ -32,7 +33,16 @@
 			description: "50+ Animations & Effects for Svelte",
 			icon: SparklesIcon,
 		},
-		// {
+		{
+			href: "/spell",
+			title: "Svelte Spell UI",
+			description: "Refined UI components for Design Engineers.",
+			icon: BookOpenIcon,
+			badge: "new",
+		},
+	];
+	/*
+	// {
 		// 	href: "/a/components",
 		// 	title: "Svelte Aceternity UI",
 		// 	description: "20+ Animations Components",
@@ -56,13 +66,7 @@
 		// 	description: "20+ Components for Indie Developers",
 		// 	icon: ZapIcon,
 		// },
-		{
-			href: "/spell/perspective-book",
-			title: "Svelte Spell UI",
-			description: "Refined UI components for Design Engineers.",
-			icon: BookOpenIcon,
-		},
-	];
+	*/
 </script>
 
 <header
