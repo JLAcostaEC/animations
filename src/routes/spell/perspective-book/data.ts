@@ -7,7 +7,7 @@ import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import TexturedExample from "./examples/textured-example.svelte";
 import TexturedExampleRaw from "./examples/textured-example.svelte?raw";
 
-export const textureDownloadUrl = "/image.avif";
+export const textureDownloadUrl = "/perspective-book-textured.avif";
 
 export const meta: ComponentMeta = {
 	id: "perspective-book",
