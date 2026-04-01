@@ -4,7 +4,7 @@
 </script>
 
 <!-- 46 vh orignal -->
-<section class="flex min-h-[86vh] items-center py-14 sm:py-18">
+<section class="flex min-h-[46vh] items-center py-14 sm:py-18">
 	<div class="mx-auto w-full max-w-3xl text-center">
 		<h1 class="text-4xl font-semibold tracking-[-0.045em] text-balance sm:text-5xl md:text-6xl">
 			Svelte Spell UI

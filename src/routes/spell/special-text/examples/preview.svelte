@@ -2,4 +2,4 @@
 	import { SpecialText } from "$lib/components/spell/special-text";
 </script>
 
-<SpecialText class="text-xl">SPELL UI</SpecialText>
+<SpecialText once={false} inView class="text-xl">SVELTE SPELL UI</SpecialText>

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Badge } from "$lib/components/ui/badge";
+	import Badge from "$lib/components/spell/badge/badge.svelte";
 	import Button from "$lib/components/ui/button/button.svelte";
 	import * as Command from "$lib/components/ui/command/index.js";
 	import * as Kbd from "$lib/components/ui/kbd/index.js";
@@ -42,12 +42,12 @@
 
 <div class="text-muted-foreground text-sm">
 	<Button
-		variant="outline"
+		variant="ghost"
 		size="sm"
-		class="flex justify-between px-1.5 md:min-w-46  md:pr-1"
+		class="bg-secondary dark:bg-muted/60 flex justify-between px-1.5 md:min-w-46  md:pr-1"
 		onclick={() => (open = true)}
 	>
-		<span class="hidden md:block"> Search... </span>
+		<span class="hidden pl-1 md:block"> Search... </span>
 
 		<Kbd.Group class="hidden gap-1 md:flex">
 			<!-- <Kbd.Root>⌘</Kbd.Root> -->
@@ -152,8 +152,8 @@
 							stroke-linejoin="round"
 						></circle>
 					</svg>
-					{component.name}</Command.LinkItem
-				>
+					{component.name}
+				</Command.LinkItem>
 			{/each}
 		</Command.Group>
 		<Command.Group heading="Spell UI">
@@ -174,7 +174,8 @@
 							role="img"
 							color="currentColor"
 						>
-							<circle opacity="0.2" cx="12" cy="12" r="10" fill="currentColor"></circle>
+							<circle opacity="0.2" cx="12" cy="12" r="10" fill="currentColor"
+							></circle>
 							<circle
 								cx="12"
 								cy="12"
@@ -186,12 +187,7 @@
 						</svg>
 						<span>{component.name}</span>
 					</span>
-					<Badge
-						variant="secondary"
-						class="bg-primary/10 text-primary hover:bg-primary/20 h-5 shrink-0 px-1.5 text-[10px] font-medium"
-					>
-						Spell
-					</Badge>
+					<Badge variant="secondary" class='rounded-full'>Spell</Badge>
 				</Command.LinkItem>
 			{/each}
 		</Command.Group>

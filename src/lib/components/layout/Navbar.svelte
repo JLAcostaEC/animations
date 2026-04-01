@@ -3,8 +3,7 @@
 	import * as Icons from "$lib/components/icons";
 	import BookOpenIcon from "@lucide/svelte/icons/book-open";
 	import SparklesIcon from "@lucide/svelte/icons/sparkles";
-	import ZapIcon from "@lucide/svelte/icons/zap";
-	import type { Component } from "svelte";
+	import { onMount, type Component } from "svelte";
 	import {
 		NavigationMenuContent,
 		NavigationMenuItem,
@@ -17,12 +16,16 @@
 	import DocsSearchNavigation from "../docs/navigation/DocsSearchNavigation.svelte";
 	import MobileNavbarSheet from "./MobileNavbarSheet.svelte";
 	import { cn } from "$lib/utils";
+	import Badge from "../spell/badge/badge.svelte";
+	import { PersistedState } from "runed";
+	import { scale } from "svelte/transition";
 
 	type NavigationItem = {
 		href: string;
 		title: string;
 		description: string;
 		icon?: Component;
+		badge?: "new";
 	};
 
 	const navigationItems: NavigationItem[] = [
@@ -32,7 +35,22 @@
 			description: "50+ Animations & Effects for Svelte",
 			icon: SparklesIcon,
 		},
-		// {
+		{
+			href: "/spell",
+			title: "Svelte Spell UI",
+			description: "Refined UI components for Design Engineers.",
+			icon: BookOpenIcon,
+			badge: "new",
+		},
+	];
+
+	const componentsHasUpdates = navigationItems.some((item) => item.badge === "new");
+
+	function formatBadgeLabel(badge?: NavigationItem["badge"]) {
+		return badge === "new" ? "New" : "";
+	}
+	/*
+	// {
 		// 	href: "/a/components",
 		// 	title: "Svelte Aceternity UI",
 		// 	description: "20+ Animations Components",
@@ -56,13 +74,12 @@
 		// 	description: "20+ Components for Indie Developers",
 		// 	icon: ZapIcon,
 		// },
-		{
-			href: "/spell/perspective-book",
-			title: "Svelte Spell UI",
-			description: "Refined UI components for Design Engineers.",
-			icon: BookOpenIcon,
-		},
-	];
+	*/
+
+	let isNew = new PersistedState("is_new_present", true);
+	let updateIsNew = () => {
+		isNew.current = false;
+	};
 </script>
 
 <header
@@ -76,10 +93,15 @@
 			<!-- Main nav  -->
 			<div class="flex items-center gap-6">
 				<a href="/" class="text-primary hover:text-primary/90"> Svelte Animations </a>
-				<NavigationMenuRoot class="max-md:hidden" delayDuration={0} viewport={false}>
+				<NavigationMenuRoot
+					class="max-md:hidden"
+					delayDuration={0}
+					viewport={false}
+					onValueChange={(v) => updateIsNew()}
+				>
 					<NavigationMenuList class="gap-1">
 						<!-- Home Link -->
-						<NavigationMenuItem>
+						<NavigationMenuItem id="home">
 							<NavigationMenuLink
 								href="/"
 								class="text-muted-foreground hover:text-primary focus:text-primary data-active:bg-accent/50 data-active:text-accent-foreground bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-transparent focus:bg-transparent"
@@ -88,11 +110,19 @@
 							</NavigationMenuLink>
 						</NavigationMenuItem>
 
-						<NavigationMenuItem>
+						<NavigationMenuItem id="components">
 							<NavigationMenuTrigger
-								class="text-muted-foreground hover:text-primary focus:text-primary data-[state=open]:text-primary bg-transparent px-4 py-2 text-sm font-medium hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent"
+								class="text-muted-foreground hover:text-primary focus:text-primary data-[state=open]:text-primary relative bg-transparent px-4 py-2 text-sm font-medium hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent"
 							>
 								Components
+								{#if isNew.connected && isNew.current}
+									<span
+										in:scale|global={{ duration: 200, delay: 600 }}
+										out:scale|global={{ duration: 200, delay: 600 }}
+										aria-hidden="true"
+										class="outline-background absolute end-1 top-1 size-2 rounded-full bg-emerald-500 outline-2"
+									></span>
+								{/if}
 							</NavigationMenuTrigger>
 							<NavigationMenuContent class="p-0">
 								<ul class="grid w-[18rem] gap-2 p-1 md:grid-cols-1">
@@ -120,9 +150,23 @@
 															{/if}
 															<div class="space-y-1">
 																<div
-																	class="text-sm leading-none font-medium"
+																	class="flex items-center gap-2"
 																>
-																	{item.title}
+																	<div
+																		class="text-sm leading-none font-medium"
+																	>
+																		{item.title}
+																	</div>
+																	{#if item.badge}
+																		<Badge
+																			variant="green"
+																			size="sm"
+																		>
+																			{formatBadgeLabel(
+																				item.badge
+																			)}
+																		</Badge>
+																	{/if}
 																</div>
 																<p
 																	class="text-muted-foreground line-clamp-1 text-xs leading-snug"

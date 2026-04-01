@@ -22,8 +22,8 @@
 	};
 
 	let llmsTxtUrl = $derived(`${getURLPath(page.url.pathname)}/llms.txt`);
-	$inspect("Spell", isSpellRoute);
-	$inspect("Install URL", isSpellRoute);
+	// $inspect("Spell", isSpellRoute);
+	// $inspect("Install URL", isSpellRoute);
 </script>
 
 <SEOComponent
