@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { Kbd } from "$lib/components/spell/keyboard-shortcut";
-
 </script>
 
 <div class="flex flex-wrap gap-4">

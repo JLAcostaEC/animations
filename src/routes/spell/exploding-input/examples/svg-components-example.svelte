@@ -18,7 +18,7 @@
 		<input
 			type="text"
 			placeholder="custom svg particles"
-			class="h-10 w-80 border-b bg-background p-0 text-base font-medium outline-none placeholder:font-medium"
+			class="bg-background h-10 w-80 border-b p-0 text-base font-medium outline-none placeholder:font-medium"
 		/>
 		<ExplodingInput
 			items={icons}

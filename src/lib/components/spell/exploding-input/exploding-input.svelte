@@ -341,8 +341,7 @@
 						particle.rotateStart,
 						particle.rotateEnd
 					);
-					const nextOpacity =
-						progress > 0.7 ? mapLinear(progress, 0.7, 1, 1, 0) : 1;
+					const nextOpacity = progress > 0.7 ? mapLinear(progress, 0.7, 1, 1, 0) : 1;
 
 					if (
 						Number.isNaN(nextX) ||
@@ -397,7 +396,7 @@
 	{#each particles as particle (particle.id)}
 		<div
 			data-slot="exploding-input-particle"
-			class="pointer-events-none absolute left-0 top-0 flex items-center justify-center will-change-transform"
+			class="pointer-events-none absolute top-0 left-0 flex items-center justify-center will-change-transform"
 			style={`transform: translate(${particle.x}px, ${particle.y}px) translate(-50%, -50%) scale(${particle.scale}) rotate(${particle.rotate}deg); opacity: ${particle.opacity}; transform-origin: 50% 50%;`}
 		>
 			{#if items.length > 0}

@@ -150,7 +150,9 @@
 	let isInView = $derived(triggerOnView ? view.current : true);
 
 	// Match the React component's speed-based API by converting speeds into actual motion timings.
-	let resolvedStagger = $derived(stagger === undefined ? 0.03 / safeSpeedReveal : Math.max(stagger, 0));
+	let resolvedStagger = $derived(
+		stagger === undefined ? 0.03 / safeSpeedReveal : Math.max(stagger, 0)
+	);
 	let resolvedDuration = $derived(
 		duration === undefined ? 0.3 / safeSpeedSegment : Math.max(duration, 0.01)
 	);
@@ -199,7 +201,10 @@
 	});
 
 	let totalUnits = $derived(
-		tokens.reduce((count, token) => count + (token.kind === "word" ? token.characters.length : 1), 0)
+		tokens.reduce(
+			(count, token) => count + (token.kind === "word" ? token.characters.length : 1),
+			0
+		)
 	);
 
 	let lastUnitIndex = $derived(totalUnits - 1);
@@ -288,7 +293,8 @@
 						class="inline-block"
 						variants={itemVariants}
 						style={letterSpacingValue ? { marginRight: letterSpacingValue } : undefined}
-						onAnimationComplete={(definition) => handleUnitComplete(definition, character.index)}
+						onAnimationComplete={(definition) =>
+							handleUnitComplete(definition, character.index)}
 					>
 						{character.value}
 					</motion.span>

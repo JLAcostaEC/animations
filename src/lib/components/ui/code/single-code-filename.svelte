@@ -36,7 +36,7 @@
 			<Code.Overflow collapsed={true}>
 				<Code.Root
 					lang={code.lang}
-					class="w-full rounded-none bg-background border-none"
+					class="bg-background w-full rounded-none border-none"
 					code={code.filecode}
 					highlight={code.highlight}
 					hideLines={false}
@@ -47,7 +47,7 @@
 		{:else}
 			<Code.Root
 				lang={code.lang}
-				class="w-full rounded-none bg-background border-none"
+				class="bg-background w-full rounded-none border-none"
 				code={code.filecode}
 				highlight={code.highlight}
 				hideLines={false}

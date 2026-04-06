@@ -34,11 +34,7 @@
 	};
 
 	function isInFinderPattern(row: number, col: number, size: number): boolean {
-		return (
-			(row < 7 && col < 7) ||
-			(row < 7 && col >= size - 7) ||
-			(row >= size - 7 && col < 7)
-		);
+		return (row < 7 && col < 7) || (row < 7 && col >= size - 7) || (row >= size - 7 && col < 7);
 	}
 
 	let {
@@ -64,13 +60,11 @@
 	let totalSize = $derived(size);
 	let circleRadius = $derived(moduleSize / 3);
 
-	let finderPositions = $derived(
-		[
-			[0, 0],
-			[0, moduleCount - 7],
-			[moduleCount - 7, 0],
-		] as [number, number][]
-	);
+	let finderPositions = $derived([
+		[0, 0],
+		[0, moduleCount - 7],
+		[moduleCount - 7, 0],
+	] as [number, number][]);
 
 	let finderSize = $derived(7 * moduleSize);
 	let innerPadding = $derived(moduleSize);
@@ -116,7 +110,15 @@
 			{@const y = row * moduleSize}
 
 			<g>
-				<rect x={x} y={y} width={finderSize} height={finderSize} fill={fgColor} rx="12" ry="12" />
+				<rect
+					{x}
+					{y}
+					width={finderSize}
+					height={finderSize}
+					fill={fgColor}
+					rx="12"
+					ry="12"
+				/>
 				<rect
 					x={x + innerPadding}
 					y={y + innerPadding}

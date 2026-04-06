@@ -87,7 +87,7 @@
 	bind:this={ref}
 	data-slot="spell-kbd"
 	class={cn(
-		"box-border relative -top-[0.03em] inline-flex min-w-[1.75em] shrink-0 cursor-default items-center justify-center rounded-[0.35em] px-[0.5em] pb-[0.05em] align-text-top text-[0.75em] leading-[1.7em] font-normal tracking-tight whitespace-nowrap select-none transition-all duration-100",
+		"relative -top-[0.03em] box-border inline-flex min-w-[1.75em] shrink-0 cursor-default items-center justify-center rounded-[0.35em] px-[0.5em] pb-[0.05em] align-text-top text-[0.75em] leading-[1.7em] font-normal tracking-tight whitespace-nowrap transition-all duration-100 select-none",
 		isActive
 			? "bg-background text-foreground translate-y-[0.05em] shadow-[inset_0_0.05em_rgba(255,255,255,0.95),inset_0_0.05em_0.2em_rgba(0,0,0,0.1),0_0_0_0.05em_rgba(0,0,0,0.134)] dark:shadow-[inset_0_0.05em_0.2em_rgba(0,0,0,0.3),0_0_0_0.05em_rgba(255,255,255,0.134)]"
 			: "bg-background text-foreground shadow-[inset_0_-0.05em_0.5em_rgba(0,0,0,0.034),inset_0_0.05em_rgba(255,255,255,0.95),inset_0_0.25em_0.5em_rgba(0,0,0,0.034),inset_0_-0.05em_rgba(0,0,0,0.172),0_0_0_0.05em_rgba(0,0,0,0.134),0_0.08em_0.17em_rgba(0,0,0,0.231)] dark:shadow-[inset_0_-0.05em_0.5em_rgba(255,255,255,0.034),inset_0_0.05em_rgba(255,255,255,0.1),inset_0_0.25em_0.5em_rgba(255,255,255,0.034),inset_0_-0.05em_rgba(255,255,255,0.172),0_0_0_0.05em_rgba(255,255,255,0.134),0_0.08em_0.17em_rgba(255,255,255,0.231)]",

@@ -25,7 +25,7 @@
 			</p>
 		</div>
 	</div>
-	<PerspectiveBook size="lg" textured={textured} >
+	<PerspectiveBook size="lg" {textured}>
 		<div class="flex h-full flex-col justify-between">
 			<div class="flex flex-col gap-4">
 				<div class="flex items-start justify-between gap-4">
@@ -33,18 +33,18 @@
 						Building Interfaces the Svelte Way
 					</h2>
 					<!-- <Code2 class="mt-0.5 size-6 shrink-0" /> -->
-					<Svelte class='size-14' />
+					<Svelte class="size-14" />
 				</div>
 
 				<p
-					class="max-w-[18ch] text-xs/relaxed font-medium text-muted-foreground/80 sm:text-sm/relaxed"
+					class="text-muted-foreground/80 max-w-[18ch] text-xs/relaxed font-medium sm:text-sm/relaxed"
 				>
 					A compact tribute to compiler-driven UI design and the creator behind it.
 				</p>
 			</div>
 
 			<div class="space-y-1">
-				<p class="text-[0.65rem] font-semibold tracking-[0.28em] text-primary/50 uppercase">
+				<p class="text-primary/50 text-[0.65rem] font-semibold tracking-[0.28em] uppercase">
 					Creator of Svelte
 				</p>
 				<span class="font-serif text-base font-medium sm:text-lg">Rich Harris</span>

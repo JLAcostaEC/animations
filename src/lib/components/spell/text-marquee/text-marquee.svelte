@@ -62,7 +62,7 @@
 				class="spell-text-marquee__viewport relative w-auto overflow-hidden opacity-100"
 				style={viewportStyle}
 			>
-				<div class="spell-text-marquee__track  relative h-full" style={trackStyle}>
+				<div class="spell-text-marquee__track relative h-full" style={trackStyle}>
 					{#each items as item, index (index)}
 						<div
 							class="spell-text-marquee__item flex items-center"
