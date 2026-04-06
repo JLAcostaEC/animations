@@ -90,7 +90,7 @@
 	);
 
 	watch(
-		() => view.isInView,
+		() => view.current,
 		(isInView) => {
 			if (isInView) {
 				// Element entered view - start color reveal after delay
@@ -105,7 +105,7 @@
 		}
 	);
 
-	// $inspect(view.isInView, "In View");
+	// $inspect(view.current, "In View");
 </script>
 
 <div class="relative h-72 w-72 select-none md:h-96 md:w-96" bind:this={element}>
@@ -113,7 +113,7 @@
 		<div
 			class={cn(
 				"absolute inset-0 transition-all ease-out",
-				view.isInView ? "opacity-100" : "opacity-0"
+				view.current ? "opacity-100" : "opacity-0"
 			)}
 			style="clip-path: {piece.clipPath}; transition-delay: {piece.delay}ms; transition-duration: {pixelFadeInDuration}ms;"
 		>

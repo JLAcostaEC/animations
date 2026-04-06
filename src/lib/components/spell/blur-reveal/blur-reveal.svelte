@@ -147,7 +147,7 @@
 	let safeDelay = $derived(Math.max(delay, 0));
 	let safeSpeedReveal = $derived(Math.max(speedReveal, 0.01));
 	let safeSpeedSegment = $derived(Math.max(speedSegment, 0.01));
-	let isInView = $derived(triggerOnView ? view.isInView : true);
+	let isInView = $derived(triggerOnView ? view.current : true);
 
 	// Match the React component's speed-based API by converting speeds into actual motion timings.
 	let resolvedStagger = $derived(stagger === undefined ? 0.03 / safeSpeedReveal : Math.max(stagger, 0));

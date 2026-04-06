@@ -64,7 +64,7 @@
 
 	const cycles = $derived(repeat ? 0 : 1);
 	const resolvedColors = $derived(customColors?.length ? customColors : defaultColors);
-	const isInView = $derived(triggerOnView ? view.isInView : true);
+	const isInView = $derived(triggerOnView ? view.current : true);
 	const justifyContent = $derived(
 		align === "left" ? "flex-start" : align === "right" ? "flex-end" : "center"
 	);

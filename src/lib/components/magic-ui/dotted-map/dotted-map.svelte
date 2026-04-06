@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { createMap } from "svg-dotted-map";
+	import { createMap } from "piri";
 	import { cn } from "$lib/utils.js";
 
 	interface Marker {

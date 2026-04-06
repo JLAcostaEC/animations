@@ -444,7 +444,7 @@
 				}
 			],
 			"registryDependencies": [],
-			"dependencies": ["svg-dotted-map"]
+			"dependencies": ["piri"]
 		},
 		{
 			"name": "marquee",

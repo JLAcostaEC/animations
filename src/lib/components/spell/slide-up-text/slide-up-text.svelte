@@ -154,7 +154,7 @@
 	);
 
 	const lastUnitIndex = $derived(totalUnits - 1);
-	const isInView = $derived(triggerOnView ? view.isInView : true);
+	const isInView = $derived(triggerOnView ? view.current : true);
 	const shouldAnimate = $derived(totalUnits > 0 && isAnimating && isInView);
 
 	function getStaggerDelay(index: number) {

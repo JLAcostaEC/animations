@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { motion, spring, useSpring } from "motion-sv";
+	import { motion, useMotionValue, useSpring, useCurrentMotionValue } from "motion-sv";
 	import type { Snippet } from "svelte";
 
 	interface Position {
@@ -69,7 +69,7 @@
 		};
 
 		const smoothMouseMove = (e: MouseEvent) => {
-			const currentPos = { x: e.clientX, y: e.clientY };
+			let currentPos: Position = { x: e.clientX, y: e.clientY };
 			updateVelocity(currentPos);
 
 			const speed = Math.sqrt(Math.pow(velocity.x, 2) + Math.pow(velocity.y, 2));
