@@ -187,7 +187,7 @@
 						</svg>
 						<span>{component.name}</span>
 					</span>
-					<Badge variant="secondary" class='rounded-full'>Spell</Badge>
+					<Badge variant="secondary" class="rounded-full">Spell</Badge>
 				</Command.LinkItem>
 			{/each}
 		</Command.Group>

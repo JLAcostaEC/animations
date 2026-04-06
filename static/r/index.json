@@ -160,7 +160,7 @@
 		"type": "registry:block",
 		"description": "A world map component rendered with dots, supporting custom markers with staggered entrance animations.",
 		"dependencies": [
-			"svg-dotted-map"
+			"piri"
 		],
 		"registryDependencies": [],
 		"relativeUrl": "dotted-map.json"
@@ -293,6 +293,17 @@
 		],
 		"registryDependencies": [],
 		"relativeUrl": "line-shadow-text.json"
+	},
+	{
+		"name": "motion-grid",
+		"title": "Motion Grid",
+		"type": "registry:block",
+		"description": "A frame-based 2D grid animation primitive with active/inactive cell states.",
+		"dependencies": [
+			"motion-sv"
+		],
+		"registryDependencies": [],
+		"relativeUrl": "motion-grid.json"
 	},
 	{
 		"name": "morphing-text",

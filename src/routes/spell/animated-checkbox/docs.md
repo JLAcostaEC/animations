@@ -20,7 +20,7 @@ pnpm add motion-sv
 
 <AnimatedCheckbox
   title="Ship the release notes"
-  checked={checked}
+  {checked}
   onCheckedChange={(value) => (checked = value)}
 />
 ```
@@ -35,7 +35,7 @@ Use controlled state when you want to manage multiple items from a parent compon
 
   let tasks = $state([
     { title: "Write docs", checked: true },
-    { title: "Record demo", checked: false }
+    { title: "Record demo", checked: false },
   ]);
 </script>
 ```
@@ -48,10 +48,10 @@ Use controlled state when you want to manage multiple items from a parent compon
 
 ## Props
 
-| Prop              | Type                                        | Default                | Description                                   |
-| ----------------- | ------------------------------------------- | ---------------------- | --------------------------------------------- |
+| Prop              | Type                                        | Default                | Description                                           |
+| ----------------- | ------------------------------------------- | ---------------------- | ----------------------------------------------------- |
 | `title`           | `string`                                    | `"Implement Checkbox"` | The label shown next to the animated check indicator. |
-| `checked`         | `boolean \| undefined`                      | `undefined`            | Controlled checked state.                     |
-| `defaultChecked`  | `boolean`                                   | `false`                | Initial checked state for uncontrolled usage. |
-| `onCheckedChange` | `((checked: boolean) => void) \| undefined` | `undefined`            | Callback fired whenever the checkbox toggles. |
-| `class`           | `string \| undefined`                       | `undefined`            | Custom classes merged onto the button root.   |
+| `checked`         | `boolean \| undefined`                      | `undefined`            | Controlled checked state.                             |
+| `defaultChecked`  | `boolean`                                   | `false`                | Initial checked state for uncontrolled usage.         |
+| `onCheckedChange` | `((checked: boolean) => void) \| undefined` | `undefined`            | Callback fired whenever the checkbox toggles.         |
+| `class`           | `string \| undefined`                       | `undefined`            | Custom classes merged onto the button root.           |

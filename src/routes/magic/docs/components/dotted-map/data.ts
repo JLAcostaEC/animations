@@ -39,7 +39,7 @@ const examples: Example[] = [
 ];
 
 let installBlock: InstallComponentDocs = {
-	packages: ["svg-dotted-map"],
+	packages: ["piri"],
 	installCode: [
 		{
 			filename: "dotted-map.svelte",

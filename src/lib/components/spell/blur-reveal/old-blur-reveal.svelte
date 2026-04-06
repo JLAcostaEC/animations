@@ -157,7 +157,10 @@
 	});
 
 	let totalUnits = $derived(
-		tokens.reduce((count, token) => count + (token.kind === "word" ? token.characters.length : 1), 0)
+		tokens.reduce(
+			(count, token) => count + (token.kind === "word" ? token.characters.length : 1),
+			0
+		)
 	);
 
 	let lastUnitIndex = $derived(totalUnits - 1);
@@ -272,7 +275,8 @@
 						class="inline-block"
 						variants={itemVariants}
 						style={letterSpacingValue ? { marginRight: letterSpacingValue } : undefined}
-						onAnimationComplete={(definition) => handleUnitComplete(definition, character.index)}
+						onAnimationComplete={(definition) =>
+							handleUnitComplete(definition, character.index)}
 					>
 						{character.value}
 					</motion.span>

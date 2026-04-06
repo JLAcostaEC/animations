@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { cn } from '$lib/utils';
-	import type { Snippet } from 'svelte';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import { cn } from "$lib/utils";
+	import type { Snippet } from "svelte";
+	import type { HTMLAttributes } from "svelte/elements";
 
-	type MarqueeDirection = 'left' | 'right' | 'up' | 'down';
+	type MarqueeDirection = "left" | "right" | "up" | "down";
 
 	interface MarqueeProps extends HTMLAttributes<HTMLDivElement> {
 		children: Snippet;
@@ -21,19 +21,19 @@
 		style: styleAttribute,
 		duration = 20,
 		pauseOnHover = false,
-		direction = 'left',
+		direction = "left",
 		fade = true,
 		fadeAmount = 10,
 		...props
 	}: MarqueeProps = $props();
 
-	const isVertical = $derived(direction === 'up' || direction === 'down');
+	const isVertical = $derived(direction === "up" || direction === "down");
 	const safeDuration = $derived(Math.max(duration, 0.01));
 	const clampedFadeAmount = $derived(Math.min(Math.max(fadeAmount, 0), 50));
 
 	const maskImage = $derived.by(() => {
 		if (!fade) {
-			return '';
+			return "";
 		}
 
 		const start = clampedFadeAmount;
@@ -56,28 +56,32 @@
 			styles.push(`-webkit-mask-image: ${maskImage}`);
 		}
 
-		return styles.join('; ');
+		return styles.join("; ");
 	});
 </script>
 
 <div
 	{...props}
-	class={cn('group flex w-full overflow-hidden', isVertical && 'flex-col', className)}
+	class={cn("group flex w-full overflow-hidden", isVertical && "flex-col", className)}
 	style={containerStyle}
 >
 	<div
 		class={cn(
-			'spell-marquee__scroller',
-			isVertical ? 'spell-marquee__scroller--vertical' : 'spell-marquee__scroller--horizontal',
+			"spell-marquee__scroller",
+			isVertical
+				? "spell-marquee__scroller--vertical"
+				: "spell-marquee__scroller--horizontal",
 			`spell-marquee__scroller--${direction}`,
-			pauseOnHover && 'spell-marquee__scroller--pause-on-hover'
+			pauseOnHover && "spell-marquee__scroller--pause-on-hover"
 		)}
 		style={`--spell-marquee-duration: ${safeDuration}s;`}
 	>
 		<div
 			class={cn(
-				'spell-marquee__segment',
-				isVertical ? 'spell-marquee__segment--vertical' : 'spell-marquee__segment--horizontal'
+				"spell-marquee__segment",
+				isVertical
+					? "spell-marquee__segment--vertical"
+					: "spell-marquee__segment--horizontal"
 			)}
 		>
 			{@render children()}
@@ -86,8 +90,10 @@
 		<div
 			aria-hidden="true"
 			class={cn(
-				'spell-marquee__segment',
-				isVertical ? 'spell-marquee__segment--vertical' : 'spell-marquee__segment--horizontal'
+				"spell-marquee__segment",
+				isVertical
+					? "spell-marquee__segment--vertical"
+					: "spell-marquee__segment--horizontal"
 			)}
 		>
 			{@render children()}

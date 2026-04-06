@@ -63,7 +63,7 @@ export const data: ComponentDoc = {
 				filename: "speed-example.svelte",
 				filecode: ViewportReplayExampleRaw,
 				lang: "svelte",
-				highlight:[2]
+				highlight: [2],
 			},
 		},
 	],

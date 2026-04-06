@@ -26,7 +26,7 @@
 		<input
 			type="text"
 			placeholder="drop image particles"
-			class="h-10 w-80 rounded-none border-b bg-background p-0 text-base font-medium outline-none placeholder:font-medium"
+			class="bg-background h-10 w-80 rounded-none border-b p-0 text-base font-medium outline-none placeholder:font-medium"
 		/>
 		<ExplodingInput
 			items={badges}
@@ -37,7 +37,7 @@
 		>
 			{#snippet children(src)}
 				<img
-					src={src}
+					{src}
 					alt=""
 					class="h-9 w-9 rounded-xl object-cover shadow-[0_8px_24px_rgba(15,23,42,0.16)]"
 				/>

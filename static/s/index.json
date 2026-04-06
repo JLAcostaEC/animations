@@ -3,8 +3,12 @@
 		"name": "perspective-book",
 		"title": "Perspective Book",
 		"type": "registry:block",
+		"author": "SikandarJODD",
 		"description": "A 3D book cover wrapper with a hover tilt effect and optional textured overlay.",
 		"registryDependencies": [],
+		"meta": {
+			"docs": "Add perspective-book-textured.avif image inside /static folder"
+		},
 		"relativeUrl": "perspective-book.json"
 	},
 	{
@@ -17,6 +21,14 @@
 		],
 		"registryDependencies": [],
 		"relativeUrl": "badge.json"
+	},
+	{
+		"name": "bar-spinner",
+		"title": "Bar Spinner",
+		"type": "registry:block",
+		"description": "A compact loading spinner made from twelve fading bars, ideal for inline waits, cards, dialogs, and button-adjacent status indicators.",
+		"registryDependencies": [],
+		"relativeUrl": "bar-spinner.json"
 	},
 	{
 		"name": "kbd",

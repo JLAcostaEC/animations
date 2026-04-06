@@ -55,7 +55,7 @@ export const data: ComponentDoc = {
 		filecode: PreviewCodeRaw,
 		lang: "svelte",
 		hideLines: true,
-		highlight:[2]
+		highlight: [2],
 	},
 	installBlock,
 	examples: [

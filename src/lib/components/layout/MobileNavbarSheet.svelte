@@ -94,21 +94,7 @@
 
 			<Separator class="my-4" />
 			<div class="space-y-2">
-				{#each [
-					{ title: "Get Started", items: getStartedItems, open: true, badge: undefined },
-					{
-						title: "Components",
-						items: componentItems,
-						open: isSectionOpen(componentItems),
-						badge: undefined,
-					},
-					{
-						title: "Svelte Spell UI",
-						items: spellItems,
-						open: isSectionOpen(spellItems),
-						badge: hasSpellUIUpdates ? "New" : undefined,
-					},
-				] as section (section.title)}
+				{#each [{ title: "Get Started", items: getStartedItems, open: true, badge: undefined }, { title: "Components", items: componentItems, open: isSectionOpen(componentItems), badge: undefined }, { title: "Svelte Spell UI", items: spellItems, open: isSectionOpen(spellItems), badge: hasSpellUIUpdates ? "New" : undefined }] as section (section.title)}
 					<details
 						class="group border-border overflow-hidden rounded-lg border"
 						open={section.open}

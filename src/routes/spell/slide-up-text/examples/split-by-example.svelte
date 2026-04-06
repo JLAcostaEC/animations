@@ -3,7 +3,7 @@
 </script>
 
 <div class="flex flex-col gap-8">
-	<div class="flex items-start flex-col">
+	<div class="flex flex-col items-start">
 		<span class="text-muted-foreground font-mono text-sm"> BY WORDS </span>
 		<SlideUpText split="words" class="text-xl font-medium" triggerOnView>
 			Beautiful animated text

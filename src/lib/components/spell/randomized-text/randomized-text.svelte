@@ -122,7 +122,7 @@
 	const expoOut = (time: number) => (time === 1 ? 1 : 1 - Math.pow(2, -10 * time));
 	const safeDelay = $derived(Math.max(delay, 0));
 	const safeDuration = $derived(Math.max(duration, 0.01));
-	const isInView = $derived(triggerOnView ? view.isInView : true);
+	const isInView = $derived(triggerOnView ? view.current : true);
 
 	const parsedStyle = $derived(parseStyleAttribute(styleAttribute));
 	const rootStyle = $derived.by(() => ({

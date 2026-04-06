@@ -11,7 +11,7 @@
 
 <Sidebar.Root class="mt-16 border-none" {...restProps} bind:ref>
 	<ScrollArea
-		class="max-h-[calc(100vh-6rem)] pt-4 pb-8 pr-1"
+		class="max-h-[calc(100vh-6rem)] pt-4 pr-1 pb-8"
 		scrollbarXClasses="hidden"
 		scrollbarYClasses="hidden"
 	>
@@ -24,7 +24,9 @@
 							<Sidebar.Menu>
 								{#each group.items as item}
 									<Sidebar.MenuItem>
-										<Sidebar.MenuButton isActive={page.url.pathname === item.href}>
+										<Sidebar.MenuButton
+											isActive={page.url.pathname === item.href}
+										>
 											{#snippet child({ props })}
 												<a href={item.href} {...props}>
 													{item.name}

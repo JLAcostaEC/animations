@@ -39,5 +39,5 @@ export {
 	Th,
 	Thead,
 	Tr,
-	CodeSpan
+	CodeSpan,
 };

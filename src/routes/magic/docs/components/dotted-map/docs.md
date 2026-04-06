@@ -9,7 +9,7 @@ The Dotted Map component renders an interactive SVG-based world map using dots. 
 - **Dot Styling**: Control dot size, color, and density
 - **Staggered Rows**: Optional honeycomb-style staggered dot pattern
 - **Responsive**: Automatically scales to fit container
-- **Performant**: Efficient rendering using `svg-dotted-map` library
+- **Performant**: Efficient rendering using `piri` library
 
 ## Installation
 
@@ -37,24 +37,24 @@ bunx shadcn-svelte@latest add "https://animations.sikandarjodd.com/r/dotted-map.
 
 #### 1. Install Dependencies
 
-The component requires the `svg-dotted-map` package:
+The component requires the `piri` package:
 
 ::: code-group
 
 ```bash [npm]
-npm install svg-dotted-map
+npm install piri
 ```
 
 ```bash [pnpm]
-pnpm add svg-dotted-map
+pnpm add piri
 ```
 
 ```bash [yarn]
-yarn add svg-dotted-map
+yarn add piri
 ```
 
 ```bash [bun]
-bun add svg-dotted-map
+bun add piri
 ```
 
 :::

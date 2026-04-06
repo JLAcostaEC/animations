@@ -19,14 +19,7 @@ const seo: SEO = {
 	title: "Bar Spinner",
 	description:
 		"Learn how to use the Bar Spinner spell component in Svelte, including size control, custom colors, and inline loading states.",
-	keywords: [
-		"Svelte",
-		"Bar Spinner",
-		"Spell",
-		"Svelte Animations",
-		"Loading Spinner",
-		"Loader",
-	],
+	keywords: ["Svelte", "Bar Spinner", "Spell", "Svelte Animations", "Loading Spinner", "Loader"],
 };
 
 const installBlock: InstallComponentDocs = {

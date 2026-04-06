@@ -13,7 +13,10 @@ pnpm add tailwind-variants
 
 ```svelte
 <script lang="ts">
-  import { ColorSelector, type ColorSelectorColor } from "$lib/components/spell/color-selector";
+  import {
+    ColorSelector,
+    type ColorSelectorColor,
+  } from "$lib/components/spell/color-selector";
 
   let value: ColorSelectorColor = $state("teal");
 </script>
@@ -45,12 +48,12 @@ Pass a `name` prop if you want the selected color to submit with a native form.
 
 ## Props
 
-| Prop            | Type                                               | Default     | Description                                        |
-| --------------- | -------------------------------------------------- | ----------- | -------------------------------------------------- |
-| `colors`        | `readonly ColorSelectorColor[]`                    | `[]`        | The swatches to render.                            |
-| `size`          | `"sm" \| "default" \| "lg" \| undefined`           | `"default"` | Controls the diameter of each swatch button.       |
-| `defaultValue`  | `ColorSelectorColor \| undefined`                  | `undefined` | Sets the initial selected swatch for uncontrolled usage. |
-| `value`         | `ColorSelectorColor \| undefined`                  | `undefined` | Controlled selected color value. Supports `bind:value`. |
-| `name`          | `string \| undefined`                              | `undefined` | Renders a hidden input for native form submission. |
-| `onColorSelect` | `((color: ColorSelectorColor) => void) \| undefined` | `undefined` | Callback fired when a swatch is selected.          |
-| `class`         | `string \| undefined`                              | `undefined` | Custom classes merged onto the radiogroup root.    |
+| Prop            | Type                                                 | Default     | Description                                              |
+| --------------- | ---------------------------------------------------- | ----------- | -------------------------------------------------------- |
+| `colors`        | `readonly ColorSelectorColor[]`                      | `[]`        | The swatches to render.                                  |
+| `size`          | `"sm" \| "default" \| "lg" \| undefined`             | `"default"` | Controls the diameter of each swatch button.             |
+| `defaultValue`  | `ColorSelectorColor \| undefined`                    | `undefined` | Sets the initial selected swatch for uncontrolled usage. |
+| `value`         | `ColorSelectorColor \| undefined`                    | `undefined` | Controlled selected color value. Supports `bind:value`.  |
+| `name`          | `string \| undefined`                                | `undefined` | Renders a hidden input for native form submission.       |
+| `onColorSelect` | `((color: ColorSelectorColor) => void) \| undefined` | `undefined` | Callback fired when a swatch is selected.                |
+| `class`         | `string \| undefined`                                | `undefined` | Custom classes merged onto the radiogroup root.          |

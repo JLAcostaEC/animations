@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { cn } from '$lib/utils';
-	import { motion } from 'motion-sv';
-	import type { HTMLAttributes } from 'svelte/elements';
+	import { cn } from "$lib/utils";
+	import { motion } from "motion-sv";
+	import type { HTMLAttributes } from "svelte/elements";
 
 	type AnimatedCheckboxProps = HTMLAttributes<HTMLButtonElement> & {
 		title?: string;
@@ -12,13 +12,13 @@
 	};
 
 	const springTransition = {
-		type: 'spring',
+		type: "spring",
 		duration: 0.4,
-		bounce: 0.2
+		bounce: 0.2,
 	} as const;
 
 	let {
-		title = 'Implement Checkbox',
+		title = "Implement Checkbox",
 		checked = undefined,
 		defaultChecked = false,
 		class: className,
@@ -45,7 +45,7 @@
 <button
 	type="button"
 	class={cn(
-		'group flex items-center gap-3 text-left select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-slate-500 dark:focus-visible:ring-offset-slate-950',
+		"group flex items-center gap-3 text-left select-none focus-visible:ring-2 focus-visible:ring-slate-400/70 focus-visible:ring-offset-2 focus-visible:ring-offset-white focus-visible:outline-none dark:focus-visible:ring-slate-500 dark:focus-visible:ring-offset-slate-950",
 		className
 	)}
 	role="checkbox"
@@ -55,10 +55,10 @@
 >
 	<div
 		class={cn(
-			'flex size-[18px] items-center justify-center rounded-[6px] border-[1.5px] transition-colors duration-200',
+			"flex size-[18px] items-center justify-center rounded-[6px] border-[1.5px] transition-colors duration-200",
 			isChecked
-				? 'border-transparent bg-slate-950 text-white dark:bg-slate-50 dark:text-slate-950'
-				: 'border-slate-400/50 bg-transparent text-slate-950 group-hover:border-slate-500/70 dark:border-slate-500/60 dark:text-slate-50 dark:group-hover:border-slate-400'
+				? "border-transparent bg-slate-950 text-white dark:bg-slate-50 dark:text-slate-950"
+				: "border-slate-400/50 bg-transparent text-slate-950 group-hover:border-slate-500/70 dark:border-slate-500/60 dark:text-slate-50 dark:group-hover:border-slate-400"
 		)}
 	>
 		<svg viewBox="0 0 20 20" class="size-full">
@@ -73,11 +73,11 @@
 				initial={{ pathLength: defaultChecked ? 1 : 0, opacity: defaultChecked ? 1 : 0 }}
 				animate={{
 					pathLength: isChecked ? 1 : 0,
-					opacity: isChecked ? 1 : 0
+					opacity: isChecked ? 1 : 0,
 				}}
 				transition={{
-					pathLength: { ease: 'easeOut', duration: 0.3 },
-					opacity: { duration: 0 }
+					pathLength: { ease: "easeOut", duration: 0.3 },
+					opacity: { duration: 0 },
 				}}
 			/>
 		</svg>
@@ -86,10 +86,10 @@
 	<div class="relative">
 		<span
 			class={cn(
-				'text-base font-medium transition-colors duration-200',
+				"text-base font-medium transition-colors duration-200",
 				isChecked
-					? 'text-slate-500 dark:text-slate-400'
-					: 'text-slate-950 dark:text-slate-50'
+					? "text-slate-500 dark:text-slate-400"
+					: "text-slate-950 dark:text-slate-50"
 			)}
 		>
 			{title}
@@ -97,10 +97,10 @@
 
 		<motion.div
 			class="absolute top-1/2 left-0 h-[1.5px] -translate-y-1/2 bg-slate-500 dark:bg-slate-400"
-			initial={{ width: defaultChecked ? '100%' : 0, opacity: defaultChecked ? 1 : 0 }}
+			initial={{ width: defaultChecked ? "100%" : 0, opacity: defaultChecked ? 1 : 0 }}
 			animate={{
-				width: isChecked ? '100%' : 0,
-				opacity: isChecked ? 1 : 0
+				width: isChecked ? "100%" : 0,
+				opacity: isChecked ? 1 : 0,
 			}}
 			transition={springTransition}
 		/>

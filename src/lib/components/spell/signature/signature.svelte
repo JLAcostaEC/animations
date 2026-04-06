@@ -1,13 +1,17 @@
 <script lang="ts">
-	import { browser } from '$app/environment';
-	import { cn } from '$lib/utils';
-	import { motion, type AnimationOptions, type Transition } from 'motion-sv';
-	import opentype from 'opentype.js';
-	import type { SVGAttributes } from 'svelte/elements';
+	import { browser } from "$app/environment";
+	import { cn } from "$lib/utils";
+	import { motion, type AnimationOptions, type Transition } from "motion-sv";
+	import opentype from "opentype.js";
+	import type { SVGAttributes } from "svelte/elements";
 
 	type GlyphLike = {
 		advanceWidth?: number;
-		getPath: (x: number, y: number, fontSize: number) => {
+		getPath: (
+			x: number,
+			y: number,
+			fontSize: number
+		) => {
 			toPathData: (decimalPlaces?: number) => string;
 		};
 	};
@@ -26,7 +30,12 @@
 					rlig?: boolean;
 				};
 			},
-			callback: (glyph: GlyphLike, glyphX: number, glyphY: number, glyphFontSize: number) => void
+			callback: (
+				glyph: GlyphLike,
+				glyphX: number,
+				glyphY: number,
+				glyphFontSize: number
+			) => void
 		) => void;
 		getAdvanceWidth: (
 			text: string,
@@ -60,13 +69,13 @@
 
 	let height = 100;
 	let strokeTransition: AnimationOptions = {
-		type: 'tween',
-		ease: 'easeInOut'
+		type: "tween",
+		ease: "easeInOut",
 	};
 
 	let {
-		text = 'Signature',
-		color = '#000',
+		text = "Signature",
+		color = "#000",
 		fontSize = 14,
 		duration = 1.5,
 		delay = 0,
@@ -83,7 +92,7 @@
 	let baseline = $derived(Math.min(height - 5, topMargin + fontSize));
 	let pathVariants = $derived({
 		hidden: { pathLength: 0, opacity: 1, fillOpacity: 0 },
-		visible: { pathLength: 1, opacity: 1, fillOpacity: 1 }
+		visible: { pathLength: 1, opacity: 1, fillOpacity: 1 },
 	});
 
 	let requestId = 0;
@@ -96,7 +105,7 @@
 		let currentRequest = ++requestId;
 
 		try {
-			let response = await fetch('/LastoriaBoldRegular.otf');
+			let response = await fetch("/LastoriaBoldRegular.otf");
 
 			if (!response.ok) {
 				throw new Error(`Failed to load font: ${response.status}`);
@@ -108,8 +117,8 @@
 				kerning: true,
 				features: {
 					liga: true,
-					rlig: true
-				}
+					rlig: true,
+				},
 			};
 
 			font.forEachGlyph(
@@ -119,13 +128,16 @@
 				fontSize,
 				fontOptions,
 				(glyph, glyphX, glyphY, glyphFontSize) => {
-					let pathData = glyph.getPath(glyphX, glyphY, glyphFontSize).toPathData(3).trim();
+					let pathData = glyph
+						.getPath(glyphX, glyphY, glyphFontSize)
+						.toPathData(3)
+						.trim();
 
 					if (pathData) {
 						nextPaths.push({
 							id: `path-${nextPaths.length}`,
 							d: pathData,
-							delay: delay + nextPaths.length * 0.2
+							delay: delay + nextPaths.length * 0.2,
 						});
 					}
 				}
@@ -160,37 +172,37 @@
 		buildPaths();
 	});
 
-	function getTransition(pathDelay: number) : Transition {
+	function getTransition(pathDelay: number): Transition {
 		return {
 			pathLength: {
 				...strokeTransition,
 				delay: pathDelay,
-				duration
+				duration,
 			},
 			opacity: {
-				type: 'tween',
+				type: "tween",
 				delay: pathDelay,
-				duration: 0.01
+				duration: 0.01,
 			},
 			fillOpacity: {
-				type: 'tween',
+				type: "tween",
 				delay: pathDelay + duration * 0.65,
-				duration: Math.min(0.25, duration * 0.35)
-			}
+				duration: Math.min(0.25, duration * 0.35),
+			},
 		};
 	}
 </script>
 
 <motion.svg
-	width={width}
-	height={height}
+	{width}
+	{height}
 	viewBox={`0 0 ${width} ${height}`}
 	fill="none"
-	class={cn('overflow-visible', className)}
+	class={cn("overflow-visible", className)}
 	initial="hidden"
-	whileInView={inView ? 'visible' : undefined}
-	animate={inView ? undefined : 'visible'}
-    inViewOptions={{ once, amount: 0.35 }}
+	whileInView={inView ? "visible" : undefined}
+	animate={inView ? undefined : "visible"}
+	inViewOptions={{ once, amount: 0.35 }}
 >
 	{#each paths as path (path.id)}
 		<motion.path
@@ -200,7 +212,7 @@
 			fill={color}
 			variants={pathVariants}
 			transition={getTransition(path.delay)}
-            vector-effect="non-scaling-stroke"
+			vector-effect="non-scaling-stroke"
 			stroke-linecap="butt"
 			stroke-linejoin="round"
 		/>

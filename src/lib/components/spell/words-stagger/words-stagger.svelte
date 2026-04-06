@@ -136,7 +136,7 @@
 		tokens.reduce((count, token) => count + (token.kind === "word" ? 1 : 0), 0)
 	);
 	const lastWordIndex = $derived(wordCount - 1);
-	const isInView = $derived(triggerOnView ? view.isInView : true);
+	const isInView = $derived(triggerOnView ? view.current : true);
 
 	const transition = $derived.by(() => ({
 		type: "tween" as const,

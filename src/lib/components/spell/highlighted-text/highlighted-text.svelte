@@ -57,7 +57,7 @@
 	);
 
 	const variants = $derived(fromVariants[from]);
-	const isVisible = $derived(triggerOnView ? view.isInView : true);
+	const isVisible = $derived(triggerOnView ? view.current : true);
 </script>
 
 <span

@@ -45,8 +45,8 @@ Tune `size` for tight inline layouts or larger card placeholders, then set `colo
 
 ## Props
 
-| Prop    | Type                  | Default          | Description                                           |
-| ------- | --------------------- | ---------------- | ----------------------------------------------------- |
-| `size`  | `number`              | `20`             | Controls the rendered width and height in pixels.     |
-| `color` | `string`              | `"currentColor"` | Sets the bar fill color using any valid CSS color.    |
-| `class` | `string \| undefined` | `undefined`      | Custom classes merged onto the root wrapper element.  |
+| Prop    | Type                  | Default          | Description                                          |
+| ------- | --------------------- | ---------------- | ---------------------------------------------------- |
+| `size`  | `number`              | `20`             | Controls the rendered width and height in pixels.    |
+| `color` | `string`              | `"currentColor"` | Sets the bar fill color using any valid CSS color.   |
+| `class` | `string \| undefined` | `undefined`      | Custom classes merged onto the root wrapper element. |

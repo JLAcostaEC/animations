@@ -11,11 +11,12 @@
 		</h1>
 
 		<p class="text-muted-foreground mx-auto mt-5 max-w-2xl text-base leading-8 text-balance">
-			Svelte Spell UI is a port of the original Spell UI by Tom. It offers a collection of high-quality components that you can copy-paste into any project.
+			Svelte Spell UI is a port of the original Spell UI by Tom. It offers a collection of
+			high-quality components that you can copy-paste into any project.
 		</p>
 
 		<div class="mt-8 flex justify-center">
-			<Button href="/spell/perspective-book" size="lg" class='rounded-full'>
+			<Button href="/spell/perspective-book" size="lg" class="rounded-full">
 				Explore
 				<ArrowRightIcon class="size-4" />
 			</Button>
