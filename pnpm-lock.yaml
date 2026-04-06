@@ -24,8 +24,8 @@ importers:
         specifier: ^1.1.0
         version: 1.1.0(svelte@5.55.1)
       motion-sv:
-        specifier: ^0.1.11
-        version: 0.1.11(svelte@5.55.1)
+        specifier: ^0.1.12
+        version: 0.1.12(svelte@5.55.1)
       opentype.js:
         specifier: ^1.3.4
         version: 1.3.4
@@ -1026,8 +1026,8 @@ packages:
   motion-dom@12.38.0:
     resolution: {integrity: sha512-pdkHLD8QYRp8VfiNLb8xIBJis1byQ9gPT3Jnh2jqfFtAsWUA3dEepDlsWe/xMpO8McV+VdpKVcp+E+TGJEtOoA==}
 
-  motion-sv@0.1.11:
-    resolution: {integrity: sha512-LsUrc9mVE/EbN4lqchnX/1fZuQpBDs7NTBlLqPtQf7wlIjR4qyNt6+yUfsrd7F1u1dsNHs6U1hb2/mMu/HfuTQ==}
+  motion-sv@0.1.12:
+    resolution: {integrity: sha512-487m6KFueq0EzXt+aeyxC4h4fBlNL9nk7X7qEWG5uckISUD31lw3F6K9uuZrxFUx1efXq1NnY7FQWFNLMJgjqw==}
     peerDependencies:
       svelte: ^5.0.0
 
@@ -2314,7 +2314,7 @@ snapshots:
     dependencies:
       motion-utils: 12.36.0
 
-  motion-sv@0.1.11(svelte@5.55.1):
+  motion-sv@0.1.12(svelte@5.55.1):
     dependencies:
       csstype: 3.2.3
       framer-motion: 12.38.0

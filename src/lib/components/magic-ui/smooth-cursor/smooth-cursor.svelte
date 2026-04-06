@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-	import { motion, useMotionValue, useSpring, useCurrentMotionValue } from "motion-sv";
+	import { motion, useSpring } from "motion-sv";
 	import type { Snippet } from "svelte";
 
 	interface Position {

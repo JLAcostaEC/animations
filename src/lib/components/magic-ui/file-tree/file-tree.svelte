@@ -1,4 +1,4 @@
-<script lang="ts" context="module">
+<script lang="ts" module>
 	export type TreeViewElement = {
 		id: string;
 		name: string;
