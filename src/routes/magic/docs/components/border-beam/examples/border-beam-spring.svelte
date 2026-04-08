@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { BorderBeam } from "$lib/components/magic-ui/border-beam";
+	import { BorderBeam } from "$lib/components/magic/border-beam";
 	import { Button } from "$lib/components/ui/button";
 </script>
 

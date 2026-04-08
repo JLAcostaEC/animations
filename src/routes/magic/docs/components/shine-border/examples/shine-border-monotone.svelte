@@ -1,5 +1,5 @@
 <script lang="ts">
-	import ShineBorder from "$lib/components/magic-ui/shine-border/shine-border.svelte";
+	import ShineBorder from "$lib/components/magic/shine-border/shine-border.svelte";
 	import { Button } from "$lib/components/ui/button";
 	import * as Card from "$lib/components/ui/card/index.js";
 	import { Input } from "$lib/components/ui/input";

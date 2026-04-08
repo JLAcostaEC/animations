@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { FlickeringGrid } from "$lib/components/magic-ui/flickering-grid";
+	import { FlickeringGrid } from "$lib/components/magic/flickering-grid";
 </script>
 
 <div class="bg-background relative size-150 w-full overflow-hidden rounded-lg border">

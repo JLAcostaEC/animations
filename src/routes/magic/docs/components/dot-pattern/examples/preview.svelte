@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { DotPattern } from "$lib/components/magic-ui/dot-pattern";
+	import { DotPattern } from "$lib/components/magic/dot-pattern";
 	import { cn } from "$lib/utils";
 </script>
 

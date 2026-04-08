@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { AnimatedList } from "$lib/components/magic-ui/animated-list";
+	import { AnimatedList } from "$lib/components/magic/animated-list";
 	import { cn } from "$lib/utils";
 	import Notification from "./notification.svelte";
 

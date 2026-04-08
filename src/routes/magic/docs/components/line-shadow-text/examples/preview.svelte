@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { LineShadowText } from "$lib/components/magic-ui/line-shadow-text";
+	import { LineShadowText } from "$lib/components/magic/line-shadow-text";
 	import { mode } from "mode-watcher";
 </script>
 

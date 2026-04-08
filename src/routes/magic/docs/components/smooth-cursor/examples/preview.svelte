@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { SmoothCursor } from "$lib/components/magic-ui/smooth-cursor";
+	import { SmoothCursor } from "$lib/components/magic/smooth-cursor";
 </script>
 
 <div>

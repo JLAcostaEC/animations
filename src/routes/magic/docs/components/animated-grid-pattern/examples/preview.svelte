@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { AnimatedGridPattern } from "$lib/components/magic-ui/animated-grid-pattern";
+	import { AnimatedGridPattern } from "$lib/components/magic/animated-grid-pattern";
 	import { cn } from "$lib/utils";
 </script>
 

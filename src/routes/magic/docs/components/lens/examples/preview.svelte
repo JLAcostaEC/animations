@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { Lens } from "$lib/components/magic-ui/lens";
+	import { Lens } from "$lib/components/magic/lens";
 	import { Button } from "$lib/components/ui/button";
 	import * as Card from "$lib/components/ui/card/index.js";
 </script>

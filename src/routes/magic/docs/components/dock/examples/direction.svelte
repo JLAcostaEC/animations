@@ -4,7 +4,7 @@
 	import Settings from "@lucide/svelte/icons/settings";
 	import Bell from "@lucide/svelte/icons/bell";
 
-	import { Dock, DockIcon } from "$lib/components/magic-ui/dock";
+	import { Dock, DockIcon } from "$lib/components/magic/dock";
 </script>
 
 <div class="flex flex-col gap-8">

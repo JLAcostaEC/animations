@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { AnimatedGradientText } from "$lib/components/magic-ui/animated-gradient-text";
+	import { AnimatedGradientText } from "$lib/components/magic/animated-gradient-text";
 </script>
 
 <AnimatedGradientText

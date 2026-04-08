@@ -6,7 +6,7 @@
 	import Linkedin from "@lucide/svelte/icons/linkedin";
 	import Facebook from "@lucide/svelte/icons/facebook";
 
-	import { Dock, DockIcon } from "$lib/components/magic-ui/dock";
+	import { Dock, DockIcon } from "$lib/components/magic/dock";
 </script>
 
 <div class="relative flex w-full items-center justify-center">

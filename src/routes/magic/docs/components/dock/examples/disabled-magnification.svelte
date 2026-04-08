@@ -5,7 +5,7 @@
 	import Camera from "@lucide/svelte/icons/camera";
 	import Gamepad2 from "@lucide/svelte/icons/gamepad-2";
 
-	import { Dock, DockIcon } from "$lib/components/magic-ui/dock";
+	import { Dock, DockIcon } from "$lib/components/magic/dock";
 </script>
 
 <div class="relative flex w-full items-center justify-center">

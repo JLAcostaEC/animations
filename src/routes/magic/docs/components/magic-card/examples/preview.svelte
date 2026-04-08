@@ -1,5 +1,5 @@
 ﻿<script>
-	import { MagicCard } from "$lib/components/magic-ui/magic-card";
+	import { MagicCard } from "$lib/components/magic/magic-card";
 	import { Button } from "$lib/components/ui/button";
 	import * as Card from "$lib/components/ui/card/index.js";
 	import { Input } from "$lib/components/ui/input";

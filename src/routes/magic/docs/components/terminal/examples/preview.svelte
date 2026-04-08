@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { Terminal, AnimatedSpan, TypingAnimation } from "$lib/components/magic-ui/terminal";
+	import { Terminal, AnimatedSpan, TypingAnimation } from "$lib/components/magic/terminal";
 </script>
 
 <Terminal>

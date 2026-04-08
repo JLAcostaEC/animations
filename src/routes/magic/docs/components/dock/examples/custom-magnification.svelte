@@ -5,7 +5,7 @@
 	import MessageCircle from "@lucide/svelte/icons/message-circle";
 	import Music from "@lucide/svelte/icons/music";
 
-	import { Dock, DockIcon } from "$lib/components/magic-ui/dock";
+	import { Dock, DockIcon } from "$lib/components/magic/dock";
 </script>
 
 <div class="relative flex w-full items-center justify-center">

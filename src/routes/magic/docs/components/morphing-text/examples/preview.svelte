@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { MorphingText } from "$lib/components/magic-ui/morphing-text";
+	import { MorphingText } from "$lib/components/magic/morphing-text";
 	const texts = [
 		"Hello",
 		"Morphing",

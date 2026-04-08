@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { onMount } from "svelte";
 	import { motion, AnimatePresence } from "motion-sv";
-	import { MotionGrid, MotionGridCells } from "$lib/components/magic-ui/motion-grid";
+	import { MotionGrid, MotionGridCells } from "$lib/components/magic/motion-grid";
 	import {
 		motionGridStateOrder,
 		motionGridStates,

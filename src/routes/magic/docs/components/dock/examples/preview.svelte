@@ -12,7 +12,7 @@
 		DockIcon,
 		type DockIconProps,
 		type DockProps,
-	} from "$lib/components/magic-ui/dock";
+	} from "$lib/components/magic/dock";
 	import { cn } from "$lib/utils";
 	import { Button } from "$lib/components/ui/button";
 

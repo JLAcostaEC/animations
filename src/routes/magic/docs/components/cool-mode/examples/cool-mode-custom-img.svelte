@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { CoolMode } from "$lib/components/magic-ui/cool-mode";
+	import { CoolMode } from "$lib/components/magic/cool-mode";
 	import { Button } from "$lib/components/ui/button";
 </script>
 
