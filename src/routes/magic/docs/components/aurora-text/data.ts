@@ -1,5 +1,5 @@
-﻿import Raw from "$lib/components/magic-ui/aurora-text/aurora-text.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/aurora-text/index.ts?raw";
+﻿import Raw from "$lib/components/magic/aurora-text/aurora-text.svelte?raw";
+import IndexTs from "$lib/components/magic/aurora-text/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -78,7 +78,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
   └── lib/
       └── components/
-          └── magic-ui/
+          └── magic/
               └── aurora-text/
                   ├── aurora-text.svelte
                   └── index.ts`,

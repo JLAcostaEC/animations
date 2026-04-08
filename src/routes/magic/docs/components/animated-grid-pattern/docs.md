@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-grid-pa
 
 ```svelte
 <script lang="ts">
-  import { AnimatedGridPattern } from "$lib/components/magic-ui/animated-grid-pattern/animated-grid-pattern.svelte";
+  import { AnimatedGridPattern } from "$lib/components/magic/animated-grid-pattern/animated-grid-pattern.svelte";
 </script>
 
 <div class="bg-background relative h-64 w-full overflow-hidden rounded-lg">

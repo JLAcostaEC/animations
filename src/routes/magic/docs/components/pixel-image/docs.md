@@ -37,7 +37,7 @@ bunx shadcn-svelte@latest add https://sv-animations.vercel.app/r/pixel-image.jso
 
 ```svelte
 <script lang="ts">
-  import { PixelImage } from "$lib/components/magic-ui/pixel-image";
+  import { PixelImage } from "$lib/components/magic/pixel-image";
 </script>
 
 <PixelImage src="/path/to/your-image.jpg" />
@@ -63,7 +63,7 @@ Simple pixel image reveal with default settings.
 
 ```svelte
 <script lang="ts">
-  import { PixelImage } from "$lib/components/magic-ui/pixel-image";
+  import { PixelImage } from "$lib/components/magic/pixel-image";
   import MyImage from "$lib/assets/my-image.jpg";
 </script>
 
@@ -76,7 +76,7 @@ Use a custom grid configuration for more control over the pixel effect.
 
 ```svelte
 <script lang="ts">
-  import { PixelImage } from "$lib/components/magic-ui/pixel-image";
+  import { PixelImage } from "$lib/components/magic/pixel-image";
   import MyImage from "$lib/assets/my-image.jpg";
 </script>
 
@@ -93,7 +93,7 @@ Choose from built-in grid configurations.
 
 ```svelte
 <script lang="ts">
-  import { PixelImage } from "$lib/components/magic-ui/pixel-image";
+  import { PixelImage } from "$lib/components/magic/pixel-image";
   import MyImage from "$lib/assets/my-image.jpg";
 </script>
 
@@ -113,7 +113,7 @@ Adjust the animation timing for different effects.
 
 ```svelte
 <script lang="ts">
-  import { PixelImage } from "$lib/components/magic-ui/pixel-image";
+  import { PixelImage } from "$lib/components/magic/pixel-image";
   import MyImage from "$lib/assets/my-image.jpg";
 </script>
 
@@ -140,7 +140,7 @@ Disable the grayscale-to-color transition for a simpler reveal.
 
 ```svelte
 <script lang="ts">
-  import { PixelImage } from "$lib/components/magic-ui/pixel-image";
+  import { PixelImage } from "$lib/components/magic/pixel-image";
   import MyImage from "$lib/assets/my-image.jpg";
 </script>
 

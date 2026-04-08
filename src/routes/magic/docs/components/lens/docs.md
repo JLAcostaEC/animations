@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/lens.json
 
 ```svelte
 <script lang="ts">
-  import Lens from "$lib/components/magic-ui/lens/lens.svelte";
+  import Lens from "$lib/components/magic/lens/lens.svelte";
 </script>
 
 <Lens zoomFactor={2} lensSize={150} isStatic={false} ariaLabel="Zoom Area">
@@ -39,7 +39,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/lens.json
 
 ```svelte
 <script lang="ts">
-  import Lens from "$lib/components/magic-ui/lens/lens.svelte";
+  import Lens from "$lib/components/magic/lens/lens.svelte";
 </script>
 
 <Lens zoomFactor={2} lensSize={150} ariaLabel="Zoom Area">

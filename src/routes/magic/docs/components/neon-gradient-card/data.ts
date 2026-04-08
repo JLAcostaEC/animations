@@ -1,5 +1,5 @@
-﻿import NeonGradientCardRaw from "$lib/components/magic-ui/neon-gradient-card/neon-gradient-card.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/neon-gradient-card/index.ts?raw";
+﻿import NeonGradientCardRaw from "$lib/components/magic/neon-gradient-card/neon-gradient-card.svelte?raw";
+import IndexTs from "$lib/components/magic/neon-gradient-card/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -59,7 +59,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── neon-gradient-card/
                 ├── neon-gradient-card.svelte
                 └── index.ts`,

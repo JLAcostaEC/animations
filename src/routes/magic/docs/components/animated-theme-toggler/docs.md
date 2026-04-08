@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-theme-t
 
 ```svelte
 <script lang="ts">
-  import { AnimatedThemeToggler } from "$lib/components/magic-ui/animated-theme-toggler";
+  import { AnimatedThemeToggler } from "$lib/components/magic/animated-theme-toggler";
 </script>
 
 <AnimatedThemeToggler />

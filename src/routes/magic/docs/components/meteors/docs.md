@@ -75,7 +75,7 @@ Add the following to your `layout.css` or global CSS file:
 
 ```svelte
 <script lang="ts">
-  import { Meteors } from "$lib/components/magic-ui/meteors";
+  import { Meteors } from "$lib/components/magic/meteors";
 </script>
 
 <div class="relative h-screen w-full overflow-hidden bg-slate-900">
@@ -113,7 +113,7 @@ Create a simple meteor shower effect with the default number of meteors.
 
 ```svelte
 <script lang="ts">
-  import { Meteors } from "$lib/components/magic-ui/meteors";
+  import { Meteors } from "$lib/components/magic/meteors";
 </script>
 
 <div class="relative h-96 w-full overflow-hidden rounded-lg bg-slate-900">
@@ -127,7 +127,7 @@ Increase the intensity by adding more meteors to the scene.
 
 ```svelte
 <script lang="ts">
-  import { Meteors } from "$lib/components/magic-ui/meteors";
+  import { Meteors } from "$lib/components/magic/meteors";
 </script>
 
 <div
@@ -143,7 +143,7 @@ Use meteors as an animated background for cards or hero sections.
 
 ```svelte
 <script lang="ts">
-  import { Meteors } from "$lib/components/magic-ui/meteors";
+  import { Meteors } from "$lib/components/magic/meteors";
 </script>
 
 <div

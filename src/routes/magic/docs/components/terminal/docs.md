@@ -63,7 +63,7 @@ Add the following to your `layout.css` or global CSS file:
   import {
     Terminal,
     TypingAnimation,
-  } from "$lib/components/magic-ui/terminal";
+  } from "$lib/components/magic/terminal";
 </script>
 
 <Terminal>

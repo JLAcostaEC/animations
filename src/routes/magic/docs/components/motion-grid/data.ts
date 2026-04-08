@@ -1,8 +1,8 @@
-import MotionGridRaw from "$lib/components/magic-ui/motion-grid/motion-grid.svelte?raw";
-import MotionGridCellsRaw from "$lib/components/magic-ui/motion-grid/motion-grid-cells.svelte?raw";
-import UseMotionGridContextRaw from "$lib/components/magic-ui/motion-grid/use-motion-grid-context.svelte.ts?raw";
-import TypesRaw from "$lib/components/magic-ui/motion-grid/types.ts?raw";
-import IndexTs from "$lib/components/magic-ui/motion-grid/index.ts?raw";
+import MotionGridRaw from "$lib/components/magic/motion-grid/motion-grid.svelte?raw";
+import MotionGridCellsRaw from "$lib/components/magic/motion-grid/motion-grid-cells.svelte?raw";
+import UseMotionGridContextRaw from "$lib/components/magic/motion-grid/use-motion-grid-context.svelte.ts?raw";
+import TypesRaw from "$lib/components/magic/motion-grid/types.ts?raw";
+import IndexTs from "$lib/components/magic/motion-grid/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -98,7 +98,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── motion-grid/
                 ├── motion-grid.svelte
                 ├── motion-grid-cells.svelte

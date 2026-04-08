@@ -1,5 +1,5 @@
-﻿import WordRotateRaw from "$lib/components/magic-ui/word-rotate/word-rotate.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/word-rotate/index.ts?raw";
+﻿import WordRotateRaw from "$lib/components/magic/word-rotate/word-rotate.svelte?raw";
+import IndexTs from "$lib/components/magic/word-rotate/index.ts?raw";
 
 import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
@@ -40,7 +40,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── word-rotate/
                 ├── word-rotate.svelte
                 └── index.ts`,

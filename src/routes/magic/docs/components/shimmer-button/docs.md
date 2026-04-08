@@ -63,7 +63,7 @@ Add the following to your `layout.css` or global CSS file:
 
 ```svelte
 <script lang="ts">
-  import { ShimmerButton } from "$lib/components/magic-ui/shimmer-button";
+  import { ShimmerButton } from "$lib/components/magic/shimmer-button";
 </script>
 
 <ShimmerButton>Shimmer Button</ShimmerButton>

@@ -39,7 +39,7 @@ Copy and paste the component source code into your project.
 
 ```svelte
 <script lang="ts">
-  import { ScrollProgress } from "$lib/components/magic-ui/scroll-progress";
+  import { ScrollProgress } from "$lib/components/magic/scroll-progress";
 </script>
 
 <ScrollProgress />

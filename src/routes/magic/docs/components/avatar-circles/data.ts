@@ -1,5 +1,5 @@
-﻿import Raw from "$lib/components/magic-ui/avatar-circles/avatar-circles.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/avatar-circles/index.ts?raw";
+﻿import Raw from "$lib/components/magic/avatar-circles/avatar-circles.svelte?raw";
+import IndexTs from "$lib/components/magic/avatar-circles/index.ts?raw";
 
 import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";

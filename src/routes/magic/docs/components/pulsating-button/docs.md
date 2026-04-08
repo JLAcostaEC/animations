@@ -47,7 +47,7 @@ Add the following to your `layout.css` or global CSS file:
 
 ```svelte
 <script lang="ts">
-  import { PulsatingButton } from "$lib/components/magic-ui/pulsating-button";
+  import { PulsatingButton } from "$lib/components/magic/pulsating-button";
 </script>
 
 <PulsatingButton pulseColor="#808080" duration="1.5s">

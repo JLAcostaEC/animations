@@ -1,5 +1,5 @@
-﻿import MorphingTextRaw from "$lib/components/magic-ui/morphing-text/morphing-text.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/morphing-text/index.ts?raw";
+﻿import MorphingTextRaw from "$lib/components/magic/morphing-text/morphing-text.svelte?raw";
+import IndexTs from "$lib/components/magic/morphing-text/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -41,7 +41,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── morphing-text/
                 ├── morphing-text.svelte
                 └── index.ts`,

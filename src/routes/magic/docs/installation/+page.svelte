@@ -17,7 +17,7 @@
 	import { PreviewComponent } from "$lib/components/ui/preview-component";
 
 	const exampleCode = `<script lang="ts">
-	import { MorphingText } from "$lib/components/magic-ui/morphing-text";
+	import { MorphingText } from "$lib/components/magic/morphing-text";
 
 	const texts = ["Hello", "World", "Morphing", "Text"];
 <\/script>

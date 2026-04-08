@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/retro-grid.json
 
 ```svelte
 <script lang="ts">
-  import RetroGrid from "$lib/components/magic-ui/retro-grid/retro-grid.svelte";
+  import RetroGrid from "$lib/components/magic/retro-grid/retro-grid.svelte";
 </script>
 
 <RetroGrid>

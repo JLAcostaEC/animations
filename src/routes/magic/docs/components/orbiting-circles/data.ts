@@ -1,5 +1,5 @@
-﻿import OrbitingCirclesRaw from "$lib/components/magic-ui/orbiting-circles/orbiting-circles.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/orbiting-circles/index.ts?raw";
+﻿import OrbitingCirclesRaw from "$lib/components/magic/orbiting-circles/orbiting-circles.svelte?raw";
+import IndexTs from "$lib/components/magic/orbiting-circles/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -71,7 +71,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── orbiting-circles/
                 ├── orbiting-circles.svelte
                 └── index.ts`,

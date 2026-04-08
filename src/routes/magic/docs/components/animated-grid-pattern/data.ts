@@ -1,5 +1,5 @@
-﻿import AnimatedGridPattern from "$lib/components/magic-ui/animated-grid-pattern/animated-grid-pattern.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/animated-grid-pattern/index.ts?raw";
+﻿import AnimatedGridPattern from "$lib/components/magic/animated-grid-pattern/animated-grid-pattern.svelte?raw";
+import IndexTs from "$lib/components/magic/animated-grid-pattern/index.ts?raw";
 import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import Preview from "./examples/preview.svelte";
@@ -40,7 +40,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── animated-grid-pattern/
                 ├── animated-grid-pattern.svelte
                 └── index.ts`,

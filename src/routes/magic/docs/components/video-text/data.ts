@@ -1,5 +1,5 @@
-﻿import VideoTextRaw from "$lib/components/magic-ui/video-text/video-text.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/video-text/index.ts?raw";
+﻿import VideoTextRaw from "$lib/components/magic/video-text/video-text.svelte?raw";
+import IndexTs from "$lib/components/magic/video-text/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -41,7 +41,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 	├── lib/
 	│   └── components/
-	│       └── magic-ui/
+	│       └── magic/
 	│           └── video-text/
 	│               ├── video-text.svelte
 	│               └── index.ts`,

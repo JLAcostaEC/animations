@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/magic-card.json
 
 ```svelte
 <script lang="ts">
-  import MagicCard from "$lib/components/magic-ui/magic-card/magic-card.svelte";
+  import MagicCard from "$lib/components/magic/magic-card/magic-card.svelte";
 </script>
 
 <MagicCard>

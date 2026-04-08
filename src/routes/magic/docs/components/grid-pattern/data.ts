@@ -1,5 +1,5 @@
-﻿import Raw from "$lib/components/magic-ui/grid-pattern/grid-pattern.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/grid-pattern/index.ts?raw";
+﻿import Raw from "$lib/components/magic/grid-pattern/grid-pattern.svelte?raw";
+import IndexTs from "$lib/components/magic/grid-pattern/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -43,7 +43,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
 	└── components/
-		└── magic-ui/
+		└── magic/
 			└── grid-pattern/
 				├── grid-pattern.svelte
 				└── index.ts`,

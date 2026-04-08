@@ -1,5 +1,5 @@
-﻿import StaggerTextRaw from "$lib/components/magic-ui/stagger-text/stagger-text.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/stagger-text/index.ts?raw";
+﻿import StaggerTextRaw from "$lib/components/magic/stagger-text/stagger-text.svelte?raw";
+import IndexTs from "$lib/components/magic/stagger-text/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -43,7 +43,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 â””â”€â”€ lib/
     â””â”€â”€ components/
-        â””â”€â”€ magic-ui/
+        â””â”€â”€ magic/
             â””â”€â”€ stagger-text/
                 â”œâ”€â”€ stagger-text.svelte
                 â””â”€â”€ index.ts`,

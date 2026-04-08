@@ -1,5 +1,5 @@
-﻿import RippleButtonRaw from "$lib/components/magic-ui/ripple-button/ripple-button.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/ripple-button/index.ts?raw";
+﻿import RippleButtonRaw from "$lib/components/magic/ripple-button/ripple-button.svelte?raw";
+import IndexTs from "$lib/components/magic/ripple-button/index.ts?raw";
 
 import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
@@ -58,7 +58,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 	├── lib/
 	│   └── components/
-	│       └── magic-ui/
+	│       └── magic/
 	│           └── ripple-button/
 	│               ├── ripple-button.svelte
 	│               └── index.ts`,

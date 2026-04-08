@@ -1,5 +1,5 @@
-﻿import RainbowButtonRaw from "$lib/components/magic-ui/rainbow-button/rainbow-button.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/rainbow-button/index.ts?raw";
+﻿import RainbowButtonRaw from "$lib/components/magic/rainbow-button/rainbow-button.svelte?raw";
+import IndexTs from "$lib/components/magic/rainbow-button/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -85,7 +85,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── rainbow-button/
                 ├── rainbow-button.svelte
                 └── index.ts`,

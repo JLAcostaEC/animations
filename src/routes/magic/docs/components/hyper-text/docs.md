@@ -39,7 +39,7 @@ Copy and paste the component source code into your project.
 
 ```svelte
 <script lang="ts">
-  import { HyperText } from "$lib/components/magic-ui/hyper-text";
+  import { HyperText } from "$lib/components/magic/hyper-text";
 </script>
 
 <HyperText text="Hyper Text" class="text-4xl font-bold" />

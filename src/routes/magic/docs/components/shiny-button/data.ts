@@ -1,5 +1,5 @@
-﻿import ShinyButtonRaw from "$lib/components/magic-ui/shiny-button/shiny-button.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/shiny-button/index.ts?raw";
+﻿import ShinyButtonRaw from "$lib/components/magic/shiny-button/shiny-button.svelte?raw";
+import IndexTs from "$lib/components/magic/shiny-button/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -43,7 +43,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 â””â”€â”€ lib/
     â””â”€â”€ components/
-        â””â”€â”€ magic-ui/
+        â””â”€â”€ magic/
             â””â”€â”€ shiny-button/
                 â”œâ”€â”€ shiny-button.svelte
                 â””â”€â”€ index.ts`,

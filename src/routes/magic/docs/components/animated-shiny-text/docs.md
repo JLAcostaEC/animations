@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-shiny-t
 
 ```svelte
 <script lang="ts">
-  import AnimatedShinyText from "$lib/components/magic-ui/animated-shiny-text/animated-shiny-text.svelte";
+  import AnimatedShinyText from "$lib/components/magic/animated-shiny-text/animated-shiny-text.svelte";
 </script>
 
 <AnimatedShinyText>✨ Introducing Magic UI</AnimatedShinyText>

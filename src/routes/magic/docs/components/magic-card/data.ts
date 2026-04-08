@@ -1,5 +1,5 @@
-﻿import MagicCardRaw from "$lib/components/magic-ui/magic-card/magic-card.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/magic-card/index.ts?raw";
+﻿import MagicCardRaw from "$lib/components/magic/magic-card/magic-card.svelte?raw";
+import IndexTs from "$lib/components/magic/magic-card/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -81,7 +81,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── magic-card/
                 ├── magic-card.svelte
                 └── index.ts`,

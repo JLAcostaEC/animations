@@ -28,7 +28,7 @@ No additional dependencies required. Copy and paste the component source code in
 
 ```svelte
 <script lang="ts">
-  import { NeonGradientCard } from "$lib/components/magic-ui/neon-gradient-card";
+  import { NeonGradientCard } from "$lib/components/magic/neon-gradient-card";
 </script>
 
 <NeonGradientCard borderSize={2} borderRadius={20}>

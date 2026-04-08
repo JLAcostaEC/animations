@@ -1,5 +1,5 @@
-﻿import IconCloudRaw from "$lib/components/magic-ui/icon-cloud/icon-cloud.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/icon-cloud/index.ts?raw";
+﻿import IconCloudRaw from "$lib/components/magic/icon-cloud/icon-cloud.svelte?raw";
+import IndexTs from "$lib/components/magic/icon-cloud/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -53,7 +53,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── icon-cloud/
                 ├── icon-cloud.svelte
                 └── index.ts`,

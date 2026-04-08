@@ -39,7 +39,7 @@ Copy and paste the component source code into your project.
 
 ```svelte
 <script lang="ts">
-  import { LightRays } from "$lib/components/magic-ui/light-rays";
+  import { LightRays } from "$lib/components/magic/light-rays";
 </script>
 
 <div class="relative h-screen w-full overflow-hidden">

@@ -39,7 +39,7 @@ Copy and paste the component source code into your project.
 
 ```svelte
 <script lang="ts">
-  import { HeroVideoDialog } from "$lib/components/magic-ui/hero-video-dialog";
+  import { HeroVideoDialog } from "$lib/components/magic/hero-video-dialog";
 </script>
 
 <HeroVideoDialog

@@ -28,7 +28,7 @@ No additional dependencies required. Copy and paste the component source code in
 
 ```svelte
 <script lang="ts">
-  import { MorphingText } from "$lib/components/magic-ui/morphing-text";
+  import { MorphingText } from "$lib/components/magic/morphing-text";
 </script>
 
 <MorphingText

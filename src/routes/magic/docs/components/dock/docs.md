@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/dock.json
 
 ```svelte
 <script lang="ts">
-  import { Dock, DockIcon } from "$lib/components/magic-ui/dock";
+  import { Dock, DockIcon } from "$lib/components/magic/dock";
   import Home from "@lucide/svelte/icons/home";
   import Search from "@lucide/svelte/icons/search";
   import Settings from "@lucide/svelte/icons/settings";

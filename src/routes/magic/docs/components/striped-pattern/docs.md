@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/striped-pattern.
 
 ```svelte
 <script lang="ts">
-  import { StripedPattern } from "$lib/components/magic-ui/striped-pattern";
+  import { StripedPattern } from "$lib/components/magic/striped-pattern";
 </script>
 
 <div
@@ -37,7 +37,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/striped-pattern.
 
 ```svelte
 <script lang="ts">
-  import { StripedPattern } from "$lib/components/magic-ui/striped-pattern";
+  import { StripedPattern } from "$lib/components/magic/striped-pattern";
 </script>
 
 <div

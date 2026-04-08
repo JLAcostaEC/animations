@@ -1,5 +1,5 @@
-﻿import ShineBorderRaw from "$lib/components/magic-ui/shine-border/shine-border.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/shine-border/index.ts?raw";
+﻿import ShineBorderRaw from "$lib/components/magic/shine-border/shine-border.svelte?raw";
+import IndexTs from "$lib/components/magic/shine-border/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -57,7 +57,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── shine-border/
                 ├── shine-border.svelte
                 └── index.ts`,

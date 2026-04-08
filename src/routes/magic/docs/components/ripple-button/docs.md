@@ -60,7 +60,7 @@ Add the following to your `layout.css` or global CSS file:
 
 ```svelte
 <script lang="ts">
-  import { RippleButton } from "$lib/components/magic-ui/ripple-button";
+  import { RippleButton } from "$lib/components/magic/ripple-button";
 </script>
 
 <RippleButton rippleColor="#ffffff" duration="600ms">Click Me</RippleButton>

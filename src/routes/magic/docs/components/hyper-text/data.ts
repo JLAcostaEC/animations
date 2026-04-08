@@ -1,5 +1,5 @@
-﻿import HyperTextRaw from "$lib/components/magic-ui/hyper-text/hyper-text.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/hyper-text/index.ts?raw";
+﻿import HyperTextRaw from "$lib/components/magic/hyper-text/hyper-text.svelte?raw";
+import IndexTs from "$lib/components/magic/hyper-text/index.ts?raw";
 
 import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
@@ -40,7 +40,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
 	└── components/
-		└── magic-ui/
+		└── magic/
 			└── hyper-text/
 				├── hyper-text.svelte
 				└── index.ts`,

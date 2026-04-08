@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-list.js
 
 ```svelte
 <script lang="ts">
-  import  from "$lib/components/magic-ui/animated-list/animated-list.svelte";
+  import  from "$lib/components/magic/animated-list/animated-list.svelte";
 </script>
 
 <>

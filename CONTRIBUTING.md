@@ -27,7 +27,7 @@ We have a detailed guide for creating new components. Please follow these steps:
 
 3. **Create Your Component**
    - Follow the structure outlined in CREATE_COMPONENT_GUIDE.md
-   - Create the component in `src/lib/components/magic-ui/`
+   - Create the component in `src/lib/components/magic/`
    - Add documentation and examples in `src/routes/magic/docs/components/`
    - Update `registry.json` with your component
 

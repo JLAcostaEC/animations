@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from "$app/state";
 	import { H1, H2, Paragraph, H3 } from "$lib/components/docs/markdown/index";
-	import AnimatedGradientTextRaw from "$lib/components/magic-ui/animated-gradient-text/animated-gradient-text.svelte?raw";
+	import AnimatedGradientTextRaw from "$lib/components/magic/animated-gradient-text/animated-gradient-text.svelte?raw";
 	import type { CodeBlock } from "$lib/components/ui/code";
 
 	import { PreviewComponent } from "$lib/components/ui/preview-component";

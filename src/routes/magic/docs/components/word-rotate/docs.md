@@ -39,7 +39,7 @@ Copy and paste the component source code into your project.
 
 ```svelte
 <script lang="ts">
-  import { WordRotate } from "$lib/components/magic-ui/word-rotate";
+  import { WordRotate } from "$lib/components/magic/word-rotate";
 </script>
 
 <WordRotate words={["Fast", "Modern", "Beautiful", "Simple"]} />

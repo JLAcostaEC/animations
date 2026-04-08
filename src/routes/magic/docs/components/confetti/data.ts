@@ -1,5 +1,5 @@
-﻿import ConfettiRaw from "$lib/components/magic-ui/confetti/confetti.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/confetti/index.ts?raw";
+﻿import ConfettiRaw from "$lib/components/magic/confetti/confetti.svelte?raw";
+import IndexTs from "$lib/components/magic/confetti/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -43,7 +43,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 â””â”€â”€ lib/
     â””â”€â”€ components/
-        â””â”€â”€ magic-ui/
+        â””â”€â”€ magic/
             â””â”€â”€ confetti/
                 â”œâ”€â”€ confetti.svelte
                 â””â”€â”€ index.ts`,

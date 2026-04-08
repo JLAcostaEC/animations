@@ -39,7 +39,7 @@ Copy and paste the component source code into your project.
 
 ```svelte
 <script lang="ts">
-  import { VideoText } from "$lib/components/magic-ui/video-text";
+  import { VideoText } from "$lib/components/magic/video-text";
 </script>
 
 <VideoText src="/videos/background.mp4" content="HELLO" fontSize={20} />

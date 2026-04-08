@@ -1,5 +1,5 @@
-﻿import LineShadowTextRaw from "$lib/components/magic-ui/line-shadow-text/line-shadow-text.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/line-shadow-text/index.ts?raw";
+﻿import LineShadowTextRaw from "$lib/components/magic/line-shadow-text/line-shadow-text.svelte?raw";
+import IndexTs from "$lib/components/magic/line-shadow-text/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -41,7 +41,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── line-shadow-text/
                 ├── line-shadow-text.svelte
                 └── index.ts`,

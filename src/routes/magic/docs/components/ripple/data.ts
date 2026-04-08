@@ -1,5 +1,5 @@
-﻿import RippleRaw from "$lib/components/magic-ui/ripple/ripple.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/ripple/index.ts?raw";
+﻿import RippleRaw from "$lib/components/magic/ripple/ripple.svelte?raw";
+import IndexTs from "$lib/components/magic/ripple/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -60,7 +60,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 	├── lib/
 	│   └── components/
-	│       └── magic-ui/
+	│       └── magic/
 	│           └── ripple/
 	│               ├── ripple.svelte
 	│               └── index.ts`,

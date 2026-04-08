@@ -58,7 +58,7 @@ Add the following to your `layout.css` or global CSS file:
 
 ```svelte
 <script lang="ts">
-  import { LineShadowText } from "$lib/components/magic-ui/line-shadow-text";
+  import { LineShadowText } from "$lib/components/magic/line-shadow-text";
 </script>
 
 <LineShadowText
