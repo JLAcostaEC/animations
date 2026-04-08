@@ -1,6 +1,5 @@
 <script lang="ts">
-	import { onMount } from "svelte";
-	import { motion, AnimatePresence, type Variants } from "motion-sv";
+	import { motion, AnimatePresence, useInView, type Variants } from "motion-sv";
 	import { cn } from "$lib/utils";
 	import type { Snippet } from "svelte";
 
@@ -9,34 +8,43 @@
 	interface BlurFadeProps {
 		children: Snippet;
 		class?: string;
-		variant?: {
-			hidden: { y: number };
-			visible: { y: number };
-		};
+		variant?: Variants;
+		exit?: boolean;
 		duration?: number;
 		delay?: number;
 		offset?: number;
 		direction?: "up" | "down" | "left" | "right";
-		inView?: boolean;
+		triggerOnView?: boolean;
 		inViewMargin?: MarginType;
 		blur?: string;
+		once?: boolean;
 	}
 
 	let {
 		children,
 		class: className,
 		variant,
+		exit = false,
 		duration = 0.4,
 		delay = 0,
 		offset = 6,
 		direction = "down",
-		inView = false,
+		triggerOnView = true,
 		inViewMargin = "-50px",
 		blur = "6px",
+		once = true,
 	}: BlurFadeProps = $props();
 
 	let containerRef: HTMLDivElement | null = $state(null);
-	let isInView = $state(false);
+	let view = useInView(
+		() => containerRef!,
+		() =>
+			({
+				once,
+				amount: 0.1,
+				margin: inViewMargin,
+			}) as any
+	);
 
 	const defaultVariants = $derived.by(() => {
 		return {
@@ -55,33 +63,7 @@
 	});
 
 	const combinedVariants = $derived(variant || defaultVariants);
-	const shouldAnimate = $derived(!inView || isInView);
-
-	onMount(() => {
-		if (!inView) {
-			isInView = true;
-			return;
-		}
-
-		if (!containerRef) return;
-
-		const observer = new IntersectionObserver(
-			([entry]) => {
-				if (entry.isIntersecting) {
-					isInView = true;
-					observer.disconnect();
-				}
-			},
-			{
-				threshold: 0.1,
-				rootMargin: inViewMargin,
-			}
-		);
-
-		observer.observe(containerRef);
-
-		return () => observer.disconnect();
-	});
+	const shouldAnimate = $derived(!triggerOnView || view.current);
 </script>
 
 <div bind:this={containerRef}>
@@ -89,7 +71,7 @@
 		<motion.div
 			initial="hidden"
 			animate={shouldAnimate ? "visible" : "hidden"}
-			exit="hidden"
+			exit={exit ? "hidden" : undefined}
 			variants={combinedVariants}
 			transition={{
 				delay: 0.04 + delay,
