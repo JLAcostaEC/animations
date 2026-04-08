@@ -41,12 +41,12 @@ let installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-â””â”€â”€ lib/
-    â””â”€â”€ components/
-        â””â”€â”€ magic/
-            â””â”€â”€ smooth-cursor/
-                â”œâ”€â”€ smooth-cursor.svelte
-                â””â”€â”€ index.ts`,
+└── lib/
+    └── components/
+        └── magic/
+            └── smooth-cursor/
+                ├── smooth-cursor.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {

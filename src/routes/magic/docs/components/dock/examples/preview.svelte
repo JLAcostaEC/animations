@@ -7,12 +7,7 @@
 	import { Separator } from "$lib/components/ui/separator";
 	import * as Tooltip from "$lib/components/ui/tooltip/index.js";
 
-	import {
-		Dock,
-		DockIcon,
-		type DockIconProps,
-		type DockProps,
-	} from "$lib/components/magic/dock";
+	import { Dock, DockIcon, type DockIconProps, type DockProps } from "$lib/components/magic/dock";
 	import { cn } from "$lib/utils";
 	import { Button } from "$lib/components/ui/button";
 

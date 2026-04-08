@@ -41,12 +41,12 @@ let installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-	lib/
-	├── components/
-	│   └── magic/
-	│       └── warp-background/
-	│           ├── warp-background.svelte
-	│           └── index.ts`,
+└── lib/
+    └── components/
+        └── magic/
+            └── warp-background/
+                ├── warp-background.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {

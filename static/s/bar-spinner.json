@@ -11,7 +11,7 @@
 			"target": "spell/bar-spinner/bar-spinner.svelte"
 		},
 		{
-			"content": "import BarSpinner from \"./bar-spinner.svelte\";\r\nexport { BarSpinner };\r\n",
+			"content": "import BarSpinner from \"./bar-spinner.svelte\";\nexport { BarSpinner };\n",
 			"type": "registry:file",
 			"target": "spell/bar-spinner/index.ts"
 		}

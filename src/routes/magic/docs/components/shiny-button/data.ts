@@ -41,12 +41,12 @@ let installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-â””â”€â”€ lib/
-    â””â”€â”€ components/
-        â””â”€â”€ magic/
-            â””â”€â”€ shiny-button/
-                â”œâ”€â”€ shiny-button.svelte
-                â””â”€â”€ index.ts`,
+└── lib/
+    └── components/
+        └── magic/
+            └── shiny-button/
+                ├── shiny-button.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {

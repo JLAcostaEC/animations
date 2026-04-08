@@ -52,13 +52,13 @@ let installBlock: InstallComponentDocs = {
 }`,
 		lang: "css",
 	},
-	folderStructure: `src
-  ├── lib
-  │   └── components
-  │       └── magic-ui
-  │           └── animated-theme-toggler
-  │               ├── animated-theme-toggler.svelte
-  │               └── index.ts`,
+	folderStructure: `src/
+└── lib/
+    └── components/
+        └── magic/
+            └── animated-theme-toggler/
+                ├── animated-theme-toggler.svelte
+                └── index.ts`,
 };
 export const data: ComponentDoc = {
 	...meta,

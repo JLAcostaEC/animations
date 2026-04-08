@@ -44,14 +44,13 @@ let installBlock: InstallComponentDocs = {
 }`,
 		lang: "css",
 	},
-	folderStructure: `    src/
-    ├── lib/
-    │   └── components/
-    │       └── magic/
-    │           └── meteors/
-    │               ├── index.ts
-    │               └── meteors.svelte
-    `,
+	folderStructure: `src/
+└── lib/
+    └── components/
+        └── magic/
+            └── meteors/
+                ├── meteors.svelte
+                └── index.ts`,
 };
 
 /** Component metadata for navigation */

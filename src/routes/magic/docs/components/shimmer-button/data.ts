@@ -73,12 +73,12 @@ let installBlock: InstallComponentDocs = {
 }`,
 	},
 	folderStructure: `src/
-	├── lib/
-	│   └── components/
-	│       └── magic/
-	│           └── shimmer-button/
-	│               ├── shimmer-button.svelte
-	│               └── index.ts`,
+└── lib/
+    └── components/
+        └── magic/
+            └── shimmer-button/
+                ├── shimmer-button.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {

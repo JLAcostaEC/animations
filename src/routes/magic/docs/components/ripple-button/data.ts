@@ -56,12 +56,12 @@ let installBlock: InstallComponentDocs = {
 }`,
 	},
 	folderStructure: `src/
-	├── lib/
-	│   └── components/
-	│       └── magic/
-	│           └── ripple-button/
-	│               ├── ripple-button.svelte
-	│               └── index.ts`,
+└── lib/
+    └── components/
+        └── magic/
+            └── ripple-button/
+                ├── ripple-button.svelte
+                └── index.ts`,
 };
 
 /*

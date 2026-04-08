@@ -41,12 +41,12 @@ let installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-â””â”€â”€ lib/
-    â””â”€â”€ components/
-        â””â”€â”€ magic/
-            â””â”€â”€ terminal/
-                â”œâ”€â”€ terminal.svelte
-                â””â”€â”€ index.ts`,
+└── lib/
+    └── components/
+        └── magic/
+            └── terminal/
+                ├── terminal.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {

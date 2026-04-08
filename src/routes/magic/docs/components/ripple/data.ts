@@ -58,12 +58,12 @@ let installBlock: InstallComponentDocs = {
 		highlight: [2, [4, 14]],
 	},
 	folderStructure: `src/
-	├── lib/
-	│   └── components/
-	│       └── magic/
-	│           └── ripple/
-	│               ├── ripple.svelte
-	│               └── index.ts`,
+└── lib/
+    └── components/
+        └── magic/
+            └── ripple/
+                ├── ripple.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {

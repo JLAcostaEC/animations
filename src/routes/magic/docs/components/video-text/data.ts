@@ -39,12 +39,12 @@ let installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-	├── lib/
-	│   └── components/
-	│       └── magic/
-	│           └── video-text/
-	│               ├── video-text.svelte
-	│               └── index.ts`,
+└── lib/
+    └── components/
+        └── magic/
+            └── video-text/
+                ├── video-text.svelte
+                └── index.ts`,
 };
 
 /*

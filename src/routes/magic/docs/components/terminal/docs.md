@@ -60,10 +60,7 @@ Add the following to your `layout.css` or global CSS file:
 
 ```svelte
 <script lang="ts">
-  import {
-    Terminal,
-    TypingAnimation,
-  } from "$lib/components/magic/terminal";
+  import { Terminal, TypingAnimation } from "$lib/components/magic/terminal";
 </script>
 
 <Terminal>

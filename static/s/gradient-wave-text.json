@@ -14,7 +14,7 @@
 			"target": "spell/gradient-wave-text/gradient-wave-text.svelte"
 		},
 		{
-			"content": "import GradientWaveText from \"./gradient-wave-text.svelte\";\r\nexport { GradientWaveText };",
+			"content": "import GradientWaveText from \"./gradient-wave-text.svelte\";\nexport { GradientWaveText };\n",
 			"type": "registry:file",
 			"target": "spell/gradient-wave-text/index.ts"
 		}

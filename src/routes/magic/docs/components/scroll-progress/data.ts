@@ -41,12 +41,12 @@ let installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-	├── lib/
-	│   └── components/
-	│       └── magic/
-	│           └── scroll-progress/
-	│               ├── scroll-progress.svelte
-	│               └── index.ts`,
+└── lib/
+    └── components/
+        └── magic/
+            └── scroll-progress/
+                ├── scroll-progress.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
