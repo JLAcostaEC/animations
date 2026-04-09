@@ -52,14 +52,14 @@ const installBlock: InstallComponentDocs = {
 	],
 	packages: ["motion-sv"],
 	folderStructure: `src/
-lib/
-  utils/
-    text-utils.ts
-  components/
-    spell/
-      words-stagger/
-        index.ts
-        words-stagger.svelte`,
+└── lib/
+	└── utils/
+	|	└── text-utils.ts
+    └── components/
+        └── spell/
+            └── words-stagger/
+                ├── words-stagger.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {

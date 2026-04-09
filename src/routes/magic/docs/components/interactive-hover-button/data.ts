@@ -1,5 +1,5 @@
-﻿import InteractiveHoverButtonRaw from "$lib/components/magic-ui/interactive-hover-button/interactive-hover-button.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/interactive-hover-button/index.ts?raw";
+﻿import InteractiveHoverButtonRaw from "$lib/components/magic/interactive-hover-button/interactive-hover-button.svelte?raw";
+import IndexTs from "$lib/components/magic/interactive-hover-button/index.ts?raw";
 
 import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
@@ -47,7 +47,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── interactive-hover-button/
                 ├── interactive-hover-button.svelte
                 └── index.ts`,

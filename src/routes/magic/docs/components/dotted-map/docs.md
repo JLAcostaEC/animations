@@ -67,7 +67,7 @@ Copy the `DottedMap` component to your project:
 src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── dotted-map/
                 ├── dotted-map.svelte
                 └── index.ts
@@ -79,7 +79,7 @@ src/
 
 ```svelte
 <script lang="ts">
-  import { DottedMap } from "$lib/components/magic-ui/dotted-map";
+  import { DottedMap } from "$lib/components/magic/dotted-map";
 </script>
 
 <div class="h-[500px] w-full">
@@ -93,7 +93,7 @@ Add markers to highlight specific locations on the map using latitude and longit
 
 ```svelte
 <script lang="ts">
-  import { DottedMap } from "$lib/components/magic-ui/dotted-map";
+  import { DottedMap } from "$lib/components/magic/dotted-map";
 
   const markers = [
     { lat: 40.7128, lng: -74.006, size: 0.3 }, // New York
@@ -114,7 +114,7 @@ Customize the appearance with dot color, radius, and map density:
 
 ```svelte
 <script lang="ts">
-  import { DottedMap } from "$lib/components/magic-ui/dotted-map";
+  import { DottedMap } from "$lib/components/magic/dotted-map";
 </script>
 
 <div class="h-[500px] w-full">
@@ -128,7 +128,7 @@ Create a beautiful fading effect with a radial gradient overlay:
 
 ```svelte
 <script lang="ts">
-  import { DottedMap } from "$lib/components/magic-ui/dotted-map";
+  import { DottedMap } from "$lib/components/magic/dotted-map";
 
   const markers = [
     { lat: 40.7128, lng: -74.006, size: 0.3 },

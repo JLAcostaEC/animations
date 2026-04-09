@@ -1,5 +1,5 @@
-﻿import LensRaw from "$lib/components/magic-ui/lens/lens.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/lens/index.ts?raw";
+﻿import LensRaw from "$lib/components/magic/lens/lens.svelte?raw";
+import IndexTs from "$lib/components/magic/lens/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -44,7 +44,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── lens/
                 ├── lens.svelte
                 └── index.ts`,

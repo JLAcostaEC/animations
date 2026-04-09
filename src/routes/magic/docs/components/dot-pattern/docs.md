@@ -23,7 +23,7 @@ Basic usage with default settings:
 
 ```svelte
 <script lang="ts">
-  import { DotPattern } from "$lib/components/magic-ui/dot-pattern";
+  import { DotPattern } from "$lib/components/magic/dot-pattern";
 </script>
 
 <div class="relative h-[400px]">
@@ -35,7 +35,7 @@ With custom spacing and glow effect:
 
 ```svelte
 <script lang="ts">
-  import { DotPattern } from "$lib/components/magic-ui/dot-pattern";
+  import { DotPattern } from "$lib/components/magic/dot-pattern";
   import { cn } from "$lib/utils";
 </script>
 

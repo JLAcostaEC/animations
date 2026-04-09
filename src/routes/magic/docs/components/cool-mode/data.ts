@@ -1,5 +1,5 @@
-﻿import CoolModeRaw from "$lib/components/magic-ui/cool-mode/cool-mode.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/cool-mode/index.ts?raw";
+﻿import CoolModeRaw from "$lib/components/magic/cool-mode/cool-mode.svelte?raw";
+import IndexTs from "$lib/components/magic/cool-mode/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -64,7 +64,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── cool-mode/
                 ├── cool-mode.svelte
                 └── index.ts`,

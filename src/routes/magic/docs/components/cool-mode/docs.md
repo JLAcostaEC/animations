@@ -23,7 +23,7 @@ Basic usage with default colored circles:
 
 ```svelte
 <script lang="ts">
-  import { CoolMode } from "$lib/components/magic-ui/cool-mode";
+  import { CoolMode } from "$lib/components/magic/cool-mode";
 </script>
 
 <CoolMode>
@@ -35,7 +35,7 @@ With emoji particles:
 
 ```svelte
 <script lang="ts">
-  import { CoolMode } from "$lib/components/magic-ui/cool-mode";
+  import { CoolMode } from "$lib/components/magic/cool-mode";
 </script>
 
 <CoolMode options={{ particle: "ð" }}>
@@ -47,7 +47,7 @@ With custom image:
 
 ```svelte
 <script lang="ts">
-  import { CoolMode } from "$lib/components/magic-ui/cool-mode";
+  import { CoolMode } from "$lib/components/magic/cool-mode";
 </script>
 
 <CoolMode options={{ particle: "/path/to/image.png" }}>
@@ -59,7 +59,7 @@ With custom configuration:
 
 ```svelte
 <script lang="ts">
-  import { CoolMode } from "$lib/components/magic-ui/cool-mode";
+  import { CoolMode } from "$lib/components/magic/cool-mode";
 </script>
 
 <CoolMode

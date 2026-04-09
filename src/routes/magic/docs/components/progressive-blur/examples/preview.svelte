@@ -1,5 +1,5 @@
 ﻿<script>
-	import { ProgressiveBlur } from "$lib/components/magic-ui/progressive-blur";
+	import { ProgressiveBlur } from "$lib/components/magic/progressive-blur";
 	import { ScrollArea } from "$lib/components/ui/scroll-area";
 </script>
 

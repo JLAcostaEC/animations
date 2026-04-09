@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { AnimatedCircularProgressBar } from "$lib/components/magic-ui/animated-circular-progress-bar";
+	import { AnimatedCircularProgressBar } from "$lib/components/magic/animated-circular-progress-bar";
 	import { onMount, onDestroy } from "svelte";
 
 	let value = $state(0);

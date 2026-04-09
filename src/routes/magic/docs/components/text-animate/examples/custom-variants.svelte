@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TextAnimate } from "$lib/components/magic-ui/text-animate";
+	import { TextAnimate } from "$lib/components/magic/text-animate";
 	import type { Variants } from "motion-sv";
 
 	const customVariants: Variants = {

@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/confetti.json
 
 ```svelte
 <script lang="ts">
-  import Confetti from "$lib/components/magic-ui/confetti/confetti.svelte";
+  import Confetti from "$lib/components/magic/confetti/confetti.svelte";
 </script>
 
 <Confetti>

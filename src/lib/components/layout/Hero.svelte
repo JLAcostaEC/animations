@@ -3,7 +3,7 @@
 	import { spellUIComponents } from "$lib/components/docs/registry/spell_ui";
 	import { cn } from "$lib/utils";
 	import ArrowRight from "@lucide/svelte/icons/arrow-right";
-	import GridPattern from "../magic-ui/grid-pattern/grid-pattern.svelte";
+	import GridPattern from "../magic/grid-pattern/grid-pattern.svelte";
 	import * as Icons from "$lib/components/icons";
 
 	const spellComponentCount = spellUIComponents.filter(

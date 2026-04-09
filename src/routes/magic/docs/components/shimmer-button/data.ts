@@ -1,5 +1,5 @@
-﻿import ShimmerButtonRaw from "$lib/components/magic-ui/shimmer-button/shimmer-button.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/shimmer-button/index.ts?raw";
+﻿import ShimmerButtonRaw from "$lib/components/magic/shimmer-button/shimmer-button.svelte?raw";
+import IndexTs from "$lib/components/magic/shimmer-button/index.ts?raw";
 
 import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
@@ -73,12 +73,12 @@ let installBlock: InstallComponentDocs = {
 }`,
 	},
 	folderStructure: `src/
-	├── lib/
-	│   └── components/
-	│       └── magic-ui/
-	│           └── shimmer-button/
-	│               ├── shimmer-button.svelte
-	│               └── index.ts`,
+└── lib/
+    └── components/
+        └── magic/
+            └── shimmer-button/
+                ├── shimmer-button.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {

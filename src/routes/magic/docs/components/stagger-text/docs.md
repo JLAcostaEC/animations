@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/stagger-text.jso
 
 ```svelte
 <script lang="ts">
-  import StaggerText from "$lib/components/magic-ui/stagger-text/stagger-text.svelte";
+  import StaggerText from "$lib/components/magic/stagger-text/stagger-text.svelte";
 </script>
 
 <StaggerText>

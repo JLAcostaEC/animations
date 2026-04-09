@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/smooth-cursor.js
 
 ```svelte
 <script lang="ts">
-  import SmoothCursor from "$lib/components/magic-ui/smooth-cursor/smooth-cursor.svelte";
+  import SmoothCursor from "$lib/components/magic/smooth-cursor/smooth-cursor.svelte";
 </script>
 
 <SmoothCursor>

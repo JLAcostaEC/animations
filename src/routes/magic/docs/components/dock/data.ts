@@ -1,6 +1,6 @@
-﻿import DockRaw from "$lib/components/magic-ui/dock/dock.svelte?raw";
-import DockIconRaw from "$lib/components/magic-ui/dock/dock-icon.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/dock/index.ts?raw";
+﻿import DockRaw from "$lib/components/magic/dock/dock.svelte?raw";
+import DockIconRaw from "$lib/components/magic/dock/dock-icon.svelte?raw";
+import IndexTs from "$lib/components/magic/dock/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -103,7 +103,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── dock/
                 ├── dock.svelte
                 ├── dock-icon.svelte

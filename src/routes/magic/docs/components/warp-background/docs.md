@@ -39,7 +39,7 @@ Copy and paste the component source code into your project.
 
 ```svelte
 <script lang="ts">
-  import { WarpBackground } from "$lib/components/magic-ui/warp-background";
+  import { WarpBackground } from "$lib/components/magic/warp-background";
 </script>
 
 <WarpBackground>

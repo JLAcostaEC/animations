@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/animated-gradien
 
 ```svelte
 <script lang="ts">
-  import AnimatedGradientText from "$lib/components/magic-ui/animated-gradient-text/animated-gradient-text.svelte";
+  import AnimatedGradientText from "$lib/components/magic/animated-gradient-text/animated-gradient-text.svelte";
 </script>
 
 <AnimatedGradientText>✨ Introducing Magic UI</AnimatedGradientText>
@@ -51,7 +51,7 @@ You can customize the animation speed using the `speed` prop:
 
 ```svelte
 <script lang="ts">
-  import AnimatedGradientText from "$lib/components/magic-ui/animated-gradient-text/animated-gradient-text.svelte";
+  import AnimatedGradientText from "$lib/components/magic/animated-gradient-text/animated-gradient-text.svelte";
 </script>
 
 <AnimatedGradientText speed={2}>Fast Animation</AnimatedGradientText>
@@ -65,7 +65,7 @@ Customize the gradient colors using `colorFrom` and `colorTo` props:
 
 ```svelte
 <script lang="ts">
-  import AnimatedGradientText from "$lib/components/magic-ui/animated-gradient-text/animated-gradient-text.svelte";
+  import AnimatedGradientText from "$lib/components/magic/animated-gradient-text/animated-gradient-text.svelte";
 </script>
 
 <AnimatedGradientText colorFrom="#00ff00" colorTo="#0000ff">

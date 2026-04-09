@@ -28,7 +28,7 @@ No additional dependencies required. Copy and paste the component source code in
 
 ```svelte
 <script lang="ts">
-  import { FlickeringGrid } from "$lib/components/magic-ui/flickering-grid";
+  import { FlickeringGrid } from "$lib/components/magic/flickering-grid";
 </script>
 
 <div class="relative size-150 w-full overflow-hidden rounded-lg border">

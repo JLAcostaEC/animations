@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { MotionGrid, MotionGridCells } from "$lib/components/magic-ui/motion-grid";
+	import { MotionGrid, MotionGridCells } from "$lib/components/magic/motion-grid";
 	import { motionGridStates } from "./state-frames";
 </script>
 

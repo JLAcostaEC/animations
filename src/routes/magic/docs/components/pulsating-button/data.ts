@@ -1,5 +1,5 @@
-﻿import PulsatingButtonRaw from "$lib/components/magic-ui/pulsating-button/pulsating-button.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/pulsating-button/index.ts?raw";
+﻿import PulsatingButtonRaw from "$lib/components/magic/pulsating-button/pulsating-button.svelte?raw";
+import IndexTs from "$lib/components/magic/pulsating-button/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -59,7 +59,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── pulsating-button/
                 ├── pulsating-button.svelte
                 └── index.ts`,

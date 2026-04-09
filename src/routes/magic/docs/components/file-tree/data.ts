@@ -1,8 +1,8 @@
-﻿import FileTreeRaw from "$lib/components/magic-ui/file-tree/file-tree.svelte?raw";
-import FolderRaw from "$lib/components/magic-ui/file-tree/folder.svelte?raw";
-import FileRaw from "$lib/components/magic-ui/file-tree/file.svelte?raw";
-import CollapseButtonRaw from "$lib/components/magic-ui/file-tree/collapse-button.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/file-tree/index.ts?raw";
+﻿import FileTreeRaw from "$lib/components/magic/file-tree/file-tree.svelte?raw";
+import FolderRaw from "$lib/components/magic/file-tree/folder.svelte?raw";
+import FileRaw from "$lib/components/magic/file-tree/file.svelte?raw";
+import CollapseButtonRaw from "$lib/components/magic/file-tree/collapse-button.svelte?raw";
+import IndexTs from "$lib/components/magic/file-tree/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -69,7 +69,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── file-tree/
                 ├── file-tree.svelte
                 ├── folder.svelte

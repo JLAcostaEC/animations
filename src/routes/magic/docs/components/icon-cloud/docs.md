@@ -14,7 +14,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/icon-cloud.json
 
 ```svelte
 <script lang="ts">
-  import { IconCloud } from "$lib/components/magic-ui/icon-cloud";
+  import { IconCloud } from "$lib/components/magic/icon-cloud";
 
   let images = [
     "https://cdn.simpleicons.org/typescript/typescript",
@@ -31,7 +31,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/icon-cloud.json
 
 ```svelte
 <script lang="ts">
-  import { IconCloud } from "$lib/components/magic-ui/icon-cloud";
+  import { IconCloud } from "$lib/components/magic/icon-cloud";
   import { Github, Twitter, Code, Database } from "@lucide/svelte";
 
   let icons = [Github, Twitter, Code, Database];
@@ -44,7 +44,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/icon-cloud.json
 
 ```svelte
 <script lang="ts">
-  import { IconCloud } from "$lib/components/magic-ui/icon-cloud";
+  import { IconCloud } from "$lib/components/magic/icon-cloud";
   import { Github, Twitter } from "@lucide/svelte";
 
   let icons = [Github, Twitter];

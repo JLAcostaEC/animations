@@ -5,7 +5,7 @@
 		MotionGrid,
 		MotionGridCells,
 		type MotionGridCellMotionProps,
-	} from "$lib/components/magic-ui/motion-grid";
+	} from "$lib/components/magic/motion-grid";
 	import { motionGridStates } from "./state-frames";
 </script>
 

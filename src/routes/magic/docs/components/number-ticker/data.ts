@@ -1,5 +1,5 @@
-﻿import NumberTickerRaw from "$lib/components/magic-ui/number-ticker/number-ticker.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/number-ticker/index.ts?raw";
+﻿import NumberTickerRaw from "$lib/components/magic/number-ticker/number-ticker.svelte?raw";
+import IndexTs from "$lib/components/magic/number-ticker/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -64,12 +64,12 @@ let installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-	├── lib/
-	│   └── components/
-	│       └── magic-ui/
-	│           └── number-ticker/
-	│               ├── number-ticker.svelte
-	│               └── index.ts`,
+└── lib/
+    └── components/
+        └── magic/
+            └── number-ticker/
+                ├── number-ticker.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {

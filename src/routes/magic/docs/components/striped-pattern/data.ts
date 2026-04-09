@@ -1,5 +1,5 @@
-﻿import Raw from "$lib/components/magic-ui/striped-pattern/striped-pattern.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/striped-pattern/index.ts?raw";
+﻿import Raw from "$lib/components/magic/striped-pattern/striped-pattern.svelte?raw";
+import IndexTs from "$lib/components/magic/striped-pattern/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";

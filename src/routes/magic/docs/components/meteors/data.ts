@@ -1,5 +1,5 @@
-import IndexTs from "$lib/components/magic-ui/meteors/index.ts?raw";
-import MeteorsRaw from "$lib/components/magic-ui/meteors/meteors.svelte?raw";
+import IndexTs from "$lib/components/magic/meteors/index.ts?raw";
+import MeteorsRaw from "$lib/components/magic/meteors/meteors.svelte?raw";
 import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 
@@ -44,14 +44,13 @@ let installBlock: InstallComponentDocs = {
 }`,
 		lang: "css",
 	},
-	folderStructure: `    src/
-    ├── lib/
-    │   └── components/
-    │       └── magic-ui/
-    │           └── meteors/
-    │               ├── index.ts
-    │               └── meteors.svelte
-    `,
+	folderStructure: `src/
+└── lib/
+    └── components/
+        └── magic/
+            └── meteors/
+                ├── meteors.svelte
+                └── index.ts`,
 };
 
 /** Component metadata for navigation */

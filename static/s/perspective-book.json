@@ -15,7 +15,7 @@
 			"target": "spell/perspective-book/perspective-book.svelte"
 		},
 		{
-			"content": "import PerspectiveBook from \"./perspective-book.svelte\";\r\nexport { PerspectiveBook };",
+			"content": "import PerspectiveBook from \"./perspective-book.svelte\";\nexport { PerspectiveBook };\n",
 			"type": "registry:file",
 			"target": "spell/perspective-book/index.ts"
 		}

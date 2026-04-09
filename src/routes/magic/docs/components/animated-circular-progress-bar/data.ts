@@ -1,5 +1,5 @@
-﻿import AnimatedCircularProgressBar from "$lib/components/magic-ui/animated-circular-progress-bar/animated-circular-progress-bar.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/animated-circular-progress-bar/index.ts?raw";
+﻿import AnimatedCircularProgressBar from "$lib/components/magic/animated-circular-progress-bar/animated-circular-progress-bar.svelte?raw";
+import IndexTs from "$lib/components/magic/animated-circular-progress-bar/index.ts?raw";
 import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import Preview from "./examples/preview.svelte";
@@ -35,7 +35,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── animated-circular-progress-bar/
                 ├── animated-circular-progress-bar.svelte
                 └── index.ts`,

@@ -1,5 +1,5 @@
 <script>
-	import { DitherShader } from "$lib/components/magic-ui/dither-shader";
+	import { DitherShader } from "$lib/components/magic/dither-shader";
 </script>
 
 <div class="flex items-center justify-center p-8">

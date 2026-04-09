@@ -20,7 +20,7 @@ The component requires three main refs:
 
 ```svelte
 <script lang="ts">
-  import { AnimatedBeam } from "$lib/components/magic-ui/animated-beam";
+  import { AnimatedBeam } from "$lib/components/magic/animated-beam";
 
   let containerRef: HTMLDivElement | null = $state(null);
   let fromRef: HTMLDivElement | null = $state(null);

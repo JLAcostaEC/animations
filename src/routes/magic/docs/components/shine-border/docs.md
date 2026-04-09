@@ -72,7 +72,7 @@ Add the following animation to your `src/routes/layout.css` or global CSS file:
 
 ```svelte
 <script lang="ts">
-  import { ShineBorder } from "$lib/components/magic-ui/shine-border";
+  import { ShineBorder } from "$lib/components/magic/shine-border";
 </script>
 
 <div class="relative overflow-hidden rounded-lg">
@@ -118,7 +118,7 @@ A single-color shine effect that adapts to light/dark mode using `mode-watcher`.
 
 ```svelte
 <script lang="ts">
-  import { ShineBorder } from "$lib/components/magic-ui/shine-border";
+  import { ShineBorder } from "$lib/components/magic/shine-border";
   import { mode } from "mode-watcher";
 </script>
 
@@ -156,7 +156,7 @@ A complete card example with shine border effect around a login form.
 
 ```svelte
 <script lang="ts">
-  import { ShineBorder } from "$lib/components/magic-ui/shine-border";
+  import { ShineBorder } from "$lib/components/magic/shine-border";
   import * as Card from "$lib/components/ui/card";
   import { Button } from "$lib/components/ui/button";
   import { Input } from "$lib/components/ui/input";

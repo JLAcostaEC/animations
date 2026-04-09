@@ -29,7 +29,7 @@ Create the following file structure:
 src/
   └── lib/
       └── components/
-          └── magic-ui/
+          └── magic/
               └── aurora-text/
                   ├── aurora-text.svelte
                   └── index.ts
@@ -72,7 +72,7 @@ src/
 
 ```svelte
 <script lang="ts">
-  import { AuroraText } from "$lib/components/magic-ui/aurora-text";
+  import { AuroraText } from "$lib/components/magic/aurora-text";
 </script>
 
 <h1 class="text-4xl font-bold">
@@ -95,7 +95,7 @@ src/
 
 ```svelte
 <script lang="ts">
-  import { AuroraText } from "$lib/components/magic-ui/aurora-text";
+  import { AuroraText } from "$lib/components/magic/aurora-text";
 </script>
 
 <h1 class="text-4xl font-bold tracking-tighter md:text-5xl lg:text-7xl">
@@ -109,7 +109,7 @@ Use custom colors to match your brand:
 
 ```svelte
 <script lang="ts">
-  import { AuroraText } from "$lib/components/magic-ui/aurora-text";
+  import { AuroraText } from "$lib/components/magic/aurora-text";
 </script>
 
 <h2 class="text-3xl font-bold">
@@ -125,7 +125,7 @@ Adjust the speed for different effects:
 
 ```svelte
 <script lang="ts">
-  import { AuroraText } from "$lib/components/magic-ui/aurora-text";
+  import { AuroraText } from "$lib/components/magic/aurora-text";
 </script>
 
 <p class="text-2xl">
@@ -139,7 +139,7 @@ Apply additional styling:
 
 ```svelte
 <script lang="ts">
-  import { AuroraText } from "$lib/components/magic-ui/aurora-text";
+  import { AuroraText } from "$lib/components/magic/aurora-text";
 </script>
 
 <span class="text-5xl">

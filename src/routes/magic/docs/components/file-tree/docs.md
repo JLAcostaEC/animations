@@ -35,7 +35,7 @@ The File Tree component consists of four main parts:
     File,
     CollapseButton,
     type TreeViewElement,
-  } from "$lib/components/magic-ui/file-tree";
+  } from "$lib/components/magic/file-tree";
 
   const elements: TreeViewElement[] = [
     {

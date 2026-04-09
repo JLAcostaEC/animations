@@ -39,7 +39,7 @@ Copy and paste the component source code into your project.
 
 ```svelte
 <script lang="ts">
-  import { ShinyButton } from "$lib/components/magic-ui/shiny-button";
+  import { ShinyButton } from "$lib/components/magic/shiny-button";
 </script>
 
 <ShinyButton>Shiny Button</ShinyButton>

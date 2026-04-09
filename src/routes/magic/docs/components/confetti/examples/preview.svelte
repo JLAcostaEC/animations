@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { Confetti } from "$lib/components/magic-ui/confetti";
+	import { Confetti } from "$lib/components/magic/confetti";
 	import { Button } from "$lib/components/ui/button";
 	let active = $state(true);
 

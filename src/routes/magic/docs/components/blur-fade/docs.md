@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/blur-fade.json
 
 ```svelte
 <script lang="ts">
-  import { BlurFade } from "$lib/components/magic-ui/blur-fade";
+  import { BlurFade } from "$lib/components/magic/blur-fade";
 </script>
 
 <BlurFade delay={0.2}>

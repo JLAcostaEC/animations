@@ -1,5 +1,5 @@
-﻿import Raw from "$lib/components/magic-ui/typing-animation/typing-animation.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/typing-animation/index.ts?raw";
+﻿import Raw from "$lib/components/magic/typing-animation/typing-animation.svelte?raw";
+import IndexTs from "$lib/components/magic/typing-animation/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -119,7 +119,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── typing-animation/
                 ├── typing-animation.svelte
                 └── index.ts`,

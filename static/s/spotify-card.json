@@ -14,7 +14,7 @@
 			"target": "spell/spotify-card/spotify-card.svelte"
 		},
 		{
-			"content": "import SpotifyCard from \"./spotify-card.svelte\";\r\nexport { SpotifyCard };",
+			"content": "import SpotifyCard from \"./spotify-card.svelte\";\nexport { SpotifyCard };\n",
 			"type": "registry:file",
 			"target": "spell/spotify-card/index.ts"
 		},

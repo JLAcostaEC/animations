@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { BentoCard, BentoGrid } from "$lib/components/magic-ui/bento-grid";
+	import { BentoCard, BentoGrid } from "$lib/components/magic/bento-grid";
 
 	// Icons
 	import FileTextIcon from "@lucide/svelte/icons/file-text";

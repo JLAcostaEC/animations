@@ -1,6 +1,6 @@
-﻿import BentoGridRaw from "$lib/components/magic-ui/bento-grid/bento-grid.svelte?raw";
-import BentoCardRaw from "$lib/components/magic-ui/bento-grid/bento-card.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/bento-grid/index.ts?raw";
+﻿import BentoGridRaw from "$lib/components/magic/bento-grid/bento-grid.svelte?raw";
+import BentoCardRaw from "$lib/components/magic/bento-grid/bento-card.svelte?raw";
+import IndexTs from "$lib/components/magic/bento-grid/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -66,7 +66,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── bento-grid/
                 ├── bento-grid.svelte
 				├── bento-card.svelte

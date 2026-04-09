@@ -5,7 +5,7 @@
 		File,
 		CollapseButton,
 		type TreeViewElement,
-	} from "$lib/components/magic-ui/file-tree";
+	} from "$lib/components/magic/file-tree";
 
 	const ELEMENTS: TreeViewElement[] = [
 		{

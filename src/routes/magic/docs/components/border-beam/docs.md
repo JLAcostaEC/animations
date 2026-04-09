@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/border-beam.json
 
 ```svelte
 <script lang="ts">
-  import { BorderBeam } from "$lib/components/magic-ui/border-beam";
+  import { BorderBeam } from "$lib/components/magic/border-beam";
 </script>
 
 <div class="relative overflow-hidden rounded-lg border">

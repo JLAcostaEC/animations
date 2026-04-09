@@ -6,7 +6,7 @@ This guide walks you through the complete process of creating and publishing a n
 
 ## Quick Overview
 
-1. Create main component in `src/lib/components/magic-ui/`
+1. Create main component in `src/lib/components/magic/`
 2. Create route in `src/routes/magic/docs/components/`
 3. Add component to `registry.json`
 4. Build registry: `pnpm registry:build`
@@ -17,12 +17,12 @@ This guide walks you through the complete process of creating and publishing a n
 
 ## Step 1: Create Main Component
 
-Create your component folder inside `src/lib/components/magic-ui/`.
+Create your component folder inside `src/lib/components/magic/`.
 
 ### Folder Structure
 
 ```
-src/lib/components/magic-ui/
+src/lib/components/magic/
 └── your-component/
     ├── your-component.svelte    # Main component
     ├── index.ts                 # Exports
@@ -70,11 +70,23 @@ export const GET: RequestHandler = async () => {
 folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── your-component/
                 ├── your-component.svelte
                 └── index.ts`,
 ```
+
+OR
+
+```markdown
+folderStructure: `src/
+	lib/
+	├── components/
+	│   └── magic/
+	│       └── warp-background/
+	│           ├── warp-background.svelte
+	│           └── index.ts
+  ```
 
 ## Step 3: Add Component to `registry.json`
 
@@ -88,12 +100,12 @@ Add your component entry to the `items` array in `registry.json`:
   "description": "Brief description of the component.",
   "files": [
     {
-      "path": "./src/lib/components/magic-ui/your-component/your-component.svelte",
+      "path": "./src/lib/components/magic/your-component/your-component.svelte",
       "type": "registry:component",
       "target": "magic/your-component/your-component.svelte"
     },
     {
-      "path": "./src/lib/components/magic-ui/your-component/index.ts",
+      "path": "./src/lib/components/magic/your-component/index.ts",
       "type": "registry:file",
       "target": "magic/your-component/index.ts"
     }
@@ -178,7 +190,7 @@ npx shadcn-svelte@latest add "http://localhost:5173/r/your-component.json"
    ```
 
 4. **PR Checklist**:
-   - [ ] Component created in `src/lib/components/magic-ui/`
+   - [ ] Component created in `src/lib/components/magic/`
    - [ ] Route created in `src/routes/magic/docs/components/`
    - [ ] `+page.svelte` with proper SEO
    - [ ] `llms.txt/+server.ts` serving `docs.md`

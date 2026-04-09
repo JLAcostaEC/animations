@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { TypingAnimation } from "$lib/components/magic-ui/typing-animation";
+	import { TypingAnimation } from "$lib/components/magic/typing-animation";
 </script>
 
 <TypingAnimation words={["First", "Second", "Final"]} loop={false} />

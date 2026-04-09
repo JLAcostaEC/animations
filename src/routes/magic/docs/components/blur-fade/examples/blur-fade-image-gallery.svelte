@@ -1,5 +1,5 @@
 ﻿<script lang="ts">
-	import { BlurFade } from "$lib/components/magic-ui/blur-fade";
+	import { BlurFade } from "$lib/components/magic/blur-fade";
 
 	const images = Array.from({ length: 9 }, (_, i) => {
 		const isLandscape = i % 2 === 0;
@@ -11,7 +11,7 @@
 
 <div class="columns-2 gap-4 sm:columns-3">
 	{#each images as imageUrl, idx (imageUrl)}
-		<BlurFade delay={0.25 + idx * 0.05} inView>
+		<BlurFade delay={0.25 + idx * 0.05} triggerOnView>
 			<img
 				class="mb-4 size-full rounded-lg object-contain"
 				src={imageUrl}

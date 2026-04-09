@@ -28,7 +28,7 @@ No additional dependencies required. Copy and paste the component source code in
 
 ```svelte
 <script lang="ts">
-  import { GridPattern } from "$lib/components/magic-ui/grid-pattern";
+  import { GridPattern } from "$lib/components/magic/grid-pattern";
 </script>
 
 <div class="relative h-[400px] w-full overflow-hidden rounded-lg border">

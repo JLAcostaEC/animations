@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/text-animate.jso
 
 ```svelte
 <script lang="ts">
-  import TextAnimate from "$lib/components/magic-ui/text-animate/text-animate.svelte";
+  import TextAnimate from "$lib/components/magic/text-animate/text-animate.svelte";
 </script>
 
 <TextAnimate
@@ -70,7 +70,7 @@ Animate entire text with a blur-in effect:
 
 ```svelte
 <script lang="ts">
-  import TextAnimate from "$lib/components/magic-ui/text-animate/text-animate.svelte";
+  import TextAnimate from "$lib/components/magic/text-animate/text-animate.svelte";
 </script>
 
 <TextAnimate
@@ -87,7 +87,7 @@ Animate each word with a slide-up effect:
 
 ```svelte
 <script lang="ts">
-  import TextAnimate from "$lib/components/magic-ui/text-animate/text-animate.svelte";
+  import TextAnimate from "$lib/components/magic/text-animate/text-animate.svelte";
 </script>
 
 <TextAnimate
@@ -104,7 +104,7 @@ Animate entire text with a scale-up spring effect:
 
 ```svelte
 <script lang="ts">
-  import TextAnimate from "$lib/components/magic-ui/text-animate/text-animate.svelte";
+  import TextAnimate from "$lib/components/magic/text-animate/text-animate.svelte";
 </script>
 
 <TextAnimate
@@ -121,7 +121,7 @@ Animate text line by line with a fade-in effect:
 
 ```svelte
 <script lang="ts">
-  import TextAnimate from "$lib/components/magic-ui/text-animate/text-animate.svelte";
+  import TextAnimate from "$lib/components/magic/text-animate/text-animate.svelte";
 </script>
 
 <TextAnimate
@@ -138,7 +138,7 @@ Animate each character with a slide-left effect:
 
 ```svelte
 <script lang="ts">
-  import TextAnimate from "$lib/components/magic-ui/text-animate/text-animate.svelte";
+  import TextAnimate from "$lib/components/magic/text-animate/text-animate.svelte";
 </script>
 
 <TextAnimate
@@ -155,7 +155,7 @@ Add a delay before the animation starts:
 
 ```svelte
 <script lang="ts">
-  import TextAnimate from "$lib/components/magic-ui/text-animate/text-animate.svelte";
+  import TextAnimate from "$lib/components/magic/text-animate/text-animate.svelte";
 </script>
 
 <TextAnimate
@@ -173,7 +173,7 @@ Control the total duration of the animation:
 
 ```svelte
 <script lang="ts">
-  import TextAnimate from "$lib/components/magic-ui/text-animate/text-animate.svelte";
+  import TextAnimate from "$lib/components/magic/text-animate/text-animate.svelte";
 </script>
 
 <TextAnimate
@@ -191,7 +191,7 @@ Use custom motion variants for complete control over the animation:
 
 ```svelte
 <script lang="ts">
-  import TextAnimate from "$lib/components/magic-ui/text-animate/text-animate.svelte";
+  import TextAnimate from "$lib/components/magic/text-animate/text-animate.svelte";
   import type { Variants } from "motion-sv";
 
   const customVariants: Variants = {

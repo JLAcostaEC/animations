@@ -1,5 +1,5 @@
 ﻿<script>
-	import { Pointer } from "$lib/components/magic-ui/pointer";
+	import { Pointer } from "$lib/components/magic/pointer";
 	import { motion } from "motion-sv";
 </script>
 

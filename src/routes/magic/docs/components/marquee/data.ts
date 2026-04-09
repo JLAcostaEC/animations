@@ -1,5 +1,5 @@
-﻿import Raw from "$lib/components/magic-ui/marquee/marquee.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/marquee/index.ts?raw";
+﻿import Raw from "$lib/components/magic/marquee/marquee.svelte?raw";
+import IndexTs from "$lib/components/magic/marquee/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -92,7 +92,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── marquee/
                 ├── marquee.svelte
                 └── index.ts`,

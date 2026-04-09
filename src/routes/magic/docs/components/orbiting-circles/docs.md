@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/orbiting-circles
 
 ```svelte
 <script lang="ts">
-  import OrbitingCircles from "$lib/components/magic-ui/orbiting-circles/orbiting-circles.svelte";
+  import OrbitingCircles from "$lib/components/magic/orbiting-circles/orbiting-circles.svelte";
 </script>
 
 <OrbitingCircles>

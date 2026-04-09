@@ -1,5 +1,5 @@
-﻿import PointerRaw from "$lib/components/magic-ui/pointer/pointer.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/pointer/index.ts?raw";
+﻿import PointerRaw from "$lib/components/magic/pointer/pointer.svelte?raw";
+import IndexTs from "$lib/components/magic/pointer/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -41,12 +41,12 @@ let installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-â””â”€â”€ lib/
-    â””â”€â”€ components/
-        â””â”€â”€ magic-ui/
-            â””â”€â”€ pointer/
-                â”œâ”€â”€ pointer.svelte
-                â””â”€â”€ index.ts`,
+└── lib/
+    └── components/
+        └── magic/
+            └── pointer/
+                ├── pointer.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {

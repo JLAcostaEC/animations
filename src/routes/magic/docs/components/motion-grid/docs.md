@@ -29,7 +29,7 @@ yarn add motion-sv
     MotionGrid,
     MotionGridCells,
     type Frames,
-  } from "$lib/components/magic-ui/motion-grid";
+  } from "$lib/components/magic/motion-grid";
 
   const frames: Frames = [
     [

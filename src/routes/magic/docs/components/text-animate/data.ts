@@ -222,7 +222,7 @@ export const data: ComponentDoc = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── text-animate/
                 ├── text-animate.svelte
                 └── index.ts`,

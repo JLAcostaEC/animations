@@ -1,5 +1,5 @@
-﻿import DottedMapRaw from "$lib/components/magic-ui/dotted-map/dotted-map.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/dotted-map/index.ts?raw";
+﻿import DottedMapRaw from "$lib/components/magic/dotted-map/dotted-map.svelte?raw";
+import IndexTs from "$lib/components/magic/dotted-map/index.ts?raw";
 
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
 import type { SEO } from "$lib/types/seo";
@@ -56,7 +56,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── dotted-map/
                 ├── dotted-map.svelte
                 └── index.ts`,

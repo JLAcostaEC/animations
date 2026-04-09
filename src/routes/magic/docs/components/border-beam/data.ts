@@ -1,5 +1,5 @@
-﻿import BorderBeamRaw from "$lib/components/magic-ui/border-beam/border-beam.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/border-beam/index.ts?raw";
+﻿import BorderBeamRaw from "$lib/components/magic/border-beam/border-beam.svelte?raw";
+import IndexTs from "$lib/components/magic/border-beam/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -71,7 +71,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── border-beam/
                 ├── border-beam.svelte
                 └── index.ts`,

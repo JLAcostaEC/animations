@@ -28,7 +28,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/marquee.json
 
 ```svelte
 <script lang="ts">
-  import Marquee from "$lib/components/magic-ui/marquee/marquee.svelte";
+  import Marquee from "$lib/components/magic/marquee/marquee.svelte";
 </script>
 
 <Marquee pauseOnHover class="[--duration:20s]">

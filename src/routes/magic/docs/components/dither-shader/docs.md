@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/dither-shader.js
 
 ```svelte
 <script lang="ts">
-  import DitherShader from "$lib/components/magic-ui/dither-shader/dither-shader.svelte";
+  import DitherShader from "$lib/components/magic/dither-shader/dither-shader.svelte";
 </script>
 
 <DitherShader>

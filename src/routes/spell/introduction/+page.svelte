@@ -8,7 +8,7 @@
 		UnorderedList,
 	} from "$lib/components/docs/markdown";
 	import * as Icons from "$lib/components/icons";
-	import { StripedPattern } from "$lib/components/magic-ui/striped-pattern";
+	import { StripedPattern } from "$lib/components/magic/striped-pattern";
 	import SEO from "$lib/seo/SEO.svelte";
 	import { Avatar, AvatarFallback, AvatarImage } from "$lib/components/ui/avatar";
 	import { Button } from "$lib/components/ui/button";

@@ -1,5 +1,5 @@
-﻿import Raw from "$lib/components/magic-ui/pixel-image/pixel-image.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/pixel-image/index.ts?raw";
+﻿import Raw from "$lib/components/magic/pixel-image/pixel-image.svelte?raw";
+import IndexTs from "$lib/components/magic/pixel-image/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";

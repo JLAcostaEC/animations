@@ -107,7 +107,7 @@ export const data: ComponentDoc = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── animated-gradient-text/
                 ├── animated-gradient-text.svelte
                 └── index.ts`,

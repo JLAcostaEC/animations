@@ -53,7 +53,7 @@ module.exports = {
 
 **4. Copy the component code:**
 
-Copy the `typing-animation.svelte` component into your project at `$lib/components/magic-ui/typing-animation/`.
+Copy the `typing-animation.svelte` component into your project at `$lib/components/magic/typing-animation/`.
 
 </Tab>
 </Tabs>
@@ -64,7 +64,7 @@ Copy the `typing-animation.svelte` component into your project at `$lib/componen
 
 ```svelte
 <script lang="ts">
-  import { TypingAnimation } from "$lib/components/magic-ui/typing-animation";
+  import { TypingAnimation } from "$lib/components/magic/typing-animation";
 </script>
 
 <TypingAnimation content="Hello World! 👋" />

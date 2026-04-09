@@ -93,8 +93,8 @@ Set-Content -Path "$baseDir\+page.svelte" -Value $pageSvelte -Encoding UTF8
 
 # Create data.ts
 $dataTs = @"
-import __PASCAL_CASE__Raw from "`$lib/components/magic-ui/$kebabCase/$kebabCase.svelte?raw";
-import IndexTs from "`$lib/components/magic-ui/$kebabCase/index.ts?raw";
+import __PASCAL_CASE__Raw from "`$lib/components/magic/$kebabCase/$kebabCase.svelte?raw";
+import IndexTs from "`$lib/components/magic/$kebabCase/index.ts?raw";
 
 import type { Example } from "`$lib/types/examples";
 import type { SEO } from "`$lib/types/seo";
@@ -167,7 +167,7 @@ let installBlock : InstallComponentDocs={
   folderStructure: ``src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── $kebabCase/
                 ├── $kebabCase.svelte
                 └── index.ts``,
@@ -217,7 +217,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/$kebabCase.json
 
 ``````svelte
 <script lang="ts">
-  import __PASCAL_CASE__ from "`$lib/components/magic-ui/$kebabCase/$kebabCase.svelte";
+  import __PASCAL_CASE__ from "`$lib/components/magic/$kebabCase/$kebabCase.svelte";
 </script>
 
 <__PASCAL_CASE__>
@@ -268,7 +268,7 @@ for ($i = 1; $i -le $ExampleCount; $i++) {
     $exampleName = "$kebabCase-example-$i"
     $exampleSvelte = @"
 <script lang="ts">
-  import __PASCAL_CASE__ from "`$lib/components/magic-ui/$kebabCase/$kebabCase.svelte";
+  import __PASCAL_CASE__ from "`$lib/components/magic/$kebabCase/$kebabCase.svelte";
 </script>
 
 <div class="flex items-center justify-center w-full h-full min-h-[200px]">

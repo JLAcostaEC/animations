@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/pointer.json
 
 ```svelte
 <script lang="ts">
-  import Pointer from "$lib/components/magic-ui/pointer/pointer.svelte";
+  import Pointer from "$lib/components/magic/pointer/pointer.svelte";
 </script>
 
 <Pointer>

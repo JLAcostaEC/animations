@@ -1,5 +1,5 @@
-﻿import WarpBackgroundRaw from "$lib/components/magic-ui/warp-background/warp-background.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/warp-background/index.ts?raw";
+﻿import WarpBackgroundRaw from "$lib/components/magic/warp-background/warp-background.svelte?raw";
+import IndexTs from "$lib/components/magic/warp-background/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -41,12 +41,12 @@ let installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-	lib/
-	├── components/
-	│   └── magic-ui/
-	│       └── warp-background/
-	│           ├── warp-background.svelte
-	│           └── index.ts`,
+└── lib/
+    └── components/
+        └── magic/
+            └── warp-background/
+                ├── warp-background.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {

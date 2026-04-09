@@ -1,5 +1,5 @@
-﻿import LightRaysRaw from "$lib/components/magic-ui/light-rays/light-rays.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/light-rays/index.ts?raw";
+﻿import LightRaysRaw from "$lib/components/magic/light-rays/light-rays.svelte?raw";
+import IndexTs from "$lib/components/magic/light-rays/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -41,7 +41,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── light-rays/
                 ├── light-rays.svelte
                 └── index.ts`,

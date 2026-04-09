@@ -1,5 +1,5 @@
-﻿import ProgressiveBlurRaw from "$lib/components/magic-ui/progressive-blur/progressive-blur.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/progressive-blur/index.ts?raw";
+﻿import ProgressiveBlurRaw from "$lib/components/magic/progressive-blur/progressive-blur.svelte?raw";
+import IndexTs from "$lib/components/magic/progressive-blur/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -51,7 +51,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── progressive-blur/
                 ├── progressive-blur.svelte
                 └── index.ts`,

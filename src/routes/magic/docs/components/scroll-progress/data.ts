@@ -1,5 +1,5 @@
-﻿import ScrollProgressRaw from "$lib/components/magic-ui/scroll-progress/scroll-progress.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/scroll-progress/index.ts?raw";
+﻿import ScrollProgressRaw from "$lib/components/magic/scroll-progress/scroll-progress.svelte?raw";
+import IndexTs from "$lib/components/magic/scroll-progress/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -41,12 +41,12 @@ let installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-	├── lib/
-	│   └── components/
-	│       └── magic-ui/
-	│           └── scroll-progress/
-	│               ├── scroll-progress.svelte
-	│               └── index.ts`,
+└── lib/
+    └── components/
+        └── magic/
+            └── scroll-progress/
+                ├── scroll-progress.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {

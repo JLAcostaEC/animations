@@ -1,5 +1,5 @@
-﻿import HeroVideoDialogRaw from "$lib/components/magic-ui/hero-video-dialog/hero-video-dialog.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/hero-video-dialog/index.ts?raw";
+﻿import HeroVideoDialogRaw from "$lib/components/magic/hero-video-dialog/hero-video-dialog.svelte?raw";
+import IndexTs from "$lib/components/magic/hero-video-dialog/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -58,7 +58,7 @@ let installBlock: InstallComponentDocs = {
 	folderStructure: `src/
 └── lib/
     └── components/
-        └── magic-ui/
+        └── magic/
             └── hero-video-dialog/
                 ├── hero-video-dialog.svelte
                 └── index.ts`,

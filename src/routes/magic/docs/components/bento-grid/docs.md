@@ -28,7 +28,7 @@ The grid is exported alongside the card component. A minimal example:
 
 ```svelte
 <script lang="ts">
-  import { BentoGrid, BentoCard } from "$lib/components/magic-ui/bento-grid";
+  import { BentoGrid, BentoCard } from "$lib/components/magic/bento-grid";
   import FileTextIcon from "@lucide/svelte/icons/file-text";
   import type { Snippet } from "svelte";
 
@@ -87,7 +87,7 @@ A more complete example lives in the `examples` folder, but the code below shows
 
 ```svelte
 <script lang="ts">
-  import { BentoCard, BentoGrid } from "$lib/components/magic-ui/bento-grid";
+  import { BentoCard, BentoGrid } from "$lib/components/magic/bento-grid";
 
   // Icons
   import FileTextIcon from "@lucide/svelte/icons/file-text";

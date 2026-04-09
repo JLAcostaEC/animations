@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/progressive-blur
 
 ```svelte
 <script lang="ts">
-  import ProgressiveBlur from "$lib/components/magic-ui/progressive-blur/progressive-blur.svelte";
+  import ProgressiveBlur from "$lib/components/magic/progressive-blur/progressive-blur.svelte";
 </script>
 
 <ProgressiveBlur>

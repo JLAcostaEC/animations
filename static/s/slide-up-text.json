@@ -19,7 +19,7 @@
 			"target": "spell/slide-up-text/slide-up-text.svelte"
 		},
 		{
-			"content": "import SlideUpText from \"./slide-up-text.svelte\";\r\nexport { SlideUpText };",
+			"content": "import SlideUpText from \"./slide-up-text.svelte\";\nexport { SlideUpText };\n",
 			"type": "registry:file",
 			"target": "spell/slide-up-text/index.ts"
 		}

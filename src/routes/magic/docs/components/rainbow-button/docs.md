@@ -66,7 +66,7 @@ Add the following to your `layout.css` or global CSS file:
 
 ```svelte
 <script lang="ts">
-  import { RainbowButton } from "$lib/components/magic-ui/rainbow-button";
+  import { RainbowButton } from "$lib/components/magic/rainbow-button";
 </script>
 
 <RainbowButton>Rainbow Button</RainbowButton>

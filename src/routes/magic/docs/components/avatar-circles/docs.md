@@ -12,7 +12,7 @@ npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/avatar-circles.j
 
 ```svelte
 <script lang="ts">
-  import { AvatarCircles } from "$lib/components/magic-ui/avatar-circles";
+  import { AvatarCircles } from "$lib/components/magic/avatar-circles";
 
   const avatars = [
     {
@@ -58,7 +58,7 @@ Display a simple stack of avatar circles.
 
 ```svelte
 <script lang="ts">
-  import { AvatarCircles } from "$lib/components/magic-ui/avatar-circles";
+  import { AvatarCircles } from "$lib/components/magic/avatar-circles";
 
   const avatars = [
     {
@@ -81,7 +81,7 @@ Add a count badge to show additional members not displayed.
 
 ```svelte
 <script lang="ts">
-  import { AvatarCircles } from "$lib/components/magic-ui/avatar-circles";
+  import { AvatarCircles } from "$lib/components/magic/avatar-circles";
 
   const avatars = [
     {

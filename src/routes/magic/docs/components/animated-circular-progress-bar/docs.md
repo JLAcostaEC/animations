@@ -16,7 +16,7 @@ The component requires a `value` and color props for the primary and secondary g
 
 ```svelte
 <script>
-  import { AnimatedCircularProgressBar } from "$lib/components/magic-ui/animated-circular-progress-bar";
+  import { AnimatedCircularProgressBar } from "$lib/components/magic/animated-circular-progress-bar";
 </script>
 
 <AnimatedCircularProgressBar

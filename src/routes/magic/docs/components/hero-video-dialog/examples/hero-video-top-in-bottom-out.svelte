@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { HeroVideoDialog } from "$lib/components/magic-ui/hero-video-dialog";
+	import { HeroVideoDialog } from "$lib/components/magic/hero-video-dialog";
 </script>
 
 <div>

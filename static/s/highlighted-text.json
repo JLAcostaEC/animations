@@ -14,7 +14,7 @@
 			"target": "spell/highlighted-text/highlighted-text.svelte"
 		},
 		{
-			"content": "import HighlightedText from \"./highlighted-text.svelte\";\r\nexport { HighlightedText };",
+			"content": "import HighlightedText from \"./highlighted-text.svelte\";\nexport { HighlightedText };\n",
 			"type": "registry:file",
 			"target": "spell/highlighted-text/index.ts"
 		}

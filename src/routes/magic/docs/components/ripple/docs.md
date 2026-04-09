@@ -49,7 +49,7 @@ Add the following to your `layout.css` or global CSS file:
 
 ```svelte
 <script lang="ts">
-  import { Ripple } from "$lib/components/magic-ui/ripple";
+  import { Ripple } from "$lib/components/magic/ripple";
 </script>
 
 <div class="relative h-screen w-full">

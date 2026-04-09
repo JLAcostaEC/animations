@@ -1,5 +1,5 @@
-﻿import TerminalRaw from "$lib/components/magic-ui/terminal/terminal.svelte?raw";
-import IndexTs from "$lib/components/magic-ui/terminal/index.ts?raw";
+﻿import TerminalRaw from "$lib/components/magic/terminal/terminal.svelte?raw";
+import IndexTs from "$lib/components/magic/terminal/index.ts?raw";
 
 import type { Example } from "$lib/types/examples";
 import type { SEO } from "$lib/types/seo";
@@ -41,12 +41,12 @@ let installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-â””â”€â”€ lib/
-    â””â”€â”€ components/
-        â””â”€â”€ magic-ui/
-            â””â”€â”€ terminal/
-                â”œâ”€â”€ terminal.svelte
-                â””â”€â”€ index.ts`,
+└── lib/
+    └── components/
+        └── magic/
+            └── terminal/
+                ├── terminal.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {

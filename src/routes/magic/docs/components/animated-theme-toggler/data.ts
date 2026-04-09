@@ -1,6 +1,6 @@
-﻿import AnimatedThemeTogglerRaw from "$lib/components/magic-ui/animated-theme-toggler/animated-theme-toggler.svelte?raw";
+﻿import AnimatedThemeTogglerRaw from "$lib/components/magic/animated-theme-toggler/animated-theme-toggler.svelte?raw";
 
-import IndexTs from "$lib/components/magic-ui/animated-theme-toggler/index.ts?raw";
+import IndexTs from "$lib/components/magic/animated-theme-toggler/index.ts?raw";
 
 import type { SEO } from "$lib/types/seo";
 import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
@@ -52,13 +52,13 @@ let installBlock: InstallComponentDocs = {
 }`,
 		lang: "css",
 	},
-	folderStructure: `src
-  ├── lib
-  │   └── components
-  │       └── magic-ui
-  │           └── animated-theme-toggler
-  │               ├── animated-theme-toggler.svelte
-  │               └── index.ts`,
+	folderStructure: `src/
+└── lib/
+    └── components/
+        └── magic/
+            └── animated-theme-toggler/
+                ├── animated-theme-toggler.svelte
+                └── index.ts`,
 };
 export const data: ComponentDoc = {
 	...meta,
