@@ -1,50 +1,55 @@
 # Svelte 5 Animations
 
 Beautiful, copy-paste animation components for Svelte 5.
-Built with [motion-sv](https://github.com/hanielu/motion-svelte) and Tailwind CSS.
+Built with [motion-sv](https://github.com/hanielu/motion-svelte), Tailwind CSS and Shadcn Svelte registry.
 
-## Installation
+[![GitHub Sponsors](https://img.shields.io/badge/GitHub%20Sponsors-Support-pink?logo=githubsponsors)](https://github.com/sponsors/SikandarJODD)
 
-1. Create SvelteKit project with Tailwind CSS
+## New Stuff
 
-   ```bash
-   pnpm dlx sv create my-app --add tailwind/css
-   ```
+- `21` new Spell UI animation components
+- Now shipping `77` total components across both libraries
 
-2. Initialize shadcn-svelte
+## What's Included
 
-   ```bash
-   pnpm dlx shadcn-svelte@latest init
-   ```
+1. `Svelte Magic UI` - `56` animation components
+2. `Svelte Spell UI` - `21` animation components
 
-3. Install motion-sv library:
-   ```bash
-   pnpm add motion-sv
-   ```
+Browse the library:
 
-## Usage
+- Main docs: [sv-animations.vercel.app](https://sv-animations.vercel.app)
+- Spell UI: [sv-animations.vercel.app/spell](https://sv-animations.vercel.app/spell)
 
-1. Visit any component page
-2. Install component via CLI or copy manually:
-   ```bash
-   pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/morphing-text.json
-   ```
-3. Check out the examples for more usage patterns
-4. Found an issue? Reach out via [Twitter](https://x.com/Sikandar_Bhide) or open a [GitHub issue](https://github.com/SikandarJODD/animations/issues)
+## Quick Start
 
-## Inspiration
+```bash
+pnpm dlx sv create my-app
+# select tailwind css option
+pnpm dlx shadcn-svelte@latest init
+pnpm add motion-sv
+```
 
-This project is inspired by Magic UI
+Install a component:
 
-- [Magic UI](https://magicui.design/)
+```bash
+pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/morphing-text.json
+```
 
-## Share & Support
+## Registry Structure
 
-- Share animations on Twitter and social platforms
-- Open [new issues](https://github.com/SikandarJODD/animations/issues) - it helps me solve problems
-- Suggest new components & improvements
-- Follow [Bhide Svelte](https://twitter.com/Sikandar_Bhide) on Twitter
+Use `/r/` for Magic UI components
+Use `/s/` for Spell UI components.
 
----
+## Credits
 
-Made with ❤️ for the Svelte community
+- [Hanielu](https://github.com/hanielu) - For creating the amazing  `motion-sv` library that powers these animations.
+- [Magic UI](https://magic-ui.com/) - For inspiring the design and concept of the Magic UI components.
+- [Spell UI](https://spell.sh/) - Thankyou Tom 😊
+## Support
+
+- Open issues: [Create New Issue / Report the Bug](https://github.com/SikandarJODD/animations/issues)
+- Sponsor the project: [GitHub Sponsors](https://github.com/sponsors/SikandarJODD)
+
+## License
+
+MIT License. See [LICENSE](LICENSE) for details.
