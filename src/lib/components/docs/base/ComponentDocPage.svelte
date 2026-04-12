@@ -64,7 +64,7 @@
 </script>
 
 <SEOComponent title={seo.title} description={seo.description} keywords={seo.keywords} />
-<div class="space-y-8 md:space-y-8">
+<div class="space-y-6 md:space-y-8">
 	<section>
 		<div class="flex flex-col justify-between gap-3 md:flex-row md:items-center md:gap-4">
 			<H1 id="introduction">{title}</H1>
@@ -113,7 +113,7 @@
 								{example.description}
 							</Paragraph>
 						{/if} -->
-						<PreviewComponent code={example.code}>
+						<PreviewComponent code={example.code} class={example.previewClass}>
 							<example.preview />
 						</PreviewComponent>
 					</div>
