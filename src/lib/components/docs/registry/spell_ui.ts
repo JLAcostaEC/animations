@@ -34,6 +34,14 @@ export const spellUIComponents: SpellComponent[] = [
 		desc: "A 3D book-cover wrapper with hover depth and optional texture.",
 	},
 	{
+		id: "tilt-card",
+		name: "Tilt Card",
+		href: "/spell/tilt-card",
+		category: "Components",
+		desc: "A cursor-reactive tilt wrapper with configurable scale, tilt depth, perspective, and spotlight.",
+		badge: "New",
+	},
+	{
 		id: "badge",
 		name: "Badge",
 		href: "/spell/badge",

@@ -12,6 +12,14 @@
 		"relativeUrl": "perspective-book.json"
 	},
 	{
+		"name": "tilt-card",
+		"title": "Tilt Card",
+		"type": "registry:block",
+		"description": "A cursor-reactive tilt wrapper with configurable scale, tilt depth, perspective, and spotlight.",
+		"registryDependencies": [],
+		"relativeUrl": "tilt-card.json"
+	},
+	{
 		"name": "badge",
 		"title": "Badge",
 		"type": "registry:block",

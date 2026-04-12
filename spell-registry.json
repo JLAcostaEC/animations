@@ -27,6 +27,25 @@
 			"registryDependencies": []
 		},
 		{
+			"name": "tilt-card",
+			"type": "registry:block",
+			"title": "Tilt Card",
+			"description": "A cursor-reactive tilt wrapper with configurable scale, tilt depth, perspective, and spotlight.",
+			"files": [
+				{
+					"path": "./src/lib/components/spell/tilt-card/tilt-card.svelte",
+					"type": "registry:component",
+					"target": "spell/tilt-card/tilt-card.svelte"
+				},
+				{
+					"path": "./src/lib/components/spell/tilt-card/index.ts",
+					"type": "registry:file",
+					"target": "spell/tilt-card/index.ts"
+				}
+			],
+			"registryDependencies": []
+		},
+		{
 			"name": "badge",
 			"type": "registry:block",
 			"title": "Badge",
