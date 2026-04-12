@@ -47,12 +47,12 @@ const installBlock: InstallComponentDocs = {
 		},
 	],
 	folderStructure: `src/
-  lib/
-    components/
-      spell/
-        tilt-card/
-          tilt-card.svelte
-          index.ts`,
+└── lib/
+    └── components/
+        └── spell/
+            └── tilt-card/
+                ├── tilt-card.svelte
+                └── index.ts`,
 };
 
 export const data: ComponentDoc = {
@@ -65,35 +65,6 @@ export const data: ComponentDoc = {
 		hideLines: true,
 	},
 	installBlock,
-	examples: [
-		{
-			name: "Scale",
-			preview: ScaleExample,
-			code: {
-				filename: "scale-example.svelte",
-				filecode: ScaleExampleRaw,
-				lang: "svelte",
-			},
-		},
-		{
-			name: "Tilt Limit",
-			preview: TiltLimitExample,
-			code: {
-				filename: "tilt-limit-example.svelte",
-				filecode: TiltLimitExampleRaw,
-				lang: "svelte",
-			},
-		},
-		{
-			name: "Perspective",
-			preview: PerspectiveExample,
-			code: {
-				filename: "perspective-example.svelte",
-				filecode: PerspectiveExampleRaw,
-				lang: "svelte",
-			},
-		},
-	],
 	seo,
 	props: [
 		{

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { cn } from "$lib/utils";
 	import type { Snippet } from "svelte";
-	import type { ClassValue, HTMLAttributes } from "svelte/elements";
+	import type { HTMLAttributes } from "svelte/elements";
 
 	type TiltEffect = "gravitate" | "evade";
 
@@ -12,7 +12,7 @@
 		effect?: TiltEffect;
 		spotlight?: boolean;
 		children?: Snippet;
-		class?: ClassValue;
+		class?: string;
 		style?: string;
 	}
 
@@ -96,7 +96,7 @@
 		>
 			<div
 				class="absolute h-[200%] w-[200%] rounded-full opacity-100 dark:opacity-60"
-				style={`left: ${spotlightLeft}; top: ${spotlightTop}; transform: translate(-50%, -50%); transition: left 0.2s ease-out, top 0.2s ease-out; background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 40%);`}
+				style="left: {spotlightLeft}; top: {spotlightTop}; transform: translate(-50%, -50%); transition: left 0.2s ease-out, top 0.2s ease-out; background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 40%);"
 			></div>
 		</div>
 	{/if}

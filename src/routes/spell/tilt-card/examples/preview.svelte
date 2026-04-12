@@ -40,56 +40,28 @@
 	</svg>
 {/snippet}
 
-<div class="flex min-h-[320px] items-center justify-center py-8">
+<div class="flex min-h-80 items-center justify-center">
 	<TiltCard
 		tiltLimit={10}
 		scale={1.05}
 		perspective={1200}
-		class="relative aspect-video w-[360px] cursor-pointer overflow-hidden rounded-[1.5rem] bg-gradient-to-br from-neutral-100 via-neutral-200 to-neutral-300 p-6 shadow-[0px_8px_16px_rgba(0,0,0,0.08),0px_16px_32px_rgba(0,0,0,0.06),0px_24px_48px_rgba(0,0,0,0.04),inset_0_0_0_1px_rgba(0,0,0,0.06)] dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900 dark:shadow-[0px_8px_16px_rgba(0,0,0,0.3),0px_16px_32px_rgba(0,0,0,0.2),0px_24px_48px_rgba(0,0,0,0.1),inset_0_0_0_1px_rgba(255,255,255,0.06)]"
+		class="flex aspect-video w-90 cursor-pointer flex-col justify-between overflow-hidden rounded-2xl bg-linear-to-br from-neutral-100 via-neutral-200 to-neutral-300 p-6 shadow-[0px_8px_16px_rgba(0,0,0,0.08),0px_16px_32px_rgba(0,0,0,0.06),0px_24px_48px_rgba(0,0,0,0.04),inset_0_0_0_1px_rgba(0,0,0,0.06)] dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900 dark:shadow-[0px_8px_16px_rgba(0,0,0,0.3),0px_16px_32px_rgba(0,0,0,0.2),0px_24px_48px_rgba(0,0,0,0.1),inset_0_0_0_1px_rgba(255,255,255,0.06)]"
 	>
-		<div class="pointer-events-none absolute inset-0">
-			<div
-				class="absolute top-0 right-0 h-28 w-28 rounded-full bg-white/35 blur-3xl dark:bg-white/10"
-			></div>
-			<div
-				class="absolute bottom-0 left-0 h-24 w-24 rounded-full bg-black/8 blur-3xl dark:bg-black/25"
-			></div>
+		<div class="flex items-start justify-between">
+			{@render spellLogo()}
+			{@render visaLogo()}
 		</div>
 
-		<div class="relative flex h-full flex-col justify-between">
-			<div class="flex items-start justify-between">
-				{@render spellLogo()}
-				{@render visaLogo()}
+		<div class="flex items-end justify-between">
+			<div>
+				<p class="text-muted-foreground text-xs">John Doe</p>
+				<p class="font-mono text-sm font-medium tracking-tight tabular-nums">
+					5367 4567 8901 2345
+				</p>
 			</div>
-
-			<div class="space-y-5">
-				<div
-					class="inline-flex h-9 w-14 items-center rounded-xl border border-black/8 bg-white/40 px-2 shadow-inner backdrop-blur-sm dark:border-white/10 dark:bg-white/6"
-				>
-					<div
-						class="h-full w-full rounded-lg bg-gradient-to-br from-neutral-100 to-neutral-300 dark:from-neutral-200/70 dark:to-neutral-500/40"
-					></div>
-				</div>
-
-				<div class="flex items-end justify-between gap-4">
-					<div>
-						<p class="text-xs text-neutral-600 dark:text-neutral-400">John Doe</p>
-						<p
-							class="font-mono text-sm font-medium tracking-tight text-neutral-950 tabular-nums dark:text-white"
-						>
-							5367 4567 8901 2345
-						</p>
-					</div>
-
-					<div class="text-left">
-						<p class="text-xs text-neutral-600 dark:text-neutral-400">Exp.</p>
-						<p
-							class="font-mono text-sm font-medium text-neutral-950 tabular-nums dark:text-white"
-						>
-							12/25
-						</p>
-					</div>
-				</div>
+			<div class="text-left">
+				<p class="text-muted-foreground text-xs">Exp.</p>
+				<p class="font-mono text-sm font-medium tabular-nums">12/25</p>
 			</div>
 		</div>
 	</TiltCard>

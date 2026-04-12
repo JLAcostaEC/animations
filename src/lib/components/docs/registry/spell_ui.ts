@@ -42,6 +42,14 @@ export const spellUIComponents: SpellComponent[] = [
 		badge: "New",
 	},
 	{
+		id: "fallback-avatar",
+		name: "Fallback Avatar",
+		href: "/spell/fallback-avatar",
+		category: "Components",
+		desc: "A seeded canvas avatar with hover animation, WebGL rendering, and a deterministic 2D fallback.",
+		badge: "New",
+	},
+	{
 		id: "badge",
 		name: "Badge",
 		href: "/spell/badge",
