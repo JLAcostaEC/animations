@@ -1,6 +1,6 @@
 @import "tailwindcss";
-
 @import "tw-animate-css";
+@import "@fontsource-variable/figtree";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -140,6 +140,7 @@
 	/* Font */
 	--font-sans: "Geist", sans-serif;
 	--font-mono: "Geist Mono", monospace;
+	--font-figtree: "Figtree Variable", sans-serif;
 
 	/* Svelte Magic UI */
 	--animate-gradient: gradient 8s linear infinite;
