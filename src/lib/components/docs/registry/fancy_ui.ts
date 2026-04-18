@@ -12,13 +12,13 @@ export interface FancyComponent {
 }
 
 export const fancyUIComponents: FancyComponent[] = [
-	{
-		id: "overview",
-		name: "Overview",
-		href: "/fancy",
-		category: "Overview",
-		desc: "A landing page for the Fancy component collection.",
-	},
+	// {
+	// 	id: "overview",
+	// 	name: "Overview",
+	// 	href: "/fancy",
+	// 	category: "Overview",
+	// 	desc: "A landing page for the Fancy component collection.",
+	// },
 	{
 		id: "media-between-text",
 		name: "Media Between Text",

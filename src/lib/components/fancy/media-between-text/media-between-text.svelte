@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { motion, useInView, type AnimationOptions, type Variants } from 'motion-sv';
-	import type { HTMLAttributes, SvelteHTMLElements } from 'svelte/elements';
+	import type { ClassValue, HTMLAttributes, SvelteHTMLElements } from 'svelte/elements';
 	import { cn } from '$lib/utils';
 
 	type ElementType = keyof SvelteHTMLElements;
@@ -17,7 +17,7 @@
 		secondText: string;
 		mediaUrl: string;
 		mediaType: 'image' | 'video';
-		mediaContainerClassName?: string;
+		mediaContainerClass?: string;
 		fallbackUrl?: string;
 		as?: ElementType;
 		autoPlay?: boolean;
@@ -29,8 +29,8 @@
 		containerRef?: HTMLElement | Document | null;
 		useInViewOptionsProp?: UseInViewOptions;
 		animationVariants?: Variants;
-		leftTextClassName?: string;
-		rightTextClassName?: string;
+		leftTextClass?: ClassValue;
+		rightTextClass?: string;
 		class?: string;
 	}
 
@@ -48,7 +48,7 @@
 		secondText,
 		mediaUrl,
 		mediaType,
-		mediaContainerClassName,
+		mediaContainerClass,
 		fallbackUrl,
 		as = 'p',
 		autoPlay = true,
@@ -65,8 +65,8 @@
 		},
 		animationVariants = defaultAnimationVariants,
 		class: className,
-		leftTextClassName,
-		rightTextClassName,
+		leftTextClass,
+		rightTextClass,
 		...props
 	}: MediaBetweenTextProps = $props();
 
@@ -125,12 +125,12 @@
 	}}
 	{...props}
 >
-	<MotionTextComponent layout class={leftTextClassName}>
+	<MotionTextComponent layout class={leftTextClass}>
 		{firstText}
 	</MotionTextComponent>
 
 	<motion.div
-		class={mediaContainerClassName}
+		class={mediaContainerClass}
 		initial="initial"
 		animate={shouldAnimate ? 'animate' : 'initial'}
 		variants={animationVariants}
@@ -155,7 +155,7 @@
 		{/if}
 	</motion.div>
 
-	<MotionTextComponent layout class={rightTextClassName}>
+	<MotionTextComponent layout class={rightTextClass}>
 		{secondText}
 	</MotionTextComponent>
 </div>

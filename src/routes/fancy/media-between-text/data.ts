@@ -4,12 +4,14 @@ import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/typ
 import type { SEO } from "$lib/types/seo";
 import Preview from "./examples/preview.svelte";
 import PreviewCodeRaw from "./examples/preview.svelte?raw";
+import type { Example } from "$lib/types/examples";
+import ScrollDemo from "./examples/scroll-demo.svelte";
+import ScrollDemoRaw from "./examples/scroll-demo.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "media-between-text",
 	title: "Media Between Text",
-	description:
-		"Reveal image or video media between two pieces of text with hover, view, or manual triggers.",
+	description: "A component that animates a media (image or video) between two text elements.",
 	category: "fancy",
 	badge: "new",
 };
@@ -52,16 +54,29 @@ const installBlock: InstallComponentDocs = {
                 +-- index.ts`,
 };
 
+let examples: Example[] = [
+	{
+		name: "Scroll-triggered Reveal",
+		preview: ScrollDemo,
+		code: {
+			filename: "scroll-demo.svelte",
+			filecode: ScrollDemoRaw,
+			lang: "svelte",
+		},
+	},
+];
+
 export const data: ComponentDoc = {
 	...meta,
 	preview: Preview,
+	previewClass: "min-h-120",
 	previewCode: {
 		filename: "preview.svelte",
 		filecode: PreviewCodeRaw,
-		lang: "svelte",
 		hideLines: true,
 		highlight: [2],
 	},
+	examples,
 	installBlock,
 	seo,
 	props: [

@@ -14,6 +14,7 @@
 		class="max-h-[calc(100vh-6rem)] pt-4 pr-1 pb-8"
 		scrollbarXClasses="hidden"
 		scrollbarYClasses="hidden"
+		fadeEffect={false}
 	>
 		<Sidebar.Content>
 			{#each fancyUISidebarGroups as group (group.title)}

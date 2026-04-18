@@ -1,18 +1,13 @@
 <script lang="ts">
 	import { MediaBetweenText } from "$lib/components/fancy/media-between-text";
-	import Image from "$lib/assets/pixel-image-demo.jpg";
 </script>
 
-<div class="flex min-h-64 items-center justify-center px-4 py-12">
-	<MediaBetweenText
-		firstText="Design"
-		secondText="Motion"
-		mediaUrl={Image}
-		mediaType="image"
-		alt="Abstract landscape used in the Media Between Text preview"
-		class="items-center gap-3 text-4xl font-semibold tracking-tight sm:text-6xl"
-		leftTextClassName="leading-none"
-		rightTextClassName="leading-none"
-		mediaContainerClassName="h-14 overflow-hidden rounded-md sm:h-20"
-	/>
-</div>
+<MediaBetweenText
+	firstText="Mañgo"
+	secondText="Time"
+	mediaUrl="https://i.pinimg.com/736x/09/66/63/0966639167069429771428b4d4fd4c2a.jpg"
+	mediaType="image"
+	alt="Abstract landscape used in the Media Between Text preview"
+	class="flex w-full cursor-pointer flex-row items-center justify-center text-2xl font-figtree! font-light text-[#ff5941] lowercase sm:text-6xl"
+	mediaContainerClass="w-full rounded-xl h-[30px] sm:h-[100px] overflow-hidden mx-px mt-1 sm:mx-2 sm:mt-4"
+/>
