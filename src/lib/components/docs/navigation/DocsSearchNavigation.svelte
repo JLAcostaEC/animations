@@ -4,8 +4,10 @@
 	import * as Command from "$lib/components/ui/command/index.js";
 	import * as Kbd from "$lib/components/ui/kbd/index.js";
 	import {
+		fancyUIComponents,
 		magicUIComponents,
 		spellUIComponents,
+		type FancyComponent,
 		type MagicComponent,
 		type SpellComponent,
 	} from "../registry";
@@ -34,6 +36,10 @@
 	];
 
 	const spellComponents: SpellComponent[] = spellUIComponents.filter(
+		(component) => component.category !== "Overview"
+	);
+
+	const fancyComponents: FancyComponent[] = fancyUIComponents.filter(
 		(component) => component.category !== "Overview"
 	);
 </script>
@@ -89,7 +95,7 @@
 	<Command.List>
 		<Command.Empty>No results found.</Command.Empty>
 		<Command.Group heading="Documentation">
-			{#each docs as doc}
+			{#each docs as doc (doc.id)}
 				<Command.LinkItem value={doc.id} onclick={() => (open = false)} href={doc.href}>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -127,7 +133,7 @@
 			{/each}
 		</Command.Group>
 		<Command.Group heading="Components">
-			{#each magicUIComponents as component}
+			{#each magicUIComponents as component (component.id)}
 				<Command.LinkItem
 					value={component.id}
 					onclick={() => (open = false)}
@@ -157,7 +163,7 @@
 			{/each}
 		</Command.Group>
 		<Command.Group heading="Spell UI">
-			{#each spellComponents as component}
+			{#each spellComponents as component (component.id)}
 				<Command.LinkItem
 					value={component.id}
 					onclick={() => (open = false)}
@@ -188,6 +194,48 @@
 						<span>{component.name}</span>
 					</span>
 					<Badge variant="secondary" class="rounded-full">Spell</Badge>
+				</Command.LinkItem>
+			{/each}
+		</Command.Group>
+		<Command.Group heading="Fancy Components">
+			{#each fancyComponents as component (component.id)}
+				<Command.LinkItem
+					value={component.id}
+					onclick={() => (open = false)}
+					href={component.href}
+					class="justify-between gap-3"
+				>
+					<span class="flex items-center gap-2">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="16"
+							height="16"
+							viewBox="0 0 24 24"
+							fill="none"
+							role="img"
+							color="currentColor"
+						>
+							<circle opacity="0.2" cx="12" cy="12" r="10" fill="currentColor"
+							></circle>
+							<path
+								d="M8.5 12.5L11 15L16 9"
+								stroke="currentColor"
+								stroke-width="1.5"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							></path>
+							<circle
+								cx="12"
+								cy="12"
+								r="10"
+								stroke="currentColor"
+								stroke-width="1.5"
+								stroke-linejoin="round"
+							></circle>
+						</svg>
+						<span>{component.name}</span>
+					</span>
+					<Badge variant="fuchsia" class="rounded-full">Fancy</Badge>
 				</Command.LinkItem>
 			{/each}
 		</Command.Group>

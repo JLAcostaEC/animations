@@ -7,6 +7,10 @@ import PreviewCodeRaw from "./examples/preview.svelte?raw";
 import type { Example } from "$lib/types/examples";
 import ScrollDemo from "./examples/scroll-demo.svelte";
 import ScrollDemoRaw from "./examples/scroll-demo.svelte?raw";
+import OpenCloseTrigger from "./examples/open-close-trigger.svelte";
+import OpenCloseTriggerRaw from "./examples/open-close-trigger.svelte?raw";
+import VerticalOpen from "./examples/vertical-open.svelte";
+import VerticalOpenRaw from "./examples/vertical-open.svelte?raw";
 
 export const meta: ComponentMeta = {
 	id: "media-between-text",
@@ -62,6 +66,26 @@ let examples: Example[] = [
 			filename: "scroll-demo.svelte",
 			filecode: ScrollDemoRaw,
 			lang: "svelte",
+		},
+	},
+	{
+		name: "Open/Close Trigger",
+		preview: OpenCloseTrigger,
+		code: {
+			filename: "open-close-trigger.svelte",
+			filecode: OpenCloseTriggerRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Vertical Open/Close",
+		preview: VerticalOpen,
+		previewClass: "min-h-90",
+		code: {
+			filename: "vertical-open-close.svelte",
+			filecode: VerticalOpenRaw,
+			lang: "svelte",
+			highlight: [21, 23, [31, 43]],
 		},
 	},
 ];
