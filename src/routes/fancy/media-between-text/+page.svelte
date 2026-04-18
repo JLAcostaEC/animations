@@ -20,7 +20,7 @@
 	keywords={data.seo.keywords}
 />
 
-<div class="space-y-6 md:space-y-8">
+<div class="">
 	<section>
 		<div class="flex flex-col justify-between gap-3 md:flex-row md:items-center md:gap-4">
 			<H1 id="introduction" class="font-figtree">{data.title}</H1>
@@ -35,14 +35,15 @@
 		</div>
 	</section>
 
-	<section>
+	<section class="mt-6">
 		<PreviewComponent code={data.previewCode} class={data.previewClass}>
 			{#if PreviewComp}
 				<PreviewComp />
 			{/if}
 		</PreviewComponent>
 	</section>
-	<section>
+
+	<section class="mt-6">
 		<H2 id="installation">Installation</H2>
 		<InstallComponent
 			{installUrl}
@@ -56,8 +57,46 @@
 		/>
 	</section>
 
+	<section class="font-figtree mt-14">
+		<H2 id="logic" class="font-figtree">Logic Image</H2>
+		<div class="mt-3 space-y-4">
+			<!-- <Paragraph class="font-figtree">
+				The component renders
+				<code class="bg-secondary text-foreground rounded px-1.5 py-0.5 text-sm"
+					>firstText</code
+				>,
+				<code class="bg-secondary text-foreground rounded px-1.5 py-0.5 text-sm">media</code
+				>, then
+				<code class="bg-secondary text-foreground rounded px-1.5 py-0.5 text-sm"
+					>secondText</code
+				>.
+			</Paragraph>
+			<Paragraph>
+				Use
+				<code class="bg-secondary text-foreground rounded px-1.5 py-0.5 text-sm"
+					>triggerType</code
+				>
+				as
+				<code class="bg-secondary text-foreground rounded px-1.5 py-0.5 text-sm">hover</code
+				>,
+				<code class="bg-secondary text-foreground rounded px-1.5 py-0.5 text-sm"
+					>inView</code
+				>, or
+				<code class="bg-secondary text-foreground rounded px-1.5 py-0.5 text-sm">ref</code
+				>.</Paragraph
+			> -->
+			<div>
+				<img
+					src="/svgs/media-between-text.svg"
+					alt="Media Between Text logic"
+					class="border-border h-90 w-fit mx-auto rounded-xl border"
+				/>
+			</div>
+		</div>
+	</section>
+
 	{#if data.examples && data.examples.length > 0}
-		<section>
+		<section class="mt-14">
 			<H2 id="examples">Examples</H2>
 			<div class="mt-4 space-y-8">
 				{#each data.examples as example (example.name)}

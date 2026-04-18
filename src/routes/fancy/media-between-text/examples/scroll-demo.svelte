@@ -11,7 +11,7 @@
 		{
 			src: "https://github.com/dummdidumm.png",
 			left: "Simon ",
-			right: "H",
+			right: "Holthausen",
 			url: "https://github.com/dummdidumm",
 		},
 		{

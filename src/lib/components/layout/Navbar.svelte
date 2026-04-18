@@ -43,7 +43,7 @@
 			badge: "new",
 		},
 		{
-			href: "/fancy",
+			href: "/fancy/media-between-text",
 			title: "Svelte Fancy Components",
 			description: "Unique, eye-catching components for Svelte.",
 			icon: BookOpenIcon,
