@@ -1,0 +1,187 @@
+import MediaBetweenTextRaw from "$lib/components/fancy/media-between-text/media-between-text.svelte?raw";
+import IndexTsRaw from "$lib/components/fancy/media-between-text/index.ts?raw";
+import type { ComponentDoc, ComponentMeta, InstallComponentDocs } from "$lib/types/structure";
+import type { SEO } from "$lib/types/seo";
+import Preview from "./examples/preview.svelte";
+import PreviewCodeRaw from "./examples/preview.svelte?raw";
+
+export const meta: ComponentMeta = {
+	id: "media-between-text",
+	title: "Media Between Text",
+	description:
+		"Reveal image or video media between two pieces of text with hover, view, or manual triggers.",
+	category: "fancy",
+	badge: "new",
+};
+
+const seo: SEO = {
+	title: "Media Between Text",
+	description:
+		"Learn how to use the Media Between Text Fancy component in Svelte, including image and video media reveals between text fragments.",
+	keywords: [
+		"Svelte",
+		"Media Between Text",
+		"Fancy UI",
+		"Svelte Fancy UI",
+		"Motion SV",
+		"Media Reveal",
+	],
+};
+
+const installBlock: InstallComponentDocs = {
+	installCode: [
+		{
+			filename: "media-between-text.svelte",
+			filecode: MediaBetweenTextRaw,
+			lang: "svelte",
+			isExpand: true,
+		},
+		{
+			filename: "index.ts",
+			filecode: IndexTsRaw,
+			lang: "typescript",
+		},
+	],
+	packages: ["motion-sv"],
+	folderStructure: `src/
++-- lib/
+    +-- components/
+        +-- fancy/
+            +-- media-between-text/
+                |-- media-between-text.svelte
+                +-- index.ts`,
+};
+
+export const data: ComponentDoc = {
+	...meta,
+	preview: Preview,
+	previewCode: {
+		filename: "preview.svelte",
+		filecode: PreviewCodeRaw,
+		lang: "svelte",
+		hideLines: true,
+		highlight: [2],
+	},
+	installBlock,
+	seo,
+	props: [
+		{
+			props: [
+				{
+					name: "firstText",
+					type: "string",
+					required: true,
+					description: "Text rendered before the media reveal.",
+				},
+				{
+					name: "secondText",
+					type: "string",
+					required: true,
+					description: "Text rendered after the media reveal.",
+				},
+				{
+					name: "mediaUrl",
+					type: "string",
+					required: true,
+					description: "Image or video source URL.",
+				},
+				{
+					name: "mediaType",
+					type: '"image" | "video"',
+					required: true,
+					description: "Controls whether an img or video element is rendered.",
+				},
+				{
+					name: "mediaContainerClassName",
+					type: "string | undefined",
+					default: "undefined",
+					description: "Classes applied to the animated media wrapper.",
+				},
+				{
+					name: "fallbackUrl",
+					type: "string | undefined",
+					default: "undefined",
+					description: "Poster URL used when rendering video media.",
+				},
+				{
+					name: "as",
+					type: "keyof SvelteHTMLElements",
+					default: '"p"',
+					description: "HTML element used for each text fragment.",
+				},
+				{
+					name: "autoPlay",
+					type: "boolean",
+					default: "true",
+					description: "Whether video media should autoplay.",
+				},
+				{
+					name: "loop",
+					type: "boolean",
+					default: "true",
+					description: "Whether video media should loop.",
+				},
+				{
+					name: "muted",
+					type: "boolean",
+					default: "true",
+					description: "Whether video media should be muted.",
+				},
+				{
+					name: "playsInline",
+					type: "boolean",
+					default: "true",
+					description: "Whether video media should play inline on mobile browsers.",
+				},
+				{
+					name: "alt",
+					type: "string | undefined",
+					default: "undefined",
+					description: "Alt text used for image media.",
+				},
+				{
+					name: "triggerType",
+					type: '"hover" | "ref" | "inView"',
+					default: '"hover"',
+					description: "Controls when the media reveal animation runs.",
+				},
+				{
+					name: "containerRef",
+					type: "HTMLElement | Document | null",
+					default: "null",
+					description: "Optional viewport root used with in-view triggering.",
+				},
+				{
+					name: "useInViewOptionsProp",
+					type: "UseInViewOptions",
+					default: "{ once: true, amount: 0.5 }",
+					description: "Options forwarded to the in-view observer.",
+				},
+				{
+					name: "animationVariants",
+					type: "Variants",
+					default: "defaultAnimationVariants",
+					description: "Motion variants used for the media reveal.",
+				},
+				{
+					name: "leftTextClassName",
+					type: "string | undefined",
+					default: "undefined",
+					description: "Classes applied to the first text fragment.",
+				},
+				{
+					name: "rightTextClassName",
+					type: "string | undefined",
+					default: "undefined",
+					description: "Classes applied to the second text fragment.",
+				},
+				{
+					name: "class",
+					type: "string | undefined",
+					default: "undefined",
+					description: "Classes merged onto the root container.",
+				},
+			],
+		},
+	],
+};
