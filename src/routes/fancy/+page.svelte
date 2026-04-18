@@ -11,7 +11,9 @@
 />
 
 <section class="w-full px-4 py-12 sm:px-6 lg:px-12">
-	<div class="mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
+	<div
+		class="mx-auto grid w-full max-w-6xl gap-10 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end"
+	>
 		<div class="max-w-3xl space-y-6">
 			<div
 				class="border-border bg-background text-muted-foreground inline-flex items-center gap-2 rounded-md border px-3 py-1 text-sm"
@@ -20,7 +22,9 @@
 				<span>Fancy UI</span>
 			</div>
 			<div class="space-y-4">
-				<h1 class="text-4xl leading-tight font-semibold tracking-tight text-balance sm:text-5xl">
+				<h1
+					class="text-4xl leading-tight font-semibold tracking-tight text-balance sm:text-5xl"
+				>
 					Expressive media components for Svelte.
 				</h1>
 				<p class="text-muted-foreground max-w-2xl text-base leading-7 sm:text-lg">
@@ -47,10 +51,11 @@
 			<div class="space-y-2">
 				<h2 class="text-lg font-semibold">Media Between Text</h2>
 				<p class="text-muted-foreground text-sm leading-6">
-					Reveal image or video media between two text fragments with hover, view, or manual
-					triggers.
+					Reveal image or video media between two text fragments with hover, view, or
+					manual triggers.
 				</p>
 			</div>
 		</a>
 	</div>
 </section>
+
