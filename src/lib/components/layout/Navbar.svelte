@@ -117,6 +117,15 @@
 							</NavigationMenuLink>
 						</NavigationMenuItem>
 
+						<NavigationMenuItem id="changelog">
+							<NavigationMenuLink
+								href="/changelog"
+								class="text-muted-foreground hover:text-primary focus:text-primary data-active:bg-accent/50 data-active:text-accent-foreground bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-transparent focus:bg-transparent"
+							>
+								Changelog
+							</NavigationMenuLink>
+						</NavigationMenuItem>
+
 						<NavigationMenuItem id="components">
 							<NavigationMenuTrigger
 								class="text-muted-foreground hover:text-primary focus:text-primary data-[state=open]:text-primary relative bg-transparent px-4 py-2 text-sm font-medium hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent"

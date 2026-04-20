@@ -24,6 +24,6 @@
 	mediaUrl="https://i.pinimg.com/1200x/4e/a2/29/4ea229649e46e744b89fcb625723fc73.jpg"
 	mediaType="image"
 	mediaContainerClass="w-full h-20 rounded-xl! overflow-hidden sm:mx-1 my-4"
-	class="items-center text-2xl sm:text-4xl font-semibold font-figtree"
+	class="font-figtree items-center text-2xl font-semibold sm:text-4xl"
 	triggerType="ref"
 />
