@@ -255,6 +255,26 @@
 			"dependencies": ["motion-sv"]
 		},
 		{
+			"name": "dia-text-reveal",
+			"type": "registry:block",
+			"title": "Dia Text Reveal",
+			"description": "A sweeping gradient text reveal with viewport triggering and rotating text support.",
+			"files": [
+				{
+					"path": "./src/lib/components/magic/dia-text-reveal/dia-text-reveal.svelte",
+					"type": "registry:component",
+					"target": "magic/dia-text-reveal/dia-text-reveal.svelte"
+				},
+				{
+					"path": "./src/lib/components/magic/dia-text-reveal/index.ts",
+					"type": "registry:file",
+					"target": "magic/dia-text-reveal/index.ts"
+				}
+			],
+			"registryDependencies": [],
+			"dependencies": ["motion-sv"]
+		},
+		{
 			"name": "cool-mode",
 			"type": "registry:block",
 			"title": "Cool Mode",

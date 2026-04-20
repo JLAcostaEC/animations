@@ -18,8 +18,8 @@
 	.highlight-badge {
 		display: inline;
 		margin: -0.04em -0.06em;
-		padding: 0.04em 0.08em;
-		border-radius: 0.2em 0.15em;
+		padding: 0.04em 0.20em;
+		border-radius: 0.2em 0.25em;
 		background: transparent;
 		box-decoration-break: clone;
 		-webkit-box-decoration-break: clone;
@@ -31,5 +31,11 @@
 			color-mix(in srgb, var(--marker-color), transparent 40%)
 		);
 		color: inherit;
+	}
+	:global(.dark) .highlight-badge {
+		background-color: color-mix(in srgb, var(--marker-color) 14%, transparent) !important;
+		background-image: none !important;
+		color: color-mix(in srgb, var(--marker-color) 85%, transparent) !important;
+		/* padding: 0.04em 0.20em; */
 	}
 </style>
