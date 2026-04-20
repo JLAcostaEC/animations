@@ -30,7 +30,7 @@
 			</h3>
 
 			<ul class="space-y-2.5 text-sm leading-7 sm:text-[15px]">
-				<li class="grid grid-cols-[0.65rem_1fr] gap-2">
+				<li class="flex gap-2.5">
 					<span
 						aria-hidden="true"
 						class="bg-muted-foreground/45 mt-[0.78em] size-1 rounded-full"
@@ -42,9 +42,18 @@
 						>
 							Dia Text Reveal
 						</a>
-						with Motion SV-powered gradient sweeps, viewport triggering, and rotating text
-						support.
+						is Inspired from Magic UI.
 					</span>
+				</li>
+				<li class="flex gap-2.5">
+					<span
+						aria-hidden="true"
+						class="bg-muted-foreground/45 mt-[0.78em] size-1 rounded-full"
+					></span>
+					<span class="min-w-0"
+						>A horizontal color band sweeps across text with a gradient shine, then
+						settles on your theme foreground color.</span
+					>
 				</li>
 			</ul>
 		</section>
