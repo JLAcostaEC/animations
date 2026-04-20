@@ -51,7 +51,7 @@
 	}
 
 	:global(pre.shiki) {
-		@apply overflow-x-auto rounded-lg bg-inherit py-2 text-sm;
+		@apply overflow-x-auto rounded-lg bg-inherit py-2 text-xs sm:text-sm;
 		-ms-overflow-style: none;
 		scrollbar-width: none;
 	}

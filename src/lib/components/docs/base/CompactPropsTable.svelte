@@ -37,7 +37,7 @@
 
 <div class={cn("border-border overflow-hidden rounded-lg border", className)}>
 	<div class="overflow-x-auto">
-		<table class="w-full min-w-[780px] table-fixed text-left text-sm">
+		<table class="w-full min-w-[780px] table-fixed text-left text-xs sm:text-sm">
 			<colgroup>
 				<col class="w-[20%]" />
 				<col class="w-[24%]" />

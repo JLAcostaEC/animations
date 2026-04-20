@@ -79,7 +79,7 @@
 		</Tooltip.Provider>
 	</div>
 	<div class="no-scrollbar overflow-x-auto p-3">
-		<span class="text-primary  font-mono text-sm leading-none font-light text-nowrap">
+		<span class="text-primary font-mono text-xs md:text-sm leading-none font-light text-nowrap">
 			{commandText}
 		</span>
 	</div>
