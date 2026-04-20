@@ -31,13 +31,13 @@
 	// here we animating height from 0 to 300px for large devices and 0 to 200px for small devices
 	animationVariants={{
 		initial: {
-			width: isSmallScreen.current ? "160px" : "120px",
+			width: isSmallScreen.current ? "100px" : "120px",
 			height: 0,
 			transition: { duration: 0.5, ease: [0.944, 0.008, 0.147, 1.002] },
 		},
 		animate: {
-			width: isSmallScreen.current ? "200px" : "160px",
-			height: isSmallScreen.current ? "200px" : "140px",
+			width: isSmallScreen.current ? "120px" : "160px",
+			height: isSmallScreen.current ? "120px" : "140px",
 			transition: { duration: 0.6, ease: [0.944, 0.008, 0.147, 1.002] },
 		},
 	}}
