@@ -18,7 +18,7 @@
 	.highlight-badge {
 		display: inline;
 		margin: -0.04em -0.06em;
-		padding: 0.04em 0.20em;
+		padding: 0.04em 0.2em;
 		border-radius: 0.2em 0.25em;
 		background: transparent;
 		box-decoration-break: clone;
