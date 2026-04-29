@@ -37,9 +37,9 @@ pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/morphing-te
 
 ## Registry Structure
 
-Use `/r/` for Magic UI components
-Use `/s/` for Spell UI components.
-Use `/f/` for Fancy Components (building...).
+- Use `/r/` for Magic UI components
+- Use `/s/` for Spell UI components.
+- Use `/f/` for Fancy Components (building...).
 
 ## Credits
 
