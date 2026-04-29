@@ -11,11 +11,10 @@
 	</div>
 
 	<p class="text-foreground mb-6 text-sm leading-7 sm:text-[15px]">
-		<a
-			href="/fancy/media-between-text"
-			class="rounded-sm outline-none focus-visible:ring-3"
-		>
-			<ChangelogHighlight>Media Between Text component - Svelte Fancy Component</ChangelogHighlight>
+		<a href="/fancy/media-between-text" class="rounded-sm outline-none focus-visible:ring-3">
+			<ChangelogHighlight
+				>Media Between Text component - Svelte Fancy Component</ChangelogHighlight
+			>
 		</a>
 		is now available, along with new Spell UI and Magic UI additions.
 	</p>

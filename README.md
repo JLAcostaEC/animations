@@ -1,4 +1,4 @@
-# Svelte 5 Animations
+# Svelte 5 Animations Components
 
 Beautiful, copy-paste animation components for Svelte 5.
 Built with [motion-sv](https://github.com/hanielu/motion-svelte), Tailwind CSS and Shadcn Svelte registry.

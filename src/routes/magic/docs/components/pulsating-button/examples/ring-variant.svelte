@@ -2,4 +2,4 @@
 	import { PulsatingButton } from "$lib/components/magic/pulsating-button";
 </script>
 
-<PulsatingButton variant="ring">Join Affiliate Program</PulsatingButton>
+<PulsatingButton variant="ring">Ring Example</PulsatingButton>

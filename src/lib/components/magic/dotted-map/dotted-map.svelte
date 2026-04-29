@@ -45,7 +45,9 @@
 	);
 
 	let points = $derived(map.points);
-	let processedMarkers = $derived(map.addMarkers(markers) as Array<{ x: number; y: number; size?: number }>);
+	let processedMarkers = $derived(
+		map.addMarkers(markers) as Array<{ x: number; y: number; size?: number }>
+	);
 </script>
 
 <svg
@@ -53,10 +55,10 @@
 	class={cn("text-gray-500 dark:text-gray-500", className)}
 	style="width: 100%; height: 100%; {style || ''}"
 >
-	{#each points as point }
+	{#each points as point}
 		<circle cx={point.x} cy={point.y} r={dotRadius} fill={dotColor} />
 	{/each}
-	{#each processedMarkers as marker }
+	{#each processedMarkers as marker}
 		<circle cx={marker.x} cy={marker.y} r={marker.size ?? dotRadius} fill={markerColor} />
 	{/each}
 </svg>

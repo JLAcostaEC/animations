@@ -3,7 +3,7 @@
 	--animate-pulse-ring: pulse-ring var(--duration) ease-out infinite;
 	--animate-pulse-ripple: pulse-ripple var(--duration) cubic-bezier(0.16, 1, 0.3, 1) infinite;
 
-    /* Pulsating Button Animations - Original */
+	/* Pulsating Button Animations - Original */
 	@keyframes pulse-slow {
 		0% {
 			box-shadow: 0 0 0 0 var(--pulse-color);
@@ -13,7 +13,7 @@
 		}
 	}
 
-    /* New Variant */
+	/* New Variant */
 	@keyframes pulse-ring {
 		0%,
 		100% {
@@ -24,7 +24,7 @@
 		}
 	}
 
-    /* Ripple Variant */
+	/* Ripple Variant */
 	@keyframes pulse-ripple {
 		0% {
 			box-shadow: 0 0 0 0 oklch(from var(--pulse-color, var(--bg)) l c h / 1);

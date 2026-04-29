@@ -38,7 +38,7 @@
 >
 	<div class="relative flex h-full w-full">
 		<h3
-			class="absolute bottom-10 left-4 w-full md:w-64 text-3xl tracking-wide sm:bottom-12 sm:left-12 sm:text-7xl"
+			class="absolute bottom-10 left-4 w-full text-3xl tracking-wide sm:bottom-12 sm:left-12 sm:text-7xl md:w-64"
 		>
 			Svelte Creators
 		</h3>
@@ -46,7 +46,7 @@
 	</div>
 
 	<div
-		class="mt-0 mb-0 sm:mt-10 sm:mb-64 flex h-full w-full flex-col items-center justify-center space-y-12 md:px-6 text-6xl"
+		class="mt-0 mb-0 flex h-full w-full flex-col items-center justify-center space-y-12 text-6xl sm:mt-10 sm:mb-64 md:px-6"
 	>
 		{#each elements as element}
 			<a href={element.url} target="_blank" rel="noreferrer">
@@ -68,7 +68,7 @@
 					animationVariants={{
 						initial: { width: 0 },
 						animate: {
-							width: isLarge.current ? "100px": "40px",
+							width: isLarge.current ? "100px" : "40px",
 							transition: {
 								duration: 1,
 								type: "spring",

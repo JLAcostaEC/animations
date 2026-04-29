@@ -13,9 +13,11 @@ import RippleVariantRaw from "./examples/ripple-variant.svelte?raw";
 import DurationExample from "./examples/duration-example.svelte";
 import ColorsExample from "./examples/colors-example.svelte";
 import DistanceExample from "./examples/distance-example.svelte";
+import MinimalExample from "./examples/minimal-example.svelte";
 import DurationExampleRaw from "./examples/duration-example.svelte?raw";
 import ColorsExampleRaw from "./examples/colors-example.svelte?raw";
 import DistanceExampleRaw from "./examples/distance-example.svelte?raw";
+import MinimalExampleRaw from "./examples/minimal-example.svelte?raw";
 
 /** Component metadata for navigation */
 export const meta: ComponentMeta = {
@@ -101,20 +103,20 @@ let installBlock: InstallComponentDocs = {
 
 export let examples: Example[] = [
 	{
-		name: "Ring Variant",
-		preview: RingVariant,
-		code: {
-			filename: "ring-variant.svelte",
-			filecode: RingVarianRaw,
-			lang: "svelte",
-		},
-	},
-	{
 		name: "Ripple Variant",
 		preview: RippleVariant,
 		code: {
 			filename: "ripple-variant.svelte",
 			filecode: RippleVariantRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Ring Variant",
+		preview: RingVariant,
+		code: {
+			filename: "ring-variant.svelte",
+			filecode: RingVarianRaw,
 			lang: "svelte",
 		},
 	},
@@ -142,6 +144,15 @@ export let examples: Example[] = [
 		code: {
 			filename: "distance-example.svelte",
 			filecode: DistanceExampleRaw,
+			lang: "svelte",
+		},
+	},
+	{
+		name: "Minimal Example",
+		preview: MinimalExample,
+		code: {
+			filename: "minimal-example.svelte",
+			filecode: MinimalExampleRaw,
 			lang: "svelte",
 		},
 	},

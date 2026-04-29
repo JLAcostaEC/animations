@@ -8,18 +8,25 @@ A sweeping gradient text reveal component built with Svelte 5 and Motion SV. It 
 ### Using CLI
 
 npm
+
 ```bash
 npx shadcn-svelte@latest add https://sv-animations.vercel.app/r/dia-text-reveal.json
 ```
+
 yarn
+
 ```bash
 yarn dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/dia-text-reveal.json
 ```
+
 pnpm
+
 ```bash
 pnpm dlx shadcn-svelte@latest add https://sv-animations.vercel.app/r/dia-text-reveal.json
 ```
+
 bun
+
 ```bash
 bun x shadcn-svelte@latest add https://sv-animations.vercel.app/r/dia-text-reveal.json
 ```
