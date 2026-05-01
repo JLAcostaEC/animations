@@ -136,6 +136,18 @@ export const data: ComponentDoc = {
 					default: '""',
 					description: "Additional CSS classes to apply.",
 				},
+				{
+					name: "prefix",
+					type: "string",
+					default: '""',
+					description: "Prefix to display before the number.",
+				},
+				{
+					name: "suffix",
+					type: "string",
+					default: '""',
+					description: "Suffix to display after the number.",
+				},
 			],
 		},
 	],
